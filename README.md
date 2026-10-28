@@ -2,6 +2,8 @@
 
 [![Patreon](https://img.shields.io/badge/Patreon-support-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/cw/blisstweeting)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/blisstweeting)
+[![Liberapay](https://img.shields.io/badge/Liberapay-support-F6C915?logo=liberapay&logoColor=black)](https://liberapay.com/blisstweeting)
+[![ENS](https://img.shields.io/badge/ENS-support-0080BC?logo=ens&logoColor=white)](https://etherscan.io/address/0x567ccDD062Ec253293B2A3C0459A86c00CdDfDbe)
 
 Free Anki vocabulary decks in 15 languages, built in your browser: **https://xenohunter.github.io/ankigen/**
 
