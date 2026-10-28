@@ -21,10 +21,11 @@ Translate the **concept** (its `note`), not the English word.
 **English units** (English examples are the source for all languages):
 - Natural everyday sentences, A2–B1 level, 4–12 words, each slot showing a different typical use or collocation.
 - Easy to translate literally: no idioms, puns, wordplay, slang, brand names, or culture-specific references. Common first names are fine.
-- Mark the target word form with braces exactly once: `"I {ate} too much."`.
+- Mark the target word form with braces exactly once: `"I {ate} too much."`. It is a form of `w`, never an `alt`.
 
 **Other languages** — slot k is a translation of English slot k:
-- Translate naturally. If your natural translation contains a form of `w` (or an `alt`), mark that form with `{…}` and omit `p`.
+- The target is always a form of `w`: the card teaches `w`, and an `alt` in bold would teach another word.
+- Translate naturally. If your natural translation contains a form of `w`, mark that form with `{…}` and omit `p`.
 - If a natural translation would **not** contain the word, write your own natural sentence of similar length and difficulty for that slot and add `"p": 0`. Never distort a translation to force the word in.
 - Language-specific notation (furigana, pinyin, stress, script) is in languages.md.
 

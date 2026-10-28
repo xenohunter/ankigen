@@ -53,7 +53,7 @@ switch (cmd) {
     const units = allUnits(ctx);
     const by = {};
     for (const u of units) {
-      const key = u.type === 'lang' || u.type === 'ipa' ? `${u.type}:${u.lang}` : u.type;
+      const key = ['lang', 'ipa', 'exfix'].includes(u.type) ? `${u.type}:${u.lang}` : u.type;
       by[key] ??= { done: 0, total: 0, weightLeft: 0 };
       by[key].total++;
       if (unitDone(ctx, prog, u)) by[key].done++;
@@ -62,9 +62,9 @@ switch (cmd) {
     let left = 0;
     for (const [k, v] of Object.entries(by)) {
       left += v.weightLeft;
-      console.log(`${k.padEnd(14)} ${String(v.done).padStart(4)}/${String(v.total).padEnd(4)} remaining weight ${v.weightLeft}`);
+      console.log(`${k.padEnd(14)} ${String(v.done).padStart(4)}/${String(v.total).padEnd(4)} remaining weight ${round1(v.weightLeft)}`);
     }
-    console.log(`\nRemaining weight: ${left} points (1 point ≈ 10k output tokens).`);
+    console.log(`\nRemaining weight: ${round1(left)} points (1 point ≈ 10k output tokens).`);
     console.log(`Concepts: ${ctx.concepts.order.length}. Lang/IPA units are listed once the concept inventory is complete.`);
     if (prog.session) console.log(`Interactive session: spent ${prog.session.spent}/${prog.session.budget} (${prog.session.units.join(', ') || 'no units yet'})`);
     break;
@@ -103,6 +103,10 @@ function printNext() {
   console.log(`  input:  node tools/gen/plan.mjs show ${u.id}`);
   console.log(`  prompt: tools/gen/prompts/${u.type}.md`);
   console.log(`  output: ${out}  then  node tools/gen/merge-unit.mjs ${out}`);
+}
+
+function round1(x) {
+  return Math.round(x * 10) / 10;
 }
 
 function fail(msg) {

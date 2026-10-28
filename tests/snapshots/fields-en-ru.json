@@ -170,7 +170,7 @@
    "Word": "thank you",
    "TypeTarget": "thank you",
    "Translation": "спасибо",
-   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> for your help!</div><div class=\"ex-tr\" lang=\"ru-RU\">Спасибо за помощь!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> very much for the gift.</div><div class=\"ex-tr\" lang=\"ru-RU\">Большое спасибо за подарок.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thanks</b>, see you tomorrow!</div><div class=\"ex-tr\" lang=\"ru-RU\">Спасибо, до завтра!</div></div>",
+   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> for your help!</div><div class=\"ex-tr\" lang=\"ru-RU\">Спасибо за помощь!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> very much for the gift.</div><div class=\"ex-tr\" lang=\"ru-RU\">Большое спасибо за подарок.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b>, see you tomorrow!</div><div class=\"ex-tr\" lang=\"ru-RU\">Спасибо, до завтра!</div></div>",
    "Related": "<span class=\"syn\">= thanks</span>",
    "POS": "фраза",
    "Emoji": "🙏",

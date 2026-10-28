@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { fullWidthPunctuation, hasAsciiPunctuation, labelGroups, stringifyLabels } from '../tools/lib/data.mjs';
+import { fullWidthPunctuation, hasAsciiPunctuation, labelGroups, stringifyLabels, targetProblem } from '../tools/lib/data.mjs';
 import { loadSqlJs } from '../tools/lib/sqljs.mjs';
 import { buildApkg } from '../src/deck/apkg.js';
 import { apkgFileName } from '../src/deck/names.js';
@@ -161,6 +161,68 @@ test('Chinese and Japanese text takes full-width punctuation; lint finds ASCII m
   for (const fine of ['10:30', 'der Tisch, la mesa', 'Ctrl+Enter, 1,000', 'Bǎ shuǐhú fàng shàng, wǒ lái pào diǎn chá.']) {
     assert.ok(!hasAsciiPunctuation(fine), fine);
     assert.equal(fullWidthPunctuation(fine), fine);
+  }
+});
+
+test('an example target shows the word: lint flags a target that is an alt, and a Chinese one without the word', () => {
+  const { languages } = JSON.parse(fs.readFileSync(new URL('data/meta/languages.json', REPO), 'utf8'));
+  /** @type {[string, string, any, any][]} language, sentence, entry, expected problem */
+  const cases = [
+    ['zh', '做三明治很{简单}。', { w: '容易', alt: ['简单'] }, { alt: '简单' }],
+    ['zh', '这次考试很{容易}。', { w: '容易', alt: ['简单'] }, null],
+    ['zh', '我每天早上都用{滴眼液}。', { w: '滴剂' }, { missing: true }],
+    ['zh', '我昨天{洗了衣服}。', { w: '洗衣服' }, null], // a separable verb
+    ['ru', 'Это моя́ {ма́ма}.', { w: 'мать', alt: ['ма́ма'] }, { alt: 'ма́ма' }],
+    ['ru', 'Я позвони́л {ма́ме}.', { w: 'мать', alt: ['ма́ма'] }, { alt: 'ма́ма' }], // a form of the alt
+    ['ru', 'Стака́н {воды́}, пожа́луйста.', { w: 'вода́', forms: { gen: 'воды́' } }, null],
+    ['ru', 'Дай {мне} ключ.', { w: 'я' }, null], // suppletive forms are not flagged
+    ['en', '{There are} many children in the park.', { w: 'there is', alt: ['there are'] }, { alt: 'there are' }],
+    ['en', 'They visited the {Czech Republic}.', { w: 'the Czech Republic', alt: ['Czechia'] }, null], // the phrase reaches past the braces
+    ['en', 'Many {Irish people} live in Boston.', { w: 'Irish person', alt: ['Irishman'] }, null],
+    ['en', 'They {married} in May.', { w: 'marry', alt: ['get married to'] }, null],
+    ['es', 'Su {marido} es médico.', { w: 'esposo', alt: ['marido'] }, { alt: 'marido' }],
+    ['el', 'Το λεωφορείο {σταματά} εδώ.', { w: 'σταματώ', alt: ['σταματάω'] }, null], // a form of both
+    ['tr', 'Sen {da} gel.', { w: 'de', alt: ['da'] }, { alt: 'da' }],
+    ['ja', '卵[たまご]を{かき 混[ま]ぜて}ください。', { w: '泡立てる', read: 'あわだてる', alt: ['かき混ぜる'] }, { alt: 'かき混ぜる' }],
+    ['ja', '玉[たま]ねぎを{刻[きざ]みました}。', { w: '刻む', read: 'きざむ', forms: { class: 'godan', masu: '刻みます', te: '刻んで', nai: '刻まない' } }, null],
+    ['ko', '우리는 일곱 시에 {저녁}을 먹어요.', { w: '저녁 식사', alt: ['저녁'] }, { alt: '저녁' }],
+    ['ko', '{저녁} 식사를 했어요.', { w: '저녁 식사', alt: ['저녁'] }, null],
+  ];
+  for (const [code, t, entry, expected] of cases) assert.deepEqual(targetProblem(t, entry, languages[code]), expected, `${code} ${t}`);
+});
+
+test('an exfix unit replaces example slots, and its merge fails while a slot still shows an alt', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ankigen-exfix-'));
+  try {
+    fs.cpSync(new URL('tests/fixtures/data', REPO), dir, { recursive: true });
+    fs.cpSync(new URL('data/meta', REPO), path.join(dir, 'meta'), { recursive: true });
+    const file = path.join(dir, 'ex', 'en', 'core-1.json');
+    fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replace('{Thank you}, see you tomorrow!', '{Thanks}, see you tomorrow!'));
+    const lint = runStatus(['tools/lint-data.mjs', '--data', dir, '--warnings']);
+    assert.equal(lint.status, 0, 'a warning');
+    assert.match(lint.stdout, /warning ex\/en\/core-1\.json phrase-thank-you: slot 3: target \{Thanks\} shows the alt "thanks", not the word "thank you"/);
+
+    const out = path.join(dir, 'out.json');
+    /** @param {any} slots @param {string[]} [flags] */
+    const merge = (slots, flags = []) => {
+      fs.writeFileSync(out, JSON.stringify({ unit: 'exfix:en:1', slots }));
+      return runStatus(['tools/gen/merge-unit.mjs', out, '--data', dir, ...flags]);
+    };
+    const skipped = merge({});
+    assert.equal(skipped.status, 1);
+    assert.match(skipped.stdout, /phrase-thank-you: slot 3 not fixed: target \{Thanks\}/);
+    const still = merge({ 'phrase-thank-you': { 3: { t: '{Thanks} a lot, see you tomorrow!' } } }, ['--partial']);
+    assert.equal(still.status, 1);
+    assert.match(still.stdout, /ERROR {3}ex\/en\/core-1\.json phrase-thank-you: slot 3: target \{Thanks\} shows the alt/);
+    // --partial: this leaves the repository's progress file alone.
+    const fixed = merge({ 'phrase-thank-you': { 3: { t: '{Thank you}, see you tomorrow!' } } }, ['--partial']);
+    assert.equal(fixed.status, 0, fixed.stdout);
+    const ex = JSON.parse(fs.readFileSync(file, 'utf8'))['phrase-thank-you'];
+    assert.deepEqual(ex.map((/** @type {any} */ x) => x.t), ['{Thank you} for your help!', '{Thank you} very much for the gift.', '{Thank you}, see you tomorrow!']);
+    const unknown = merge({ 'phrase-thank-you': { 4: { t: '{Thank you}!' } } }, ['--partial']);
+    assert.match(unknown.stdout, /slots: phrase-thank-you has no slot 4/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
   }
 });
 

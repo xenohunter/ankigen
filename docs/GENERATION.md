@@ -14,6 +14,7 @@ Run everything from the repo root (`/home/xenohunter/projects/ankigen`). You nee
 | 3. Languages | `lang:<code>:<module>:<n>` | words, forms, hints, definitions, 3 example slots for ≤ 100 concepts | 2 (ja/zh 2.5) | 53 per language |
 | | `review:<code>` | fix collisions and warnings, spot-check | 1 | 15 |
 | 4. IPA | `ipa:<code>:<module>` | pronunciation (all but zh, ja) | 0.5 | ≈ 36 per language |
+| 5. Example fixes | `exfix:<code>:<n>` | rewrite example slots whose target is an alt, not a form of `w` (or, in Chinese, lacks the word); one unit per 250 concepts, sending only the flagged ones | 0.03 per concept | 14 per language |
 | — Etymology | (dropped for now; the app hides the field) | one-line schematics | — | — |
 
 Dependencies (enforced by `units.mjs`):
@@ -21,8 +22,9 @@ Dependencies (enforced by `units.mjs`):
 - Lang units appear once the inventory is complete.
 - Non-English lang units wait for `review:en`, because English examples are the source of the parallel example slots.
 - IPA waits for that language's review.
+- Example fixes wait for that language's review, and non-English ones for English's fixes (the slots they translate).
 
-Completion of lang, IPA and label units is checked against the files themselves. Concept and review units are recorded in `tools/gen/progress.json`.
+Completion of lang, IPA, label and example-fix units is checked against the files themselves. Concept and review units are recorded in `tools/gen/progress.json`.
 
 The concept inventory is complete: **3,498 concepts** in 36 modules (83 of them country- or language-specific). 1 weight point ≈ 10k output tokens; `plan.mjs status` shows about 1,900 points left, ~85% of it in phase 3.
 
@@ -46,6 +48,7 @@ Phase by phase:
 | All other languages | `node tools/gen/batch.mjs auto --type lang --max 300 --incomplete` | batches; repeat until `estimate` shows none left |
 | Reviews | `node tools/gen/batch.mjs auto --type review` | sequential, all languages |
 | IPA | `node tools/gen/batch.mjs auto --type ipa --max 300` | batches |
+| Example fixes | `node tools/gen/batch.mjs auto --type exfix` | batches; English first, so run it again until `estimate --type exfix` shows none left |
 
 How `auto` works:
 1. Submits a batch.
@@ -87,6 +90,7 @@ The app's own texts in other languages (`data/ui/<code>.json`, with the landing 
 
 - `merge-unit.mjs` lints every unit before it counts.
 - `review:<code>` clears what's left per language: collisions → hints, definitions containing the headword, furigana, missing forms, plus a deterministic 30-entry spot check.
+- The target of an example must be a form of `w`, not an `alt` (DATA_FORMAT §6). Lint flags the slots that break this, and `exfix:<code>:<n>` units rewrite them. Until the existing data is fixed this is a lint warning; once `plan.mjs status` shows every `exfix` unit done, it becomes an error (the `warn` in `lintExamples`, `tools/lib/data.mjs`), so new data can't bring it back.
 - User reports land in the feedback sheet. Fix those entries in the data files, then run `node tools/lint-data.mjs --fix` and bump `data/meta/version.json`.
 
 ## 5. Interactive fallback (Claude session in the repo)

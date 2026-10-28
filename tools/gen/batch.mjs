@@ -12,7 +12,7 @@
 //   node tools/gen/batch.mjs auto     [filters] [--max N]  submit → wait → collect → retry (≤ 2 rounds);
 //                                                          concepts/review units run one by one via sync
 //   node tools/gen/batch.mjs auto --batch <batchId>        resume waiting on a submitted batch (no new submit)
-// filters:  --type concepts|labels|landing|lang|review|ipa   --lang <code>   --module <id>
+// filters:  --type concepts|labels|landing|lang|review|ipa|exfix   --lang <code>   --module <id>
 // options:  --model claude-sonnet-5-5  --max-tokens 64000  --price-in 1 --price-out 5 (USD per M tokens, batch)
 //           --data <dir> (default data)
 //           --incomplete (retry, auto): resubmit only units still missing entries; their review units fix lint errors
@@ -124,6 +124,7 @@ function expectedOutput(u, subset) {
   switch (u.type) {
     case 'lang': return n * (['ja', 'zh'].includes(u.lang) ? 300 : 220);
     case 'ipa': return n * 20;
+    case 'exfix': return n * (['ja', 'zh'].includes(u.lang) ? 400 : 300);
     case 'labels': return 2000;
     case 'landing': return 12000;
     case 'concepts': return 250 * 50;
@@ -343,7 +344,7 @@ function retryRequests(m, ctx) {
     if (!u) continue;
     if (prog && unitDone(ctx, prog, u)) continue;
     if (r.attempt >= MAX_ATTEMPTS) { console.log(`  giving up on ${r.customId} after ${r.attempt} attempts — fix in an interactive session`); continue; }
-    if (x?.kind === 'truncated' && (u.type === 'lang' || u.type === 'ipa')) {
+    if (x?.kind === 'truncated' && ['lang', 'ipa', 'exfix'].includes(u.type)) {
       const ids = r.subset || u.slice || u.ids;
       const half = Math.ceil(ids.length / 2);
       const [a, b] = [ids.slice(0, half), ids.slice(half)];

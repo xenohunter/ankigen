@@ -12,12 +12,13 @@
 //   lang:     {"unit","lang":{id:entry},"ex":{id:[{t,p?,r?}]},"patch":{otherId:{field:value|null}}}
 //   review:   {"unit","patch":{id:{field:value|null}},"lang":{id:entry},"ex":{id:[...]}}
 //   ipa:      {"unit","ipa":{id:"ipa"}}
+//   exfix:    {"unit","slots":{id:{"<slot 1-3>":{t,p?,r?}}}} → replaces those example slots
 //   landing:  {"unit","landing":{texts,plural,languages,categories,modules,fields,options,pairs}} → data/landing/<code>.json
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, writeCanonical, stringifyLabels, labelOrder, lint, exists } from '../lib/data.mjs';
-import { context, findUnit, loadProgress, saveProgress, repoRoot, owns } from './units.mjs';
+import { context, findUnit, loadProgress, saveProgress, repoRoot, owns, flaggedTargets } from './units.mjs';
 import { appMeta, canonicalTexts, checkTexts } from '../landing.mjs';
 
 const ROOT = repoRoot();
@@ -87,6 +88,29 @@ function patch(code, patches) {
   }
 }
 
+function setSlots(code, slots, allowed) {
+  const byMod = {};
+  for (const [id, bySlot] of Object.entries(slots || {})) {
+    const ce = ctx.concepts.byId.get(id);
+    if (!ce) { problems.push(`slots: unknown concept ${id}`); continue; }
+    if (!allowed.has(id)) { problems.push(`slots: ${id} is not in this unit's slice`); continue; }
+    (byMod[ce.module] ??= {})[id] = bySlot;
+  }
+  for (const [mod, items] of Object.entries(byMod)) {
+    const data = load(layerPath('ex', code, mod));
+    for (const [id, bySlot] of Object.entries(items)) {
+      const list = data[id];
+      if (!Array.isArray(list)) { problems.push(`slots: ${code} has no examples for ${id}`); continue; }
+      for (const [slot, ex] of Object.entries(bySlot || {})) {
+        if (!/^[1-3]$/.test(slot) || Number(slot) > list.length) { problems.push(`slots: ${id} has no slot ${slot}`); continue; }
+        list[Number(slot) - 1] = ex;
+        touchedIds.add(id);
+      }
+    }
+    writeLayer('ex', code, mod, data);
+  }
+}
+
 switch (unit.type) {
   case 'concepts': {
     const f = path.join(dataDir, 'concepts', `${unit.module}.json`);
@@ -142,6 +166,10 @@ switch (unit.type) {
     upsert('ipa', unit.lang, out.ipa, new Set(unit.ids));
     break;
   }
+  case 'exfix': {
+    setSlots(unit.lang, out.slots, new Set(unit.chunk));
+    break;
+  }
   case 'landing': {
     const meta = appMeta(ctx.p.meta);
     problems.push(...checkTexts(out.landing, meta, unit.lang));
@@ -164,8 +192,10 @@ const relevant = issues.filter((i) => {
   if (!touchedFiles.has(i.file)) return touchedIds.has(i.id) || [...touchedIds].some((id) => i.msg.includes(id));
   return i.id === null || touchedIds.has(i.id) || unit.type === 'labels';
 });
-const errors = relevant.filter((i) => i.level === 'error');
-const warnings = relevant.filter((i) => i.level === 'warning');
+// An example fix must leave no target that lint flags, warning or not.
+const failed = (i) => i.level === 'error' || (unit.type === 'exfix' && i.target);
+const errors = relevant.filter(failed);
+const warnings = relevant.filter((i) => !failed(i));
 
 // Completeness
 const partial = argv.includes('--partial');
@@ -180,6 +210,12 @@ if (fresh.type === 'lang' && !partial) {
     const ex = ctx.layers.ex[unit.lang]?.get(id);
     if (!ex?.length) problems.push(`missing examples for ${id}`);
     else if (ex.length < 3) warnings.push({ level: 'warning', file: `ex/${unit.lang}`, id, msg: `only ${ex.length} example(s); 3 expected` });
+  }
+}
+if (fresh.type === 'exfix' && !partial) {
+  const flagged = flaggedTargets(ctx, unit.lang);
+  for (const id of fresh.ids) {
+    if (!touchedIds.has(id)) for (const p of flagged.get(id)) problems.push(`${id}: slot ${p.slot} not fixed: ${p.msg}`);
   }
 }
 if (fresh.type === 'labels') {

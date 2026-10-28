@@ -6,15 +6,16 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { paths, loadRegistry, loadConcepts, readJson, exists, listDirs, listJson } from '../lib/data.mjs';
+import { paths, loadRegistry, loadConcepts, readJson, exists, listDirs, listJson, targetProblems } from '../lib/data.mjs';
 import { appMeta, readTranslations, translatedLanguages } from '../landing.mjs';
 
 export const CORE_PART = 250;   // concepts per core inventory unit
 export const LANG_SLICE = 100;  // concepts per language unit
+export const EXFIX_SLICE = 250; // concepts per example-fix unit (only the flagged ones are sent)
 export const LANG_ORDER = ['en', 'ru', 'sr', 'ja', 'zh', 'de', 'es', 'pt', 'pl', 'ko', 'nl', 'fr', 'hy', 'tr', 'el'];
 
 // Relative cost of a unit (1 point ≈ 10k output tokens). Calibrate progress.sessionBudget, not these.
-export const WEIGHTS = { concepts: 2, conceptsSmall: 1.5, labels: 0.5, landing: 1, lang: 2, langCJK: 2.5, review: 1, ipa: 0.5 };
+export const WEIGHTS = { concepts: 2, conceptsSmall: 1.5, labels: 0.5, landing: 1, lang: 2, langCJK: 2.5, review: 1, ipa: 0.5, exfix: 0.03 /* per flagged concept */ };
 
 export function repoRoot() {
   return path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -66,6 +67,12 @@ export function langOrder(reg) {
 
 export function owns(concept, code) {
   return !concept.only || concept.only.includes(code);
+}
+
+/** Example slots whose {target} does not show the word, for one language (data.mjs targetProblems; cached). */
+export function flaggedTargets(ctx, code) {
+  ctx.targets ??= {};
+  return (ctx.targets[code] ??= targetProblems(ctx.layers.lang[code], ctx.layers.ex[code], ctx.reg.languages.languages[code]));
 }
 
 /** All units in execution order: [{id, type, weight, deps:[ids], ...}] */
@@ -121,6 +128,20 @@ export function allUnits(ctx) {
       units.push({ id: `ipa:${code}:${m.id}`, type: 'ipa', lang: code, module: m.id, ids, weight: WEIGHTS.ipa, deps: [`review:${code}`] });
     }
   }
+  // 5. Example fixes: slots whose {target} is not a form of the word (DATA_FORMAT §6), per 250 concepts of a
+  //    language; `ids` are the flagged ones. English first: the other languages' slots translate it.
+  const enFixes = [];
+  for (const code of langOrder(reg)) {
+    const flagged = flaggedTargets(ctx, code);
+    for (let i = 1; i <= Math.ceil(ctx.concepts.order.length / EXFIX_SLICE); i++) {
+      const id = `exfix:${code}:${i}`;
+      const chunk = ctx.concepts.order.slice((i - 1) * EXFIX_SLICE, i * EXFIX_SLICE);
+      const ids = chunk.filter((c) => flagged.has(c));
+      const weight = Math.max(0.1, Math.round(ids.length * WEIGHTS.exfix * 10) / 10);
+      units.push({ id, type: 'exfix', lang: code, part: i, chunk, ids, weight, deps: [`review:${code}`, ...(code === 'en' ? [] : enFixes)] });
+      if (code === 'en') enFixes.push(id);
+    }
+  }
   return units;
 }
 
@@ -147,6 +168,8 @@ export function unitDone(ctx, prog, u) {
       ctx.translated ??= translatedLanguages(appMeta(ctx.p.meta), readTranslations(ctx.p.data));
       return ctx.translated.includes(u.lang);
     }
+    case 'exfix':
+      return !u.ids.length;
     case 'ipa': {
       const L = ctx.layers.lang[u.lang];
       const I = ctx.layers.ipa[u.lang];

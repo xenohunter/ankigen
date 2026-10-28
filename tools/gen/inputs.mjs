@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { lint } from '../lib/data.mjs';
-import { moduleConceptIds, owns } from './units.mjs';
+import { moduleConceptIds, owns, flaggedTargets } from './units.mjs';
 import { appMeta, englishTexts, readTranslations } from '../landing.mjs';
 
 export function langInfo(reg, code) {
@@ -20,7 +20,7 @@ export function outputPath(unitId) {
 /**
  * @param ctx   context() from units.mjs
  * @param u     unit from allUnits()
- * @param opts  { subset?: string[] } restrict a lang/ipa unit to these concept IDs (used for split retries)
+ * @param opts  { subset?: string[] } restrict a lang/ipa/exfix unit to these concept IDs (used for split retries)
  */
 export function buildInput(ctx, u, opts = {}) {
   const { reg, concepts, layers } = ctx;
@@ -82,7 +82,8 @@ export function buildInput(ctx, u, opts = {}) {
   }
   if (u.type === 'review') {
     const { issues } = lint({ dataDir: ctx.p.data, metaDir: ctx.p.meta });
-    const mine = issues.filter((i) => (i.file || '').includes(`/${u.lang}/`) || (i.file || '').startsWith(`lang/${u.lang}`));
+    // Example targets that are not the word are the exfix units' work.
+    const mine = issues.filter((i) => !i.target && ((i.file || '').includes(`/${u.lang}/`) || (i.file || '').startsWith(`lang/${u.lang}`)));
     const errors = mine.filter((i) => i.level === 'error');
     const warnings = mine.filter((i) => i.level === 'warning').slice(0, 300);
     const L = layers.lang[u.lang];
@@ -103,6 +104,19 @@ export function buildInput(ctx, u, opts = {}) {
       entries[id] = { note: c?.note, pos: c?.pos, entry: L.get(id), ex: E?.get(id)?.map((x) => x.t) };
     }
     return { ...base, lang: langInfo(reg, u.lang), errors, warnings, entries, spotCheck: sample };
+  }
+  if (u.type === 'exfix') {
+    const flagged = flaggedTargets(ctx, u.lang);
+    const ids = opts.subset ? u.ids.filter((id) => opts.subset.includes(id)) : u.ids;
+    const items = ids.map((id) => {
+      const { c } = concepts.byId.get(id);
+      const { def, st, ...entry } = layers.lang[u.lang].get(id);
+      const item = { id, pos: c.pos, note: c.note, entry, ex: layers.ex[u.lang].get(id) };
+      if (u.lang !== 'en') item.enExamples = layers.ex.en?.get(id)?.map((x) => x.t);
+      item.fix = Object.fromEntries(flagged.get(id).map((p) => [p.slot, p.msg]));
+      return item;
+    });
+    return { ...base, lang: langInfo(reg, u.lang), concepts: items };
   }
   if (u.type === 'ipa') {
     const words = {};
@@ -189,6 +203,7 @@ export function systemBlocks(rootDir, u) {
   ];
   if (u.type === 'concepts') shared.push('# Golden sample (concept files)\n' + fixtureFiles(rootDir, ['concepts']));
   if (u.type === 'lang' || u.type === 'review') shared.push('# Golden sample (concepts, entries, examples)\n' + fixtureFiles(rootDir, ['concepts', 'lang', 'ex']));
+  if (u.type === 'exfix') shared.push('# Golden sample (examples)\n' + fixtureFiles(rootDir, ['ex']));
   const blocks = [{ type: 'text', text: shared.join('\n\n'), cache_control: { type: 'ephemeral' } }];
   if (u.lang && u.type !== 'labels') blocks.push({ type: 'text', text: '# Language guide\n' + languageSection(rootDir, u.lang) });
   return blocks;

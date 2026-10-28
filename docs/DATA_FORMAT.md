@@ -101,6 +101,7 @@ Script rules:
 ```
 
 - Up to 3 slots (target: exactly 3). `t` marks the target form with **exactly one** `{…}`.
+- The target is a form of the entry's `w`, inflected as the sentence needs, **never an `alt`**: the card teaches `w`. Lint warns when a target is closer to an alt than to `w` or its forms, and when a Chinese target lacks the characters of `w` (`exfix` units fix those, GENERATION.md).
 - **Slot-parallel design**: English slot k is the source sentence. Another language's slot k is a translation of it (`p` omitted) or, when a natural translation would not contain the word, an independent sentence (`"p": 0`). In a deck A→B, the translation shown under A's slot k is B's slot k, but only when both are parallel. Slots never pair across indices.
 - Japanese `t` uses Anki-style furigana: `私[わたし]は 水[みず]を 飲[の]みます`. A space goes before a kanji run that follows other text; the renderer removes it. The target wraps the annotated form: `{食[た]べます}`.
 - Chinese adds `r`: the pinyin of the whole sentence (tone marks, ASCII punctuation, no braces).
@@ -149,7 +150,7 @@ What lint checks:
 - **IDs:** ID syntax, uniqueness, retired IDs, references (`mods`, `ant`, `rel`, `only`), entries in the right file.
 - **Groups and bands:** core-band exclusivity, groups not split across bands.
 - **Word entries:** ownership (`w` vs `gl`), script per language, full-width punctuation in Chinese and Japanese text (examples too), Russian stress, gender and article rules, form keys and required forms, readings and romanization formats, collisions → hints, definitions present and not containing the headword.
-- **Examples:** slot rules, target braces, parallel slots having an English source, furigana syntax, pinyin.
+- **Examples:** slot rules, target braces, targets showing `w` (not an alt), parallel slots having an English source, furigana syntax, pinyin.
 - **Optional layers:** IPA charset, etymology syntax.
 - **Labels:** completeness.
 

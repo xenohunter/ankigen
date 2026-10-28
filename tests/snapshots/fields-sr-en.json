@@ -168,7 +168,7 @@
    "TypeTarget": "хвала",
    "Translation": "thank you <span class=\"alt\">· thanks</span>",
    "OtherScript": "hvala",
-   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала</b> на помоћи!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you for your help!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала вам</b> много на поклону.</div><div class=\"ex-tr\" lang=\"en-US\">Thank you very much for the gift.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала</b>, видимо се сутра!</div><div class=\"ex-tr\" lang=\"en-US\">Thanks, see you tomorrow!</div></div>",
+   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала</b> на помоћи!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you for your help!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала вам</b> много на поклону.</div><div class=\"ex-tr\" lang=\"en-US\">Thank you very much for the gift.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"sr-Cyrl-RS\"><b class=\"t\">Хвала</b>, видимо се сутра!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you, see you tomorrow!</div></div>",
    "Related": "<span class=\"syn\">= хвала вам, хвала ти</span>",
    "POS": "phrase",
    "Emoji": "🙏",

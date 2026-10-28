@@ -3,5 +3,5 @@
 "word-eat": [{"t":"We usually {eat} dinner at seven."},{"t":"I don't {eat} meat."},{"t":"What did you {eat} for breakfast?"}],
 "word-hand": [{"t":"Wash your {hands} before dinner."},{"t":"She was holding a cup in her left {hand}."},{"t":"Raise your {hand} if you have a question."}],
 "word-arm": [{"t":"He broke his {arm} playing football."},{"t":"She carried the baby in her {arms}."},{"t":"My {arms} are tired from swimming."}],
-"phrase-thank-you": [{"t":"{Thank you} for your help!"},{"t":"{Thank you} very much for the gift."},{"t":"{Thanks}, see you tomorrow!"}]
+"phrase-thank-you": [{"t":"{Thank you} for your help!"},{"t":"{Thank you} very much for the gift."},{"t":"{Thank you}, see you tomorrow!"}]
 }

@@ -292,6 +292,129 @@ export function targetSpans(t) {
   return [...t.matchAll(/\{([^{}]*)\}/g)].map((m) => m[1]);
 }
 
+// ---------- Example targets ----------
+
+// An example's {target} shows the entry's word: a form of `w`, never an `alt` (DATA_FORMAT §6). Inflection makes
+// "a form of" fuzzy, so words compare by their common beginning, and only clear cases are flagged: a target closer
+// to an alt than to the word, and a Chinese target without the word's characters (Chinese does not inflect).
+const TARGET_PASS = 0.75; // a target at least this close to the word or one of its forms shows the word
+const ALT_MIN = 0.5;      // a target at least this close to an alt (and closer than to the word) shows the alt
+const ENUM_FORMS = ['aspect', 'class', 'type', 'aux'];
+
+function foldTarget(s, lang, unspaced) {
+  const plain = stripStress(s.replace(/ ?([^ [\]{}]+?)\[[^\]]*\]/g, '$1'))
+    .toLocaleLowerCase(lang.locale)
+    .replace(/[՛՜՝՞]/g, '') // Armenian emphasis and question marks sit inside the word
+    .normalize('NFD'); // Hangul syllables → jamo, so 가다 and 갈 share a beginning
+  return unspaced ? plain.replace(/\s+/g, '') : plain;
+}
+
+function words(s) {
+  return s.split(/[^\p{L}\p{M}\p{N}]+/u).filter(Boolean);
+}
+
+/** 1 for the same word; else the share of the shorter word that both begin with, if that is at least half of it. */
+function wordSimilarity(a, b) {
+  if (a === b) return 1;
+  const A = [...a];
+  const B = [...b];
+  let n = 0;
+  while (n < A.length && n < B.length && A[n] === B[n]) n++;
+  const shorter = Math.min(A.length, B.length);
+  return n >= Math.max(2, Math.ceil(shorter / 2)) ? n / shorter : 0;
+}
+
+/** A word next to the braces completes a phrase only as that word, or with a short ending (식사를 for 식사). */
+function completes(phraseWord, word) {
+  return word.startsWith(phraseWord) && [...word.slice(phraseWord.length).normalize('NFC')].length <= 2;
+}
+
+function isSubsequence(part, whole) {
+  let i = 0;
+  for (const ch of whole) if (ch === part[i]) i++;
+  return i === part.length;
+}
+
+/**
+ * How closely a folded target shows a folded phrase: every word of the phrase, matched to its closest target word.
+ * near: the words next to the braces, which may complete a phrase of several words.
+ * reserved: target words that are the entry's own words; they show another phrase only as the same word, so
+ * "Irish people" does not show the alt "Irishman".
+ */
+function phraseScore(target, phrase, { unspaced = false, near = [], reserved = new Set() } = {}) {
+  if (!phrase) return 0;
+  if (unspaced) {
+    if (target.includes(phrase)) return 1;
+    return isSubsequence([...phrase], target) ? TARGET_PASS : wordSimilarity(phrase, target); // 洗了衣服 shows 洗衣服
+  }
+  const tw = words(target);
+  const all = words(phrase);
+  const pw = all.some((w) => [...w].length > 1) ? all.filter((w) => [...w].length > 1) : all; // clitics (s', l') say little
+  if (!pw.length) return 0;
+  const best = (a) => Math.max(
+    0,
+    ...tw.map((b) => (reserved.has(b) && a !== b ? 0 : wordSimilarity(a, b))),
+    ...(pw.length > 1 ? near : []).map((b) => (completes(a, b) ? 1 : 0)),
+  );
+  return pw.reduce((sum, a) => sum + best(a), 0) / pw.length;
+}
+
+/**
+ * Does an example's target show the entry's word? `t` is the sentence with its {target}, `lang` the registry entry.
+ * Returns null if it does (or if that is unclear), else { alt } when the target is closer to that alt than to the
+ * word, or { missing: true } for a Chinese target without the word's characters.
+ */
+export function targetProblem(t, entry, lang) {
+  const m = typeof t === 'string' && typeof entry?.w === 'string' ? /\{([^{}]*)\}/.exec(t) : null;
+  if (!m) return null;
+  const unspaced = lang.script === 'Han' || lang.script === 'Japanese';
+  const target = foldTarget(m[1], lang, unspaced);
+  // A phrase may reach past the braces: "the {Czech Republic}" shows "the Czech Republic".
+  const near = unspaced ? [] : [words(foldTarget(t.slice(0, m.index), lang, false)).at(-1), words(foldTarget(t.slice(m.index + m[0].length), lang, false))[0]].filter(Boolean);
+  // The word, its kana reading and the words of its forms (each alone: 'hat gegessen', 'шёл, шла').
+  const forms = Object.entries(entry.forms || {}).filter(([k, v]) => !ENUM_FORMS.includes(k) && typeof v === 'string').map(([, v]) => v);
+  const candidates = [entry.w, ...(lang.reading === 'kana' && entry.read ? [entry.read] : []), ...forms.flatMap((f) => f.split(unspaced ? /[,、]\s*/ : /[,\s]+/))]
+    .map((c) => foldTarget(c, lang, unspaced));
+  const wordScore = Math.max(...candidates.map((c) => phraseScore(target, c, { unspaced, near })));
+  if (wordScore >= TARGET_PASS) return null;
+  const reserved = new Set(candidates.flatMap(words));
+  let alt = null;
+  let altScore = 0;
+  for (const a of Array.isArray(entry.alt) ? entry.alt : []) {
+    const s = phraseScore(target, foldTarget(a, lang, unspaced), { unspaced, reserved });
+    if (s > altScore) [alt, altScore] = [a, s];
+  }
+  if (alt && altScore >= ALT_MIN && altScore > wordScore) return { alt };
+  return lang.script === 'Han' ? { missing: true } : null;
+}
+
+export function targetMessage(span, entry, problem) {
+  return problem.alt
+    ? `target {${span}} shows the alt "${problem.alt}", not the word "${entry.w}"`
+    : `target {${span}} does not contain the word "${entry.w}"`;
+}
+
+/**
+ * Every flagged example slot of one language: Map(id → [{ slot (from 1), span, problem, msg }]).
+ * `entries` and `examples` map concept IDs to the entry and the example list.
+ */
+export function targetProblems(entries, examples, lang) {
+  const out = new Map();
+  for (const [id, list] of examples || []) {
+    const entry = entries?.get(id);
+    if (!entry?.w || !Array.isArray(list)) continue;
+    list.forEach((ex, i) => {
+      const spans = typeof ex?.t === 'string' ? targetSpans(ex.t) : [];
+      if (spans.length !== 1) return;
+      const problem = targetProblem(ex.t, entry, lang);
+      if (!problem) return;
+      if (!out.has(id)) out.set(id, []);
+      out.get(id).push({ slot: i + 1, span: spans[0], problem, msg: targetMessage(spans[0], entry, problem) });
+    });
+  }
+  return out;
+}
+
 // ---------- Lint ----------
 
 /**
@@ -612,6 +735,9 @@ function lintExamples(code, map, reg, concepts, layers, issues) {
       const spans = targetSpans(ex.t);
       if (spans.length !== 1 || !spans[0].trim()) issues.push(err(file, id, `${where}: mark the target word with exactly one {…}`));
       if ((ex.t.match(/[{}]/g) || []).length !== 2) issues.push(err(file, id, `${where}: unbalanced braces`));
+      // A warning until the examples written before this check are fixed (exfix units, GENERATION.md); then an error.
+      const problem = spans.length === 1 ? targetProblem(ex.t, entry, lang) : null;
+      if (problem) issues.push({ ...warn(file, id, `${where}: ${targetMessage(spans[0], entry, problem)}`), target: true });
       if (ex.p !== undefined) {
         if (code === 'en') issues.push(err(file, id, `${where}: English examples are the source; no "p"`));
         else if (ex.p !== 0) issues.push(err(file, id, `${where}: p may only be 0 (non-parallel); omit when parallel`));

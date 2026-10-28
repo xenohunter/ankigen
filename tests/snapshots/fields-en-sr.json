@@ -170,7 +170,7 @@
    "Word": "thank you",
    "TypeTarget": "thank you",
    "Translation": "hvala <span class=\"alt\">· hvala vam, hvala ti</span>",
-   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> for your help!</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala na pomoći!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> very much for the gift.</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala vam mnogo na poklonu.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thanks</b>, see you tomorrow!</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala, vidimo se sutra!</div></div>",
+   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> for your help!</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala na pomoći!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b> very much for the gift.</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala vam mnogo na poklonu.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"en-US\"><b class=\"t\">Thank you</b>, see you tomorrow!</div><div class=\"ex-tr\" lang=\"sr-Latn-RS\">Hvala, vidimo se sutra!</div></div>",
    "Related": "<span class=\"syn\">= thanks</span>",
    "POS": "fraza",
    "Emoji": "🙏",

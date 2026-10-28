@@ -169,7 +169,7 @@
    "TypeTarget": "спасибо",
    "Translation": "thank you <span class=\"alt\">· thanks</span>",
    "Romanization": "spasíbo",
-   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\"><b class=\"t\">Спаси́бо</b> за помощь!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you for your help!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\">Большое <b class=\"t\">спаси́бо</b> за подарок.</div><div class=\"ex-tr\" lang=\"en-US\">Thank you very much for the gift.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\"><b class=\"t\">Спаси́бо</b>, до завтра!</div><div class=\"ex-tr\" lang=\"en-US\">Thanks, see you tomorrow!</div></div>",
+   "Examples": "<div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\"><b class=\"t\">Спаси́бо</b> за помощь!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you for your help!</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\">Большое <b class=\"t\">спаси́бо</b> за подарок.</div><div class=\"ex-tr\" lang=\"en-US\">Thank you very much for the gift.</div></div><div class=\"ex\" data-concept=\"phrase-thank-you\"><div class=\"ex-t\" lang=\"ru-RU\"><b class=\"t\">Спаси́бо</b>, до завтра!</div><div class=\"ex-tr\" lang=\"en-US\">Thank you, see you tomorrow!</div></div>",
    "POS": "phrase",
    "Emoji": "🙏",
    "ConceptId": "phrase-thank-you",
