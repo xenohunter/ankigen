@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "词汇由 AI 起草，目前只有一部分经过人工审核。非常欢迎你的反馈。",
     "head.draftTopic": "词汇草稿",
@@ -51,6 +51,8 @@
     "download.building": "正在生成牌组…",
     "download.saved": "已保存 {file}。用 Anki 打开（File → Import），或在手机上点按它，用 AnkiDroid 打开。",
     "download.failed": "无法生成牌组（{error}）。请重试。",
+    "download.audio": "音频",
+    "download.audioSize": "+{size} MB",
     "update.title": "更新牌组",
     "update.intro": "改了字段、添加了模块，或者想要更新的数据？重新下载，再用默认选项把新文件导入 Anki（File → Import）。Anki 会更新你现有的笔记及其版式，把新单词加入同一个牌组，并保留你的复习进度。",
     "update.edits": "你对 AnkiGen 笔记所做的修改和标签会被新版本替换。旗标、暂停的卡片和学习进度都会保留。",
@@ -159,7 +161,16 @@
     "fb.field.pos": "词性",
     "fb.field.register": "语体",
     "fb.field.emoji": "表情符号",
-    "fb.field.conceptId": "概念 ID"
+    "fb.field.conceptId": "概念 ID",
+    "audio.label": "发音音频",
+    "audio.warning": "这是 AnkiGen 最具实验性的功能，仍处于原型阶段：录音由机器生成，没有经过任何人检查。重音、读音和口音都可能有误，请不要依赖它们。如果你是母语者，觉得录音质量不好，请通过“反馈”按钮告诉我们：必要时我们会撤下该语言的音频。",
+    "audio.oldDecks": "在加入音频之前就导入过 AnkiGen 牌组？第一次导入更新时，请在 Anki 的导入选项中勾选“Merge note types”（合并笔记类型）；否则 Anki 会跳过你现有的笔记，因为它们的笔记类型现在多了一个音频字段。",
+    "audio.help1": "为你学习的每个词添加一段录音：只有这个词本身，不包括例句、翻译或释义。录音在正向卡片的正面和反向卡片的背面播放。",
+    "audio.help2": "录音由 Google Cloud Text-to-Speech 生成。",
+    "audio.help3": "以后如果想删除这些声音文件，请关闭音频，重新下载牌组并再次导入，然后在 Anki 中用 Tools → Check Media 删除未使用的文件。",
+    "audio.play": "播放这个词",
+    "audio.loading": "正在加载发音音频… {percent}%",
+    "audio.failed": "无法加载发音音频（{error}）。请重试，或关闭音频。"
   },
   "plural": {
     "title": {

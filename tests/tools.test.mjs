@@ -9,6 +9,7 @@ import { loadSqlJs } from '../tools/lib/sqljs.mjs';
 import { buildApkg } from '../src/deck/apkg.js';
 import { apkgFileName } from '../src/deck/names.js';
 import { createLoader } from '../src/data/loader.js';
+import { loadAudioIndex } from '../src/data/clips.js';
 import { appMeta, englishTexts, landingSite, textsSource } from '../tools/landing.mjs';
 import { parseOutput } from '../tools/gen/output.mjs';
 import { fixtureDeck, fixtureLoader } from './helpers/fixtures.mjs';
@@ -87,7 +88,7 @@ test('tools/bundle.mjs: the site serves the same data from its bundles as the so
     for (const file of ['index.html', '404.html', 'og-image.png', 'favicon.svg', 'src/main.js', 'src/deck/apkg.js', 'vendor/sql-wasm.wasm', 'data/meta/version.json']) {
       assert.ok(fs.existsSync(path.join(site, file)), `the site has ${file}`);
     }
-    for (const file of ['docs', 'tools', 'tests', 'feedback', '.env', 'package.json', 'CLAUDE.md', 'data/concepts', 'data/lang']) {
+    for (const file of ['docs', 'tools', 'tests', 'feedback', '.env', 'package.json', 'CLAUDE.md', 'data/concepts', 'data/lang', 'data/audio']) {
       assert.ok(!fs.existsSync(path.join(site, file)), `the site leaves out ${file}`);
     }
 
@@ -103,7 +104,24 @@ test('tools/bundle.mjs: the site serves the same data from its bundles as the so
       fetchText: async () => '',
     });
     const fromSource = fixtureLoader();
-    assert.deepEqual(await fromSite.getMeta(), await fromSource.getMeta());
+    const [siteMeta, sourceMeta] = [await fromSite.getMeta(), await fromSource.getMeta()];
+    assert.deepEqual({ ...siteMeta, audio: null }, { ...sourceMeta, audio: null });
+
+    // Audio: meta.json names the index of each language with clips; the packs give the very clips of data/audio.
+    assert.deepEqual(Object.keys(siteMeta.audio), ['en', 'ru', 'sr', 'ja', 'de'], 'the fixture languages with clips, in registry order');
+    for (const [code, a] of Object.entries(siteMeta.audio)) {
+      assert.equal(a.voice, sourceMeta.audio[code].voice);
+      assert.match(/** @type {string} */ (a.index), new RegExp(`^audio/${code}/index\\.[0-9a-f]{16}\\.json$`));
+      const [packed, source] = [await loadAudioIndex(fromSite, siteMeta, code), await loadAudioIndex(fromSource, sourceMeta, code)];
+      assert.deepEqual([...packed.clips], [...source.clips], `${code}: every word keeps its clip`);
+      for (const [hash, file] of source.files) {
+        const p = /** @type {import('../src/data/clips.js').ClipSource} */ (packed.files.get(hash));
+        assert.match(p.url, new RegExp(`^audio/${code}/[a-z0-9-]+\\.[0-9a-f]{16}\\.mp3$`), 'content-hashed packs per module');
+        assert.deepEqual(fs.readFileSync(path.join(site, p.url)).subarray(p.offset, p.offset + p.length), fs.readFileSync(new URL(file.url, REPO)), `${code} ${hash}`);
+      }
+    }
+    assert.match(stdout, /audio\/: en \d+ clips [\d.]+ MB, ru /);
+    assert.match(stdout, /site: [\d.]+ MB \(limit 900 MB\)/);
     const [bundled, source] = [await fromSite.getConcepts(), await fromSource.getConcepts()];
     assert.deepEqual(bundled.order, source.order);
     for (const [id, record] of source.byId) {
@@ -119,10 +137,17 @@ test('tools/bundle.mjs: the site serves the same data from its bundles as the so
     assert.match(stdout, /decks\/: 20 landing pages and the hub; sitemap\.xml/);
     for (const [name, text] of Object.entries(await landingSite(fromSource))) assert.equal(fs.readFileSync(path.join(site, name), 'utf8'), text, name);
 
-    // Same data, same bytes; and the next build replaces the site.
-    const before = fs.readFileSync(path.join(site, 'bundles', version, 'en.json'));
+    // Same data, same bytes (the audio packs too); and the next build replaces the site.
+    const audioFiles = () => fs.readdirSync(path.join(site, 'audio'), { recursive: true, withFileTypes: true })
+      .filter((d) => d.isFile()).map((d) => [path.join(d.parentPath, d.name), fs.readFileSync(path.join(d.parentPath, d.name))]).sort();
+    const before = [fs.readFileSync(path.join(site, 'bundles', version, 'en.json')), audioFiles()];
     run(['tools/bundle.mjs', '--site', site, '--data', 'tests/fixtures/data']);
-    assert.deepEqual(fs.readFileSync(path.join(site, 'bundles', version, 'en.json')), before);
+    assert.deepEqual([fs.readFileSync(path.join(site, 'bundles', version, 'en.json')), audioFiles()], before);
+
+    // The site must stay under the limit (900 MB: GitHub Pages allows 1 GB), or the build fails.
+    const over = runStatus(['tools/bundle.mjs', '--site', site, '--data', 'tests/fixtures/data', '--limit-mb', '1']);
+    assert.equal(over.status, 1);
+    assert.match(over.stdout, /the site is \d+ MB, over the 1 MB limit/);
   } finally {
     fs.rmSync(site, { recursive: true, force: true });
   }

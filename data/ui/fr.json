@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "Le vocabulaire a été rédigé par une machine et n'est que partiellement relu. Vos retours sont les bienvenus.",
     "head.draftTopic": "le vocabulaire en brouillon",
@@ -51,6 +51,8 @@
     "download.building": "Création de votre deck…",
     "download.saved": "{file} enregistré. Ouvrez-le avec Anki (File → Import), ou touchez-le sur votre téléphone pour l'ouvrir dans AnkiDroid.",
     "download.failed": "Impossible de créer le deck ({error}). Veuillez réessayer.",
+    "download.audio": "Audio",
+    "download.audioSize": "+{size} Mo",
     "update.title": "Mettre à jour votre deck",
     "update.intro": "Vous avez modifié des champs, ajouté des modules ou voulez des données plus récentes ? Téléchargez à nouveau et importez le nouveau fichier dans Anki (File → Import) avec les options par défaut. Anki met à jour vos notes existantes et leur mise en page, ajoute les nouveaux mots au même deck et conserve votre progression.",
     "update.edits": "Vos propres modifications et étiquettes sur les notes AnkiGen sont remplacées par la nouvelle version. Les drapeaux, les cartes suspendues et la progression sont conservés.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "classe grammaticale",
     "fb.field.register": "registre",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "ID du concept"
+    "fb.field.conceptId": "ID du concept",
+    "audio.label": "Prononciation audio",
+    "audio.warning": "La partie la plus expérimentale d'AnkiGen, encore un prototype : les enregistrements sont générés par une machine et personne ne les a vérifiés. L'accent tonique, les lectures et l'accent peuvent être faux : ne vous y fiez pas. Si c'est votre langue maternelle et que les enregistrements sonnent mal, signalez-le avec le bouton « Commentaires » : au besoin, nous retirerons l'audio de cette langue.",
+    "audio.oldDecks": "Vous avez déjà importé un deck AnkiGen avant l'arrivée de l'audio ? Lors du premier import d'une mise à jour, cochez « Merge note types » dans les options d'import d'Anki ; sinon, Anki ignorera vos notes existantes, car leur type de note comporte désormais un champ pour l'audio.",
+    "audio.help1": "Ajoute un enregistrement de chaque mot que vous apprenez : le mot seul, sans ses exemples, sa traduction ni sa définition. Il est joué au recto des cartes directes et au verso des cartes inversées.",
+    "audio.help2": "Les enregistrements sont réalisés avec Google Cloud Text-to-Speech.",
+    "audio.help3": "Pour supprimer plus tard les fichiers sonores, désactivez l'audio, téléchargez le deck et importez-le de nouveau, puis supprimez dans Anki les fichiers inutilisés avec Tools → Check Media.",
+    "audio.play": "Écouter le mot",
+    "audio.loading": "Chargement de la prononciation… {percent} %",
+    "audio.failed": "Impossible de charger la prononciation ({error}). Réessayez ou désactivez l'audio."
   },
   "plural": {
     "title": {

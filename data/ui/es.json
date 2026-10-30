@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "El vocabulario lo ha redactado una máquina y solo está revisado en parte. Tus comentarios son muy bienvenidos.",
     "head.draftTopic": "el vocabulario en borrador",
@@ -51,6 +51,8 @@
     "download.building": "Creando tu mazo…",
     "download.saved": "{file} guardado. Ábrelo con Anki (File → Import) o tócalo en el móvil para abrirlo en AnkiDroid.",
     "download.failed": "No se ha podido crear el mazo ({error}). Vuelve a intentarlo.",
+    "download.audio": "Audio",
+    "download.audioSize": "+{size} MB",
     "update.title": "Actualizar tu mazo",
     "update.intro": "¿Has cambiado campos, añadido módulos o quieres datos más recientes? Descarga el mazo de nuevo e importa el archivo nuevo en Anki (File → Import) con las opciones predeterminadas. Anki actualiza tus notas existentes y su diseño, añade las palabras nuevas al mismo mazo y conserva tu progreso de repaso.",
     "update.edits": "Tus propios cambios y etiquetas en las notas de AnkiGen se sustituyen por la nueva versión. Las marcas, las tarjetas suspendidas y el progreso se conservan.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "categoría gramatical",
     "fb.field.register": "registro",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "ID de concepto"
+    "fb.field.conceptId": "ID de concepto",
+    "audio.label": "Audio de pronunciación",
+    "audio.warning": "La parte más experimental de AnkiGen, todavía un prototipo: las grabaciones las genera una máquina y nadie las ha revisado. La acentuación, las lecturas y el acento pueden estar mal, así que no te fíes de ellas. Si es tu lengua materna y las grabaciones suenan mal, avísanos con el botón «Comentarios»: si hace falta, retiraremos el audio de ese idioma.",
+    "audio.oldDecks": "¿Ya has importado un mazo de AnkiGen antes de que hubiera audio? La primera vez que importes una actualización, marca «Merge note types» en las opciones de importación de Anki; si no, Anki omitirá tus notas existentes, porque su tipo de nota ahora tiene un campo para el audio.",
+    "audio.help1": "Añade una grabación de cada palabra que aprendes: solo la palabra, sin sus ejemplos, su traducción ni su definición. Suena en el anverso de las tarjetas directas y en el reverso de las inversas.",
+    "audio.help2": "Las grabaciones se hacen con Google Cloud Text-to-Speech.",
+    "audio.help3": "Para quitar los archivos de sonido más adelante, desactiva el audio, descarga el mazo y vuelve a importarlo; después borra en Anki los archivos que ya no se usan con Tools → Check Media.",
+    "audio.play": "Reproducir la palabra",
+    "audio.loading": "Cargando el audio de pronunciación… {percent} %",
+    "audio.failed": "No se ha podido cargar el audio de pronunciación ({error}). Vuelve a intentarlo o desactiva el audio."
   },
   "plural": {
     "title": {

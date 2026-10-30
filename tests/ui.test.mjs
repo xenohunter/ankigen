@@ -2,6 +2,7 @@
 // language is tested in tests/i18n.test.mjs; here the texts are English.)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { shownSteps } from '../src/ui/steps.js';
 import { deckSize, listStatus, localTermsHelp } from '../src/ui/copy.js';
 import { plural } from '../src/ui/i18n.js';
@@ -10,7 +11,7 @@ import { localTerms } from '../src/deck/select.js';
 import { buildDeck } from '../src/deck/deck.js';
 import { cardOrds } from '../src/deck/render.js';
 import { createLoader } from '../src/data/loader.js';
-import { defaultConfig, validate } from '../src/state.js';
+import { defaultConfig, hasAudio, validate } from '../src/state.js';
 import { fixtureInput, fixtureLoader } from './helpers/fixtures.mjs';
 import { loadMeta } from './helpers/meta.mjs';
 
@@ -45,6 +46,25 @@ test('counts read naturally', () => {
   assert.equal(listStatus(1734, 1734, ''), '', 'the search box shows the total');
   assert.equal(listStatus(12, 1734, ' water '), '12 of 1,734 words');
   assert.equal(listStatus(0, 1734, 'xqz'), 'No words match “xqz”.');
+});
+
+test('audio: the deck view has clips only where the learned language has audio; a download waits for them', async () => {
+  const loading = createApp({ loader: fixtureLoader(), meta, initial: validate({ learn: 'ru', know: 'en', modules: ['core-1'], audio: true }, meta) });
+  assert.equal(loading.deckInput(), null);
+  await loading.settled();
+  const view = loading.view();
+  const manifest = JSON.parse(fs.readFileSync(new URL('fixtures/data/audio/ru/manifest.json', import.meta.url), 'utf8'));
+  const files = new Map(view.notes.flatMap((n) => n.conceptIds).map((id) => [manifest[id].file, manifest[id].bytes]));
+  assert.deepEqual(view.audio, { clips: files.size, bytes: [...files.values()].reduce((a, b) => a + b, 0) });
+  assert.equal(files.size, 10, 'рука́ hand/arm and both брат share a clip');
+  assert.ok(loading.deckInput()?.audio, 'then the download has the clips');
+  assert.equal((await fixtureApp({ learn: 'ru', know: 'en', modules: ['core-1'] })).view().audio, null, 'audio off');
+  // Armenian has no voice: no toggle (ui/options.js shows it where hasAudio), no clips, and the choice is kept.
+  const hy = await fixtureApp({ learn: 'hy', know: 'en', modules: ['core-1'], audio: true });
+  assert.equal(hasAudio(meta, 'hy'), false);
+  assert.equal(hy.view().audio, null);
+  assert.equal(hy.store.get().audio, true);
+  assert.ok(['ru', 'de', 'ja', 'en', 'sr'].every((code) => hasAudio(meta, code)));
 });
 
 test('the app loads what the config needs and derives the deck view', async () => {

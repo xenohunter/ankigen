@@ -1,6 +1,6 @@
 # Anki import checklist (manual)
 
-A hands-on test of the `.apkg` files on Anki desktop and AnkiDroid. It takes about 40 minutes. The page's "?" next to Download explains updating a deck; its text is `update.*` in `src/ui/strings.js`, so check it against what you see.
+A hands-on test of the `.apkg` files on Anki desktop and AnkiDroid. It takes about 50 minutes. The page's "?" next to Download explains updating a deck; its text is `update.*` in `src/ui/strings.js`, so check it against what you see.
 
 ## Already verified automatically
 
@@ -9,6 +9,7 @@ The import logic was run against Anki's own backend (the `anki` Python package 2
 - **Storage:** every note and card is stored exactly as written: GUIDs, ids, fields, sort field, checksum, tags, card order. The full English deck (3,341 notes) passes Check Database.
 - **Re-imports:** each step below gives the numbers stated, and review history survives.
 - **Rendering:** for 162 cards across 7 configurations, Anki's rendering equals the site's preview, character for character.
+- **Pronunciation audio** (2026-10-28, same three backends): the clips land in `collection.media` byte for byte, and the same file again adds none; turning audio on later updates the notes and adds the clips; turning it off empties the Audio field, and Check Media lists the clips as unused. Anki's own sound tags put the clip on the forward question only and on the reverse answer only. A 19-field deck from before the Audio field is "conflicting" until "Merge note types" is ticked.
 
 So this checklist is about what only the real apps show: their import dialogs, cards on real screens in light and dark mode, typing answers, and opening files on a phone.
 
@@ -25,7 +26,7 @@ So this checklist is about what only the real apps show: their import dialogs, c
    - Files go to `tmp/anki-test/<step>/`. In Windows Explorer that is `\\wsl$\Ubuntu\home\xenohunter\projects\ankigen\tmp\anki-test\`.
    - For the phone, copy a file over (cloud drive, USB, or a message to yourself) and open it with AnkiDroid.
 
-Steps 1–8 use the small test dataset in `tests/fixtures/data`, 15 concepts in en/ru/ja/de/sr. Step 9 uses the real English data.
+Steps 1–8 use the small test dataset in `tests/fixtures/data`, 15 concepts in en/ru/ja/de/sr. Step 9 uses the real English data. Steps 10–11 go back to the test dataset, with its pronunciation clips (`tests/fixtures/data/audio/`).
 
 ## Anki desktop
 
@@ -54,7 +55,7 @@ Do: File → Import → `tmp/anki-test/1/ankigen-ru-en-<date>.apkg`.
   - Sort Field shows e.g. "вода́ f.".
   - Created is today (not 1970, not "invalid date").
   - Tags look like `ankigen::foundations::core-1`.
-- [ ] **Edit one note:** 19 fields, Word … Reverse. Rows switched off are empty, and Reverse is empty.
+- [ ] **Edit one note:** 20 fields, Word … Reverse, Audio. Rows switched off are empty, and so are Reverse and Audio.
 
 Then study 3 cards and press Good on each.
 
@@ -158,6 +159,30 @@ node tools/apkg.mjs '#v1&l=en&k==&m=core-1,core-2,core-3,numbers,time,phrases,co
 - [ ] **Browse:** scrolling and searching feel normal.
 - [ ] **A few definition cards:** long definitions wrap cleanly.
 
+**Step 10: Pronunciation audio on**
+
+Back to the Russian deck of steps 1–5, with reverse cards and audio. The clips are the golden sample's, in `tests/fixtures/data/audio/ru/`.
+
+```
+node tools/apkg.mjs '#v1&l=ru&k=en&m=core-1,time&f=forms:f,ipa:o&x=1&r=1&a=1' --data tests/fixtures/data --out tmp/anki-test/10
+```
+
+- [ ] **Result:** 11 notes updated and 11 reverse cards added again (step 5 removed them). Tools → Check Media reports no missing and no unused files.
+- [ ] **Forward card:** showing the front plays "вода" by itself, and a small play button sits under the word. Showing the answer does not play it again; R replays it.
+- [ ] **Reverse card:** the front ("water") is silent and has no button; showing the answer plays "вода".
+- [ ] **Listen to a few:** рука́ (hand and arm share one clip), су́тки, пить. Machine voices: note anything wrong, but these are expected to be imperfect.
+- [ ] **Same file again:** "11 notes already present", and Check Media is still clean: no second copy of any clip.
+- [ ] **Dark mode:** the play button is visible.
+
+**Step 11: Pronunciation audio off**
+
+```
+node tools/apkg.mjs '#v1&l=ru&k=en&m=core-1,time&f=forms:f,ipa:o&x=1&r=1' --data tests/fixtures/data --out tmp/anki-test/11
+```
+
+- [ ] **Result:** 11 notes updated; no card plays anything or shows a play button. Edit a note: the Audio field is empty.
+- [ ] **Tools → Check Media:** lists 11 unused files, `ankigen-ru-….mp3`. "Delete Unused" removes them. This is what the page's "?" next to the audio toggle tells users to do.
+
 ## AnkiDroid
 
 Repeat a shorter round on the phone, in a fresh state (or after deleting the desktop-tested decks there).
@@ -174,6 +199,8 @@ Repeat a shorter round on the phone, in a fresh state (or after deleting the des
 - [ ] **Night mode** (⋮ → Night mode, or Settings → Appearance): readable, with no white boxes.
 - [ ] **Deck description:** the deck's overview screen shows the description, and its link opens the browser.
 - [ ] **Step 9:** the full-size deck imports in reasonable time.
+- [ ] **Step 10:** the clip plays when the forward front appears and from its button, not again on the forward answer, not on the reverse front, and on the reverse back. Copy the file over again and import it a second time: no new media.
+- [ ] **Step 11:** after the audio-off file, Check Media (⋮ → Check media, or Settings → Advanced) lists the unused clips. Tell me the menu path in your version.
 
 ## What to send back
 
@@ -184,12 +211,14 @@ Repeat a shorter round on the phone, in a fresh state (or after deleting the des
   - the Japanese back;
   - the import options on both apps.
 - The AnkiDroid menu path for Empty Cards.
+- For steps 10 and 11: when the clip plays on each app, how the play button looks, and the AnkiDroid menu path for Check Media.
 
 ## What the import messages mean
 
 | Message | Cause | What to do |
 |---|---|---|
 | "N notes already present in your collection." | The same file again, or a file that is not newer | Nothing |
-| "N notes were not imported, because their note type has changed, and 'Merge note types' was not enabled." | The AnkiGen note type was edited (fields added, removed or renamed) | Re-import with "Merge note types" ticked |
+| "N notes were not imported, because their note type has changed, and 'Merge note types' was not enabled." | The AnkiGen note type was edited (fields added, removed or renamed), or the deck was downloaded before 2026-10-28 (19 fields; AnkiGen then added the Audio field) | Re-import with "Merge note types" ticked |
+| Unused files `ankigen-<lang>-….mp3` in Check Media | Audio was turned off, or words changed their clips | "Delete Unused" in Check Media |
 | A second "AnkiGen::…" deck appears | The original deck was renamed or moved | Move the new cards into your deck |
 | "The front of this card is blank." | Reverse cards were turned off | Tools → Empty Cards |

@@ -7,6 +7,7 @@
 //            makes the card only when the Reverse field is filled. Every row about the learned word goes
 //            to the answer; only the translation and concept rows placed on Front (POS, register, emoji)
 //            stay on the question. Type the answer adds {{type:TypeTarget}} to both sides.
+//   Audio:   only on the forward question and the reverse answer (ARCHITECTURE §7.1).
 // Captions come from labels.json in the known language. data-field / data-dir / data-side let the site
 // tell which field a selection came from (feedback reports).
 
@@ -84,10 +85,12 @@ export function noteType(ctx, css) {
   const isEmoji = (/** @type {string} */ row) => row === 'emoji';
   const learningRow = (/** @type {string} */ row) => sideOf(ctx, row) === 'learning';
 
+  const audio = ctx.audio ? '{{#Audio}}<div class="audio" data-field="Audio">{{Audio}}</div>{{/Audio}}' : '';
+
   // Forward: emoji (if on the front) above the word, other Front rows below it.
-  const fwdQuestion = (/** @type {boolean} */ ruby) =>
-    sections(ctx, (row, p) => isEmoji(row) && p === 'front') + word(ctx, ruby) + sections(ctx, (row, p) => !isEmoji(row) && p === 'front');
-  const forwardFront = card('forward', 'front', fwdQuestion(reading === 'front'));
+  const fwdQuestion = (/** @type {boolean} */ ruby, sound = '') =>
+    sections(ctx, (row, p) => isEmoji(row) && p === 'front') + word(ctx, ruby) + sound + sections(ctx, (row, p) => !isEmoji(row) && p === 'front');
+  const forwardFront = card('forward', 'front', fwdQuestion(reading === 'front', audio));
   const forwardBack = card(
     'forward',
     'back',
@@ -108,6 +111,7 @@ export function noteType(ctx, css) {
       '<hr id=answer>' +
       typeBox +
       word(ctx, reading !== 'off') +
+      audio +
       sections(ctx, (row, p) => (learningRow(row) ? p !== 'off' : p === 'back')),
   );
 

@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "De woordenschat is machinaal opgesteld en nog maar deels gecontroleerd. Feedback is heel welkom.",
     "head.draftTopic": "de conceptwoordenschat",
@@ -51,6 +51,8 @@
     "download.building": "Je deck wordt gemaakt…",
     "download.saved": "{file} opgeslagen. Open het met Anki (File → Import) of tik erop op je telefoon om het in AnkiDroid te openen.",
     "download.failed": "Het deck kon niet worden gemaakt ({error}). Probeer het opnieuw.",
+    "download.audio": "Audio",
+    "download.audioSize": "+{size} MB",
     "update.title": "Je deck bijwerken",
     "update.intro": "Velden gewijzigd, modules toegevoegd of nieuwere gegevens nodig? Download opnieuw en importeer het nieuwe bestand in Anki (File → Import) met de standaardopties. Anki werkt je bestaande notities en hun opmaak bij, voegt nieuwe woorden toe aan hetzelfde deck en behoudt je voortgang.",
     "update.edits": "Je eigen wijzigingen en labels in AnkiGen-notities worden vervangen door de nieuwe versie. Vlaggen, opgeschorte kaarten en voortgang blijven behouden.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "woordsoort",
     "fb.field.register": "register",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "concept-ID"
+    "fb.field.conceptId": "concept-ID",
+    "audio.label": "Uitspraak (audio)",
+    "audio.warning": "Het meest experimentele deel van AnkiGen, nog maar een prototype: de opnames zijn machinaal gemaakt en niemand heeft ze gecontroleerd. Klemtoon, lezing en accent kunnen fout zijn, dus vertrouw er niet op. Is het je moedertaal en klinken de opnames slecht? Laat het ons weten met de knop ‘Feedback’: zo nodig halen we de audio van die taal weg.",
+    "audio.oldDecks": "Heb je al een AnkiGen-deck geïmporteerd voordat er audio was? Vink de eerste keer dat je een update importeert ‘Merge note types’ aan in de importopties van Anki; anders slaat Anki je bestaande notities over, omdat hun notitietype nu een veld voor de audio heeft.",
+    "audio.help1": "Voegt een opname toe van elk woord dat je leert: alleen het woord, niet de voorbeelden, de vertaling of de definitie. De opname speelt op de voorkant van gewone kaarten en op de achterkant van omgekeerde kaarten.",
+    "audio.help2": "De opnames worden gemaakt met Google Cloud Text-to-Speech.",
+    "audio.help3": "Wil je de geluidsbestanden later verwijderen? Zet de audio uit, download het deck en importeer het opnieuw, en verwijder daarna in Anki de ongebruikte bestanden met Tools → Check Media.",
+    "audio.play": "Woord afspelen",
+    "audio.loading": "Uitspraak laden… {percent}%",
+    "audio.failed": "De uitspraak kon niet worden geladen ({error}). Probeer het opnieuw of zet de audio uit."
   },
   "plural": {
     "title": {

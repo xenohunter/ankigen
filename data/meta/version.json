@@ -1,5 +1,5 @@
 {
   "$comment": "Bump 'data' on every data release (YYYY.MM.DD[.n]). The app shows it in the footer and attaches it to feedback reports.",
-  "data": "2026.10.18",
+  "data": "2026.10.30",
   "schema": 1
 }

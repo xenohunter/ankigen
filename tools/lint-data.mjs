@@ -12,6 +12,7 @@ import path from 'node:path';
 import { lint, coverage, moduleSizes, readJson, writeCanonical, stringifyLabels, labelOrder, listDirs, listJson, LAYERS, paths, loadRegistry, loadConcepts } from './lib/data.mjs';
 import { appMeta, landingIssues } from './landing.mjs';
 import { uiIssues } from './ui-texts.mjs';
+import { audioIssues } from './lib/audio.mjs';
 
 const args = process.argv.slice(2);
 const opt = (name, def) => {
@@ -27,7 +28,7 @@ const filter = opt('--filter', null);
 if (flag('--fix')) fix(dataDir, metaDir);
 
 const { issues, ctx } = lint({ dataDir, metaDir });
-issues.push(...landingIssues(dataDir, appMeta(metaDir)), ...uiIssues(dataDir, appMeta(metaDir)));
+issues.push(...landingIssues(dataDir, appMeta(metaDir)), ...uiIssues(dataDir, appMeta(metaDir)), ...audioIssues(ctx));
 const shown = issues.filter((i) => !filter || (i.file || '').includes(filter) || i.id === filter);
 const errors = shown.filter((i) => i.level === 'error');
 const warnings = shown.filter((i) => i.level === 'warning');

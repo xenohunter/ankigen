@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   defaultConfig, validate, encodeHash, decodeHash, loadConfig, saveConfig, createStore, placementOf, withPlacement,
-  typesAnswer, SAME, STORAGE_KEY,
+  typesAnswer, hasAudio, usesAudio, SAME, STORAGE_KEY,
 } from '../src/state.js';
 import { loadMeta } from './helpers/meta.mjs';
 
@@ -20,7 +20,7 @@ const throwingStorage = {
 
 test('defaults come from fields.json', () => {
   assert.deepEqual(defaultConfig(meta), {
-    v: 1, learn: null, know: null, modules: [], fields: {}, examples: 2, reverse: false, type: false, srScript: 'cyrl',
+    v: 1, learn: null, know: null, modules: [], fields: {}, examples: 2, reverse: false, type: false, audio: false, srScript: 'cyrl',
   });
 });
 
@@ -48,7 +48,7 @@ test('the ARCHITECTURE example decodes; re-encoding drops what does not apply', 
 test('invalid values fall back to defaults and keep the rest', () => {
   const config = decodeHash('#v1&l=xx&k=ru&m=core-1,nope&f=reading:z,word:b,ipa:f,bogus:b&x=9&r=yes&t=1&sr=q&zz=1', meta);
   assert.deepEqual(config, {
-    v: 1, learn: null, know: 'ru', modules: ['core-1'], fields: { ipa: 'front' }, examples: 2, reverse: false, type: false, srScript: 'cyrl',
+    v: 1, learn: null, know: 'ru', modules: ['core-1'], fields: { ipa: 'front' }, examples: 2, reverse: false, type: false, audio: false, srScript: 'cyrl',
   });
   assert.equal(decodeHash('#v1&l=ru&k=ru', meta)?.know, null, 'cannot speak the language you learn (use Same language)');
   assert.equal(decodeHash('#v1&l=ru&x=%E0%A4', meta)?.learn, 'ru', 'a malformed escape only drops its key');
@@ -85,6 +85,24 @@ test('field placements: per-language defaults, rows that do not apply, overrides
   assert.deepEqual(withPlacement(on, meta, 'romanization', 'off').fields, {}, 'choosing the default removes the override');
   assert.equal(withPlacement(ru, meta, 'word', 'back'), ru, 'fixed rows cannot move');
   assert.equal(withPlacement(ru, meta, 'gender', 'front'), ru, 'only the listed placements are allowed');
+});
+
+test('audio: a=1 only where the learned language has audio; the choice survives switching; anything else is off', () => {
+  const voiced = { ...meta, audio: { de: { voice: 'de-DE-Chirp3-HD-Kore' }, hy: { locale: 'hy-AM', unsupported: true } } };
+  const de = decodeHash('#v1&l=de&k=en&a=1', voiced);
+  assert.equal(de?.audio, true);
+  assert.equal(encodeHash(/** @type {any} */ (de), voiced), '#v1&l=de&k=en&x=2&a=1');
+  const hy = validate({ ...de, learn: 'hy' }, voiced);
+  assert.equal(hy.audio, true, 'kept while learning a language without audio');
+  assert.equal(encodeHash(hy, voiced), '#v1&l=hy&k=en&x=2', 'but not written for it');
+  assert.equal(encodeHash(validate({ ...hy, learn: 'de' }, voiced), voiced), '#v1&l=de&k=en&x=2&a=1', 'back where it has effect');
+  assert.equal(encodeHash(validate({ learn: 'de', know: 'sr', audio: true }, voiced), voiced), '#v1&l=de&k=sr&x=2&a=1&sr=c');
+  for (const bad of ['a=0', 'a=yes', 'a=2', 'a=', 'a=%31%31']) assert.equal(decodeHash(`#v1&l=de&k=en&${bad}`, voiced)?.audio, false, bad);
+  assert.equal(validate({ learn: 'de', audio: 'true' }, voiced).audio, false);
+  assert.equal(decodeHash('#v1&a=1', voiced)?.audio, true, 'a hash with only a is still a config');
+  assert.deepEqual(['de', 'hy', 'fr', null].map((code) => hasAudio(voiced, code)), [true, false, false, false]);
+  assert.equal(hasAudio({ ...meta, audio: undefined }, 'de'), false, 'no audio.json: no audio');
+  assert.equal(usesAudio(voiced, validate({ learn: 'de', audio: false }, voiced)), false);
 });
 
 test('load: hash, then local storage, then defaults', () => {

@@ -2,7 +2,7 @@
 // The page's English texts: what the page shows in English, and the master that every translation in
 // data/ui/<code>.json follows (tools/ui-texts.mjs checks them). {name} marks a value filled in at run time.
 // Module, field and option texts come from data/meta, translated in data/landing; the feedback dialog's
-// texts are in ui/feedback-dialog.js, which loads them with the dialog.
+// texts are in ui/feedback-dialog.js and the audio option's in ui/audio.js, which load them when they load.
 //
 // tools/landing.mjs uses head.draftHelp1 and update.intro too: changing them changes the landing pages'
 // English texts, so their translations are redone (docs/GENERATION.md).
@@ -68,6 +68,8 @@ export const STRINGS = {
   'download.building': 'Building your deck…',
   'download.saved': 'Saved {file}. Open it with Anki (File → Import), or tap it on your phone to open it in AnkiDroid.',
   'download.failed': 'Could not build the deck ({error}). Please try again.',
+  'download.audio': 'Audio',
+  'download.audioSize': '+{size} MB',
   'update.title': 'Updating your deck',
   'update.intro':
     'Changed fields, added modules, or want newer data? Download again and import the new file into Anki (File → Import) with the default options. Anki updates your existing notes and their layout, adds new words to the same deck, and keeps your review progress.',

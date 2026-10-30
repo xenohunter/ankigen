@@ -49,6 +49,16 @@
 
 .disambig { color: var(--muted); font-size: 0.75em; margin-top: 0.2em; }
 
+/* Pronunciation audio: Anki draws a [sound:…] tag as its play button (.replay-button); the site's preview draws
+   one of its own (.ag-play) in the same place and size. */
+.audio { margin-top: 0.3em; line-height: 1; }
+.audio .replay-button svg { width: 1.6em; height: 1.6em; vertical-align: middle; }
+.ag-play { padding: 0; border: 0; background: none; color: var(--accent); cursor: pointer; }
+.ag-play:disabled { opacity: 0.4; cursor: default; }
+.ag-play:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 50%; }
+.ag-play circle { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.ag-play path { fill: currentColor; }
+
 .translation { font-size: 1.35em; }
 .translation.prompt { font-size: 1.6em; margin-top: 0.4em; }
 .translation .hint,

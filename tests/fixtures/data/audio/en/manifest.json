@@ -1,0 +1,15 @@
+{
+"word-water": {"file":"1a140b083541060f.mp3","text":"water","voice":"en-US-Chirp3-HD-Kore","bytes":4224},
+"word-eat": {"file":"626152bc46f51b81.mp3","text":"eat","voice":"en-US-Chirp3-HD-Kore","bytes":5184},
+"word-drink": {"file":"1c11428439b6b6f6.mp3","text":"drink","voice":"en-US-Chirp3-HD-Kore","bytes":6144},
+"word-big": {"file":"40468a4d939433d2.mp3","text":"big","voice":"en-US-Chirp3-HD-Kore","bytes":4224},
+"word-small": {"file":"10190742a1de0f78.mp3","text":"small","voice":"en-US-Chirp3-HD-Kore","bytes":5184},
+"word-brother-older": {"file":"81c574fedcf542d2.mp3","text":"brother","voice":"en-US-Chirp3-HD-Kore","bytes":4032},
+"word-brother-younger": {"file":"81c574fedcf542d2.mp3","text":"brother","voice":"en-US-Chirp3-HD-Kore","bytes":4032},
+"word-hand": {"file":"37cddf9d5f716bfa.mp3","text":"hand","voice":"en-US-Chirp3-HD-Kore","bytes":6144},
+"word-arm": {"file":"be30e7bd92cdc678.mp3","text":"arm","voice":"en-US-Chirp3-HD-Kore","bytes":5376},
+"word-monday": {"file":"d0a688eef2fb9b31.mp3","text":"Monday","voice":"en-US-Chirp3-HD-Kore","bytes":6144},
+"word-tuesday": {"file":"242c2ee996856043.mp3","text":"Tuesday","voice":"en-US-Chirp3-HD-Kore","bytes":5856},
+"phrase-thank-you": {"file":"dc36fa139556dc9d.mp3","text":"thank you","voice":"en-US-Chirp3-HD-Kore","bytes":4416},
+"word-residence-permit": {"file":"cd61ce984bb340ad.mp3","text":"residence permit","voice":"en-US-Chirp3-HD-Kore","bytes":5664}
+}

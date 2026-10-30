@@ -4,6 +4,7 @@
 // reach the page, its storage or its address. Their only script is the bridge below: it tells the page the
 // face's height, so the frame shows all of it without scrolling, and the text selected on it, for reports (the
 // body carries the note's concept IDs and word); Ctrl/Cmd+Enter on a card opens a report as on the page.
+// [sound:…] is ui/audio.js's play button, played in the frame.
 // Light or dark follows the page, as Anki's night mode follows the app.
 
 import { noteFields } from '../deck/fields.js';
@@ -61,11 +62,14 @@ function bridge(page) {
 
 const BRIDGE = `<script>(${bridge})(${JSON.stringify(PAGE)})</script>`;
 
-/** @param {string} css @param {string} html @param {{ concept: string, word: string }} note */
-function frameDoc(css, html, { concept, word }) {
+/** @type {typeof import('./audio.js') | null} */
+let audio = null;
+
+/** @param {string} css @param {string} html @param {{ concept: string, word: string }} note @param {string} [player] */
+function frameDoc(css, html, { concept, word }, player = '') {
   const night = dark.matches ? ' nightMode night_mode' : '';
   const data = `data-concept="${escapeAttr(concept)}" data-word="${escapeAttr(word)}"`;
-  return `<!doctype html><html><head><meta charset="utf-8"><style>${css}\n${FRAME_STYLE}</style></head><body class="card${night}" ${data}><div id="qa">${html}</div>${BRIDGE}</body></html>`;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${css}\n${FRAME_STYLE}</style></head><body class="card${night}" ${data}><div id="qa">${html}</div>${BRIDGE}${player}</body></html>`;
 }
 
 /** A selection as a frame reported it, with only what a report keeps. @param {any} s @returns {ReportContext | null} */
@@ -160,10 +164,17 @@ export function mountPreview(root, app, { id, isActive, frames, onReset }) {
     const css = view.noteType.css;
     const note = { concept: view.sample.conceptIds.join(','), word: stripHtml(fields.Word) };
     directions[1].hidden = !view.config.reverse;
+    if (fields.Audio && !audio) {
+      import('./audio.js').then((m) => {
+        audio = m;
+        render(app.view());
+      }, () => {});
+    }
+    const sound = (/** @type {string} */ name) => audio?.playButton(app, name, () => render(app.view())) ?? '';
     for (const face of faces) {
-      const card = renderCard(view.noteType, fields, face.ord, { typeLabel: t('preview.typeAnswer') });
+      const card = renderCard(view.noteType, fields, face.ord, { typeLabel: t('preview.typeAnswer'), sound });
       if (!card) continue;
-      const doc = frameDoc(css, card[face.side], note);
+      const doc = frameDoc(css, card[face.side], note, audio?.PLAYER);
       if (doc !== face.doc) {
         face.doc = doc;
         face.frame.srcdoc = doc;

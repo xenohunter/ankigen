@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "Kelime hazinesi makine tarafından taslak olarak hazırlandı ve yalnızca kısmen kontrol edildi. Geri bildirimlerinizi bekliyoruz.",
     "head.draftTopic": "taslak kelime hazinesi",
@@ -51,6 +51,8 @@
     "download.building": "Desteniz hazırlanıyor…",
     "download.saved": "{file} kaydedildi. Anki ile açın (File → Import) ya da telefonunuzda dosyaya dokunarak AnkiDroid'de açın.",
     "download.failed": "Deste oluşturulamadı ({error}). Lütfen tekrar deneyin.",
+    "download.audio": "Ses",
+    "download.audioSize": "+{size} MB",
     "update.title": "Destenizi güncelleme",
     "update.intro": "Alanları mı değiştirdiniz, modül mü eklediniz ya da daha yeni veri mi istiyorsunuz? Yeniden indirin ve yeni dosyayı varsayılan seçeneklerle Anki'ye aktarın (File → Import). Anki mevcut notlarınızı ve düzenlerini günceller, yeni kelimeleri aynı desteye ekler ve tekrar ilerlemenizi korur.",
     "update.edits": "AnkiGen notlarında yaptığınız düzenlemeler ve etiketler yeni sürümle değiştirilir. Bayraklar, askıya alınmış kartlar ve ilerlemeniz korunur.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "sözcük türü",
     "fb.field.register": "üslup",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "kavram kimliği"
+    "fb.field.conceptId": "kavram kimliği",
+    "audio.label": "Telaffuz sesi",
+    "audio.warning": "AnkiGen'in en deneysel bölümü, henüz bir prototip: kayıtlar makineyle üretildi ve kimse kontrol etmedi. Vurgu, okunuş ve aksan yanlış olabilir; bu yüzden bunlara güvenmeyin. Ana diliniz buysa ve kayıtlar kötü geliyorsa, “Geri bildirim” düğmesiyle bize bildirin: gerekirse o dilin sesini kaldırırız.",
+    "audio.oldDecks": "Ses eklenmeden önce bir AnkiGen destesini içe aktardınız mı? Bir güncellemeyi ilk kez içe aktarırken Anki'nin içe aktarma seçeneklerinde “Merge note types” seçeneğini işaretleyin; aksi hâlde Anki mevcut notlarınızı atlar, çünkü not türlerinde artık ses için bir alan var.",
+    "audio.help1": "Öğrendiğiniz her kelimenin kaydını ekler: yalnızca kelimenin kendisini; örnekleri, çevirisi veya tanımı eklenmez. Kayıt, düz kartların ön yüzünde ve ters kartların arka yüzünde çalar.",
+    "audio.help2": "Kayıtlar Google Cloud Text-to-Speech ile yapılır.",
+    "audio.help3": "Ses dosyalarını daha sonra kaldırmak için sesi kapatın, desteyi indirip yeniden içe aktarın, ardından Anki'de kullanılmayan dosyaları Tools → Check Media ile silin.",
+    "audio.play": "Kelimeyi çal",
+    "audio.loading": "Telaffuz sesi yükleniyor… %{percent}",
+    "audio.failed": "Telaffuz sesi yüklenemedi ({error}). Tekrar deneyin veya sesi kapatın."
   },
   "plural": {
     "title": {

@@ -6,7 +6,7 @@ import { buildDeck } from '../deck/deck.js';
 import { apkgFileName, deckName } from '../deck/names.js';
 import { deckSize } from './copy.js';
 import { h, msg, whenIdle } from './dom.js';
-import { t } from './i18n.js';
+import { number, t } from './i18n.js';
 import { help } from './popover.js';
 
 /** @type {Promise<any> | null} */
@@ -45,6 +45,7 @@ export function mountDownload(root, app, { onSaved } = {}) {
   const deck = h('dd');
   const size = h('dd');
   const file = h('dd', { class: 'dl-file' });
+  const audio = [h('dt', null, msg('download.audio')), h('dd')];
   const button = h('button', { type: 'button', class: 'button primary' }, msg('download.button'));
   const status = h('p', { class: 'dl-status', role: 'status' });
   /** The status line, worked out again in the interface language on every update. @type {() => string} */
@@ -57,7 +58,7 @@ export function mountDownload(root, app, { onSaved } = {}) {
     h('ul', null, ...['update.edits', 'update.deck', 'update.noteType', 'update.reverse'].map((key) => h('li', null, msg(key)))),
   );
   root.append(
-    h('dl', { class: 'dl-summary' }, h('dt', null, msg('download.deck')), deck, h('dt', null, msg('download.size')), size, h('dt', null, msg('download.file')), file),
+    h('dl', { class: 'dl-summary' }, h('dt', null, msg('download.deck')), deck, h('dt', null, msg('download.size')), size, ...audio, h('dt', null, msg('download.file')), file),
     h('div', { class: 'dl-actions' }, button, h('span', { class: 'dl-help' }, msg('download.later'), help(msg('download.laterTopic'), updateHelp))),
     status,
   );
@@ -85,7 +86,10 @@ export function mountDownload(root, app, { onSaved } = {}) {
     setStatus(() => t('download.building'));
     try {
       const [SQL, { buildApkg }] = await Promise.all([loadSql(), loadPackager()]);
-      const bytes = await buildApkg({ SQL, config: input.config, meta: input.meta, deck: buildDeck(input) });
+      const built = buildDeck(input);
+      const media = input.audio ? await (await import('./audio.js')).deckMedia(app, built.notes, setStatus) : undefined;
+      if (media === null) return; // the clips could not be loaded; the status says so
+      const bytes = await buildApkg({ SQL, config: input.config, meta: input.meta, deck: built, media });
       const name = apkgFileName(input.config, input.meta);
       save(bytes, name);
       setStatus(() => t('download.saved', { file: name }));
@@ -110,7 +114,10 @@ export function mountDownload(root, app, { onSaved } = {}) {
       deck.textContent = deckName(config, app.meta);
       size.textContent = ready ? deckSize(notes.length, cards) : t('download.loading');
       file.textContent = apkgFileName(config, app.meta);
-      if (!busy) button.disabled = !ready || !notes.length;
+      const clips = view.audio;
+      for (const el of audio) el.hidden = !clips;
+      if (clips) audio[1].textContent = 'bytes' in clips ? t('download.audioSize', { size: number(Math.ceil(clips.bytes / 104857.6) / 10) }) : t('download.loading');
+      if (!busy) button.disabled = !notes.length || !app.deckInput(); // the words, and the clips if any, are loaded
       if (!prefetched && config.modules.length) {
         prefetched = true;
         whenIdle(() => {

@@ -1,0 +1,16 @@
+{
+"word-water": {"file":"d96dff78e4774f09.mp3","text":"水","voice":"ja-JP-Chirp3-HD-Kore","bytes":2496},
+"word-eat": {"file":"a0d4d13a50fd4632.mp3","text":"食べる","voice":"ja-JP-Chirp3-HD-Kore","bytes":3264},
+"word-drink": {"file":"7770d5f7216ee703.mp3","text":"飲む","voice":"ja-JP-Chirp3-HD-Kore","bytes":3264},
+"word-big": {"file":"32a3ddc157cf2322.mp3","text":"大きい","voice":"ja-JP-Chirp3-HD-Kore","bytes":3072},
+"word-small": {"file":"06105516632c3ecc.mp3","text":"小さい","voice":"ja-JP-Chirp3-HD-Kore","bytes":3264},
+"word-brother-older": {"file":"f8ae41e6ab725e19.mp3","text":"兄","voice":"ja-JP-Chirp3-HD-Kore","bytes":5376},
+"word-brother-younger": {"file":"4328c8ad8f26fd95.mp3","text":"弟","voice":"ja-JP-Chirp3-HD-Kore","bytes":3744},
+"word-hand": {"file":"f9f79ef46cded6cd.mp3","text":"手","voice":"ja-JP-Chirp3-HD-Kore","bytes":3264},
+"word-arm": {"file":"877e077b1135b6fe.mp3","text":"腕","voice":"ja-JP-Chirp3-HD-Kore","bytes":3936},
+"word-monday": {"file":"53b2115576d94c0c.mp3","text":"月曜日","voice":"ja-JP-Chirp3-HD-Kore","bytes":5856},
+"word-tuesday": {"file":"2e91ce4cf77a8ed5.mp3","text":"火曜日","voice":"ja-JP-Chirp3-HD-Kore","bytes":3264},
+"phrase-thank-you": {"file":"23bfa76fa4c2d292.mp3","text":"ありがとう","voice":"ja-JP-Chirp3-HD-Kore","bytes":5664},
+"word-residence-permit": {"file":"decfcdb5c2711dd4.mp3","text":"在留許可","voice":"ja-JP-Chirp3-HD-Kore","bytes":4224},
+"word-residence-record-jp": {"file":"00712642f7ef176d.mp3","text":"住民票","voice":"ja-JP-Chirp3-HD-Kore","bytes":4224}
+}

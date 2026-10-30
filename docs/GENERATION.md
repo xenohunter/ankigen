@@ -2,7 +2,7 @@
 
 The data is written by Claude in **units**: small, self-contained jobs. Each unit is validated by the linter and merged into `data/` on its own. Units run through the **Anthropic API** (Message Batches for bulk work, plain Messages for sequential work). An interactive Claude session can also run them (§5).
 
-Run everything from the repo root (`/home/xenohunter/projects/ankigen`). You need Node 18+ and, for API runs, a `.env` file in the repo root with `ANKIGEN_API_KEY=…` (copy `.env.example`). `batch.mjs` reads it itself. Don't export `ANTHROPIC_API_KEY` in your shell: Claude Code would then bill the API instead of your plan.
+Run everything from the repo root (`/home/xenohunter/projects/ankigen`). You need Node 18+ and, for API runs, a `.env` file in the repo root with `ANKIGEN_API_KEY=…` (copy `.env.example`). `batch.mjs` reads it itself. Don't export `ANTHROPIC_API_KEY` in your shell: Claude Code would then bill the API instead of your plan. The pronunciation audio has its own tool and key (§7).
 
 ## 1. Phases and units
 
@@ -119,3 +119,39 @@ Continue AnkiGen data generation in this repo. Follow docs/GENERATION.md §5.
 - IPA may still be in progress if you choose to ship without it.
 - Etymology is not generated (dropped for now).
 - Non-parallel examples are fine.
+- Pronunciation audio (§7) never holds up a deploy: a word without a clip has none.
+
+## 7. Pronunciation audio
+
+`tools/audio.mjs` makes one clip per word entry of a language with **Google Cloud Text-to-Speech** (REST API with an API key; no other service) and keeps the clips in the repo, under `data/audio/` (DATA_FORMAT §13). `tools/bundle.mjs` packs them for the site (ARCHITECTURE §3). Audio is not a unit and not part of the deploy gate.
+
+Setup: put `GOOGLE_TTS_API_KEY=…` into `.env` (see `.env.example`); the tool reads that one variable itself. In the Google Cloud console, restrict the key to the Text-to-Speech API.
+
+```
+node tools/audio.mjs status                                # per language: voice and tier, clips present and missing; the key
+node tools/audio.mjs estimate [--lang <code>]              # clips and characters still to generate
+node tools/audio.mjs run [--lang <code>] [--max-chars N]   # everything, in one go
+node tools/audio.mjs pilot [--lang <code>]                 # about 20 words per language, and tmp/audio-pilot.html
+node tools/audio.mjs prune                                 # delete clip files no manifest uses
+```
+
+What `run` does, in this order:
+1. **Resolves the voice** of every language that has a TTS locale (`"tts"` in `languages.json`) but no entry in `data/meta/audio.json`. From Google's voice list, by exact locale only (never pt-BR for pt-PT): a Chirp 3 HD voice (Kore wherever it exists, else the first female one), else Neural2, else WaveNet, else the language is `{"unsupported": true}`. The entry gets the text rules that follow from the registry (DATA_FORMAT §13). For Chinese the tool also tries whether the voice follows SSML pinyin phonemes.
+2. **Checks again** the languages marked unsupported (and those whose locale in `languages.json` changed), so a language gains audio as soon as Google adds a voice.
+3. **Makes the clips** that are missing or whose key changed. The key is the text sent, the locale, the voice and the format: a corrected word, or another voice picked by hand in `audio.json`, regenerates; everything else is skipped. Each distinct text is synthesized once, and identical texts share one file. Manifests are written as it goes, so it can be stopped (Ctrl+C) and run again.
+
+Without `--lang` it covers every language with data; a language whose data is still incomplete is fine, a later run picks up its new words. It stops before sending more than `--max-chars` characters (default 900,000) and says so. Characters are billed for every request, SSML included; Chirp 3 HD costs $30 per million (check the current price and free tier). The first full run, on 2026-10-28, sent 357,483 characters for 45,591 clips in 14 languages and took about 4 hours; with the pilot and tests the day's total was about 366,000 characters. The clips take 241 MB.
+
+Robustness:
+- Requests keep to Google's per-project quotas, at 90% (Chirp 3 HD: 200 a minute, so about 4 hours for 14 languages; Neural2 and WaveNet: 1,000), six at a time. 429 and 5xx are retried with backoff. Other failures are logged to `tmp/audio-failures.jsonl` and the run goes on; the next run tries them again.
+- Chirp 3 HD varies from request to request, and sometimes answers a very short word (ja, ty, tak, ναι…) with a fraction of a second of near-silence. The tool checks every Chirp clip for speech without decoding it (`hasSpeech` in `tools/lib/audio.mjs`, from the MP3 frames' global gain; calibrated on 335 decoded clips) and tries up to 10 times, alternating the text as written and the same words capitalized with a full stop ("Tak."), which the voice says more often. The manifest records the form that worked as `sent`. A word that still fails gets no clip and is logged; after the first run that was Russian и and Greek ναι. The check can't hear: decoding all 45,850 clips in a browser afterwards found 3 that had passed it but were too short or quiet (Korean 입, 힘, Turkish ay); deleting such a file makes the next `run` synthesize it again.
+- `lint-data` warns when an active language has no TTS locale, about words without a current clip, and about missing or unused clip files; a malformed `audio.json` is an error.
+
+Listening: `pilot` makes about 20 clips per language (homographs, special texts, the longest words, the first words of the deck) into `data/audio` (so a run reuses them), and writes `tmp/audio-pilot.html` to play them. Russian gets a second clip of each word with its stress marks, under `tmp/audio-pilot/`, to compare. On 2026-10-30 the owner kept the clips without marks: the marked ones had several bugs. So `ru` stays at `"stress": false`.
+
+## 8. Adding audio for a language
+
+1. Add its TTS locale to `data/meta/languages.json` as `"tts"`: Google's language code, such as `it-IT` (`cmn-CN` for Mandarin). This is part of adding the language anyway.
+2. `node tools/audio.mjs run --lang <code>`
+
+That is all: the bundle packs its clips, and the deck and the page offer audio for it with no code change. If Google has no voice of a usable tier for the locale, `audio.json` says so, and every later `run` checks again.

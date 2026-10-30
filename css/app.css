@@ -18,6 +18,8 @@
   --support: #e07a24;
   --support-ink: #a94f0c;
   --support-soft: #fdf1e6;
+  --warn-soft: #fff7df;
+  --warn-line: #e6c871;
   --radius: 10px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Hiragino Sans",
     "PingFang SC", "Microsoft YaHei", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans CJK JP", sans-serif;
@@ -40,6 +42,8 @@
     --support: #ec9346;
     --support-ink: #f4b072;
     --support-soft: #35251a;
+    --warn-soft: #332b17;
+    --warn-line: #75622c;
   }
 }
 
@@ -941,6 +945,28 @@ html:has(.is-pinned) {
 
 .opt-label {
   margin-right: 0.2rem;
+}
+
+/* The pronunciation audio toggle (ui/audio.js): last in Card options, after a line, its warning always in sight. */
+.opt-audio {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+.opt-note {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* While audio is on: decks imported before the Audio field need "Merge note types" once. */
+.opt-notice {
+  margin: 0.6rem 0 0;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--warn-line);
+  border-radius: 8px;
+  background: var(--warn-soft);
+  font-size: 0.9rem;
 }
 
 .dl-summary {

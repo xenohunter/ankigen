@@ -4,7 +4,7 @@
   "deferred": ["it", "ga", "gd", "sv"],
   "languages": {
     "en": {
-      "name": "English", "native": "English", "status": "active", "locale": "en-US", "variantNote": "US English (spelling, vocabulary, IPA)",
+      "name": "English", "native": "English", "status": "active", "locale": "en-US", "tts": "en-US", "variantNote": "US English (spelling, vocabulary, IPA)",
       "country": "US", "script": "Latin", "extends": null,
       "gender": null, "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -15,7 +15,7 @@
       }
     },
     "ru": {
-      "name": "Russian", "native": "Русский", "status": "active", "locale": "ru-RU", "variantNote": "Standard Russian; stress marks (U+0301) on every polysyllabic word; always write ё",
+      "name": "Russian", "native": "Русский", "status": "active", "locale": "ru-RU", "tts": "ru-RU", "variantNote": "Standard Russian; stress marks (U+0301) on every polysyllabic word; always write ё",
       "country": "RU", "script": "Cyrillic", "extends": null,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "mf", "pl"] },
       "stress": true, "reading": null,
@@ -27,7 +27,7 @@
       }
     },
     "sr": {
-      "name": "Serbian", "native": "Српски", "status": "active", "locale": "sr-RS", "variantNote": "Ekavian standard of Serbia. Stored in Cyrillic; Latin is derived by rule at runtime",
+      "name": "Serbian", "native": "Српски", "status": "active", "locale": "sr-RS", "tts": "sr-RS", "variantNote": "Ekavian standard of Serbia. Stored in Cyrillic; Latin is derived by rule at runtime",
       "country": "RS", "script": "Cyrillic", "extends": null,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "pl"] },
       "stress": false, "reading": null,
@@ -39,7 +39,7 @@
       }
     },
     "ja": {
-      "name": "Japanese", "native": "日本語", "status": "active", "locale": "ja-JP", "variantNote": "Standard Japanese; usual written form (kanji where customary, kana where customary)",
+      "name": "Japanese", "native": "日本語", "status": "active", "locale": "ja-JP", "tts": "ja-JP", "variantNote": "Standard Japanese; usual written form (kanji where customary, kana where customary)",
       "country": "JP", "script": "Japanese", "extends": null,
       "gender": null, "stress": false, "reading": "kana",
       "romanization": { "source": "stored", "scheme": "hepburn-macron" }, "otherScript": null, "measureWord": "counter", "hanja": false, "ipa": false, "exampleReading": "furigana",
@@ -49,14 +49,14 @@
       }
     },
     "zh": {
-      "name": "Chinese", "native": "中文", "status": "active", "locale": "zh-Hans-CN", "variantNote": "Mandarin (Putonghua), Simplified characters, mainland usage",
+      "name": "Chinese", "native": "中文", "status": "active", "locale": "zh-Hans-CN", "tts": "cmn-CN", "variantNote": "Mandarin (Putonghua), Simplified characters, mainland usage",
       "country": "CN", "script": "Han", "extends": null,
       "gender": null, "stress": false, "reading": "pinyin",
       "romanization": { "source": "reading", "scheme": "pinyin-tone-marks" }, "otherScript": null, "measureWord": "measure-word", "hanja": false, "ipa": false, "exampleReading": "pinyin",
       "forms": {}
     },
     "de": {
-      "name": "German", "native": "Deutsch", "status": "active", "locale": "de-DE", "variantNote": "Standard German of Germany",
+      "name": "German", "native": "Deutsch", "status": "active", "locale": "de-DE", "tts": "de-DE", "variantNote": "Standard German of Germany",
       "country": "DE", "script": "Latin", "extends": null,
       "gender": { "mode": "article", "values": ["m", "f", "n", "pl"], "articles": { "m": "der", "f": "die", "n": "das", "pl": "die" } },
       "stress": false, "reading": null,
@@ -68,7 +68,7 @@
       }
     },
     "es": {
-      "name": "Spanish", "native": "Español", "status": "active", "locale": "es-ES", "variantNote": "Peninsular Spanish (Spain)",
+      "name": "Spanish", "native": "Español", "status": "active", "locale": "es-ES", "tts": "es-ES", "variantNote": "Peninsular Spanish (Spain)",
       "country": "ES", "script": "Latin", "extends": null,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "el", "f": "la", "mf": "el/la", "m.pl": "los", "f.pl": "las" } },
       "stress": false, "reading": null,
@@ -80,7 +80,7 @@
       }
     },
     "pt": {
-      "name": "Portuguese", "native": "Português", "status": "active", "locale": "pt-PT", "variantNote": "European Portuguese (Portugal)",
+      "name": "Portuguese", "native": "Português", "status": "active", "locale": "pt-PT", "tts": "pt-PT", "variantNote": "European Portuguese (Portugal)",
       "country": "PT", "script": "Latin", "extends": null,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "o", "f": "a", "mf": "o/a", "m.pl": "os", "f.pl": "as" } },
       "stress": false, "reading": null,
@@ -92,7 +92,7 @@
       }
     },
     "pl": {
-      "name": "Polish", "native": "Polski", "status": "active", "locale": "pl-PL", "variantNote": "Standard Polish",
+      "name": "Polish", "native": "Polski", "status": "active", "locale": "pl-PL", "tts": "pl-PL", "variantNote": "Standard Polish",
       "country": "PL", "script": "Latin", "extends": null,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "pl"] },
       "stress": false, "reading": null,
@@ -104,7 +104,7 @@
       }
     },
     "ko": {
-      "name": "Korean", "native": "한국어", "status": "active", "locale": "ko-KR", "variantNote": "Standard South Korean",
+      "name": "Korean", "native": "한국어", "status": "active", "locale": "ko-KR", "tts": "ko-KR", "variantNote": "Standard South Korean",
       "country": "KR", "script": "Hangul", "extends": null,
       "gender": null, "stress": false, "reading": null,
       "romanization": { "source": "stored", "scheme": "revised-romanization" }, "otherScript": null, "measureWord": null, "hanja": true, "ipa": true, "exampleReading": null,
@@ -114,7 +114,7 @@
       }
     },
     "nl": {
-      "name": "Dutch", "native": "Nederlands", "status": "active", "locale": "nl-NL", "variantNote": "Netherlands Dutch",
+      "name": "Dutch", "native": "Nederlands", "status": "active", "locale": "nl-NL", "tts": "nl-NL", "variantNote": "Netherlands Dutch",
       "country": "NL", "script": "Latin", "extends": null,
       "gender": { "mode": "article", "values": ["c", "n", "pl"], "articles": { "c": "de", "n": "het", "pl": "de" } },
       "stress": false, "reading": null,
@@ -126,7 +126,7 @@
       }
     },
     "fr": {
-      "name": "French", "native": "Français", "status": "active", "locale": "fr-FR", "variantNote": "Standard French of France",
+      "name": "French", "native": "Français", "status": "active", "locale": "fr-FR", "tts": "fr-FR", "variantNote": "Standard French of France",
       "country": "FR", "script": "Latin", "extends": null,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "le", "f": "la", "mf": "le/la", "m.pl": "les", "f.pl": "les" }, "elision": true },
       "stress": false, "reading": null,
@@ -138,7 +138,7 @@
       }
     },
     "hy": {
-      "name": "Armenian", "native": "Հայերեն", "status": "active", "locale": "hy-AM", "variantNote": "Eastern Armenian, reformed (Soviet) orthography, as used in Armenia",
+      "name": "Armenian", "native": "Հայերեն", "status": "active", "locale": "hy-AM", "tts": "hy-AM", "variantNote": "Eastern Armenian, reformed (Soviet) orthography, as used in Armenia",
       "country": "AM", "script": "Armenian", "extends": null,
       "gender": null, "stress": false, "reading": null,
       "romanization": { "source": "rule", "scheme": "hy-bgn-pcgn" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -148,7 +148,7 @@
       }
     },
     "tr": {
-      "name": "Turkish", "native": "Türkçe", "status": "active", "locale": "tr-TR", "variantNote": "Standard Turkish (Turkey)",
+      "name": "Turkish", "native": "Türkçe", "status": "active", "locale": "tr-TR", "tts": "tr-TR", "variantNote": "Standard Turkish (Turkey)",
       "country": "TR", "script": "Latin", "extends": null,
       "gender": null, "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -158,7 +158,7 @@
       }
     },
     "el": {
-      "name": "Greek", "native": "Ελληνικά", "status": "active", "locale": "el-GR", "variantNote": "Modern Greek, monotonic orthography",
+      "name": "Greek", "native": "Ελληνικά", "status": "active", "locale": "el-GR", "tts": "el-GR", "variantNote": "Modern Greek, monotonic orthography",
       "country": "GR", "script": "Greek", "extends": null,
       "gender": { "mode": "article", "values": ["m", "f", "n", "mf", "m.pl", "f.pl", "n.pl"], "articles": { "m": "ο", "f": "η", "n": "το", "mf": "ο/η", "m.pl": "οι", "f.pl": "οι", "n.pl": "τα" } },
       "stress": false, "reading": null,

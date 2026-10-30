@@ -7,4 +7,6 @@ The data in this directory (concepts, words, translations, definitions, example 
 
 The vocabulary was drafted with an AI model and is being reviewed by people; it may contain errors.
 
+The pronunciation clips in `audio/` were synthesized from these words with Google Cloud Text-to-Speech. They are machine-generated and nobody has checked them, so a stress, reading or accent may be wrong.
+
 AnkiGen's code is under the MIT license ([`../LICENSE`](../LICENSE)).

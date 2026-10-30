@@ -4,14 +4,16 @@
 //
 //   node tools/apkg.mjs '#v1&l=ja&k=ru&m=core-1&r=1' [--data tests/fixtures/data] [--out tmp] [--now <ms>]
 //
-// --data  read concepts and language files from another directory (meta always comes from data/meta)
+// a=1 in the hash adds the pronunciation audio, read from <data>/audio (as the site does with a=1).
+// --data  read concepts, language files and clips from another directory (meta always comes from data/meta)
 // --out   output directory (default tmp/, which git ignores)
 // --now   fixed export clock in milliseconds; two runs with the same --now give identical files
 import fs from 'node:fs';
 import path from 'node:path';
 import { createLoader, safeDataDir } from '../src/data/loader.js';
-import { decodeHash, SAME } from '../src/state.js';
-import { buildApkg } from '../src/deck/apkg.js';
+import { loadAudioIndex } from '../src/data/clips.js';
+import { decodeHash, SAME, usesAudio } from '../src/state.js';
+import { buildApkg, mediaNames } from '../src/deck/apkg.js';
 import { apkgFileName, deckName } from '../src/deck/names.js';
 import { buildDeck } from '../src/deck/deck.js';
 import { cardOrds } from '../src/deck/render.js';
@@ -59,11 +61,21 @@ if (!config?.learn || !config.know || !config.modules.length) {
 const concepts = await loader.getConcepts();
 const learnData = await loader.getLanguage(config.learn);
 const knowData = config.know === SAME ? learnData : await loader.getLanguage(config.know);
-const deck = buildDeck({ config, meta, concepts, learnData, knowData, css: (await loader.getCardCss()) ?? '' });
+const audio = usesAudio(meta, config) ? await loadAudioIndex(loader, meta, config.learn) : null;
+const deck = buildDeck({ config, meta, concepts, learnData, knowData, audio, css: (await loader.getCardCss()) ?? '' });
 
-const bytes = await buildApkg({ SQL: await loadSqlJs(), config, meta, deck, now: opt('--now') ? Number(opt('--now')) : Date.now() });
+// Each clip is its own file under <data>/audio/<code>/ here (the site serves them from packs).
+/** @type {Map<string, Uint8Array>} */
+const media = new Map();
+for (const name of mediaNames(deck.notes)) {
+  const source = audio?.files.get(/-([0-9a-f]+)\.mp3$/.exec(name)?.[1] ?? '');
+  if (source) media.set(name, new Uint8Array(fs.readFileSync(new URL(source.url, ROOT))));
+}
+
+const bytes = await buildApkg({ SQL: await loadSqlJs(), config, meta, deck, media, now: opt('--now') ? Number(opt('--now')) : Date.now() });
 const out = path.join(opt('--out') ?? 'tmp', apkgFileName(config, meta));
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, bytes);
 const cards = deck.notes.reduce((n, note) => n + cardOrds(deck.noteType, note.fields).length, 0);
-console.log(`${out}: ${deckName(config, meta)}, ${deck.notes.length} notes, ${cards} cards, ${(bytes.length / 1024).toFixed(0)} KB`);
+const clips = media.size ? `, ${media.size} clips` : '';
+console.log(`${out}: ${deckName(config, meta)}, ${deck.notes.length} notes, ${cards} cards${clips}, ${(bytes.length / 1024).toFixed(0)} KB`);

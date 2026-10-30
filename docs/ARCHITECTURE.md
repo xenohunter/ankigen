@@ -9,7 +9,7 @@ Audience: the engineer (Claude Code) implementing the web app. Product decisions
   - `sql.js` (WASM SQLite)
   - `fflate` (zip)
 - **Deterministic** deck content: same data version and same config give the same notes, fields, GUIDs and order. Only export timestamps vary, including the note and card ids derived from them (see §7.2, §7.4).
-- **Fast**: initial page JS ≤ 60 KB gzipped (excluding sql.js, which is lazy-loaded; so are the word list, the language menu, the Share block, the Reset all dialog and the feedback dialog, which load after the first render or on first use). First paint < 1 s on a mid-range phone.
+- **Fast**: initial page JS ≤ 60 KB gzipped (excluding sql.js, which is lazy-loaded; so are the word list, the language menu, the Share block, the Reset all dialog, the feedback dialog and the audio option with its clip loader, which load after the first render, on first use, or once the learned language has audio). First paint < 1 s on a mid-range phone. With audio the first load is at 59.9 KB: little room left.
 - Works offline once loaded (nice-to-have: a tiny service worker caching app + fetched data).
 
 ## 2. Repository layout
@@ -31,6 +31,8 @@ src/
   config.js             constants: site, repo, Patreon, Buy Me a Coffee and data license URLs, feedback endpoint, app version
   state.js              config model, defaults, validation, URL-hash codec, localStorage
   data/loader.js        fetch meta, concepts, layer files or bundles; caching; graceful misses
+  data/clips.js         pronunciation audio: a language's clip index, a deck's clips and size, and their bytes
+                        (byte ranges of the packs); loaded only when a deck has audio
   deck/select.js        which concepts become which notes, in which order (merges, disambiguators)
   deck/fields.js        per-note field HTML (word, translation, forms, examples, …)
   deck/templates.js     Anki templates + CSS for a config
@@ -46,6 +48,8 @@ src/
   ui/steps.js ui/languages.js ui/modules.js ui/fields.js ui/options.js
   ui/preview.js ui/sidebar.js ui/feedback.js ui/popover.js ui/download.js
   ui/feedback-dialog.js the feedback dialog and its English texts (loaded on first use, with feedback/client.js)
+  ui/audio.js           the pronunciation audio toggle and its English texts, a download's clips, the preview's play
+                        button (loaded once the learned language has audio)
   ui/strings.js         the page's English texts: the master of the translations in data/ui
   ui/i18n.js            the interface language: texts, plurals, numbers, the language to start with (no DOM)
   ui/page.js            what the two pages share: the starting language, their texts, the language menu
@@ -58,10 +62,11 @@ src/
 vendor/                 sql-wasm.js, sql-wasm.wasm, fflate.js (ES module) + fflate.d.ts (pinned; versions,
                         checksums and LICENSE files in vendor/README.md)
 data/                   vocabulary (see DATA_FORMAT.md); landing/ and ui/: translations of the landing pages' and the
-                        page's texts (§10, §13)
+                        page's texts (§10, §13); audio/: the pronunciation clips (DATA_FORMAT.md §13)
 tools/                  data lint + generation tooling, apkg.mjs (an .apkg from a config hash, in Node),
-                        bundle.mjs (the site with its data bundles), landing.mjs (landing pages and sitemap),
-                        ui-texts.mjs (checks and stamps data/ui)
+                        bundle.mjs (the site with its data bundles and audio packs), landing.mjs (landing pages and
+                        sitemap), ui-texts.mjs (checks and stamps data/ui), audio.mjs (the pronunciation clips, with
+                        Google Cloud Text-to-Speech; GENERATION.md §7)
 tests/                  node --test suites + fixtures (tests/fixtures/data exists)
 feedback/Code.gs        Apps Script backend (exists)
 .github/workflows/      ci.yml (lint + tests), pages.yml (bundle + deploy)
@@ -78,16 +83,23 @@ Keep pure logic (`state`, `deck/*`, `text/*`, `feedback/client` minus `fetch`) f
   - `ui-<code>.json`: the page's texts in an interface language (§13): `{ui, landing}`, from `data/ui/<code>.json` and the parts of `data/landing/<code>.json` the page shows.
 
   The loader reads `data/meta/version.json` without the cache (`no-cache`), then the bundles of that version. A language pair then takes five requests (version, meta, concepts and the two languages), which gzip well: English is 855 KB, 250 KB gzipped. The site leaves out the source vocabulary files (it keeps `data/meta/`), and the same data always gives the same bytes. `tools/bundle.mjs` replaces `_site/` as a whole, so it refuses any directory it did not build.
+- **Pronunciation audio** (`tools/lib/audio.mjs` `audioPacks`): outside the versioned bundles, so that unchanged audio stays cached across data versions, the site has per language with clips
+  - `audio/<code>/<module>.<hash>.mp3`: packs of the clips whose words' concepts have that primary module, each clip once (in the pack of its first use), in canonical order;
+  - `audio/<code>/index.<hash>.json`: `{packs: [[path, size]], files: {clip: [pack, offset, length]}, clips: {concept: clip}}`, a clip being its content hash.
+
+  Both names carry their content's hash, and `meta.json` names each index (`meta.audio[code].index`; only languages with clips are listed, so only they show the toggle). Only clips whose text is the word's current one get in. Same clips, same bytes. The browser never fetches a file per clip: `data/clips.js` asks for the byte ranges a deck needs, merging ranges less than 16 KB apart, or for the whole pack when the ranges would cover 60% of it. A topical module borrows many core words (Time & calendar: 8 words of its own, 118 cross-listed), so whole packs would cost several MB for a few hundred KB of clips. A server that ignores ranges sends the whole pack once; Pages answers ranges with 206.
+- **Audio while developing:** without bundles the toggle shows for the languages with a voice in `data/meta/audio.json`, and each clip is fetched from its own file under `data/audio/` (or `?data=`'s `audio/`).
 - **Development / fallback:** if bundles are missing, load `data/meta/*`, all `data/concepts/*.json`, then per-module layer files for the two languages, in parallel. A missing file means empty; never throw.
-- Loader API (async, cached): `getMeta()`, `getConcepts()`, `getLanguage(code)` → `{lang: Map, ex: Map, ipa: Map, etym: Map}`, `getUiTexts(code)` → `{ui, landing}` (the bundle, or the two source files).
+- Loader API (async, cached): `getMeta()`, `getConcepts()`, `getLanguage(code)` → `{lang: Map, ex: Map, ipa: Map, etym: Map}`, `getUiTexts(code)` → `{ui, landing}` (the bundle, or the two source files), `getJson(path)` (with `dataBase`, what `data/clips.js` `loadAudioIndex` reads the audio index or manifest with).
 - Start prefetching a language when the user hovers or focuses its chip. Show a short inline status in the step while loading ("Loading Japanese words…"), and a message if loading fails.
 
 ## 4. State and URL
 
-- **Config:** `{v:1, learn, know|'=', modules:[ids], fields:{id: placement}, examples:0–3, reverse, type, srScript}`.
+- **Config:** `{v:1, learn, know|'=', modules:[ids], fields:{id: placement}, examples:0–3, reverse, type, audio, srScript}`.
 - Encoded in `location.hash`, compact and human-readable, for example:
-  `#v1&l=ja&k=ru&m=core-1,core-2,food&f=reading:f,ipa:o,forms:b&x=2&r=1&t=1&sr=c`
+  `#v1&l=ja&k=ru&m=core-1,core-2,food&f=reading:f,ipa:o,forms:b&x=2&r=1&t=1&a=1&sr=c`
   - Only non-default field placements are written.
+  - `a=1` (pronunciation audio) only while the learned language has audio (`hasAudio`); anything but `1` is off. The choice itself survives a switch to a language without audio and back.
   - Unknown keys are ignored. Invalid values fall back to defaults, keeping the rest.
 - The config is also saved to localStorage (try/catch). On load, the precedence is hash > localStorage > defaults.
 - The interface language is the `lang` query parameter: `?lang=ru#v1&l=ja&k=ru…` (§13). The address names it once there is a config or the user chose a language; other parameters (the dev `?data=`) stay. `app.address(href)` builds the address, for the URL and for the Share block.
@@ -158,10 +170,11 @@ Produces the HTML for each Anki field, given the note and config. All text is es
 
 ### 7.1 Note type (one per language pair)
 
-- **Fields (fixed order, never changes within schema v1):**
-  `Word, WordRuby, TypeTarget, Disambig, Translation, Romanization, OtherScript, MeasureWord, Hanja, Forms, IPA, Examples, Related, Etymology, POS, Register, Emoji, ConceptId, Reverse`.
+- **Fields (fixed order, never changes within schema v1; a new field can only be appended):**
+  `Word, WordRuby, TypeTarget, Disambig, Translation, Romanization, OtherScript, MeasureWord, Hanja, Forms, IPA, Examples, Related, Etymology, POS, Register, Emoji, ConceptId, Reverse, Audio`.
   - Fields switched off are left empty.
   - `Reverse` is `"1"` when reverse cards are on, otherwise empty.
+  - `Audio` (appended 2026-10-28) is `[sound:ankigen-<lang>-<hash>.mp3]` when the deck has audio and the word has a clip (merged notes: their shared word's), otherwise empty. A deck made before it has 19 fields: Anki then needs "Merge note types" once (§7.4).
 - **Templates:**
   - `Forward`.
   - `Reverse`, whose front is wrapped entirely in `{{#Reverse}}…{{/Reverse}}`. Anki creates a reverse card only when the field is non-empty, so toggling reverse never changes the note type's schema.
@@ -169,10 +182,12 @@ Produces the HTML for each Anki field, given the note and config. All text is es
   - On reverse cards every learning-side field goes to the answer.
   - Japanese: the front uses `WordRuby` only when Reading = Front; the back uses `WordRuby` whenever Reading ≠ Off.
   - Type the answer: `{{type:TypeTarget}}` on the reverse front and back, only when enabled.
+  - Audio (only when the deck has audio): `{{#Audio}}<div class="audio">{{Audio}}</div>{{/Audio}}` under the word on the forward question and on the reverse answer, never on the reverse question. Anki plays every `[sound:]` of the side it shows (`{{FrontSide}}` would not replay it, but these templates repeat the question instead), so the forward answer leaves it out: the word plays once, on the question. Checked with Anki's own `question_av_tags`/`answer_av_tags`.
 - **CSS:** `css/card.css`, embedded verbatim.
   - Night mode via `.nightMode`/`.night_mode`.
   - `lang` attributes on learned/known blocks so CJK picks correct glyphs (zh-Hans vs ja).
   - Ruby styling, small grey captions, mobile-first.
+  - The play button's place and size: Anki's own `.replay-button` and the preview's `.ag-play`.
 - **Sort field:** Word (plain text).
 
 ### 7.2 IDs (`deck/ids.js`) — use `crypto.subtle` SHA-256 (async; available in browsers and Node ≥ 20)
@@ -204,7 +219,9 @@ Produces the HTML for each Anki field, given the note and config. All text is es
 - Cards:
   - One per template whose question is not blank: the forward card always, the reverse card when Reverse = 1. This uses `cardOrds` in `deck/render.js`, the same check the preview uses.
   - New cards: `due` = note position (0-based); `ord` 0 = forward, 1 = reverse.
-- Zip with `fflate` entries `collection.anki2` and `media` (content `{}`), fixed entry mtime 1980-01-01 00:00, deterministic order.
+- Zip with `fflate` entries `collection.anki2`, the clips and `media`, fixed entry mtime 1980-01-01 00:00, deterministic order.
+  - Without audio `media` is `{}`. With audio the clips the notes name are entries `0`, `1`, … (stored, not deflated: MP3 is compressed already) in order of first use in the notes, and `media` maps them to their names, `{"0": "ankigen-ru-7f5f35a1b51dbce6.mp3", …}`. The order comes from the notes, not from how the clips were fetched, so a fixed clock still gives identical bytes. A clip a note names but the caller didn't pass is an error, never a silent broken button.
+  - A clip's name is its content hash: Anki matches media by name, so one name never stands for two recordings, and importing the same clip again adds nothing.
 - File name: `ankigen-<learn>-<know>-<data version>.apkg`; same-language decks repeat the language (`ankigen-en-en-…`).
 - `buildApkg` takes the initialized sql.js module as a parameter and returns the bytes; the page wraps them in a Blob.
 
@@ -227,6 +244,12 @@ What re-importing does was checked against the Anki backend itself: the `anki` P
 - **A note type the user changed** (e.g. added a field):
   - Without "Merge note types": notes are not updated, and Anki adds an unused copy "AnkiGen … +" of the incoming note type.
   - With it: notes update, but the user's extra field is emptied.
+- **Pronunciation audio** (checked on 2026-10-28 with the same three backends):
+  - With audio, the clips land in `collection.media` byte for byte; the same file again adds no media ("already present").
+  - Turning audio on later: notes and templates update, the clips are added. Turning it off: the `Audio` field is emptied and the clips stay; Tools → Check Media lists them as unused.
+  - The forward card plays the clip on the question only, the reverse card on the answer only.
+  - A deck from before the `Audio` field (19 fields), then one with it, with default options: "conflicting", nothing updated (and Anki keeps a copy "AnkiGen … +" of the new note type). With "Merge note types" ticked, at once or on a later import: the notes update, with their clips, and the copy goes.
+  - When testing by hand or in scripts, build each file after the previous import, or give it a later clock: an importer may stamp updated notes with the import time, and then an older file counts as a duplicate.
 
 The manual checks on real devices are in `docs/ANKI_CHECKLIST.md`. The user-facing summary of all this is the "?" next to Download (`update.*` in `src/ui/strings.js`).
 
@@ -240,6 +263,7 @@ The manual checks on real devices are in `docs/ANKI_CHECKLIST.md`. The user-faci
 - **Preview:** each face is rendered in an `<iframe srcdoc sandbox="allow-scripts">` with `card.css`, inside `<body class="card">` like Anki's reviewer. Light/dark follows the page (`nightMode` on the body).
   - The frames have an opaque origin: they can't reach the page, its storage or its address, and the page can't read them. Their only script is a small bridge (`bridge` in `ui/preview.js`) that posts `{ankigen: 1, type}` messages to the page: `size` (the body's height, on load, resize and when fonts arrive), `selection` (the selected text and where it is, or null) and `shortcut` (Ctrl/Cmd+Enter). The page answers `clear` after a report quoted the selection. The page accepts messages only from its own frames and keeps only the fields and lengths a report uses.
   - Why not `allow-same-origin` without scripts: browser extensions inject scripts into every frame, and in such a frame Chrome blocks them and logs "Blocked script execution in 'about:srcdoc'…" for each face. With `allow-scripts` alone the extensions run, nothing is logged, and the frames stay isolated from the page. (Both flags together would let the frames lift their own sandbox.)
+  - **Audio:** `deck/render.js` draws `[sound:…]` with a `sound` renderer, here `ui/audio.js`'s play button. The page fetches the clip (one byte range of its pack) and puts it into the frame as a `data:` URL; the frame's second script (`PLAYER`) plays it on the click. So the frame needs nothing from the page, and the sound starts within the click, which browsers require for audio. The button is disabled while its clip loads. The preview never plays by itself, and the word list has no audio.
   - A face never scrolls: its frame takes the face's whole height (plus the frame's borders), and the frame's document hides overflow. When the faces don't fit, the panel scrolls them under its heading and buttons.
   - The sample is the richest of the first 40 notes, and it is kept while it stays in the deck. "Another word" picks a random note.
   - "Reset all" (shown once a language is chosen) asks "Are you sure?" in a small dialog, then removes the saved config (`ankigen:config`), drops the hash from the address and reloads: the defaults, with nothing loaded. The interface language (`?lang=`, `ankigen:lang`) and the feedback client's state stay.
@@ -321,9 +345,10 @@ The manual checks on real devices are in `docs/ANKI_CHECKLIST.md`. The user-faci
   - **fields:** snapshots per language for the golden sample.
   - **templates:** reverse rule moves learning fields to the back; type answer only on reverse.
   - **apkg:** build in Node with sql.js, reopen the DB, assert tables, IDs, fields, cards and the zip layout; byte-identical with a fixed clock; another clock changes only timestamps.
+  - **audio** (`tests/audio.test.mjs`, on the golden sample's real clips in `tests/fixtures/data/audio/`): voice resolution (exact locale, tier order, unsupported, checked again), the text rules, cache keys, the speech check, packs (determinism, index), fetching by byte range with and without range support, the Audio field, templates (never on the reverse question), the preview's play button, media entries in the .apkg and `tools/apkg.mjs` with `a=1`; the `a` key (`state`), the deck view's clips and Armenian without any (`ui`).
 - `tools/lint-data.mjs` on `data/` and on `tests/fixtures/data` in CI.
 - **site:** the static files agree with `src/config.js` and the registry; `modulepreload` matches the import graph; the first load stays within its budget.
-- **tools:** `tools/apkg.mjs` matches `buildApkg`; the site from `tools/bundle.mjs` loads the same data as the source files, and its landing pages are the ones the source files give; `lint-data --gate` passes and fails as it should.
+- **tools:** `tools/apkg.mjs` matches `buildApkg`; the site from `tools/bundle.mjs` loads the same data as the source files, its packs give the very clips of `data/audio`, and its landing pages are the ones the source files give; the build fails above its size limit; `lint-data --gate` passes and fails as it should.
 - **landing:** a page for every pair with words, at its slug; unique titles and descriptions; every link resolves, and the app links decode to the page's pair in its visitors' language; module counts match the deck; no 18+ or vulgar samples; the hub and the sitemap list exactly the pages; same data, same pages; hreflang only among pages in their own language; the structured data.
 - **i18n:** the language a visitor gets; texts, plurals and numbers per language, and the English fallback; every `data/ui` translation complete and current; the bundle gives the same texts as the source files; the page's address.
 - **site** also checks that the texts of `index.html` and `languages.html` are the English of `src/ui/strings.js`, that their early language check knows the interface languages, and the languages page's list.
@@ -332,7 +357,8 @@ The manual checks on real devices are in `docs/ANKI_CHECKLIST.md`. The user-faci
 ## 12. CI/CD
 
 - `ci.yml` (push/PR): Node 22, `node tools/lint-data.mjs`, `node tools/lint-data.mjs --data tests/fixtures/data --meta data/meta`, `node --test`.
-- `pages.yml` (push to `master`, or run by hand): lint, tests, the data gate, `node tools/bundle.mjs --site _site` (app + vendor + bundles + data/meta + SEO files + landing pages and sitemap), then `actions/upload-pages-artifact` and `actions/deploy-pages`. One-time setup: Settings → Pages → Source: GitHub Actions.
+- `pages.yml` (push to `master`, or run by hand): lint, tests, the data gate, `node tools/bundle.mjs --site _site` (app + vendor + bundles + audio packs + data/meta + SEO files + landing pages and sitemap), then `actions/upload-pages-artifact` and `actions/deploy-pages`. One-time setup: Settings → Pages → Source: GitHub Actions.
+- **Site size:** Pages publishes up to 1 GB. `tools/bundle.mjs` measures the built site and fails above 900 MB (`--limit-mb`), so the deploy stops there; it prints the size on every build. The pronunciation audio is most of it: 241 MB for 14 languages, in a 273 MB site (2026-10-29; §3). Pages also has a soft limit of 100 GB of traffic a month: a full deck with audio is 15–20 MB, so audio downloads are what would reach it first.
 - **Data gate:** `node tools/lint-data.mjs --gate` fails unless every active language has an entry for every concept, which is 100% in the `entries` column of `--report`. A failing gate fails the build, so nothing deploys. A manual run can skip it with the input "Deploy even if some languages are incomplete". The site ships only when every language is complete.
 
 ## 13. Interface language
@@ -340,7 +366,7 @@ The manual checks on real devices are in `docs/ANKI_CHECKLIST.md`. The user-faci
 The page speaks the 15 languages (SPEC §4). `src/ui/i18n.js` holds the language and turns keys into texts; it has no DOM, so it runs under `node --test`.
 
 - **Texts:**
-  - English: `src/ui/strings.js` (`STRINGS`, and `PLURALS` for texts with a number), plus the feedback dialog's own texts in `src/ui/feedback-dialog.js`, which register with the dialog (`addEnglish`), so they stay out of the first load.
+  - English: `src/ui/strings.js` (`STRINGS`, and `PLURALS` for texts with a number), plus the feedback dialog's own texts in `src/ui/feedback-dialog.js` and the audio option's in `src/ui/audio.js`, which register when their module loads (`addEnglish`), so they stay out of the first load.
   - Translations: `data/ui/<code>.json` has `texts`, `plural` (one form per CLDR plural category of the language, `Intl.PluralRules`) and the two fixed field rows (`fields.word`, `fields.translation`); `data/landing/<code>.json` (§10) gives the module, category, field and option texts and the language names.
   - `t(key, values)`, `plural(key, n, values)` and `number(n)` use the translation, else the English text, key by key: a new English text shows in English until its translations arrive.
   - `{placeholders}` are filled in at run time. A sentence is never assembled from pieces in English order; a text with a number is one whole text per plural category ("{n} words here exist only in…").

@@ -24,6 +24,7 @@ import { stripStress } from '../text/normalize.js';
 export const FIELD_NAMES = /** @type {const} */ ([
   'Word', 'WordRuby', 'TypeTarget', 'Disambig', 'Translation', 'Romanization', 'OtherScript', 'MeasureWord',
   'Hanja', 'Forms', 'IPA', 'Examples', 'Related', 'Etymology', 'POS', 'Register', 'Emoji', 'ConceptId', 'Reverse',
+  'Audio',
 ]);
 
 /** @typedef {Record<(typeof FIELD_NAMES)[number], string>} Fields */
@@ -48,9 +49,9 @@ export function langTag(reg, code, srScript) {
 
 /**
  * Everything the field and template builders need for one config.
- * @param {{ config: Config, meta: any, concepts: Concepts, learnData: LanguageData, knowData: LanguageData }} input
+ * @param {{ config: Config, meta: any, concepts: Concepts, learnData: LanguageData, knowData: LanguageData, audio?: import('../data/clips.js').AudioIndex | null }} input
  */
-export function deckContext({ config, meta, concepts, learnData, knowData }) {
+export function deckContext({ config, meta, concepts, learnData, knowData, audio = null }) {
   const same = config.know === SAME;
   const learnCode = /** @type {string} */ (config.learn);
   const knowCode = same ? learnCode : /** @type {string} */ (config.know);
@@ -86,6 +87,7 @@ export function deckContext({ config, meta, concepts, learnData, knowData }) {
     know: { code: knowCode, reg: languages[knowCode], data: knowData, tag: langTag(languages[knowCode], knowCode, config.srScript) },
     /** @param {string} id */
     place: (id) => placementOf(meta, config, id),
+    audio: config.audio ? audio : null,
     stressOn,
     learnText,
     knowText,
@@ -123,7 +125,14 @@ export function noteFields(note, ctx) {
     Emoji: on('emoji') ? escapeHtml(unique(concepts.map((c) => c?.emoji)).join(' ')) : '',
     ConceptId: on('conceptId') ? escapeHtml(note.conceptIds.join(', ')) : '',
     Reverse: ctx.config.reverse ? '1' : '',
+    Audio: soundTag(note, ctx),
   };
+}
+
+/** Merged members say the same word. @param {Note} note @param {DeckContext} ctx */
+function soundTag(note, ctx) {
+  const hash = ctx.audio && note.conceptIds.map((id) => ctx.audio?.clips.get(id)).find(Boolean);
+  return hash ? `[sound:ankigen-${ctx.learn.code}-${hash}.mp3]` : '';
 }
 
 /**

@@ -7,12 +7,16 @@
 //   <code>.json    one per language with data: all its layers, { lang, ex, ipa, etym }, keyed by concept ID
 //   ui-<code>.json one per interface language but English: its texts, from data/ui and data/landing
 //                  (tools/ui-texts.mjs uiBundle)
+// and, outside the versioned bundles so that they stay cached across data versions, the pronunciation audio of each
+// language with clips (tools/lib/audio.mjs audioPacks): audio/<code>/<module>.<hash>.mp3 packs and an
+// index.<hash>.json, which meta.json names (meta.audio). The site must stay under 900 MB (Pages allows 1 GB).
 //
-//   node tools/bundle.mjs [--site _site] [--data data] [--meta <data>/meta]
+//   node tools/bundle.mjs [--site _site] [--data data] [--meta <data>/meta] [--limit-mb 900]
 //
 // --site  output directory (default _site/, which git ignores). It is replaced as a whole, so the tool
 //         refuses a directory it did not build.
 // --data  read concepts and layers from another directory (e.g. tests/fixtures/data); --meta defaults to data/meta
+// --limit-mb  fail when the site is larger (default 900)
 // Same data, same bytes. Preview the result with: python3 -m http.server -d _site 8000
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,6 +26,8 @@ import { createLoader } from '../src/data/loader.js';
 import { UI_LANGUAGES } from '../src/ui/i18n.js';
 import { DECKS_DIR, appMeta, landingSite, readTranslations, translatedLanguages } from './landing.mjs';
 import { readUiTexts, uiBundle } from './ui-texts.mjs';
+import { audioPacks, languageAudio, readAudioMeta } from './lib/audio.mjs';
+import { loadConcepts, loadRegistry, paths } from './lib/data.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
@@ -30,6 +36,46 @@ export const SITE_FILES = ['index.html', 'languages.html', '404.html', 'robots.t
 const LAYERS = ['lang', 'ex', 'ipa', 'etym'];
 /** Written into every site this tool builds; a directory without it is never replaced. */
 const MARKER = '.ankigen-site';
+/** GitHub Pages publishes sites up to 1 GB; the build fails above this many MB. */
+export const SITE_LIMIT_MB = 900;
+
+/**
+ * The site's pronunciation audio: for each language with current clips, its packs and index (site path → bytes or
+ * text), and what meta.json says of it: { voice, tier, index }.
+ * @param {string} dataDir @param {string} metaDir
+ */
+export function makeAudio(dataDir, metaDir) {
+  const p = paths(dataDir, metaDir);
+  const reg = loadRegistry(p.meta);
+  const concepts = loadConcepts(p, reg, []);
+  const audio = readAudioMeta(metaDir);
+  const ctx = { dataDir, reg, order: concepts.order, audio };
+  /** @type {Record<string, { voice: string, tier: string, index: string }>} */
+  const meta = {};
+  /** @type {Record<string, Uint8Array | string>} */
+  const files = {};
+  /** @type {Record<string, { clips: number, bytes: number }>} */
+  const sizes = {};
+  for (const [code, setting] of Object.entries(audio.languages)) {
+    if (!setting?.voice || !reg.languages.languages[code]) continue;
+    const packs = audioPacks(languageAudio(ctx, code), (id) => concepts.byId.get(id)?.module ?? '');
+    if (!packs) continue;
+    Object.assign(files, packs.files);
+    meta[code] = { voice: setting.voice, tier: setting.tier, index: packs.index };
+    sizes[code] = { clips: packs.clips, bytes: packs.bytes };
+  }
+  return { meta, files, sizes };
+}
+
+/** The size of a directory and everything in it, in bytes. @param {string} dir */
+export function dirSize(dir) {
+  let bytes = 0;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    bytes += entry.isDirectory() ? dirSize(file) : fs.statSync(file).size;
+  }
+  return bytes;
+}
 
 /** @param {string} file */
 function readJson(file) {
@@ -68,9 +114,12 @@ export function makeBundles(dataDir, metaDir) {
   for (const code of UI_LANGUAGES) {
     if (code !== 'en' && (ui[code] || landing[code])) files[`ui-${code}.json`] = uiBundle(ui[code] ?? null, landing[code] ?? null);
   }
+  const audio = makeAudio(dataDir, metaDir);
+  meta.audio = audio.meta;
   return {
     version: /** @type {string} */ (meta.version.data),
     files: Object.fromEntries(Object.entries(files).map(([name, value]) => [name, JSON.stringify(value)])),
+    audio,
   };
 }
 
@@ -89,11 +138,12 @@ function siteLoader(siteDir) {
 }
 
 /**
- * @param {{ siteDir: string, dataDir: string, metaDir: string }} dirs absolute paths
+ * @param {{ siteDir: string, dataDir: string, metaDir: string, limitMb?: number }} dirs absolute paths; limitMb: the
+ *   largest site allowed (it is built anyway, then the build fails)
  */
-export async function buildSite({ siteDir, dataDir, metaDir }) {
+export async function buildSite({ siteDir, dataDir, metaDir, limitMb = SITE_LIMIT_MB }) {
   checkReplaceable(siteDir);
-  const { version, files } = makeBundles(dataDir, metaDir);
+  const { version, files, audio } = makeBundles(dataDir, metaDir);
   fs.rmSync(siteDir, { recursive: true, force: true });
   fs.mkdirSync(siteDir, { recursive: true });
   fs.writeFileSync(path.join(siteDir, MARKER), 'Built by tools/bundle.mjs; the next build replaces this whole directory.\n');
@@ -106,13 +156,19 @@ export async function buildSite({ siteDir, dataDir, metaDir }) {
   const bundleDir = path.join(siteDir, 'bundles', version);
   fs.mkdirSync(bundleDir, { recursive: true });
   for (const [name, text] of Object.entries(files)) fs.writeFileSync(path.join(bundleDir, name), text);
+  for (const [name, content] of Object.entries(audio.files)) {
+    fs.mkdirSync(path.dirname(path.join(siteDir, name)), { recursive: true });
+    fs.writeFileSync(path.join(siteDir, name), content);
+  }
   const translations = readTranslations(dataDir);
   const pages = await landingSite(siteLoader(siteDir), translations, readUiTexts(dataDir));
   for (const [name, text] of Object.entries(pages)) {
     fs.mkdirSync(path.dirname(path.join(siteDir, name)), { recursive: true });
     fs.writeFileSync(path.join(siteDir, name), text);
   }
-  return { version, files, pages, translated: translatedLanguages(appMeta(metaDir), translations) };
+  const size = dirSize(siteDir);
+  if (size > limitMb * 1024 * 1024) throw new Error(`the site is ${(size / 1024 / 1024).toFixed(0)} MB, over the ${limitMb} MB limit (GitHub Pages allows 1 GB)`);
+  return { version, files, audio, size, pages, translated: translatedLanguages(appMeta(metaDir), translations) };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -123,15 +179,24 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     return i >= 0 && args[i + 1] ? args[i + 1] : fallback;
   };
   const dataDir = path.resolve(opt('--data', 'data'));
-  const dirs = { siteDir: path.resolve(opt('--site', '_site')), dataDir, metaDir: path.resolve(opt('--meta', path.join(ROOT, 'data', 'meta'))) };
+  const dirs = {
+    siteDir: path.resolve(opt('--site', '_site')),
+    dataDir,
+    metaDir: path.resolve(opt('--meta', path.join(ROOT, 'data', 'meta'))),
+    limitMb: Number(opt('--limit-mb', String(SITE_LIMIT_MB))),
+  };
   try {
-    const { version, files, pages, translated } = await buildSite(dirs);
+    const { version, files, audio, size, pages, translated } = await buildSite(dirs);
     const kb = (/** @type {number} */ n) => `${Math.round(n / 1024).toLocaleString('en-US')} KB`;
+    const mb = (/** @type {number} */ n) => `${(n / 1024 / 1024).toFixed(1)} MB`;
     const sizes = Object.entries(files).map(([name, text]) => `${name} ${kb(Buffer.byteLength(text))} (${kb(zlib.gzipSync(text).length)} gzipped)`);
     const landing = Object.keys(pages).filter((name) => name.startsWith(DECKS_DIR) && name !== `${DECKS_DIR}index.html`).length;
+    const voiced = Object.entries(audio.sizes).map(([code, s]) => `${code} ${s.clips.toLocaleString('en-US')} clips ${mb(s.bytes)}`);
     console.log(`${path.relative(process.cwd(), dirs.siteDir) || '.'}: data ${version}, from ${path.relative(process.cwd(), dataDir) || '.'}\n  ${sizes.join('\n  ')}`);
+    console.log(`  audio/: ${voiced.join(', ') || 'no clips yet'}`);
     console.log(`  ${DECKS_DIR}: ${landing} landing page${landing === 1 ? '' : 's'} and the hub; sitemap.xml`);
     console.log(`  landing pages in the visitor's language: ${translated.join(', ') || 'none yet'} (others in English)`);
+    console.log(`  site: ${mb(size)} (limit ${dirs.limitMb} MB)`);
   } catch (error) {
     console.error(`tools/bundle.mjs: ${/** @type {Error} */ (error).message}`);
     process.exit(1);

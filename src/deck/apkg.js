@@ -1,6 +1,7 @@
 // @ts-check
-// The .apkg file (ARCHITECTURE §7): a schema-11 collection.anki2 written with sql.js, plus an empty media
-// map, zipped with fflate. The JSON in the col row mirrors what Anki's own legacy export writes.
+// The .apkg file (ARCHITECTURE §7): a schema-11 collection.anki2 written with sql.js, the pronunciation clips the
+// notes name (zip entries 0, 1, … in order of first use) and the media map naming them ({} without audio), zipped
+// with fflate. The JSON in the col row mirrors what Anki's own legacy export writes.
 //
 // What Anki's importer matches on, so it must never change for a language pair: note GUIDs, the note
 // type ID with its field and template names, and the deck *name* (decks are matched by name, not ID).
@@ -136,10 +137,11 @@ function modelJson(noteType, mid, did, mod) {
  * @param {Config} input.config
  * @param {any} input.meta
  * @param {{ notes: DeckNote[], noteType: NoteType }} input.deck
+ * @param {Map<string, Uint8Array>} [input.media] the clips the notes' Audio fields name, by media name
  * @param {number} [input.now] export time in milliseconds; tests pass a fixed clock
  * @returns {Promise<Uint8Array>} the zip file
  */
-export async function buildApkg({ SQL, config, meta, deck, now = Date.now() }) {
+export async function buildApkg({ SQL, config, meta, deck, media = new Map(), now = Date.now() }) {
   const learn = /** @type {string} */ (config.learn);
   const know = /** @type {string} */ (config.know);
   const sec = Math.floor(now / 1000);
@@ -193,12 +195,22 @@ export async function buildApkg({ SQL, config, meta, deck, now = Date.now() }) {
     insertNote.free();
     insertCard.free();
     db.run('commit');
-    const collection = db.export();
-    return zipSync({
-      'collection.anki2': [collection, { mtime: ZIP_TIME }],
-      media: [strToU8('{}'), { mtime: ZIP_TIME, level: 0 }],
+    /** @type {import('../../vendor/fflate.js').Zippable} */
+    const zip = { 'collection.anki2': [db.export(), { mtime: ZIP_TIME }] };
+    const names = mediaNames(notes);
+    names.forEach((name, i) => {
+      const bytes = media.get(name);
+      if (!bytes) throw new Error(`no audio for ${name}`);
+      zip[i] = [bytes, { mtime: ZIP_TIME, level: 0 }]; // MP3 is compressed already
     });
+    zip.media = [strToU8(JSON.stringify(Object.fromEntries(names.map((name, i) => [i, name])))), { mtime: ZIP_TIME, level: 0 }];
+    return zipSync(zip);
   } finally {
     db.close();
   }
+}
+
+/** The media the notes name in their Audio fields, in order of first use. @param {DeckNote[]} notes */
+export function mediaNames(notes) {
+  return [...new Set(notes.flatMap((note) => [...(note.fields.Audio ?? '').matchAll(/\[sound:([^\]]+)\]/g)].map((m) => m[1])))];
 }

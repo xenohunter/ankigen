@@ -10,10 +10,11 @@ import { noteType } from './templates.js';
 
 /**
  * @param {{ config: import('../state.js').Config, meta: any, concepts: import('../data/loader.js').Concepts,
- *   learnData: import('../data/loader.js').LanguageData, knowData: import('../data/loader.js').LanguageData, css: string }} input
+ *   learnData: import('../data/loader.js').LanguageData, knowData: import('../data/loader.js').LanguageData, css: string,
+ *   audio?: import('../data/clips.js').AudioIndex | null }} input
  */
-export function buildDeck({ config, meta, concepts, learnData, knowData, css }) {
-  const ctx = deckContext({ config, meta, concepts, learnData, knowData });
+export function buildDeck({ config, meta, concepts, learnData, knowData, css, audio }) {
+  const ctx = deckContext({ config, meta, concepts, learnData, knowData, audio });
   /** @type {DeckNote[]} */
   const notes = selectNotes(config, meta, concepts, learnData, knowData).map((note) => ({ ...note, fields: noteFields(note, ctx) }));
   return { notes, noteType: noteType(ctx, css) };

@@ -83,8 +83,18 @@ Each row is Off / Front / Back (some rows have fewer choices). Defaults are in `
 
 - **More…:** the last five rows are in a section that is closed until the user opens it, or until one of them is on (from a link). Closed, it names the rows that are on.
 
-- **Deck options:** Reverse cards (off), Type the answer (off; needs reverse), Serbian script (Cyrillic/Latin; shown when Serbian is on either side).
-- No audio, no color coding, no listening or cloze cards (explicitly out of scope).
+- **Deck options:** Reverse cards (off), Type the answer (off; needs reverse), Serbian script (Cyrillic/Latin; shown when Serbian is on either side), Pronunciation audio (off; see below).
+- No color coding, no listening or cloze cards (explicitly out of scope).
+
+### Pronunciation audio (prototype)
+The most experimental part of the app, and labelled as such.
+- **What:** one machine-made clip per learned word: its main form as the card shows it with default settings. That is the article where the Gender / article row shows one (das Wasser, l'eau; a noun of either gender gets both: el estudiante, la estudiante), Russian without stress marks, Serbian in its stored Cyrillic, a Japanese word as its kana reading when another word is spelled the same with another reading, and such a Chinese word with an SSML pinyin phoneme. Merged notes share one clip. No examples, translations or definitions.
+- **Voices:** Google Cloud Text-to-Speech only, for the language's exact locale (never a sibling such as pt-BR for pt-PT): a Chirp 3 HD voice (Kore, female, wherever it exists), else Neural2, else WaveNet, else no audio. Today: Chirp 3 HD for 13 languages, WaveNet for Portuguese, none for Armenian.
+- **On cards:** the clip plays on the front of forward cards and on the back of reverse cards, never on the reverse question; the forward answer doesn't play it again.
+- **Page:** only when the learned language has audio, the Card options block ends with a line, the "Pronunciation audio" toggle and, always in sight, a muted warning: the most experimental, prototype part of the app; clips are machine-generated and unchecked; stress, readings and accent may be wrong; don't rely on them; native speakers who find them poor are asked to tell us with the Feedback button, and a language's audio is taken down if needed. Its "?" says it covers words only, that the voices are Google Cloud Text-to-Speech's, and how to remove the files (Tools → Check Media). For other languages the block ends as before.
+- While the toggle is on, a light warning frame under it tells people who imported an AnkiGen deck before audio was added to tick "Merge note types" the first time they import an update (§6).
+- The choice is `a=1` in the link. It survives switching languages, but is written only for a learned language with audio. With audio on, the Download summary shows the extra size, a download fetches the clips with a progress line, and the preview shows a small play button.
+- Audio coverage is not part of the deploy gate: a word without a clip simply has none.
 
 ## 4. Page flow and UI
 
@@ -99,14 +109,14 @@ Minimal, clean, fast. Card captions use the language the user speaks, via `label
 3. **I speak:** first a **Same language** button on a row of its own, with "— word definitions" in muted text (the interface language's clearest phrase: ru «толковый словарь»), set apart from the language chips below by a thin line.
 4. **Modules:** a tree with expand/collapse and checkboxes at module and category level, a selected count, and an 18+ badge on Profanity.
 5. **Card fields:** the field table and examples slider; the rarely used rows under "More…" (§3).
-6. **Reverse cards / Type the answer** toggles.
+6. **Reverse cards / Type the answer** toggles, and the Pronunciation audio toggle where the learned language has audio (§3).
 7. **Download:** summary plus the button.
 8. **Share** (no number, no card background), with Download. First row: "Copy link" (the page's address: the deck and the interface language) and the system share sheet where the browser has one. Second row: X, Facebook, Reddit, Telegram, WhatsApp, VK (Russian interface), LINE (Japanese), Weibo (Chinese), Bluesky and email.
 
 How the steps behave:
 - Each step's block appears once the previous step has a choice.
 - Steps stay editable; changing an earlier step never resets later choices unless they become invalid.
-- "?" popups explain non-obvious controls: modules with country-specific terms, 18+, each field row, reverse cards, type the answer, Serbian script, concept ID, the draft disclaimer, and how to re-import updates. Same-language mode is explained by its note, and in full by its tooltip.
+- "?" popups explain non-obvious controls: modules with country-specific terms, 18+, each field row, reverse cards, type the answer, Serbian script, pronunciation audio, concept ID, the draft disclaimer, and how to re-import updates. Same-language mode is explained by its note, and in full by its tooltip.
 - After the first download, the header's support links are sticky: while their place is out of view they slide down from the top edge of the window and stay there.
 
 Always-visible elements:
@@ -151,17 +161,18 @@ Always-visible elements:
 
 ## 6. Anki output
 
-- `.apkg` built in the browser (sql.js + zip). No media files.
+- `.apkg` built in the browser (sql.js + zip). Media only with pronunciation audio: the clips, named `ankigen-<lang>-<content hash>.mp3`, so a name never stands for two recordings and a re-import never duplicates one.
 - **One deck per language pair:** `AnkiGen::<Learning> (<Known>)`. Deck, note type and note IDs come from stable hashes, so importing more modules later adds to the same deck, and re-downloading updates notes.
 - **Note order:** canonical order (module tree order, then file order).
 - **Module membership** goes into hierarchical tags: `ankigen::<category>::<module>`.
 - The **note type** has a fixed field list. Templates depend on the configuration. Fields the user switched off are left empty.
+  - On 2026-10-28 the `Audio` field was appended (20 fields). The site was already reachable then, so a deck downloaded before that needs "Merge note types" ticked once when the next download is imported; otherwise Anki skips its notes as conflicting.
 
 ## 7. Data
 
 - See `docs/DATA_FORMAT.md`. The data is concept-centric, with per-language layer files, permanent IDs, a linter, and a golden sample in `tests/fixtures/data`.
-- Data is generated in resumable units (`docs/GENERATION.md`). The site deploys once all 15 languages are complete. IPA comes last. Etymology is dropped for now: the note type keeps an empty Etymology field, so it can come back without changing the note type.
+- Data is generated in resumable units (`docs/GENERATION.md`). The site deploys once all 15 languages are complete. IPA comes last. Pronunciation audio is made from the finished words by its own tool (`docs/GENERATION.md` §7) and never holds up a deploy. Etymology is dropped for now: the note type keeps an empty Etymology field, so it can come back without changing the note type.
 
 ## 8. Non-goals (for now)
 
-Audio, images, user accounts, server-side generation, translations of example sentences beyond the slot-parallel scheme, slang, analytics.
+Audio beyond the word itself (examples, translations, listening cards), images, user accounts, server-side generation, translations of example sentences beyond the slot-parallel scheme, slang, analytics.

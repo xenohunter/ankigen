@@ -2,7 +2,7 @@
 // The page's model: the config store, the data loaded so far, and the deck view derived from both.
 // No DOM, so it runs under node --test with the fixture loader; main.js and the other ui/ modules render it.
 
-import { SAME, createStore, encodeHash, validate } from '../state.js';
+import { SAME, createStore, encodeHash, usesAudio, validate } from '../state.js';
 import { localTerms, moduleCounts, selectNotes } from '../deck/select.js';
 import { deckContext, noteFields } from '../deck/fields.js';
 import { noteType } from '../deck/templates.js';
@@ -13,6 +13,7 @@ import { language } from './i18n.js';
 /** @typedef {import('../data/loader.js').Concepts} Concepts */
 /** @typedef {import('../deck/select.js').Note} Note */
 /** @typedef {ReturnType<typeof import('../data/loader.js').createLoader>} Loader */
+/** @typedef {import('../data/clips.js').AudioIndex} AudioIndex */
 
 /**
  * What the page shows for the current config.
@@ -26,6 +27,7 @@ import { language } from './i18n.js';
  * @property {import('../deck/fields.js').DeckContext | null} ctx
  * @property {import('../deck/templates.js').NoteType | null} noteType
  * @property {Note | null} sample  the note shown in the preview
+ * @property {{ clips: number, bytes: number } | { loading: true } | null} audio  the deck's clips; null: no audio
  */
 
 /** How many notes from the start of the deck compete to be the default preview sample. */
@@ -40,7 +42,7 @@ function richestNote(notes, ctx) {
   let best = notes[0] ?? null;
   let bestScore = -1;
   for (const note of notes.slice(0, SAMPLE_POOL)) {
-    const score = Object.values(noteFields(note, ctx)).filter(Boolean).length;
+    const score = Object.values({ ...noteFields(note, ctx), Audio: '' }).filter(Boolean).length;
     if (score > bestScore) [best, bestScore] = [note, score];
   }
   return best;
@@ -53,6 +55,10 @@ export function createApp({ loader, meta, initial, random = Math.random }) {
   const store = createStore(validate(initial, meta));
   /** @type {Map<string, LanguageData>} */
   const languages = new Map();
+  /** @type {Map<string, AudioIndex>} */
+  const audios = new Map();
+  /** @type {typeof import('../data/clips.js') | null} */
+  let clips = null;
   /** @type {Map<string, Promise<void>>} fetches in flight: language codes and 'concepts' */
   const inflight = new Map();
   /** @type {Set<string>} what could not be loaded (the page then works without it) */
@@ -116,22 +122,30 @@ export function createApp({ loader, meta, initial, random = Math.random }) {
       );
     }
     for (const code of [config.learn, config.know]) if (code && code !== SAME) prefetch(code);
+    const learn = /** @type {string} */ (config.learn);
+    if (usesAudio(meta, config) && !audios.has(learn)) {
+      const load = async () => {
+        clips = await import('../data/clips.js');
+        audios.set(learn, await clips.loadAudioIndex(loader, meta, learn));
+      };
+      track(`audio:${learn}`, load, () => audios.set(learn, { clips: new Map(), files: new Map() }));
+    }
   }
 
-  /** @param {Config} config @returns {{ learnData?: LanguageData, knowData?: LanguageData }} */
+  /** audio: null if none, undefined while loading. @param {Config} config @returns {{ learnData?: LanguageData, knowData?: LanguageData, audio?: AudioIndex | null }} */
   function dataFor(config) {
     const learnData = config.learn ? languages.get(config.learn) : undefined;
     const knowData = config.know === SAME ? learnData : config.know ? languages.get(config.know) : undefined;
-    return { learnData, knowData };
+    return { learnData, knowData, audio: usesAudio(meta, config) ? audios.get(/** @type {string} */ (config.learn)) : null };
   }
 
   /** The view without its sample. @param {Config} config @returns {View} */
   function deck(config) {
-    const { learnData, knowData } = dataFor(config);
+    const { learnData, knowData, audio } = dataFor(config);
     if (!concepts || !learnData || !knowData) {
-      return { config, ready: false, notes: [], cards: 0, counts: new Map(), local: new Map(), ctx: null, noteType: null, sample: null };
+      return { config, ready: false, notes: [], cards: 0, counts: new Map(), local: new Map(), ctx: null, noteType: null, sample: null, audio: null };
     }
-    const input = { config, meta, concepts, learnData, knowData };
+    const input = { config, meta, concepts, learnData, knowData, audio };
     const pair = `${config.learn}|${config.know}|${dataVersion}`;
     if (pairCache?.key !== pair) {
       pairCache = { key: pair, counts: moduleCounts(config, meta, concepts, learnData, knowData), local: localTerms(config, meta, concepts, learnData, knowData) };
@@ -148,6 +162,7 @@ export function createApp({ loader, meta, initial, random = Math.random }) {
       ctx,
       noteType: noteType(ctx, css),
       sample: null,
+      audio: audio === null ? null : audio && clips ? clips.deckClips(notes, audio) : { loading: true },
     };
   }
 
@@ -220,8 +235,8 @@ export function createApp({ loader, meta, initial, random = Math.random }) {
     /** Everything buildDeck needs for the current config, or null while loading. */
     deckInput() {
       const config = store.get();
-      const { learnData, knowData } = dataFor(config);
-      return concepts && learnData && knowData ? { config, meta, concepts, learnData, knowData, css } : null;
+      const { learnData, knowData, audio } = dataFor(config);
+      return concepts && learnData && knowData && audio !== undefined ? { config, meta, concepts, learnData, knowData, css, audio } : null;
     },
     /** Resolves once nothing is loading. */
     async settled() {

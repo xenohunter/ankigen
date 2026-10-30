@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "語彙は AI で下書きしたもので、確認はまだ一部だけです。ご意見をお待ちしています。",
     "head.draftTopic": "語彙の下書き",
@@ -51,6 +51,8 @@
     "download.building": "デッキを作成しています…",
     "download.saved": "{file} を保存しました。Anki で開くか（File → Import）、スマートフォンでタップして AnkiDroid で開いてください。",
     "download.failed": "デッキを作成できませんでした（{error}）。もう一度お試しください。",
+    "download.audio": "音声",
+    "download.audioSize": "+{size} MB",
     "update.title": "デッキの更新",
     "update.intro": "フィールドを変更したとき、モジュールを追加したとき、新しいデータがほしいときは、もう一度ダウンロードして、新しいファイルを Anki に読み込んでください（File → Import、オプションは初期設定のまま）。既存のノートとレイアウトが更新され、新しい単語が同じデッキに追加されます。学習の進捗もそのまま残ります。",
     "update.edits": "AnkiGen のノートに加えた編集やタグは、新しいバージョンで置き換えられます。フラグ、保留中のカード、学習の進捗は残ります。",
@@ -159,7 +161,16 @@
     "fb.field.pos": "品詞",
     "fb.field.register": "文体・丁寧さ",
     "fb.field.emoji": "絵文字",
-    "fb.field.conceptId": "コンセプトID"
+    "fb.field.conceptId": "コンセプトID",
+    "audio.label": "発音の音声",
+    "audio.warning": "AnkiGen で最も実験的な機能で、まだ試作段階です。録音は機械で生成したもので、誰も確認していません。アクセントや読み方、発音が間違っていることがあるので、頼りにしないでください。ネイティブスピーカーの方で、音声の質が悪いと感じたら、「フィードバック」ボタンからお知らせください。必要であれば、その言語の音声を取り下げます。",
+    "audio.oldDecks": "音声が追加される前に AnkiGen のデッキを読み込んだことがありますか？ 更新を初めて読み込むときは、Anki の読み込みオプションで「Merge note types」にチェックを入れてください。入れないと、ノートタイプに音声用のフィールドが増えたため、Anki は既存のノートをスキップします。",
+    "audio.help1": "学ぶ単語ごとに録音を追加します。入るのは単語だけで、例文・訳・定義は含みません。順方向カードの表面と、逆方向カードの裏面で再生されます。",
+    "audio.help2": "録音は Google Cloud Text-to-Speech で作成しています。",
+    "audio.help3": "あとで音声ファイルを削除するには、音声をオフにしてデッキをダウンロードし、もう一度インポートしてから、Anki の Tools → Check Media で使われていないファイルを削除してください。",
+    "audio.play": "単語を再生",
+    "audio.loading": "発音の音声を読み込み中… {percent}%",
+    "audio.failed": "発音の音声を読み込めませんでした（{error}）。もう一度試すか、音声をオフにしてください。"
   },
   "plural": {
     "title": {

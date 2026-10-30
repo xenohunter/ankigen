@@ -2,7 +2,8 @@
 // The translations of the page's own texts (ARCHITECTURE §13): data/ui/<code>.json for each interface language
 // but English, written by hand or by Claude Code (not by the API pipeline):
 //   { "source": "<hash of the English texts>",
-//     "texts":  { key: text },                      every text of src/ui/strings.js and of the feedback dialog
+//     "texts":  { key: text },                      every text of src/ui/strings.js, the feedback dialog and the
+//                                                   audio option (src/ui/audio.js)
 //     "plural": { key: { category: text } },        each plural category of the language (Intl.PluralRules)
 //     "fields": { word: { label, help }, translation: { label, labelSame, help } } }   the two fixed field rows
 // The module, field and option texts and the language names come from data/landing (tools/landing.mjs).
@@ -16,6 +17,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { PLURALS, STRINGS } from '../src/ui/strings.js';
 import { DIALOG_PLURALS, DIALOG_STRINGS } from '../src/ui/feedback-dialog.js';
+import { AUDIO_STRINGS } from '../src/ui/audio.js';
 import { UI_LANGUAGES } from '../src/ui/i18n.js';
 import { SCRIPT_LETTERS, appMeta } from './landing.mjs';
 import { fullWidthLang, hasAsciiPunctuation } from './lib/data.mjs';
@@ -32,7 +34,7 @@ const PROSE = ['head.draftHelp1', 'update.intro', 'fb.privacy'];
 export function englishUi(meta) {
   const fixed = meta.fields.fields.filter((/** @type {any} */ d) => d.fixed);
   return {
-    texts: { ...STRINGS, ...DIALOG_STRINGS },
+    texts: { ...STRINGS, ...DIALOG_STRINGS, ...AUDIO_STRINGS },
     plural: { ...PLURALS, ...DIALOG_PLURALS },
     fields: Object.fromEntries(fixed.map((/** @type {any} */ d) => [d.id, { label: d.label, ...(d.labelSame ? { labelSame: d.labelSame } : {}), help: d.help }])),
   };

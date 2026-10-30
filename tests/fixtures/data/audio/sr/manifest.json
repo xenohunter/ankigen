@@ -1,0 +1,15 @@
+{
+"word-water": {"file":"d1eff78a3a3872b3.mp3","text":"вода","voice":"sr-RS-Chirp3-HD-Kore","bytes":6336},
+"word-eat": {"file":"c103dffc825495a0.mp3","text":"јести","voice":"sr-RS-Chirp3-HD-Kore","bytes":5184},
+"word-drink": {"file":"3c96af7d332fc4f8.mp3","text":"пити","voice":"sr-RS-Chirp3-HD-Kore","bytes":5184},
+"word-big": {"file":"598cf7544eaeda8f.mp3","text":"велики","voice":"sr-RS-Chirp3-HD-Kore","bytes":6144},
+"word-small": {"file":"399c152656ba7a68.mp3","text":"мали","voice":"sr-RS-Chirp3-HD-Kore","bytes":3264},
+"word-brother-older": {"file":"47d3d78793352da2.mp3","text":"брат","voice":"sr-RS-Chirp3-HD-Kore","bytes":5856},
+"word-brother-younger": {"file":"47d3d78793352da2.mp3","text":"брат","voice":"sr-RS-Chirp3-HD-Kore","bytes":5856},
+"word-hand": {"file":"37f5d754c69022f2.mp3","text":"рука","voice":"sr-RS-Chirp3-HD-Kore","bytes":5184},
+"word-arm": {"file":"37f5d754c69022f2.mp3","text":"рука","voice":"sr-RS-Chirp3-HD-Kore","bytes":5184},
+"word-monday": {"file":"bd73f793a8c53a0a.mp3","text":"понедељак","voice":"sr-RS-Chirp3-HD-Kore","bytes":5184},
+"word-tuesday": {"file":"5686497d597762f8.mp3","text":"уторак","voice":"sr-RS-Chirp3-HD-Kore","bytes":6336},
+"phrase-thank-you": {"file":"63b1a38f5544fcb7.mp3","text":"хвала","voice":"sr-RS-Chirp3-HD-Kore","bytes":4032},
+"word-residence-permit": {"file":"59e3066eeba760f8.mp3","text":"дозвола за боравак","voice":"sr-RS-Chirp3-HD-Kore","bytes":8352}
+}

@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "Das Vokabular wurde maschinell entworfen und ist erst teilweise geprüft. Feedback ist sehr willkommen.",
     "head.draftTopic": "Vokabular-Entwurf",
@@ -51,6 +51,8 @@
     "download.building": "Dein Deck wird erstellt…",
     "download.saved": "{file} gespeichert. Öffne die Datei mit Anki (File → Import) oder tippe sie auf dem Handy an, um sie in AnkiDroid zu öffnen.",
     "download.failed": "Das Deck konnte nicht erstellt werden ({error}). Bitte versuche es noch einmal.",
+    "download.audio": "Audio",
+    "download.audioSize": "+{size} MB",
     "update.title": "Dein Deck aktualisieren",
     "update.intro": "Felder geändert, Module hinzugefügt oder neuere Daten gewünscht? Lade das Deck erneut herunter und importiere die neue Datei mit den Standardoptionen in Anki (File → Import). Anki aktualisiert deine vorhandenen Notizen samt Layout, fügt neue Wörter zum selben Deck hinzu und behält deinen Lernfortschritt.",
     "update.edits": "Deine eigenen Änderungen und Schlagwörter an AnkiGen-Notizen werden durch die neue Version ersetzt. Markierungen, ausgesetzte Karten und Lernfortschritt bleiben erhalten.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "Wortart",
     "fb.field.register": "Stilebene",
     "fb.field.emoji": "Emoji",
-    "fb.field.conceptId": "Konzept-ID"
+    "fb.field.conceptId": "Konzept-ID",
+    "audio.label": "Aussprache als Audio",
+    "audio.warning": "Der experimentellste Teil von AnkiGen, noch ein Prototyp: Die Aufnahmen sind maschinell erzeugt und von niemandem geprüft. Betonung, Lesung und Akzent können falsch sein, also verlass dich nicht darauf. Du sprichst die Sprache als Muttersprache und die Aufnahmen klingen schlecht? Sag uns über den Button „Feedback“ Bescheid: Wenn nötig, nehmen wir das Audio einer Sprache wieder heraus.",
+    "audio.oldDecks": "Hast du schon ein AnkiGen-Deck importiert, bevor es Audio gab? Setze beim ersten Import eines Updates in Ankis Importoptionen das Häkchen bei „Merge note types“, sonst überspringt Anki deine vorhandenen Notizen: Ihr Notiztyp hat jetzt ein Feld für das Audio.",
+    "audio.help1": "Fügt eine Aufnahme jedes Wortes hinzu, das du lernst: nur das Wort, nicht seine Beispiele, Übersetzung oder Definition. Sie wird auf der Vorderseite der Vorwärtskarten und auf der Rückseite der umgekehrten Karten abgespielt.",
+    "audio.help2": "Die Aufnahmen werden mit Google Cloud Text-to-Speech erzeugt.",
+    "audio.help3": "Um die Audiodateien später zu entfernen, schalte das Audio aus, lade das Deck herunter und importiere es erneut. Lösche dann in Anki die ungenutzten Dateien mit Tools → Check Media.",
+    "audio.play": "Wort abspielen",
+    "audio.loading": "Aussprache wird geladen… {percent} %",
+    "audio.failed": "Die Aussprache konnte nicht geladen werden ({error}). Versuche es noch einmal oder schalte das Audio aus."
   },
   "plural": {
     "title": {

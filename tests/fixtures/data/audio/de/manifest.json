@@ -1,0 +1,15 @@
+{
+"word-water": {"file":"b10258a01162bfb2.mp3","text":"das Wasser","voice":"de-DE-Chirp3-HD-Kore","bytes":6432},
+"word-eat": {"file":"c56667d83e793736.mp3","text":"essen","voice":"de-DE-Chirp3-HD-Kore","bytes":4416},
+"word-drink": {"file":"1acfad42bb95613d.mp3","text":"trinken","voice":"de-DE-Chirp3-HD-Kore","bytes":5856},
+"word-big": {"file":"6a567fc5e6912f1c.mp3","text":"groß","voice":"de-DE-Chirp3-HD-Kore","bytes":4416},
+"word-small": {"file":"9d61221c0250549e.mp3","text":"klein","voice":"de-DE-Chirp3-HD-Kore","bytes":5184},
+"word-brother-older": {"file":"36cd2bde8aaf74be.mp3","text":"der Bruder","voice":"de-DE-Chirp3-HD-Kore","bytes":4032},
+"word-brother-younger": {"file":"36cd2bde8aaf74be.mp3","text":"der Bruder","voice":"de-DE-Chirp3-HD-Kore","bytes":4032},
+"word-hand": {"file":"38fe125e067c7fe8.mp3","text":"die Hand","voice":"de-DE-Chirp3-HD-Kore","bytes":3552},
+"word-arm": {"file":"f51ff2f126094891.mp3","text":"der Arm","voice":"de-DE-Chirp3-HD-Kore","bytes":4032},
+"word-monday": {"file":"b162293747d92b90.mp3","text":"der Montag","voice":"de-DE-Chirp3-HD-Kore","bytes":4416},
+"word-tuesday": {"file":"fe6b50e7d34d0dce.mp3","text":"der Dienstag","voice":"de-DE-Chirp3-HD-Kore","bytes":5472},
+"phrase-thank-you": {"file":"2927a9ed051c1081.mp3","text":"danke","voice":"de-DE-Chirp3-HD-Kore","bytes":4704},
+"word-residence-permit": {"file":"b5a461bb2e3e193a.mp3","text":"der Aufenthaltstitel","voice":"de-DE-Chirp3-HD-Kore","bytes":9696}
+}

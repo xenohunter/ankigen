@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "Słownictwo zostało przygotowane maszynowo i jest tylko częściowo sprawdzone. Uwagi są bardzo mile widziane.",
     "head.draftTopic": "wstępna wersja słownictwa",
@@ -51,6 +51,8 @@
     "download.building": "Tworzenie talii…",
     "download.saved": "Zapisano {file}. Otwórz plik w Anki (File → Import) albo stuknij go w telefonie, aby otworzyć go w AnkiDroid.",
     "download.failed": "Nie udało się utworzyć talii ({error}). Spróbuj ponownie.",
+    "download.audio": "Audio",
+    "download.audioSize": "+{size} MB",
     "update.title": "Aktualizacja talii",
     "update.intro": "Zmienione pola, nowe moduły albo nowsze dane? Pobierz talię ponownie i zaimportuj nowy plik do Anki (File → Import) z domyślnymi opcjami. Anki zaktualizuje istniejące notatki i ich układ, doda nowe słowa do tej samej talii i zachowa postępy w nauce.",
     "update.edits": "Twoje własne zmiany i etykiety w notatkach AnkiGen zostaną zastąpione nową wersją. Flagi, zawieszone fiszki i postępy zostaną zachowane.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "część mowy",
     "fb.field.register": "rejestr",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "ID pojęcia"
+    "fb.field.conceptId": "ID pojęcia",
+    "audio.label": "Wymowa (audio)",
+    "audio.warning": "Najbardziej eksperymentalna część AnkiGen, wciąż prototyp: nagrania są generowane maszynowo i nikt ich nie sprawdził. Akcent wyrazowy, odczyty i wymowa mogą być błędne, więc nie polegaj na nich. Jeśli to twój język ojczysty i nagrania brzmią źle, daj nam znać przyciskiem „Opinia”: w razie potrzeby usuniemy audio dla tego języka.",
+    "audio.oldDecks": "Masz już talię AnkiGen zaimportowaną przed dodaniem audio? Przy pierwszym imporcie aktualizacji zaznacz „Merge note types” w opcjach importu Anki, inaczej Anki pominie twoje istniejące notatki, bo ich typ ma teraz pole na audio.",
+    "audio.help1": "Dodaje nagranie każdego słowa, którego się uczysz: tylko samego słowa, bez przykładów, tłumaczenia i definicji. Odtwarza się na przodzie fiszek zwykłych i na tyle fiszek odwrotnych.",
+    "audio.help2": "Nagrania powstają w Google Cloud Text-to-Speech.",
+    "audio.help3": "Aby później usunąć pliki dźwiękowe, wyłącz audio, pobierz talię i zaimportuj ją ponownie, a potem usuń w Anki nieużywane pliki przez Tools → Check Media.",
+    "audio.play": "Odtwórz słowo",
+    "audio.loading": "Wczytywanie wymowy… {percent}%",
+    "audio.failed": "Nie udało się wczytać wymowy ({error}). Spróbuj ponownie albo wyłącz audio."
   },
   "plural": {
     "title": {

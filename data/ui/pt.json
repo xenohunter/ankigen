@@ -1,5 +1,5 @@
 {
-  "source": "839990bb5d81",
+  "source": "bdc86f0e97d2",
   "texts": {
     "head.draft": "O vocabulário foi redigido por uma máquina e só está revisto em parte. As tuas sugestões são muito bem-vindas.",
     "head.draftTopic": "o vocabulário em rascunho",
@@ -51,6 +51,8 @@
     "download.building": "A criar o teu baralho…",
     "download.saved": "{file} guardado. Abre-o no Anki (File → Import) ou toca nele no telemóvel para o abrir no AnkiDroid.",
     "download.failed": "Não foi possível criar o baralho ({error}). Tenta de novo.",
+    "download.audio": "Áudio",
+    "download.audioSize": "+{size} MB",
     "update.title": "Atualizar o teu baralho",
     "update.intro": "Alteraste campos, juntaste módulos ou queres dados mais recentes? Descarrega de novo e importa o novo ficheiro no Anki (File → Import) com as opções predefinidas. O Anki atualiza as notas existentes e o respetivo aspeto, adiciona as palavras novas ao mesmo baralho e mantém o teu progresso de revisão.",
     "update.edits": "As tuas próprias alterações e etiquetas nas notas do AnkiGen são substituídas pela nova versão. As bandeiras, os cartões suspensos e o progresso mantêm-se.",
@@ -159,7 +161,16 @@
     "fb.field.pos": "classe gramatical",
     "fb.field.register": "registo",
     "fb.field.emoji": "emoji",
-    "fb.field.conceptId": "ID do conceito"
+    "fb.field.conceptId": "ID do conceito",
+    "audio.label": "Áudio da pronúncia",
+    "audio.warning": "A parte mais experimental do AnkiGen, ainda um protótipo: as gravações são geradas por uma máquina e ninguém as verificou. A acentuação, as leituras e o sotaque podem estar errados, por isso não confies nelas. Se é a tua língua materna e as gravações soam mal, avisa-nos com o botão «Comentários»: se for preciso, retiramos o áudio dessa língua.",
+    "audio.oldDecks": "Já importaste um baralho do AnkiGen antes de haver áudio? Da primeira vez que importares uma atualização, assinala «Merge note types» nas opções de importação do Anki; caso contrário, o Anki ignora as tuas notas existentes, porque o tipo de nota delas tem agora um campo para o áudio.",
+    "audio.help1": "Acrescenta uma gravação de cada palavra que aprendes: só a palavra, sem os exemplos, a tradução ou a definição. Toca na frente dos cartões diretos e no verso dos invertidos.",
+    "audio.help2": "As gravações são feitas com o Google Cloud Text-to-Speech.",
+    "audio.help3": "Para remover os ficheiros de som mais tarde, desliga o áudio, descarrega o baralho e importa-o de novo; depois apaga no Anki os ficheiros que já não são usados com Tools → Check Media.",
+    "audio.play": "Ouvir a palavra",
+    "audio.loading": "A carregar o áudio da pronúncia… {percent}%",
+    "audio.failed": "Não foi possível carregar o áudio da pronúncia ({error}). Tenta de novo ou desliga o áudio."
   },
   "plural": {
     "title": {

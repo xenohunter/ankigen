@@ -1,0 +1,20 @@
+{
+  "$comment": "Pronunciation audio per language (tools/audio.mjs, docs/GENERATION.md §7): the Google Cloud Text-to-Speech locale, voice and tier, the clip format, and the text rules (article: say the article; stress: keep Russian stress marks; homographs: \"reading\" says the kana reading, \"pinyin\" uses an SSML pinyin phoneme). {\"unsupported\": true}: Google has no voice of a usable tier for the locale; every run checks again. Edit a voice by hand if you like: the next run regenerates the clips it changes.",
+  "languages": {
+    "en": {"locale":"en-US","voice":"en-US-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{}},
+    "ru": {"locale":"ru-RU","voice":"ru-RU-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"stress":false}},
+    "sr": {"locale":"sr-RS","voice":"sr-RS-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{}},
+    "ja": {"locale":"ja-JP","voice":"ja-JP-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"homographs":"reading"}},
+    "zh": {"locale":"cmn-CN","voice":"cmn-CN-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"homographs":"pinyin"}},
+    "de": {"locale":"de-DE","voice":"de-DE-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}},
+    "es": {"locale":"es-ES","voice":"es-ES-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}},
+    "pt": {"locale":"pt-PT","voice":"pt-PT-Wavenet-E","tier":"wavenet","format":"mp3","text":{"article":true}},
+    "pl": {"locale":"pl-PL","voice":"pl-PL-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{}},
+    "ko": {"locale":"ko-KR","voice":"ko-KR-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{}},
+    "nl": {"locale":"nl-NL","voice":"nl-NL-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}},
+    "fr": {"locale":"fr-FR","voice":"fr-FR-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}},
+    "hy": {"locale":"hy-AM","unsupported":true},
+    "tr": {"locale":"tr-TR","voice":"tr-TR-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{}},
+    "el": {"locale":"el-GR","voice":"el-GR-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}}
+  }
+}

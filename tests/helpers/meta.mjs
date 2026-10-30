@@ -13,5 +13,6 @@ export function loadMeta() {
     fields: read('fields.json'),
     labels: read('labels.json'),
     version: read('version.json'),
+    audio: fs.existsSync(new URL('audio.json', META)) ? read('audio.json').languages : {},
   };
 }

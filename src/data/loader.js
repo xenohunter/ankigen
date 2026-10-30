@@ -14,6 +14,7 @@
  * @property {any} fields     data/meta/fields.json
  * @property {any} labels     data/meta/labels.json
  * @property {{ data: string, schema: number }} version
+ * @property {Record<string, { voice?: string, index?: string }>} audio
  */
 
 /**
@@ -117,10 +118,10 @@ export function createLoader({ fetchJson = httpJson, fetchText = httpText, dataD
     once('meta', async () => {
       const bundle = await bundleBase();
       if (bundle) return bundle.meta;
-      const names = ['languages', 'modules', 'fields', 'labels', 'version'];
-      const [languages, modules, fields, labels, version] = await Promise.all(names.map((n) => fetchJson(`data/meta/${n}.json`)));
+      const names = ['languages', 'modules', 'fields', 'labels', 'version', 'audio'];
+      const [languages, modules, fields, labels, version, audio] = await Promise.all(names.map((n) => fetchJson(`data/meta/${n}.json`)));
       if (!languages || !modules || !fields) throw new Error('Could not load data/meta');
-      return { languages, modules, fields, labels: labels ?? { keys: [], labels: {} }, version: version ?? { data: '', schema: 1 } };
+      return { languages, modules, fields, labels: labels ?? { keys: [], labels: {} }, version: version ?? { data: '', schema: 1 }, audio: audio?.languages ?? {} };
     });
 
   /** @returns {Promise<Concepts>} */
@@ -152,6 +153,9 @@ export function createLoader({ fetchJson = httpJson, fetchText = httpText, dataD
       return { lang, ex, ipa, etym };
     });
 
+  /** A JSON file, cached (data/clips.js reads the audio indexes with it). @param {string} path */
+  const getJson = (path) => once(path, () => fetchJson(path));
+
   /** The card stylesheet, embedded verbatim in the note type. */
   const getCardCss = () => once('css', async () => (await fetchText('css/card.css')) ?? '');
 
@@ -172,5 +176,5 @@ export function createLoader({ fetchJson = httpJson, fetchText = httpText, dataD
     return texts;
   };
 
-  return { getMeta, getConcepts, getLanguage, getCardCss, getUiTexts };
+  return { getMeta, getConcepts, getLanguage, getCardCss, getUiTexts, getJson, dataBase };
 }

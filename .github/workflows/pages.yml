@@ -43,6 +43,7 @@ jobs:
       - name: Data gate
         if: ${{ !inputs.allow_incomplete }}
         run: node tools/lint-data.mjs --gate
+      # Fails when the site passes 900 MB (Pages publishes up to 1 GB; the pronunciation audio is most of it).
       - name: Build the site
         run: node tools/bundle.mjs --site _site
       - uses: actions/configure-pages@v6

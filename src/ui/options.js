@@ -1,8 +1,9 @@
 // @ts-check
 // Step 5: deck options from fields.json → deckOptions: reverse cards, type the answer (needs reverse
-// cards) and the Serbian script (shown when Serbian is on either side).
+// cards) and the Serbian script (shown when Serbian is on either side); the audio toggle (ui/audio.js) where the
+// learned language has audio.
 
-import { usesSerbian } from '../state.js';
+import { hasAudio, usesSerbian } from '../state.js';
 import { h, live, msg } from './dom.js';
 import { optionText } from './i18n.js';
 import { help } from './popover.js';
@@ -46,9 +47,15 @@ export function mountOptions(root, app) {
   );
   root.append(script);
 
+  /** @type {{ update: (view: import('./app.js').View) => void } | null} */
+  let audio = null;
+
   return {
     /** @param {import('./app.js').View} view */
-    update({ config }) {
+    update(view) {
+      const { config } = view;
+      if (audio) audio.update(view);
+      else if (hasAudio(app.meta, config.learn)) import('./audio.js').then((m) => (audio ??= m.mountAudioOption(root, app, help)).update(app.view()), () => {});
       reverse.input.checked = config.reverse;
       type.input.checked = config.reverse && config.type;
       type.input.disabled = !config.reverse;

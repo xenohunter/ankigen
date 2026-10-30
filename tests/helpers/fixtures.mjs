@@ -3,8 +3,10 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { createLoader, moduleOrder } from '../../src/data/loader.js';
-import { validate, SAME } from '../../src/state.js';
+import { loadAudioIndex } from '../../src/data/clips.js';
+import { validate, usesAudio, SAME } from '../../src/state.js';
 import { buildDeck } from '../../src/deck/deck.js';
+import { mediaNames } from '../../src/deck/apkg.js';
 
 const ROOT = new URL('../../', import.meta.url);
 
@@ -38,7 +40,17 @@ export async function fixtureInput(partial) {
   const config = validate({ modules: moduleOrder(meta.modules), ...partial }, meta);
   const learnData = await loader.getLanguage(/** @type {string} */ (config.learn));
   const knowData = config.know === SAME ? learnData : await loader.getLanguage(/** @type {string} */ (config.know));
-  return { meta, concepts, config, learnData, knowData, css: (await loader.getCardCss()) ?? '' };
+  // the golden sample's clips (tests/fixtures/data/audio), as the browser loads them when audio is on
+  const audio = usesAudio(meta, config) ? await loadAudioIndex(loader, meta, /** @type {string} */ (config.learn)) : null;
+  return { meta, concepts, config, learnData, knowData, audio, css: (await loader.getCardCss()) ?? '' };
+}
+
+/** The clips a deck's notes name, read from their files (each its own file under the fixture's audio/). @param {{ notes: any[], audio: any }} deck */
+export function fixtureMedia(deck) {
+  return new Map(mediaNames(deck.notes).map((name) => {
+    const source = deck.audio.files.get(/-([0-9a-f]+)\.mp3$/.exec(name)?.[1]);
+    return [name, new Uint8Array(fs.readFileSync(new URL(source.url, ROOT)))];
+  }));
 }
 
 /** @param {Record<string, any>} partial */

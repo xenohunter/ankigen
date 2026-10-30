@@ -15,11 +15,14 @@ data/
     labels.json      card captions per known language
     version.json     data version (shown in footer, sent with reports)
     retired.json     IDs that must never be reused
+    audio.json       pronunciation voices and text rules per language (§13)
   concepts/<module>.json          concept inventory, split by PRIMARY module
   lang/<code>/<module>.json       words, forms, hints, definitions, glosses
   ex/<code>/<module>.json         example sentences (3 slots)
   ipa/<code>/<module>.json        IPA (optional layer)
   etym/<code>/<module>.json       etymology hints (optional layer, deferred)
+  audio/<code>/manifest.json      pronunciation clips: which word says what, in which file (§13)
+  audio/<code>/<hash>.mp3         the clips (written only by tools/audio.mjs)
 ```
 
 Every layer file for `<module>` contains only concepts whose **primary module** (the first entry of `mods`) is `<module>`. A concept cross-listed in other modules lives in exactly one file per layer.
@@ -131,7 +134,8 @@ No prose and no glosses, so it never needs translating. Lint warns on anything t
 
 ## 10. Languages, variants, deferred languages
 
-- `languages.json` → `active` lists shipped languages in UI order. `deferred` reserves codes (it, ga, gd, sv, …). To activate one, add its full feature block and generate its units.
+- `languages.json` → `active` lists shipped languages in UI order. `deferred` reserves codes (it, ga, gd, sv, …). To activate one, add its full feature block, including its `tts` locale, and generate its units; then its pronunciation audio (`node tools/audio.mjs run --lang <code>`, GENERATION.md §8).
+- `tts`: the language's Google Cloud Text-to-Speech locale (`en-US`, `cmn-CN` for Mandarin), used only for the pronunciation audio (§13). `locale` stays the BCP 47 tag the cards and the page use. Lint warns when an active language has none.
 - Regional variants (pt-BR, es-MX, en-GB…) are separate registry entries with `"extends": "<base code>"` and their own files under `lang/<variant>/` containing **only entries that differ**. Missing entries and fields fall back to the base language. They appear as separate choices in the UI.
 
 ## 11. Commands
@@ -153,6 +157,7 @@ What lint checks:
 - **Examples:** slot rules, target braces, targets showing `w` (not an alt), parallel slots having an English source, furigana syntax, pinyin.
 - **Optional layers:** IPA charset, etymology syntax.
 - **Labels:** completeness.
+- **Audio** (never an error for coverage): an active language without a `tts` locale, words without a current clip, missing or unused clip files (warnings); a malformed `meta/audio.json` (errors).
 
 ## 12. Changing data safely
 
@@ -160,3 +165,36 @@ What lint checks:
 - **Move** a concept to another primary module by moving its line in every layer. Its ID and GUID stay the same, so this is safe. Re-run `--fix`.
 - **Never** rename IDs or reuse retired ones.
 - After an edit, run lint and bump `meta/version.json`.
+- A changed word keeps its old clip until `node tools/audio.mjs run` makes the new one; the site leaves the old one out meanwhile (§13).
+
+## 13. Pronunciation audio (`meta/audio.json`, `audio/<code>/`)
+
+Written by `tools/audio.mjs` (GENERATION.md §7); `audio.json` may also be edited by hand.
+
+`meta/audio.json`, one language per line, in registry order:
+
+```
+"de": {"locale":"de-DE","voice":"de-DE-Chirp3-HD-Kore","tier":"chirp3-hd","format":"mp3","text":{"article":true}},
+"hy": {"locale":"hy-AM","unsupported":true}
+```
+
+- `locale` is the `tts` locale the voice was resolved for; `voice` a Google voice of that locale; `tier` `chirp3-hd`, `neural2` or `wavenet`; `format` `mp3`.
+- `unsupported`: Google has no voice of those tiers for the locale. Every run checks again.
+- `text`, the rules for what is said (set from the registry when the voice is resolved):
+  - `article: true`: the article the card shows with default settings (`das Wasser`, `l'eau`); a noun of either gender gets both (`el estudiante, la estudiante`). Languages whose Gender / article row shows an article.
+  - `stress`: Russian keeps its stress marks when `true`; `false` (the default) strips them. Words that differ only in stress then share a clip. The pilot of 2026-10-30 chose `false`: the voice handled the marks badly.
+  - `homographs`: for a word another entry spells the same way with another reading: `"reading"` says the reading (Japanese kana); `"pinyin"` wraps the word in an SSML pinyin phoneme, tone numbers (Chinese).
+  - Always: Serbian in its stored Cyrillic; a slash reads as a list (`Pan/Pani` → `Pan, Pani`); the hyphen of a suffix or prefix is not said (`-den` → `den`).
+
+`audio/<code>/manifest.json`, one entry per line in canonical concept order (like a layer file):
+
+```
+"word-water": {"file":"b10258a01162bfb2.mp3","text":"das Wasser","voice":"de-DE-Chirp3-HD-Kore","bytes":6432},
+"word-yes": {"file":"a3e608a53da16c8c.mp3","text":"tak","voice":"pl-PL-Chirp3-HD-Kore","bytes":3936,"sent":"Tak."},
+```
+
+- `file` is named by the first 16 hex digits of the SHA-256 of its bytes, so a name never stands for two recordings (Anki matches media by name). In Anki the clip is `ankigen-<code>-<hash>.mp3`.
+- `text` is what was synthesized (SSML for a pinyin phoneme); `sent` only when a retry used another form of it (capitalized with a full stop). Identical texts share one file across concepts; merged notes say the same word, so they get one clip.
+- `bytes` is the file's size (the page's Download summary adds them up).
+- A clip is current when its `text` is the word's current text; the site serves only current clips, in any voice.
+- Gloss entries (concepts a language doesn't own) get no clip. Retired concepts drop out at the next run; `node tools/audio.mjs prune` then deletes the files no manifest uses.

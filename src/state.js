@@ -2,10 +2,11 @@
 // Deck configuration (ARCHITECTURE §4): model, defaults from data/meta/fields.json, validation,
 // URL-hash codec, local storage, and a tiny observable store. Pure logic: the storage object is passed in.
 //
-// Hash format: #v1&l=ja&k=ru&m=core-1,food&f=reading:f,ipa:o&x=2&r=1&t=1&sr=c
+// Hash format: #v1&l=ja&k=ru&m=core-1,food&f=reading:f,ipa:o&x=2&r=1&t=1&a=1&sr=c
 //   l learn · k know ('=' = same-language mode) · m modules (canonical order) · f field placements that
 //   differ from the default (o off, f front, b back, n on, w with the word) · x examples 0–3 ·
-//   r reverse · t type the answer (needs r) · sr Serbian script (c|l, written when Serbian is involved).
+//   r reverse · t type the answer (needs r) · a audio (written where the learned language has it) ·
+//   sr Serbian script (c|l, written when Serbian is involved).
 // Unknown keys are ignored; an invalid value falls back to its default and keeps the rest.
 
 /** @typedef {'off' | 'front' | 'back' | 'on' | 'word'} Placement */
@@ -21,6 +22,7 @@
  * @property {number} examples
  * @property {boolean} reverse
  * @property {boolean} type        type the answer; only effective with reverse
+ * @property {boolean} audio       only where the learned language has audio
  * @property {Script} srScript
  */
 
@@ -46,6 +48,7 @@
  * @property {{ active: string[], languages: Record<string, any> }} languages
  * @property {{ categories: { id: string, modules: { id: string }[] }[] }} modules
  * @property {{ fields: FieldDef[], deckOptions: { id: string, default: any, values?: string[] }[] }} fields
+ * @property {Record<string, { voice?: string }>} [audio]
  */
 
 export const SAME = '=';
@@ -57,7 +60,7 @@ const SCRIPT_CODE = { cyrl: 'c', latn: 'l' };
 const invert = (map) => Object.fromEntries(Object.entries(map).map(([k, v]) => [v, k]));
 const CODE_PLACEMENT = invert(PLACEMENT_CODE);
 const CODE_SCRIPT = invert(SCRIPT_CODE);
-const HASH_KEYS = ['l', 'k', 'm', 'f', 'x', 'r', 't', 'sr'];
+const HASH_KEYS = ['l', 'k', 'm', 'f', 'x', 'r', 't', 'a', 'sr'];
 
 // ---------------------------------------------------------------- meta helpers
 
@@ -90,6 +93,12 @@ export function mode(config) {
 export function usesSerbian(config) {
   return config.learn === 'sr' || config.know === 'sr';
 }
+
+/** @param {Meta} meta @param {string | null} code */
+export const hasAudio = (meta, code) => Boolean(code && meta.audio?.[code]?.voice);
+
+/** Audio on, for a learned language that has it. @param {Meta} meta @param {Config} config */
+export const usesAudio = (meta, config) => config.audio && hasAudio(meta, config.learn);
 
 /** Default placement of a field row for a learning language. @param {FieldDef} def @param {string | null} learn */
 export function defaultPlacement(def, learn) {
@@ -132,6 +141,7 @@ export function defaultConfig(meta) {
     examples: examplesRange(meta).default,
     reverse: Boolean(deckOption(meta, 'reverse')?.default),
     type: Boolean(deckOption(meta, 'typeAnswer')?.default),
+    audio: false,
     srScript: deckOption(meta, 'srScript')?.default === 'latn' ? 'latn' : 'cyrl',
   };
 }
@@ -167,6 +177,7 @@ export function validate(raw, meta) {
     examples,
     reverse,
     type: typeof raw.type === 'boolean' ? raw.type : base.type,
+    audio: raw.audio === true,
     srScript: raw.srScript === 'cyrl' || raw.srScript === 'latn' ? raw.srScript : base.srScript,
   };
 }
@@ -200,6 +211,7 @@ export function encodeHash(config, meta) {
   parts.push(`x=${config.examples}`);
   if (config.reverse) parts.push('r=1');
   if (typesAnswer(config)) parts.push('t=1');
+  if (usesAudio(meta, config)) parts.push('a=1');
   if (usesSerbian(config)) parts.push(`sr=${SCRIPT_CODE[config.srScript]}`);
   return '#' + parts.join('&');
 }
@@ -242,6 +254,7 @@ export function decodeHash(hash, meta) {
       examples: values.x !== undefined && /^\d+$/.test(values.x) ? Number(values.x) : undefined,
       reverse,
       type: reverse && values.t === '1',
+      audio: values.a === '1',
       srScript: CODE_SCRIPT[values.sr],
     },
     meta,

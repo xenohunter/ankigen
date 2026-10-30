@@ -157,7 +157,7 @@ test('cards: a forward card per note, reverse only when on; clock ids; due = not
       ivl: 0, factor: 0, reps: 0, lapses: 0, left: 0, odue: 0, odid: 0, flags: 0, data: '{}',
     })));
     assert.deepEqual(rows('select * from cards order by id'), expected);
-    const reverseField = rows('select flds from notes').map((r) => r.flds.split('\x1f').at(-1));
+    const reverseField = rows('select flds from notes').map((r) => r.flds.split('\x1f')[FIELD_NAMES.indexOf('Reverse')]);
     assert.ok(reverseField.every((v) => v === (reverse ? '1' : '')));
   }
 });
