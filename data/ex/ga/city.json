@@ -1,0 +1,22 @@
+{
+"word-town-hall": [{"t":"Beidh an bhainis ag {halla an bhaile} Dé Sathairn."},{"t":"Is féidir leat an fhoirm a fháil ag {halla an bhaile}."},{"t":"Oibríonn an méara i {halla an bhaile}."}],
+"word-fire-station": [{"t":"Tá an {stáisiún dóiteáin} in aice na scoile."},{"t":"Thug na páistí cuairt ar an {stáisiún dóiteáin} Dé hAoine."},{"t":"Tá {stáisiún dóiteáin} nua inár mbaile."}],
+"word-mosque": [{"t":"Téann siad chuig an {mosc} gach Aoine."},{"t":"Tá cúpóla gorm álainn ar an {mosc}."},{"t":"Thugamar cuairt ar {mosc} cáiliúil ar ár dturas."}],
+"word-synagogue": [{"t":"Tá an {tsionagóg} ar choirnéal na Príomhshráide."},{"t":"Téann a theaghlach chuig an {tsionagóg} Dé Sathairn."},{"t":"Tógadh an {tsionagóg} sheanda sa bhliain 1890."}],
+"word-cathedral": [{"t":"Is í an {ardeaglais} an foirgneamh is sine sa chathair."},{"t":"Dhreapamar túr na {hardeaglaise}."},{"t":"Tháinig na céadta duine chuig an {ardeaglais} don cheolchoirm."}],
+"word-laundromat": [{"t":"Tá mo mheaisín níocháin briste, mar sin téim chuig an {laundraí}."},{"t":"Tá {laundraí} trasna na sráide."},{"t":"Tabhair roinnt bonn leat chuig an {laundraí}."}],
+"word-art-gallery": [{"t":"Chaitheamar an tráthnóna sa {ghailearaí ealaíne}."},{"t":"Tá an {gailearaí ealaíne} saor in aisce Dé Domhnaigh."},{"t":"Tá pictiúr aici i {ngailearaí ealaíne} beag i lár na cathrach."}],
+"word-nightclub": [{"t":"Rinne siad damhsa ar feadh na hoíche sa {chlub oíche}."},{"t":"Caithfidh tú a bheith os cionn fiche a haon chun dul isteach sa {chlub oíche}."},{"t":"Osclaíonn an {club oíche} ag a deich agus dúnann sé ag a ceathair."}],
+"word-old-town": [{"t":"Shiúlamar tríd an {tseanchathair} tar éis lóin."},{"t":"Tá sráideanna cúnga agus caiféanna beaga sa {tseanchathair}."},{"t":"Fanann a lán turasóirí sa {tseanchathair}."}],
+"word-skyscraper": [{"t":"Is féidir leat an chathair ar fad a fheiceáil ón {ardfhoirgneamh} sin."},{"t":"Tá siad ag tógáil {ardfhoirgnimh} nua i lár na cathrach."},{"t":"Tá m'oifig ar an daicheadú hurlár in {ardfhoirgneamh}."}],
+"word-apartment-block": [{"t":"Tá cónaí orainn i {mbloc árasán} mór in aice leis an bpáirc."},{"t":"Tá ardaitheoir sa {bhloc árasán}."},{"t":"Tá fiche teaghlach sa {bhloc árasán} seo."}],
+"word-avenue": [{"t":"Tá an t-óstán ar {ascaill} leathan le go leor crann."},{"t":"Cas ar chlé ag deireadh na {hascaille}."},{"t":"Tá crainn ar gach taobh den {ascaill}.","p":0}],
+"word-pedestrian-zone": [{"t":"Is {limistéar coisithe} é lár na cathrach."},{"t":"Ní féidir le gluaisteáin dul isteach sa {limistéar coisithe}."},{"t":"D'ólamar caife sa {limistéar coisithe}."}],
+"word-bench": [{"t":"Suímis ar an {mbinse} sin ar feadh nóiméid."},{"t":"Bhí seanfhear ag léamh ar {bhinse} sa pháirc."},{"t":"Bhí an {binse} fliuch tar éis na báistí."}],
+"word-fountain": [{"t":"Bhí páistí ag súgradh in aice leis an {scairdeán}."},{"t":"Tá {scairdeán} álainn sa chearnóg lárnach."},{"t":"Chaitheamar boinn isteach sa {scairdeán}."}],
+"word-opposite": [{"t":"Tá an banc {os comhair} na hoifige poist."},{"t":"Shuigh sí {os mo chomhair} ag an mbord."},{"t":"Tá bácús {os comhair} ár dtí."}],
+"word-city-block": [{"t":"Tá an siopa dhá {bhloc} ón áit seo."},{"t":"Shiúlamar timpeall an {bhloc} chun aer úr a fháil."},{"t":"Tá stad an bhus ar an gcéad {bhloc} eile."}],
+"word-tourist-information": [{"t":"Iarraimis léarscáil ar an {oifig eolais do thurasóirí}."},{"t":"Tá an {oifig eolais do thurasóirí} in aice leis an stáisiún traenach."},{"t":"Dúnann an {oifig eolais do thurasóirí} ag a cúig."}],
+"word-landmark": [{"t":"Is é an túr an {sainchomhartha} is cáiliúla sa chathair."},{"t":"Úsáid an séipéal mór sin mar {shainchomhartha}."},{"t":"Thógamar grianghraif de gach {sainchomhartha} ar an turas."}],
+"word-outskirts": [{"t":"Tá cónaí orthu ar {imeall na cathrach}."},{"t":"Tá an t-aerfort suite ar {imeall na cathrach}."},{"t":"Tá tithe níos saoire ar {imeall na cathrach}."}]
+}

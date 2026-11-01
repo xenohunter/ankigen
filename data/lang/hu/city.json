@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"városháza","alt":["polgármesteri hivatal"],"forms":{"pl":"városházak","acc":"városházat"},"def":"Az épület, ahol a település önkormányzata dolgozik."},
+"word-fire-station": {"w":"tűzoltóság","alt":["tűzoltóállomás"],"forms":{"pl":"tűzoltóságok","acc":"tűzoltóságot"},"def":"Épület, ahol a lángok oltására kiképzett emberek és autóik riasztásra várnak."},
+"word-mosque": {"w":"mecset","forms":{"pl":"mecsetek","acc":"mecsetet"},"def":"Épület, ahol a muszlimok imádkoznak."},
+"word-synagogue": {"w":"zsinagóga","forms":{"pl":"zsinagógák","acc":"zsinagógát"},"def":"Épület, ahol a zsidó emberek imádkoznak és tanulnak."},
+"word-cathedral": {"w":"katedrális","alt":["székesegyház"],"forms":{"pl":"katedrálisok","acc":"katedrálist"},"def":"Nagyon nagy és fontos templom, amelyet püspök vezet."},
+"word-laundromat": {"w":"önkiszolgáló mosoda","forms":{"pl":"önkiszolgáló mosodák","acc":"önkiszolgáló mosodát"},"def":"Nyilvános hely, ahol érmével működő gépekben lehet ruhát tisztítani és szárítani."},
+"word-art-gallery": {"w":"galéria","alt":["képtár"],"forms":{"pl":"galériák","acc":"galériát"},"def":"Épület vagy terem, ahol festményeket és más műalkotásokat mutatnak be a közönségnek."},
+"word-nightclub": {"w":"éjszakai klub","alt":["szórakozóhely"],"forms":{"pl":"éjszakai klubok","acc":"éjszakai klubot"},"def":"Hajnalig nyitva tartó hely zenével, tánccal és italokkal."},
+"word-old-town": {"w":"óváros","forms":{"pl":"óvárosok","acc":"óvárost"},"def":"A település legrégibb, történelmi épületekkel és szűk utcákkal teli negyede."},
+"word-skyscraper": {"w":"felhőkarcoló","forms":{"pl":"felhőkarcolók","acc":"felhőkarcolót"},"def":"Nagyon magas épület, sok emelettel."},
+"word-apartment-block": {"w":"lakóház","alt":["társasház"],"forms":{"pl":"lakóházak","acc":"lakóházat"},"def":"Nagy épület, amelyet több emeleten sok lakásra osztanak."},
+"word-avenue": {"w":"sugárút","alt":["fasor"],"forms":{"pl":"sugárutak","acc":"sugárutat"},"def":"Széles városi utca, amelynek két oldalán gyakran fák állnak."},
+"word-pedestrian-zone": {"w":"sétálóutca","alt":["gyalogosövezet"],"forms":{"pl":"sétálóutcák","acc":"sétálóutcát"},"def":"Városi utca, ahová autók nem hajthatnak be, így az emberek biztonságban gyalogolhatnak."},
+"word-bench": {"w":"pad","forms":{"pl":"padok","acc":"padot"},"def":"Hosszú ülőalkalmatosság több embernek, általában a szabadban."},
+"word-fountain": {"w":"szökőkút","forms":{"pl":"szökőkutak","acc":"szökőkutat"},"def":"Építmény, amely vizet lövell a levegőbe, általában parkban vagy téren."},
+"word-opposite": {"w":"szemben","alt":["átellenben"],"def":"Valaminek a túloldalán, azzal egymás felé fordulva."},
+"word-city-block": {"w":"háztömb","forms":{"pl":"háztömbök","acc":"háztömböt"},"def":"Épületek együttese, amelyet négy oldalról utcák vesznek körül."},
+"word-tourist-information": {"w":"turistainformáció","alt":["információs iroda"],"forms":{"pl":"turistainformációk","acc":"turistainformációt"},"def":"Iroda, ahol a látogatók térképet és tanácsot kaphatnak egy helyről."},
+"word-landmark": {"w":"nevezetesség","alt":["látványosság"],"forms":{"pl":"nevezetességek","acc":"nevezetességet"},"def":"Híres, könnyen felismerhető épület vagy hely."},
+"word-outskirts": {"w":"külváros","forms":{"pl":"külvárosok","acc":"külvárost"},"def":"A település központjától legtávolabb eső részei.","hint":"városszél"},
+"word-passeggiata": {"gl":"passeggiata: olasz lassú esti vagy vasárnapi séta, hogy lássanak és látsszanak"}
+}

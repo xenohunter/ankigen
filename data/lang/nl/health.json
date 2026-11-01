@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"contactlenzen","g":"pl","alt":["lenzen"],"def":"Kleine gebogen stukjes plastic die je op je ogen draagt om scherp te zien."},
 "word-wheelchair": {"w":"rolstoel","g":"c","forms":{"pl":"rolstoelen"},"def":"Stoel met grote wielen voor mensen die moeilijk kunnen lopen."},
 "word-crutches": {"w":"krukken","g":"pl","def":"Stokken die onder de armen passen en een gewond iemand helpen lopen."},
-"word-patient-person": {"w":"patiënt","g":"c","forms":{"pl":"patiënten","f":"patiënte"},"def":"Persoon die medische zorg krijgt van een arts of in een ziekenhuis."}
+"word-patient-person": {"w":"patiënt","g":"c","forms":{"pl":"patiënten","f":"patiënte"},"def":"Persoon die medische zorg krijgt van een arts of in een ziekenhuis."},
+"word-doctor-declaration-ua": {"gl":"deklaratsiia: Oekraïense overeenkomst met een huisarts voor gratis basiszorg"},
+"word-medical-card-ie": {"gl":"Iers zorgpasje (HSE) voor gratis huisartsbezoek en andere zorg"},
+"word-nhs-uk": {"gl":"Schotse openbare gezondheidszorg, meestal gratis; je schrijft je in bij een huisarts"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: Vietnamese zorgverzekeringspas voor vergoede zorg"}
 }

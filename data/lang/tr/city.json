@@ -18,5 +18,6 @@
 "word-city-block": {"w":"ada","hint":"sokaklarla çevrili","forms":{"acc":"adayı"},"def":"Dört yanı sokakla çevrili bina grubu."},
 "word-tourist-information": {"w":"turizm danışma bürosu","alt":["turist bilgi ofisi"],"forms":{"acc":"turizm danışma bürosunu"},"def":"Ziyaretçilerin bir yer hakkında harita ve öneri alabildiği ofis."},
 "word-landmark": {"w":"simge yapı","forms":{"acc":"simge yapıyı"},"def":"Bir yerin tanınmış ve kolayca fark edilen binası ya da noktası."},
-"word-outskirts": {"w":"şehir kenarı","forms":{"acc":"şehir kenarını"},"def":"Bir kentin merkezden en uzak bölümleri."}
+"word-outskirts": {"w":"şehir kenarı","forms":{"acc":"şehir kenarını"},"def":"Bir kentin merkezden en uzak bölümleri."},
+"word-passeggiata": {"gl":"passeggiata: İtalyanlarda akşamları veya pazar günleri görünüp görmek için yapılan keyifli gezinti"}
 }

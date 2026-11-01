@@ -18,5 +18,6 @@
 "word-city-block": {"w":"manzana","g":"f","hint":"de casas","def":"Conjunto de edificios rodeado por calles en sus cuatro lados."},
 "word-tourist-information": {"w":"oficina de turismo","g":"f","alt":["oficina de información turística"],"def":"Lugar donde los visitantes consiguen mapas y consejos sobre una ciudad."},
 "word-landmark": {"w":"lugar emblemático","g":"m","alt":["punto de referencia","hito"],"def":"Edificio o lugar famoso y fácil de reconocer."},
-"word-outskirts": {"w":"afueras","g":"f.pl","alt":["periferia"],"def":"Zonas de una ciudad más alejadas del centro.","hint":"límite urbano"}
+"word-outskirts": {"w":"afueras","g":"f.pl","alt":["periferia"],"def":"Zonas de una ciudad más alejadas del centro.","hint":"límite urbano"},
+"word-passeggiata": {"gl":"passeggiata: paseo tranquilo y social italiano, al atardecer o en domingo, para ver y ser visto"}
 }

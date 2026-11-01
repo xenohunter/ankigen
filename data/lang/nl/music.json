@@ -45,5 +45,7 @@
 "word-whistle": {"w":"fluiten","forms":{"past":"floot, floten","pp":"heeft gefloten"},"def":"Een hoog geluid maken door lucht tussen je lippen door te blazen."},
 "word-hum": {"w":"neuriën","forms":{"past":"neuriede, neuriedden","pp":"heeft geneuried"},"def":"Een melodie zingen met gesloten lippen."},
 "word-vinyl-record": {"w":"vinylplaat","g":"c","forms":{"pl":"vinylplaten"},"def":"Platte zwarte schijf waarvan muziek klinkt als er een naald overheen gaat."},
-"word-instrument": {"w":"instrument","g":"n","alt":["muziekinstrument"],"forms":{"pl":"instrumenten"},"def":"Voorwerp, zoals een gitaar of piano, waarmee je muziek maakt."}
+"word-instrument": {"w":"instrument","g":"n","alt":["muziekinstrument"],"forms":{"pl":"instrumenten"},"def":"Voorwerp, zoals een gitaar of piano, waarmee je muziek maakt."},
+"word-ceili": {"gl":"céilí: Ierse bijeenkomst met traditionele muziek, zang en groepsdans"},
+"word-mod-gaelic": {"gl":"mòd: Schots-Gaelisch festival van zang, muziek, poëzie en voordracht"}
 }

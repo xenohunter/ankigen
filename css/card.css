@@ -30,6 +30,10 @@
 :lang(ja) { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
 :lang(zh) { font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", sans-serif; }
 :lang(ko) { font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Noto Sans CJK KR", sans-serif; }
+/* Arabic: a typeface whose vowel marks read well, a little larger, with room above and below for the marks. */
+:lang(ar) { font-family: "Geeza Pro", "Noto Naskh Arabic", "Segoe UI", Tahoma, sans-serif; line-height: 1.7; }
+.ex-t:lang(ar),
+.val:lang(ar) { font-size: 1.15em; }
 
 .ag {
   max-width: 34em;

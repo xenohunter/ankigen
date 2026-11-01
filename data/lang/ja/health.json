@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"コンタクトレンズ","rom":"kontakutorenzu","alt":["コンタクト"],"def":"目に直接つけて、はっきり見えるようにする小さくて丸い物。"},
 "word-wheelchair": {"w":"車椅子","read":"くるまいす","rom":"kurumaisu","mw":"台","def":"歩くのが難しい人が座って、大きな輪を回して進む椅子。"},
 "word-crutches": {"w":"松葉杖","read":"まつばづえ","rom":"matsubazue","def":"けがをした人が、わきの下に当てて体を支えて歩く二本の棒。"},
-"word-patient-person": {"w":"患者","read":"かんじゃ","rom":"kanja","mw":"人","def":"病院や医者から治療を受けている人。"}
+"word-patient-person": {"w":"患者","read":"かんじゃ","rom":"kanja","mw":"人","def":"病院や医者から治療を受けている人。"},
+"word-doctor-declaration-ua": {"gl":"デクララツィヤ：ウクライナで無料の基本診療を受けるための、家庭医との契約"},
+"word-medical-card-ie": {"gl":"メディカルカード：アイルランドで対象者が無料で受診できるHSEの医療カード"},
+"word-nhs-uk": {"gl":"NHS：スコットランドの公的医療制度。ほとんど無料で、かかりつけ医に登録する"},
+"word-health-insurance-card-vn": {"gl":"ベトナムの健康保険証。公的医療機関で医療費の払い戻しに使う"}
 }

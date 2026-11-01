@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"Kontaktlinsen","g":"pl","def":"Kleine gewölbte Plastikscheiben, die man auf den Augen trägt, um scharf zu sehen."},
 "word-wheelchair": {"w":"Rollstuhl","g":"m","forms":{"pl":"Rollstühle"},"def":"Stuhl mit großen Rädern für Menschen, die nicht gut gehen können."},
 "word-crutches": {"w":"Krücken","g":"pl","alt":["Gehstützen"],"def":"Stöcke, die unter die Arme passen und Verletzten beim Gehen helfen."},
-"word-patient-person": {"w":"Patient","g":"m","hint":"in Behandlung","forms":{"gen":"Patienten","pl":"Patienten","f":"Patientin"},"def":"Person, die von einem Arzt oder im Krankenhaus behandelt wird."}
+"word-patient-person": {"w":"Patient","g":"m","hint":"in Behandlung","forms":{"gen":"Patienten","pl":"Patienten","f":"Patientin"},"def":"Person, die von einem Arzt oder im Krankenhaus behandelt wird."},
+"word-doctor-declaration-ua": {"gl":"Deklaration: ukrainischer Vertrag mit einem Hausarzt für kostenlose medizinische Grundversorgung"},
+"word-medical-card-ie": {"gl":"Medical Card: irische HSE-Karte für kostenlose Hausarztbesuche und Gesundheitsleistungen"},
+"word-nhs-uk": {"gl":"NHS Scotland: schottischer öffentlicher Gesundheitsdienst, meist kostenlos; Anmeldung bei einem Hausarzt"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: vietnamesische Krankenversicherungskarte für erstattete Behandlungen"}
 }

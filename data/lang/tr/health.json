@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"kontakt lens","alt":["lens"],"forms":{"acc":"kontakt lensi","pl":"kontakt lensler"},"def":"Net görmek için gözlere takılan küçük, eğri plastik parçalar."},
 "word-wheelchair": {"w":"tekerlekli sandalye","forms":{"acc":"tekerlekli sandalyeyi"},"def":"Rahat yürüyemeyen insanlar için büyük tekerlekli koltuk."},
 "word-crutches": {"w":"koltuk değneği","forms":{"acc":"koltuk değneğini","poss3":"koltuk değneği"},"def":"Kol altına yerleştirilip yaralı birinin yürümesine yardım eden sopalar."},
-"word-patient-person": {"w":"hasta","forms":{"acc":"hastayı"},"def":"Doktor veya hemşire tarafından tedavi edilen kişi.","hint":"tedavi gören"}
+"word-patient-person": {"w":"hasta","forms":{"acc":"hastayı"},"def":"Doktor veya hemşire tarafından tedavi edilen kişi.","hint":"tedavi gören"},
+"word-doctor-declaration-ua": {"gl":"deklaratsiia: Ukrayna'da ücretsiz birinci basamak sağlık hizmeti için aile hekimiyle yapılan sözleşme"},
+"word-medical-card-ie": {"gl":"medical card: İrlanda'da uygun kişilere ücretsiz GP ziyareti ve sağlık hizmeti sağlayan HSE kartı"},
+"word-nhs-uk": {"gl":"Ulusal Sağlık Hizmeti: İskoçya'nın kamu sağlık sistemi, çoğunlukla ücretsiz; GP'ye kayıt gerekir"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: Vietnam'da masrafı karşılanan tedavi için sağlık sigortası kartı"}
 }

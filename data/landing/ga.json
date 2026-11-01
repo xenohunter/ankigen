@@ -1,0 +1,464 @@
+{
+  "source": "09e27ff47335",
+  "texts": {
+    "decks": "Deiceanna",
+    "cta": "Cruthaigh do dheic",
+    "ctaNote": "Osclaíonn sé AnkiGen leis an bpéire seo agus {module} roghnaithe.",
+    "deck": "Deic Anki: {deck}",
+    "intro": "Cruthaíonn AnkiGen deiceanna Anki saor in aisce díreach i do bhrabhsálaí: focail de réir téama, agus a n-aistriúchán agus abairtí samplacha le gach ceann. Roghnaigh na modúil agus an rud a thaispeánfaidh gach cárta, agus ansin íosluchtaigh comhad .apkg do Anki nó AnkiDroid. Níl cuntas ag teastáil, agus ní gá aon rud a shuiteáil.",
+    "cardsHeading": "Cad a thaispeánann na cártaí",
+    "cardsIntro": "Taispeánann gach cárta an focal atá á fhoghlaim agat agus a aistriúchán. Roghnaíonn tú cad eile a thaispeánfaidh sé, agus ar cén taobh:",
+    "captions": "Tá fotheidil na gcártaí, mar shampla “{caption}”, i nGaeilge.",
+    "modulesHeading": "Modúil",
+    "modulesIntro": "Má bhaineann focal le roinnt modúl, níl sé sa deic ach uair amháin. Osclaíonn gach modúl AnkiGen agus gan ach an modúl sin roghnaithe; is féidir leat tuilleadh a chur leis ansin.",
+    "sampleWords": "Focail shamplacha",
+    "local": "Focail nach bhfuil ach sa teanga seo: {count}, mar shampla {example}. Níl focal cruinn orthu seo i dteangacha eile, mar sin míníonn do chártaí iad i do theanga féin.",
+    "howHeading": "Conas a oibríonn sé",
+    "step1": "Roghnaigh na modúil atá uait. Taispeánann gach ceann acu cé mhéad focal atá aige do do phéire.",
+    "step2": "Roghnaigh cad a thaispeánfaidh gach cárta, agus ar cén taobh. Taispeánann an réamhamharc fíorchártaí agus tú ag roghnú.",
+    "step3": "Íosluchtaigh an comhad .apkg agus oscail le Anki é (File → Import), nó tapáil air ar do ghuthán chun é a oscailt in AnkiDroid.",
+    "update": "Réimsí athraithe, modúil nua curtha leis, nó sonraí níos nuaí uait? Íosluchtaigh arís é agus iompórtáil an comhad nua in Anki (File → Import) leis na roghanna réamhshocraithe. Nuashonraíonn Anki do nótaí atá ann cheana agus a leagan amach, cuireann sé focail nua leis an deic chéanna, agus coinníonn sé do dhul chun cinn athbhreithnithe.",
+    "aboutHeading": "Faoin stór focal",
+    "about": "Dréachtaíodh na focail, na haistriúcháin agus na habairtí samplacha le samhail AI, agus tá daoine á seiceáil, teanga ar theanga. Má tá rud éigin mícheart, roghnaigh é ar chárta réamhamhairc in AnkiGen agus brúigh Ctrl+Enter (⌘+Enter ar Mac), nó úsáid an cnaipe Feedback ansin. Cabhraíonn gach tuarascáil leis an deic a cheartú do chách.",
+    "moreHeading": "Tuilleadh deiceanna",
+    "moreForYou": "Tuilleadh deiceanna do chainteoirí Gaeilge",
+    "allDecks": "Gach deic de réir péire teanga"
+  },
+  "languages": {
+    "en": "Béarla",
+    "de": "Gearmáinis",
+    "nl": "Ollainnis",
+    "sv": "Sualainnis",
+    "zh": "Sínis",
+    "ja": "Seapáinis",
+    "vi": "Vítneamais",
+    "ko": "Cóiréis",
+    "es": "Spáinnis",
+    "fr": "Fraincis",
+    "pt": "Portaingéilis",
+    "it": "Iodáilis",
+    "ru": "Rúisis",
+    "pl": "Polainnis",
+    "uk": "Úcráinis",
+    "sr": "Seirbis",
+    "ga": "Gaeilge",
+    "gd": "Gaeilge na hAlban",
+    "ar": "Araibis",
+    "tr": "Tuircis",
+    "el": "Gréigis",
+    "hu": "Ungáiris",
+    "hy": "Airméinis"
+  },
+  "categories": {
+    "foundations": "Bunghnéithe",
+    "communication": "Cumarsáid",
+    "daily-life": "An saol laethúil",
+    "getting-around": "Ag taisteal timpeall",
+    "living-abroad": "Ag cónaí thar lear",
+    "health-safety": "Sláinte agus sábháilteacht",
+    "interests": "Spéiseanna",
+    "adult": "18+"
+  },
+  "modules": {
+    "core-1": {
+      "name": "Croí I",
+      "desc": "Na ~500 focal is minice a úsáidtear, atá coitianta do gach teanga."
+    },
+    "core-2": {
+      "name": "Croí II",
+      "desc": "An ~500 focal eile is minice."
+    },
+    "core-3": {
+      "name": "Croí III",
+      "desc": "An ~800 focal eile is minice."
+    },
+    "numbers": {
+      "name": "Uimhreacha agus matamaitic",
+      "desc": "Bunuimhreacha agus orduimhreacha, codáin, uimhríocht, tomhais."
+    },
+    "time": {
+      "name": "Am agus féilire",
+      "desc": "Laethanta, míonna, séasúir, am ar an gclog, dátaí, minicíocht."
+    },
+    "phrases": {
+      "name": "Frásaí marthanais",
+      "desc": "Beannachtaí, béasaíocht agus abairtí iomlána do chásanna laethúla."
+    },
+    "countries": {
+      "name": "Tíortha, náisiúntachtaí agus teangacha",
+      "desc": "Mórthíortha, a muintir, a n-aidiachtaí agus a dteangacha."
+    },
+    "language-learning": {
+      "name": "Foghlaim teangacha",
+      "desc": "Caint faoin teanga: téarmaí gramadaí, fuaimniú, cabhair a iarraidh."
+    },
+    "family": {
+      "name": "Teaghlach agus caidrimh",
+      "desc": "Gaolta, céilí, cairde, imeachtaí saoil."
+    },
+    "feelings": {
+      "name": "Mothúcháin agus carachtar",
+      "desc": "Mothúcháin, giúmar, tréithe pearsantachta."
+    },
+    "food": {
+      "name": "Bia agus deochanna",
+      "desc": "Earraí grósaeireachta, miasa, deochanna, ag ithe amach."
+    },
+    "cooking": {
+      "name": "Cócaireacht agus cistin",
+      "desc": "Briathra cócaireachta, uirlisí, gléasanna, oidis."
+    },
+    "shopping": {
+      "name": "Siopadóireacht agus éadaí",
+      "desc": "Siopaí, íocaíocht, méideanna, éadaí, earraí a thabhairt ar ais."
+    },
+    "housing": {
+      "name": "Tithíocht agus cíos",
+      "desc": "Cíos a ghlacadh, conarthaí, tiarnaí talún, fóntais, seomraí."
+    },
+    "household": {
+      "name": "Obair tí agus deisiúcháin",
+      "desc": "Tascanna tí, troscán, uirlisí, deisiúcháin, pluiméireacht, leictreachas."
+    },
+    "nature": {
+      "name": "Aimsir agus an dúlra",
+      "desc": "Aimsir, aeráid, tírdhreach, plandaí."
+    },
+    "animals": {
+      "name": "Peataí agus ainmhithe",
+      "desc": "Peataí, cúram peataí, cuairteanna ar an tréidlia, ainmhithe coitianta."
+    },
+    "city": {
+      "name": "Cathair agus treoracha",
+      "desc": "Áiteanna sa bhaile mór, treoracha a iarraidh agus a thabhairt."
+    },
+    "transport": {
+      "name": "Iompar agus taisteal",
+      "desc": "Iompar poiblí, ticéid, aerfoirt, óstáin, bagáiste."
+    },
+    "driving": {
+      "name": "Tiomáint agus rialacha bóthair",
+      "desc": "Páirteanna cairr, rialacha tráchta, comharthaí bóthair, scrúduithe tiomána, fíneálacha, timpistí."
+    },
+    "signs": {
+      "name": "Comharthaí agus fógraí",
+      "desc": "An rud a léann tú ar dhoirse, ar shiopaí agus ar shráideanna: Brúigh, Slí Amach, As Ord."
+    },
+    "residence": {
+      "name": "Cónaí agus stádas dlíthiúil",
+      "desc": "Víosaí, ceadanna, clárú, doiciméid, oifigí — móide téarmaí a bhaineann le tír áirithe."
+    },
+    "money": {
+      "name": "Airgead agus baincéireacht",
+      "desc": "Cuntais, cártaí, aistrithe, cánacha, iasachtaí."
+    },
+    "work": {
+      "name": "Obair agus fostaíocht",
+      "desc": "Poist, conarthaí, tuarastal, saol oifige, cuardach poist."
+    },
+    "telecom": {
+      "name": "Post, guthán agus idirlíon",
+      "desc": "Beartáin, cártaí SIM, pleananna soghluaiste, idirlíon, cuntais."
+    },
+    "education": {
+      "name": "Oideachas",
+      "desc": "Scoil, ollscoil, cúrsaí, scrúduithe."
+    },
+    "health": {
+      "name": "Sláinte agus míochaine",
+      "desc": "Corp, comharthaí, dochtúirí, cógaslann, árachas."
+    },
+    "emergencies": {
+      "name": "Éigeandálaí",
+      "desc": "Garda, tine, otharcharr, timpistí, tubaistí."
+    },
+    "hobbies": {
+      "name": "Caithimh aimsire",
+      "desc": "Caithimh aimsire choitianta, ceardaíocht, bailiú, gníomhaíochtaí amuigh faoin aer."
+    },
+    "sports": {
+      "name": "Spórt",
+      "desc": "Spóirt, trealamh, comórtais, aclaíocht."
+    },
+    "music": {
+      "name": "Ceol",
+      "desc": "Uirlisí, seánraí, ag seinm agus ag éisteacht."
+    },
+    "video-games": {
+      "name": "Físchluichí",
+      "desc": "Foclóir cluiche chun imirt agus comhrá."
+    },
+    "tabletop": {
+      "name": "Cluichí boird",
+      "desc": "Dísle, cártaí, babhtaí agus rialacha — d'oícheanta cluiche."
+    },
+    "tech": {
+      "name": "Teicneolaíocht agus ríomhairí",
+      "desc": "Gairis, bogearraí, an gréasán, fadhbanna a réiteach."
+    },
+    "science": {
+      "name": "Eolaíocht",
+      "desc": "Bunfhoclóir na fisice, na ceimice, na bitheolaíochta agus na réalteolaíochta."
+    },
+    "profanity": {
+      "name": "Focail mhaslacha",
+      "desc": "Mionnaí agus maslaí, comhoiriúnaithe de réir déine thar theangacha."
+    }
+  },
+  "fields": {
+    "gender": {
+      "label": "Inscne / alt",
+      "help": "Taispeánann sé an t-alt (der Tisch, la mesa) nó marc inscne (m/f/n) in aice leis an bhfocal."
+    },
+    "stress": {
+      "label": "Comharthaí buaiche",
+      "help": "Marcálann sé an guta treisithe (молоко́). Baineann sé leis an bhfocal, a fhoirmeacha agus an focal aibhsithe sna samplaí."
+    },
+    "vowels": {
+      "label": "Comharthaí gutaí",
+      "help": "Na comharthaí gutaí gearra (harakat) os cionn agus faoi bhun na litreacha: كِتَاب seachas كتاب. Baineann siad leis an bhfocal, a fhoirmeacha agus an focal aibhsithe sna samplaí."
+    },
+    "reading": {
+      "label": "Léamh (furigana)",
+      "help": "Léamh kana os cionn an kanji. Rialaíonn sé furigana sna habairtí samplacha freisin."
+    },
+    "romanization": {
+      "label": "Rómhánú",
+      "help": "An focal i litreacha Laidine: Hepburn (Seapáinis), pinyin (Sínis), Revised Romanization (Cóiréis), ALA-LC (Araibis), litriú traslitrithe (Rúisis, Úcráinis, Airméinis, Gréigis). Don tSínis rialaíonn sé pinyin sna habairtí samplacha freisin."
+    },
+    "otherScript": {
+      "label": "Script eile",
+      "help": "Taispeánann sé an focal sa script Seirbise eile (Laidineach má úsáideann an deic Coireallach, agus a mhalairt)."
+    },
+    "measureWord": {
+      "label": "Focal tomhais / comhairimh",
+      "help": "An t-aicmitheoir a úsáidtear agus an t-ainmfhocal seo á chomhaireamh (一本书, 鉛筆を三本, ba con mèo)."
+    },
+    "hanja": {
+      "label": "Hanja",
+      "help": "Carachtair Shínise taobh thiar d'fhocail Sínea-Chóiréise (은행 → 銀行). Ní thaispeántar iad ach do na focail a bhfuil siad acu."
+    },
+    "forms": {
+      "label": "Príomhfhoirmeacha",
+      "help": "An beagán foirmeacha atá ag teastáil chun an focal a úsáid: iolra, ginideach, aimsir chaite, páirtí gné, aicme briathair… ní táblaí iomlána."
+    },
+    "ipa": {
+      "label": "IPA",
+      "help": "Fuaimniú in Aibítir Fhoghraíochta Idirnáisiúnta."
+    },
+    "examples": {
+      "label": "Samplaí",
+      "help": "Abairtí samplacha agus an focal aibhsithe. Úsáid an sleamhnán chun líon a roghnú (0–3)."
+    },
+    "exampleTranslations": {
+      "label": "Aistriúcháin ar shamplaí",
+      "help": "Taispeánann sé gach sampla i do theanga féin nuair a bhíonn aistriúchán comhfhreagrach ann. Scríobhadh roinnt samplaí go dúchasach agus níl aistriúchán acu."
+    },
+    "related": {
+      "label": "Contrárthaí agus focail ghaolmhara",
+      "help": "Focail os coinne agus focail a bhfuil dlúthghaol acu, sa teanga atá á foghlaim agat."
+    },
+    "pos": {
+      "label": "Cuid cainte",
+      "help": "ainmfhocal, briathar, aidiacht…"
+    },
+    "register": {
+      "label": "Stíl",
+      "help": "Marcálann sé focail neamhfhoirmiúla, fhoirmiúla, gharbha nó maslacha."
+    },
+    "emoji": {
+      "label": "Emoji",
+      "help": "Leid pictiúir d'fhocail choincréideacha (💧 uisce). Níl ceann ag formhór na bhfocal teibí."
+    },
+    "conceptId": {
+      "label": "ID an choincheapa",
+      "help": "Cód beag ag bun an chárta (m.sh. word-water). Má aimsíonn tú botún agus tú ag staidéar in Anki, cuir an cód seo i do thuarascáil ionas go bhfaighimid an iontráil cheart."
+    }
+  },
+  "options": {
+    "reverse": {
+      "label": "Cártaí droim ar ais",
+      "help": "Cuireann sé dara cárta leis do gach focal: do theanga → an teanga atá á foghlaim agat. Ar chártaí droim ar ais téann gach rud faoin bhfocal atá á fhoghlaim go taobh na freagra, ionas nach dtugann aon rud an freagra uait."
+    },
+    "typeAnswer": {
+      "label": "Clóscríobh an freagra",
+      "help": "Ar chártaí droim ar ais clóscríobhann tú an focal in ionad é a chur i gcuimhne amháin. Comparáideann Anki do litriú leis an bpríomhfhoirm (alt san áireamh; ní chuirtear aird ar chomharthaí buaiche ná gutaí)."
+    },
+    "srScript": {
+      "label": "Script na Seirbise",
+      "help": "Scríobhtar an tSeirbis i gCoireallach agus i Laidin araon. Roghnaigh an ceann atá ar do chártaí."
+    }
+  },
+  "pairs": {
+    "en": {
+      "name": "Béarla do chainteoirí Gaeilge",
+      "title": "Béarla do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Béarla do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Bhéarla agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Béarla do chainteoirí teangacha eile"
+    },
+    "de": {
+      "name": "Gearmáinis do chainteoirí Gaeilge",
+      "title": "Gearmáinis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Gearmáinis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Ghearmáinis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Gearmáinis do chainteoirí teangacha eile"
+    },
+    "nl": {
+      "name": "Ollainnis do chainteoirí Gaeilge",
+      "title": "Ollainnis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Ollainnis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Ollainnis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Ollainnis do chainteoirí teangacha eile"
+    },
+    "sv": {
+      "name": "Sualainnis do chainteoirí Gaeilge",
+      "title": "Sualainnis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Sualainnis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa tSualainnis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Sualainnis do chainteoirí teangacha eile"
+    },
+    "zh": {
+      "name": "Sínis do chainteoirí Gaeilge",
+      "title": "Sínis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Sínis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa tSínis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Sínis do chainteoirí teangacha eile"
+    },
+    "ja": {
+      "name": "Seapáinis do chainteoirí Gaeilge",
+      "title": "Seapáinis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Seapáinis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa tSeapáinis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Seapáinis do chainteoirí teangacha eile"
+    },
+    "vi": {
+      "name": "Vítneamais do chainteoirí Gaeilge",
+      "title": "Vítneamais do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Vítneamais do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Vítneamais agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Vítneamais do chainteoirí teangacha eile"
+    },
+    "ko": {
+      "name": "Cóiréis do chainteoirí Gaeilge",
+      "title": "Cóiréis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Cóiréis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Chóiréis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Cóiréis do chainteoirí teangacha eile"
+    },
+    "es": {
+      "name": "Spáinnis do chainteoirí Gaeilge",
+      "title": "Spáinnis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Spáinnis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Spáinnis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Spáinnis do chainteoirí teangacha eile"
+    },
+    "fr": {
+      "name": "Fraincis do chainteoirí Gaeilge",
+      "title": "Fraincis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Fraincis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Fhraincis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Fraincis do chainteoirí teangacha eile"
+    },
+    "pt": {
+      "name": "Portaingéilis do chainteoirí Gaeilge",
+      "title": "Portaingéilis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Portaingéilis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Phortaingéilis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Portaingéilis do chainteoirí teangacha eile"
+    },
+    "it": {
+      "name": "Iodáilis do chainteoirí Gaeilge",
+      "title": "Iodáilis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Iodáilis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Iodáilis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Iodáilis do chainteoirí teangacha eile"
+    },
+    "ru": {
+      "name": "Rúisis do chainteoirí Gaeilge",
+      "title": "Rúisis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Rúisis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Rúisis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Rúisis do chainteoirí teangacha eile"
+    },
+    "pl": {
+      "name": "Polainnis do chainteoirí Gaeilge",
+      "title": "Polainnis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Polainnis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Pholainnis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Polainnis do chainteoirí teangacha eile"
+    },
+    "uk": {
+      "name": "Úcráinis do chainteoirí Gaeilge",
+      "title": "Úcráinis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Úcráinis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Úcráinis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Úcráinis do chainteoirí teangacha eile"
+    },
+    "sr": {
+      "name": "Seirbis do chainteoirí Gaeilge",
+      "title": "Seirbis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Seirbis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa tSeirbis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Seirbis do chainteoirí teangacha eile"
+    },
+    "gd": {
+      "name": "Gaeilge na hAlban do chainteoirí Gaeilge",
+      "title": "Gaeilge na hAlban do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Gaeilge na hAlban do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail i nGaeilge na hAlban agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Gaeilge na hAlban do chainteoirí teangacha eile"
+    },
+    "ar": {
+      "name": "Araibis do chainteoirí Gaeilge",
+      "title": "Araibis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Araibis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Araibis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Araibis do chainteoirí teangacha eile"
+    },
+    "tr": {
+      "name": "Tuircis do chainteoirí Gaeilge",
+      "title": "Tuircis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Tuircis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Tuircis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Tuircis do chainteoirí teangacha eile"
+    },
+    "el": {
+      "name": "Gréigis do chainteoirí Gaeilge",
+      "title": "Gréigis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Gréigis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail sa Ghréigis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Gréigis do chainteoirí teangacha eile"
+    },
+    "hu": {
+      "name": "Ungáiris do chainteoirí Gaeilge",
+      "title": "Ungáiris do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Ungáiris do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Ungáiris agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Ungáiris do chainteoirí teangacha eile"
+    },
+    "hy": {
+      "name": "Airméinis do chainteoirí Gaeilge",
+      "title": "Airméinis do Ghaeilgeoirí: deic Anki — AnkiGen",
+      "description": "Airméinis do Ghaeilgeoirí: deic Anki saor in aisce, {words} agus {modules}, le haistriúcháin agus samplaí. Do Anki agus AnkiDroid.",
+      "lede": "Deic Anki saor in aisce le focail san Airméinis agus aistriúcháin Ghaeilge, cruthaithe i do bhrabhsálaí.",
+      "others": "Airméinis do chainteoirí teangacha eile"
+    }
+  },
+  "plural": {
+    "word": {
+      "one": "{n} fhocal",
+      "two": "{n} fhocal",
+      "few": "{n} fhocal",
+      "many": "{n} bhfocal",
+      "other": "{n} focal"
+    },
+    "module": {
+      "one": "{n} mhodúl",
+      "two": "{n} mhodúl",
+      "few": "{n} mhodúl",
+      "many": "{n} modúl",
+      "other": "{n} modúl"
+    }
+  }
+}

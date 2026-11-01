@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "Kelime hazinesi makine tarafından taslak olarak hazırlandı ve yalnızca kısmen kontrol edildi. Geri bildirimlerinizi bekliyoruz.",
     "head.draftTopic": "taslak kelime hazinesi",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "Kartlarda çeviri yerine öğrendiğiniz dilde kısa bir tanım gösterilir. O dilde basit cümleleri okuyabildiğinizde idealdir.",
     "lang.loading": "Kelimeler yükleniyor ({language})…",
     "lang.failed": "Kelimeler yüklenemedi ({language}). Bağlantınızı kontrol edip sayfayı yeniden yükleyin.",
+    "group.germanic": "Cermen",
+    "group.asian": "Doğu ve Güneydoğu Asya",
+    "group.romance": "Roman",
+    "group.slavic": "Slav",
+    "group.celtic": "Kelt",
+    "group.other": "Diğer",
     "modules.hint": "İstediğiniz konuları seçin; daha sonra başkalarını da ekleyebilirsiniz.",
     "modules.show": "Modülleri göster: {category}",
     "modules.tally": "{n}/{total}",

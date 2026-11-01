@@ -91,5 +91,12 @@
 "word-itv-es": {"pos":"noun","mods":["driving"],"note":"Spain: vehicle technical inspection (ITV)","only":["es"]},
 "word-apk-nl": {"pos":"noun","mods":["driving"],"note":"Netherlands: periodic vehicle inspection (APK)","only":["nl"]},
 "word-kteo-gr": {"pos":"noun","mods":["driving"],"note":"Greece: vehicle technical inspection centre (ΚΤΕΟ)","only":["el"]},
-"word-muayene-tr": {"pos":"noun","mods":["driving"],"note":"Turkey: periodic vehicle inspection (araç muayenesi)","only":["tr"]}
+"word-muayene-tr": {"pos":"noun","mods":["driving"],"note":"Turkey: periodic vehicle inspection (araç muayenesi)","only":["tr"]},
+"word-revisione-it": {"pos":"noun","mods":["driving"],"note":"Italy: revisione, the mandatory periodic vehicle inspection","only":["it"]},
+"word-besiktning-se": {"pos":"noun","mods":["driving"],"note":"Sweden: besiktning (kontrollbesiktning), the mandatory periodic vehicle inspection at an approved inspection station","only":["sv"]},
+"word-tsc-mvs-ua": {"pos":"noun","mods":["driving"],"note":"Ukraine: сервісний центр МВС (ТСЦ), the office for driving licences, vehicle registration and driving exams","only":["uk"]},
+"word-nct-ie": {"pos":"noun","mods":["driving"],"note":"Ireland: NCT, the National Car Test, the mandatory periodic roadworthiness inspection of cars","only":["ga"]},
+"word-mot-uk": {"pos":"noun","mods":["driving"],"note":"Great Britain: MOT, the mandatory annual roadworthiness test for vehicles over three years old","only":["gd"]},
+"word-muszaki-vizsga-hu": {"pos":"noun","mods":["driving"],"note":"Hungary: műszaki vizsga, the mandatory periodic technical inspection of vehicles, shown by a sticker on the license plate","only":["hu"]},
+"word-dang-kiem-vn": {"pos":"noun","mods":["driving"],"note":"Vietnam: đăng kiểm, the mandatory periodic technical and emissions inspection of cars and trucks at a registry centre","only":["vi"]}
 }

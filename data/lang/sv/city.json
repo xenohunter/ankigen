@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"stadshus","g":"n","alt":["rådhus"],"forms":{"def":"stadshuset","pl":"stadshus"},"def":"Byggnad där kommunens politiker och tjänstemän arbetar."},
+"word-fire-station": {"w":"brandstation","g":"c","forms":{"def":"brandstationen","pl":"brandstationer"},"def":"Byggnad där räddningstjänstens personal och bilar väntar på larm."},
+"word-mosque": {"w":"moské","g":"c","forms":{"def":"moskén","pl":"moskéer"},"def":"Byggnad där muslimer går för att be."},
+"word-synagogue": {"w":"synagoga","g":"c","forms":{"def":"synagogan","pl":"synagogor"},"def":"Byggnad där judar går för att be och studera."},
+"word-cathedral": {"w":"domkyrka","g":"c","alt":["katedral"],"forms":{"def":"domkyrkan","pl":"domkyrkor"},"def":"Mycket stor och viktig byggnad för gudstjänst, som leds av en biskop."},
+"word-laundromat": {"w":"myntvätt","g":"c","forms":{"def":"myntvätten","pl":"myntvättar"},"def":"Lokal där man själv gör rent och torkar kläder i maskiner som man betalar för."},
+"word-art-gallery": {"w":"konstgalleri","g":"n","alt":["galleri"],"forms":{"def":"konstgalleriet","pl":"konstgallerier"},"def":"Lokal där målningar och andra verk visas för allmänheten."},
+"word-nightclub": {"w":"nattklubb","g":"c","alt":["klubb"],"forms":{"def":"nattklubben","pl":"nattklubbar"},"def":"Ställe som har öppet till sent på kvällen, med musik, dans och drycker."},
+"word-old-town": {"w":"gamla stan","g":"c","forms":{"def":"gamla stan"},"def":"Den äldsta delen av en ort, ofta med historiska hus och smala gränder."},
+"word-skyscraper": {"w":"skyskrapa","g":"c","forms":{"def":"skyskrapan","pl":"skyskrapor"},"def":"Mycket hög byggnad med många våningar."},
+"word-apartment-block": {"w":"hyreshus","g":"n","alt":["flerfamiljshus"],"forms":{"def":"hyreshuset","pl":"hyreshus"},"def":"Stor byggnad indelad i många bostäder på olika våningar."},
+"word-avenue": {"w":"aveny","g":"c","alt":["boulevard"],"forms":{"def":"avenyn","pl":"avenyer"},"def":"Bred gata i en stad, ofta med träd längs sidorna."},
+"word-pedestrian-zone": {"w":"gågata","g":"c","forms":{"def":"gågatan","pl":"gågator"},"def":"Del av en stad där bilar inte får köra, så att människor kan promenera tryggt."},
+"word-bench": {"w":"bänk","g":"c","alt":["parkbänk"],"forms":{"def":"bänken","pl":"bänkar"},"def":"Långt säte för flera personer, oftast utomhus."},
+"word-fountain": {"w":"fontän","g":"c","forms":{"def":"fontänen","pl":"fontäner"},"def":"Konstruktion som sprutar vatten upp i luften, ofta i en park eller på ett torg."},
+"word-opposite": {"w":"mittemot","def":"På andra sidan om något och vänd mot det."},
+"word-city-block": {"w":"kvarter","g":"n","forms":{"def":"kvarteret","pl":"kvarter"},"def":"Område med byggnader som har gator på alla fyra sidor.","hint":"mellan gator"},
+"word-tourist-information": {"w":"turistinformation","g":"c","alt":["turistbyrå"],"forms":{"def":"turistinformationen"},"def":"Kontor där besökare kan få kartor och råd om en plats."},
+"word-landmark": {"w":"landmärke","g":"n","forms":{"def":"landmärket","pl":"landmärken"},"def":"Byggnad eller plats som är berömd och lätt att känna igen."},
+"word-outskirts": {"w":"utkant","g":"c","forms":{"def":"utkanten","pl":"utkanter"},"def":"Den del av en stad som ligger längst från mitten."},
+"word-passeggiata": {"gl":"passeggiata: italiensk lugn kvälls- eller söndagspromenad för att synas och träffa folk"}
+}

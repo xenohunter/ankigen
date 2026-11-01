@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"gl":"jeonse: Kore'de aylık kira yerine ödenen büyük depozito"},
 "word-cold-rent-de": {"gl":"Kaltmiete: Almanya'da faturalar hariç kira"},
 "word-warm-rent-de": {"gl":"Warmmiete: Almanya'da faturalar dahil kira"},
-"word-communal-apartment-ru": {"gl":"kommunalka: Rusya'da birkaç ailenin paylaştığı daire"}
+"word-communal-apartment-ru": {"gl":"kommunalka: Rusya'da birkaç ailenin paylaştığı daire"},
+"word-council-tax-uk": {"gl":"council tax: Birleşik Krallık'ta konutlara uygulanan, değer sınıflarına göre belediye vergisi"}
 }

@@ -36,5 +36,7 @@
 "word-nature-reserve": {"pos":"noun","mods":["nature"],"note":"protected area for wildlife"},
 "word-environment-protection": {"pos":"noun","mods":["nature"],"note":"protecting the environment"},
 "word-climate-change": {"pos":"noun","mods":["nature"],"note":"global warming"},
-"word-renewable-energy": {"pos":"noun","mods":["nature","science"],"note":"solar and wind power"}
+"word-renewable-energy": {"pos":"noun","mods":["nature","science"],"note":"solar and wind power"},
+"word-allemansratten": {"pos":"noun","mods":["nature"],"note":"Sweden: allemansrätten, the public right of access to roam, camp and pick berries on most land, with responsibility for nature","only":["sv"]},
+"word-machair": {"pos":"noun","mods":["nature"],"note":"Gaelic: fertile low-lying coastal grassland on shell sand with wildflowers, typical of the Hebrides","only":["gd"]}
 }

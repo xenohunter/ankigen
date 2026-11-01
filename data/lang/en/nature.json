@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"nature reserve","alt":["wildlife refuge"],"def":"an area where wild animals and plants are kept safe from harm"},
 "word-environment-protection": {"w":"environmental protection","def":"actions that keep air, water and land clean and safe from damage"},
 "word-climate-change": {"w":"climate change","alt":["global warming"],"def":"the long-term rise in Earth's temperature and shift in weather patterns"},
-"word-renewable-energy": {"w":"renewable energy","def":"power from sources that do not run out, such as the sun and wind"}
+"word-renewable-energy": {"w":"renewable energy","def":"power from sources that do not run out, such as the sun and wind"},
+"word-allemansratten": {"gl":"allemansrätten: Swedish public right to roam, camp and pick berries on most land"},
+"word-machair": {"gl":"machair: fertile low coastal grassland on shell sand, typical of the Hebrides"}
 }

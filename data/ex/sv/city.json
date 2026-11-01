@@ -1,0 +1,22 @@
+{
+"word-town-hall": [{"t":"Bröllopet hålls i {stadshuset} på lördag."},{"t":"Du kan få blanketten i {stadshuset}."},{"t":"Borgmästaren arbetar i {stadshuset}."}],
+"word-fire-station": [{"t":"{Brandstationen} ligger bredvid skolan."},{"t":"Barnen besökte {brandstationen} i fredags."},{"t":"Det finns en ny {brandstation} i vår stad."}],
+"word-mosque": [{"t":"De går till {moskén} varje fredag."},{"t":"{Moskén} har en vacker blå kupol."},{"t":"Vi besökte en berömd {moské} på vår resa."}],
+"word-synagogue": [{"t":"{Synagogan} ligger på hörnet av Storgatan."},{"t":"Hans familj går till {synagogan} på lördagar."},{"t":"Den gamla {synagogan} byggdes 1890."}],
+"word-cathedral": [{"t":"{Domkyrkan} är stadens äldsta byggnad."},{"t":"Vi besteg tornet på {domkyrkan}."},{"t":"Hundratals människor kom till {domkyrkan} för konserten."}],
+"word-laundromat": [{"t":"Min tvättmaskin är trasig, så jag går till {myntvätten}."},{"t":"Det finns en {myntvätt} på andra sidan gatan."},{"t":"Ta med några mynt till {myntvätten}."}],
+"word-art-gallery": [{"t":"Vi tillbringade eftermiddagen på {konstgalleriet}."},{"t":"{Konstgalleriet} har gratis inträde på söndagar."},{"t":"Hon har en målning på ett litet {konstgalleri} i centrum."}],
+"word-nightclub": [{"t":"De dansade hela natten på {nattklubben}."},{"t":"Man måste vara över tjugoett för att komma in på {nattklubben}."},{"t":"{Nattklubben} öppnar klockan tio och stänger klockan fyra."}],
+"word-old-town": [{"t":"Vi gick genom {gamla stan} efter lunch."},{"t":"{Gamla stan} har smala gator och små caféer."},{"t":"Många turister bor i {gamla stan}."}],
+"word-skyscraper": [{"t":"Från den där {skyskrapan} kan man se hela staden."},{"t":"De bygger en ny {skyskrapa} i centrum."},{"t":"Mitt kontor ligger på fyrtionde våningen i en {skyskrapa}."}],
+"word-apartment-block": [{"t":"Vi bor i ett stort {hyreshus} nära parken."},{"t":"{Hyreshuset} har hiss."},{"t":"Det bor tjugo familjer i det här {hyreshuset}."}],
+"word-avenue": [{"t":"Hotellet ligger vid en bred {aveny} med många träd."},{"t":"Sväng vänster i slutet av {avenyn}."},{"t":"{Avenyn} är en berömd gata i Göteborg.","p":0}],
+"word-pedestrian-zone": [{"t":"Stadens centrum är en {gågata}."},{"t":"Bilar får inte köra på {gågatan}."},{"t":"Vi fikade på {gågatan}."}],
+"word-bench": [{"t":"Vi sätter oss på den där {bänken} en stund."},{"t":"En gammal man satt och läste på en {bänk} i parken."},{"t":"{Bänken} var blöt av regnet."}],
+"word-fountain": [{"t":"Barnen lekte nära {fontänen}."},{"t":"Det finns en vacker {fontän} på torget."},{"t":"Vi kastade mynt i {fontänen}."}],
+"word-opposite": [{"t":"Banken ligger {mittemot} postkontoret."},{"t":"Hon satt {mittemot} mig vid bordet."},{"t":"Det finns ett bageri {mittemot} vårt hus."}],
+"word-city-block": [{"t":"Affären ligger två {kvarter} härifrån."},{"t":"Vi gick ett varv runt {kvarteret} för att få frisk luft."},{"t":"Busshållplatsen ligger i nästa {kvarter}."}],
+"word-tourist-information": [{"t":"Vi frågar på {turistinformationen} efter en karta."},{"t":"{Turistinformationen} ligger bredvid tågstationen."},{"t":"{Turistinformationen} stänger klockan fem."}],
+"word-landmark": [{"t":"Tornet är stadens mest kända {landmärke}."},{"t":"Använd den stora kyrkan som {landmärke}."},{"t":"Vi fotograferade varje {landmärke} på rundturen."}],
+"word-outskirts": [{"t":"De bor i {utkanten} av staden."},{"t":"Flygplatsen ligger i {utkanten} av stan."},{"t":"Husen är billigare i {utkanterna}."}]
+}

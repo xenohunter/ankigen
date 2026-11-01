@@ -109,5 +109,6 @@
 "word-nationality": {"w":"nacionalidad","g":"f","def":"Condición legal de pertenecer a un país, que consta en el pasaporte."},
 "word-continent": {"w":"continente","g":"m","def":"Cada una de las grandes extensiones de tierra del planeta."},
 "word-immigrant": {"w":"inmigrante","g":"mf","def":"Persona que llega a vivir de forma permanente a un país extranjero."},
-"word-homeland": {"w":"patria","g":"f","alt":["tierra natal"],"def":"País donde una persona ha nacido y al que siente que pertenece."}
+"word-homeland": {"w":"patria","g":"f","alt":["tierra natal"],"def":"País donde una persona ha nacido y al que siente que pertenece."},
+"word-gaeltacht": {"gl":"Gaeltacht: región de Irlanda donde el irlandés es la lengua cotidiana de la comunidad"}
 }

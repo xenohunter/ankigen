@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: 스페인의 의무 차량 기술 검사"},
 "word-apk-nl": {"gl":"APK: 네덜란드의 정기 차량 안전 검사"},
 "word-kteo-gr": {"gl":"KTEO: 그리스의 차량 기술 검사 센터"},
-"word-muayene-tr": {"gl":"araç muayenesi: 터키의 정기 차량 검사"}
+"word-muayene-tr": {"gl":"araç muayenesi: 터키의 정기 차량 검사"},
+"word-revisione-it": {"gl":"레비지오네: 이탈리아의 의무 정기 차량 검사"},
+"word-besiktning-se": {"gl":"베식트닝: 스웨덴의 공인 검사소에서 받는 의무 차량 검사"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS: 우크라이나의 운전면허·차량 등록·시험 담당 기관"},
+"word-nct-ie": {"gl":"NCT: 아일랜드의 의무 자동차 안전 검사(국가 자동차 검사)"},
+"word-mot-uk": {"gl":"MOT: 영국의 3년 넘은 차량 대상 연례 안전 검사"},
+"word-muszaki-vizsga-hu": {"gl":"뮈사키 비지고: 번호판 스티커로 표시되는 헝가리의 정기 차량 검사"},
+"word-dang-kiem-vn": {"gl":"당끼엠: 베트남의 의무 차량 기술·배출가스 검사"}
 }

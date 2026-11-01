@@ -45,5 +45,7 @@
 "word-saudade": {"pos":"noun","mods":["feelings"],"note":"Portuguese: deep longing for someone or something absent","only":["pt"]},
 "word-gezellig": {"pos":"adj","mods":["feelings"],"note":"Dutch: cozy, pleasant, convivial","only":["nl"]},
 "word-schadenfreude": {"pos":"noun","mods":["feelings"],"note":"German: pleasure at someone else's misfortune","only":["de"]},
-"word-amae": {"pos":"noun","mods":["feelings"],"note":"Japanese: wish to be indulged, relying on another's goodwill (甘え)","only":["ja"]}
+"word-amae": {"pos":"noun","mods":["feelings"],"note":"Japanese: wish to be indulged, relying on another's goodwill (甘え)","only":["ja"]},
+"word-lagom": {"pos":"adv","mods":["feelings"],"note":"Swedish: just the right amount, neither too much nor too little; a cultural ideal of moderation","only":["sv"]},
+"word-craic": {"pos":"noun","mods":["feelings"],"note":"Irish: fun, good company and lively conversation; also used in the greeting 'what's the craic?'","only":["ga"]}
 }

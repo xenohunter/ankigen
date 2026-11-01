@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"rezerwat przyrody","g":"m","alt":["rezerwat"],"forms":{"gen":"rezerwatu przyrody","pl":"rezerwaty przyrody"},"def":"Obszar, na którym dzikie zwierzęta i rośliny są chronione przed zniszczeniem."},
 "word-environment-protection": {"w":"ochrona środowiska","g":"f","forms":{"gen":"ochrony środowiska"},"def":"Działania, dzięki którym powietrze, woda i ziemia pozostają czyste i nieuszkodzone."},
 "word-climate-change": {"w":"zmiana klimatu","g":"f","alt":["globalne ocieplenie"],"forms":{"gen":"zmiany klimatu","pl":"zmiany klimatu"},"def":"Długotrwały wzrost temperatury na Ziemi i przesunięcie typowej pogody."},
-"word-renewable-energy": {"w":"energia odnawialna","g":"f","forms":{"gen":"energii odnawialnej"},"def":"Prąd i ciepło ze źródeł, które się nie wyczerpują, jak słońce i wiatr."}
+"word-renewable-energy": {"w":"energia odnawialna","g":"f","forms":{"gen":"energii odnawialnej"},"def":"Prąd i ciepło ze źródeł, które się nie wyczerpują, jak słońce i wiatr."},
+"word-allemansratten": {"gl":"allemansrätten: szwedzkie prawo wstępu do natury, biwakowania i zbierania jagód na większości terenów"},
+"word-machair": {"gl":"machair: żyzny, nisko położony nadmorski łąkowy teren na piasku muszlowym, typowy dla Hebrydów"}
 }

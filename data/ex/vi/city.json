@@ -1,0 +1,22 @@
+{
+"word-town-hall": [{"t":"Đám cưới sẽ được tổ chức tại {tòa thị chính} vào thứ Bảy."},{"t":"Bạn có thể lấy mẫu đơn ở {tòa thị chính}."},{"t":"Thị trưởng làm việc ở {tòa thị chính}."}],
+"word-fire-station": [{"t":"Cạnh trường học là {trạm cứu hỏa}."},{"t":"Thứ Sáu các em nhỏ đến thăm {trạm cứu hỏa}."},{"t":"Thị trấn chúng tôi có một {trạm cứu hỏa} mới."}],
+"word-mosque": [{"t":"Họ đến {nhà thờ Hồi giáo} vào thứ Sáu hằng tuần."},{"t":"{Nhà thờ Hồi giáo} có mái vòm màu xanh rất đẹp."},{"t":"Trong chuyến đi, chúng tôi thăm một {nhà thờ Hồi giáo} nổi tiếng."}],
+"word-synagogue": [{"t":"{Giáo đường Do Thái} nằm ở góc phố Main."},{"t":"Gia đình anh ấy đến {giáo đường Do Thái} vào các ngày thứ Bảy."},{"t":"{Giáo đường Do Thái} cũ được xây năm 1890."}],
+"word-cathedral": [{"t":"{Nhà thờ lớn} là công trình lâu đời nhất thành phố."},{"t":"Chúng tôi leo lên tháp của {nhà thờ lớn}."},{"t":"Hàng trăm người đến {nhà thờ lớn} để dự buổi hòa nhạc."}],
+"word-laundromat": [{"t":"Máy giặt nhà tôi hỏng nên tôi ra {hiệu giặt tự động}."},{"t":"Bên kia đường có một {hiệu giặt tự động}."},{"t":"Hãy mang theo ít tiền xu đến {hiệu giặt tự động}."}],
+"word-art-gallery": [{"t":"Chúng tôi dành cả buổi chiều ở {phòng tranh}."},{"t":"{Phòng tranh} miễn phí vào Chủ nhật."},{"t":"Cô ấy có một bức tranh trong một {phòng tranh} nhỏ ở trung tâm."}],
+"word-nightclub": [{"t":"Họ nhảy suốt đêm ở {hộp đêm}."},{"t":"Phải trên hai mươi mốt tuổi mới được vào {hộp đêm}."},{"t":"{Hộp đêm} mở cửa lúc mười giờ và đóng cửa lúc bốn giờ."}],
+"word-old-town": [{"t":"Sau bữa trưa chúng tôi đi dạo qua {khu phố cổ}."},{"t":"{Khu phố cổ} có những con đường hẹp và vài quán cà phê nhỏ."},{"t":"Nhiều khách du lịch ở trong {khu phố cổ}."}],
+"word-skyscraper": [{"t":"Từ {tòa nhà chọc trời} đó có thể nhìn thấy cả thành phố."},{"t":"Họ đang xây một {tòa nhà chọc trời} mới ở trung tâm."},{"t":"Văn phòng của tôi ở tầng bốn mươi của một {tòa nhà chọc trời}."}],
+"word-apartment-block": [{"t":"Chúng tôi sống trong một {chung cư} lớn gần công viên."},{"t":"{Chung cư} này có thang máy."},{"t":"Có hai mươi gia đình sống trong {chung cư} này."}],
+"word-avenue": [{"t":"Khách sạn nằm trên một {đại lộ} rộng có nhiều cây."},{"t":"Hãy rẽ trái ở cuối {đại lộ}."},{"t":"{Đại lộ} Thăng Long là một con đường nổi tiếng ở Hà Nội.","p":0}],
+"word-pedestrian-zone": [{"t":"Trung tâm thành phố là một {phố đi bộ}."},{"t":"Xe không được vào {phố đi bộ}."},{"t":"Chúng tôi uống cà phê ở {phố đi bộ}."}],
+"word-bench": [{"t":"Ngồi xuống {ghế đá} kia một lát đi."},{"t":"Một ông già đang đọc sách trên {ghế đá} trong công viên."},{"t":"{Ghế đá} bị ướt vì mưa."}],
+"word-fountain": [{"t":"Lũ trẻ đang chơi gần {đài phun nước}."},{"t":"Quảng trường chính có một {đài phun nước} rất đẹp."},{"t":"Chúng tôi ném tiền xu vào {đài phun nước}."}],
+"word-opposite": [{"t":"Ngân hàng nằm {đối diện} bưu điện."},{"t":"Cô ấy ngồi {đối diện} tôi bên bàn."},{"t":"Có một hiệu bánh {đối diện} nhà chúng tôi."}],
+"word-city-block": [{"t":"Cửa hàng cách đây hai {dãy phố}."},{"t":"Chúng tôi đi vòng quanh {dãy phố} cho thoáng."},{"t":"Bến xe buýt nằm ở {dãy phố} tiếp theo."}],
+"word-tourist-information": [{"t":"Ta hỏi ở {trung tâm thông tin du lịch} xin một tấm bản đồ nhé."},{"t":"{Trung tâm thông tin du lịch} ở cạnh ga tàu."},{"t":"{Trung tâm thông tin du lịch} đóng cửa lúc năm giờ."}],
+"word-landmark": [{"t":"Tháp là {địa danh} nổi tiếng nhất thành phố."},{"t":"Hà Nội có nhiều {địa danh} nổi tiếng.","p":0},{"t":"Chúng tôi chụp ảnh mọi {địa danh} trong chuyến tham quan."}],
+"word-outskirts": [{"t":"Họ sống ở {ngoại ô} thành phố."},{"t":"Sân bay nằm ở {ngoại ô} thị trấn."},{"t":"Nhà ở {ngoại ô} rẻ hơn."}]
+}

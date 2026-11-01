@@ -20,7 +20,7 @@ const files = await landingSite(loader);
 const HUB = `${DECKS_DIR}index.html`;
 const pages = Object.keys(files).filter((file) => file.startsWith(DECKS_DIR) && file !== HUB);
 /** The languages of tests/fixtures/data, in registry order. */
-const SAMPLE_LANGUAGES = ['en', 'ru', 'sr', 'ja', 'de'];
+const SAMPLE_LANGUAGES = /** @type {string[]} */ (meta.languages.active).filter((code) => ['en', 'ru', 'sr', 'ja', 'de'].includes(code));
 /** Page file → [learn, know], for every pair of the sample languages. */
 const pairOf = new Map(
   SAMPLE_LANGUAGES.flatMap((learn) => SAMPLE_LANGUAGES.filter((k) => k !== learn).map((know) => [`${pairPage(meta, learn, know).dir}index.html`, [learn, know]])),
@@ -35,7 +35,7 @@ test('a page for every bilingual pair with words: <learning>-for-<known>-speaker
   assert.deepEqual([slug('Portuguese (Brazil)'), slug('Español'), slug('Scottish Gaelic')], ['portuguese-brazil', 'espanol', 'scottish-gaelic']);
   const active = /** @type {string[]} */ (meta.languages.active);
   const dirs = active.flatMap((learn) => active.filter((k) => k !== learn).map((know) => pairPage(meta, learn, know).dir));
-  assert.equal(new Set(dirs).size, 15 * 14, 'every pair of the registry gets its own address');
+  assert.equal(new Set(dirs).size, active.length * (active.length - 1), 'every pair of the registry gets its own address');
 });
 
 test('pairs without words get no page; the hub and the sitemap list exactly the pages', () => {

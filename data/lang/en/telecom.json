@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"QR code","def":"a square pattern of black and white dots that a phone camera can scan"},
 "word-notification": {"w":"notification","alt":["alert"],"def":"a short message that appears on your phone to tell you something new"},
 "word-landline": {"w":"landline","def":"a telephone that is connected by wires, not by a mobile network"},
-"word-postal-worker": {"w":"mail carrier","alt":["mailman","postal worker"],"def":"a person whose job is to bring letters and packages to homes"}
+"word-postal-worker": {"w":"mail carrier","alt":["mailman","postal worker"],"def":"a person whose job is to bring letters and packages to homes"},
+"word-eircode-ie": {"gl":"Eircode: Irish seven-character postcode that identifies each individual address"}
 }

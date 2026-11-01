@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"cosméticos","g":"m.pl","alt":["maquillaje"],"def":"Productos que se aplican en la cara o la piel para mejorar el aspecto."},
 "word-small-size": {"w":"talla pequeña","alt":["talla S"],"def":"Medida de ropa por debajo de la intermedia."},
 "word-medium-size": {"w":"talla mediana","alt":["talla M"],"def":"Medida de ropa entre la más chica y la más grande."},
-"word-large-size": {"w":"talla grande","alt":["talla L"],"def":"Medida de ropa por encima de la intermedia."}
+"word-large-size": {"w":"talla grande","alt":["talla L"],"def":"Medida de ropa por encima de la intermedia."},
+"word-vyshyvanka": {"gl":"vyshyvanka: camisa ucraniana con bordados tradicionales, símbolo nacional"}
 }

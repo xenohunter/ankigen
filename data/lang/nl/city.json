@@ -18,5 +18,6 @@
 "word-city-block": {"w":"huizenblok","g":"n","alt":["bouwblok","blok"],"forms":{"pl":"huizenblokken"},"def":"Groep gebouwen met aan alle vier de kanten een straat."},
 "word-tourist-information": {"w":"toeristeninformatie","g":"c","alt":["VVV-kantoor"],"def":"Kantoor waar bezoekers kaarten en advies over een plaats krijgen."},
 "word-landmark": {"w":"bezienswaardigheid","g":"c","alt":["herkenningspunt"],"forms":{"pl":"bezienswaardigheden"},"def":"Beroemd gebouw of beroemde plek die veel mensen komen bekijken."},
-"word-outskirts": {"w":"stadsrand","g":"c","alt":["buitenwijk"],"forms":{"pl":"stadsranden"},"def":"Het deel van een plaats dat het verst van het midden ligt."}
+"word-outskirts": {"w":"stadsrand","g":"c","alt":["buitenwijk"],"forms":{"pl":"stadsranden"},"def":"Het deel van een plaats dat het verst van het midden ligt."},
+"word-passeggiata": {"gl":"passeggiata: Italiaanse rustige wandeling in de avond, om te zien en gezien te worden"}
 }

@@ -1,10 +1,11 @@
 {
-"word-day-24h": {"pos":"noun","mods":["time"],"note":"a full 24-hour period, day and night (ru сутки, pl doba); no single word elsewhere","only":["ru","pl"]},
+"word-day-24h": {"pos":"noun","mods":["time"],"note":"a full 24-hour period, day and night (ru сутки, pl doba, uk доба, sv dygn); no single word elsewhere","only":["ru","pl","uk","sv"]},
 "word-day-off": {"pos":"noun","mods":["time","work"],"note":"day when you don't work"},
 "word-working-day": {"pos":"noun","mods":["time","work"],"note":"day when people work (Mon–Fri)"},
 "word-on-time": {"pos":"adv","mods":["time","transport","work"],"note":"punctually, at the right time"},
 "word-date-of-birth": {"pos":"noun","mods":["time","residence","family"],"note":"the date someone was born"},
 "word-time-zone": {"pos":"noun","mods":["time","transport"],"note":"region with the same standard time"},
 "word-o-clock": {"pos":"adv","mods":["time"],"note":"used to say the hour: five o'clock"},
-"word-lifetime": {"pos":"noun","mods":["time"],"note":"the duration of a life"}
+"word-lifetime": {"pos":"noun","mods":["time"],"note":"the duration of a life"},
+"word-hogmanay": {"pos":"noun","mods":["time"],"note":"Scottish: New Year's Eve and its celebrations, with first-footing and Auld Lang Syne (gd Oidhche Challainn)","only":["gd"]}
 }

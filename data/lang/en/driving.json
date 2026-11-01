@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: Spain's mandatory technical inspection of vehicles"},
 "word-apk-nl": {"gl":"APK: Dutch periodic roadworthiness inspection for vehicles"},
 "word-kteo-gr": {"gl":"KTEO: Greek vehicle technical inspection center"},
-"word-muayene-tr": {"gl":"araç muayenesi: Turkey's periodic vehicle inspection"}
+"word-muayene-tr": {"gl":"araç muayenesi: Turkey's periodic vehicle inspection"},
+"word-revisione-it": {"gl":"revisione: Italy's mandatory periodic vehicle inspection"},
+"word-besiktning-se": {"gl":"besiktning: Swedish mandatory vehicle inspection at an approved station"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS: Ukrainian office for driving licenses, vehicle registration and exams"},
+"word-nct-ie": {"gl":"NCT: Ireland's National Car Test, the mandatory roadworthiness inspection"},
+"word-mot-uk": {"gl":"MOT: British annual roadworthiness test for vehicles over three years old"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga: Hungarian periodic vehicle inspection, shown by a plate sticker"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm: Vietnamese mandatory technical and emissions inspection of vehicles"}
 }

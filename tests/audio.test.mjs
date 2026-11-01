@@ -111,7 +111,7 @@ test('cache: a clip is kept while its text, locale, voice and format stay; ident
   const setting = { locale: 'de-DE', voice: 'de-DE-Chirp3-HD-Kore', format: 'mp3' };
   const m = (/** @type {string} */ file, /** @type {string} */ text, v = setting.voice) => ({ file, text, voice: v, bytes: 10 });
   const manifest = {
-    a: m('aaaa.mp3', 'das Wasser'),
+    a: { ...m('aaaa.mp3', 'das Wasser'), sent: 'Das Wasser.' },
     b: m('bbbb.mp3', 'essen'),
     c: m('cccc.mp3', 'trinken', 'de-DE-Chirp3-HD-Leda'),
     gone: m('dddd.mp3', 'weg'),
@@ -120,7 +120,7 @@ test('cache: a clip is kept while its text, locale, voice and format stay; ident
   const has = (/** @type {string} */ file) => file !== 'eeee.mp3';
   const inputs = new Map([['a', 'das Wasser'], ['a2', 'das Wasser'], ['b', 'essen!'], ['c', 'trinken'], ['lost', 'groß'], ['new1', 'klein'], ['new2', 'klein']]);
   const plan = planClips({ inputs, setting, manifest, has });
-  assert.deepEqual(plan.manifest.a, manifest.a, 'unchanged');
+  assert.deepEqual(plan.manifest.a, manifest.a, 'unchanged, with the form that worked');
   assert.deepEqual(plan.manifest.a2, { ...manifest.a }, 'the same text shares the clip');
   assert.equal(plan.manifest.gone, undefined, 'a concept without a word drops out');
   assert.deepEqual([...plan.todo], [['essen!', ['b']], ['trinken', ['c']], ['groß', ['lost']], ['klein', ['new1', 'new2']]]);

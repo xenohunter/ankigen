@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "De woordenschat is machinaal opgesteld en nog maar deels gecontroleerd. Feedback is heel welkom.",
     "head.draftTopic": "de conceptwoordenschat",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "De kaarten tonen in plaats van een vertaling een korte definitie in de taal die je leert. Handig zodra je er eenvoudige zinnen in kunt lezen.",
     "lang.loading": "Woorden laden ({language})…",
     "lang.failed": "De woorden konden niet worden geladen ({language}). Controleer je verbinding en laad de pagina opnieuw.",
+    "group.germanic": "Germaans",
+    "group.asian": "Oost- en Zuidoost-Aziatisch",
+    "group.romance": "Romaans",
+    "group.slavic": "Slavisch",
+    "group.celtic": "Keltisch",
+    "group.other": "Overig",
     "modules.hint": "Kies de onderwerpen die je wilt; je kunt er later meer toevoegen.",
     "modules.show": "Modules tonen: {category}",
     "modules.tally": "{n} van {total}",

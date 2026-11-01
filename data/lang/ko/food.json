@@ -82,5 +82,8 @@
 "word-picnic": {"w":"소풍","rom":"sopung","hanja":"逍風","alt":["피크닉"],"def":"도시락을 싸서 공원 같은 야외로 나가 먹고 노는 일."},
 "word-butcher-shop": {"w":"정육점","rom":"jeongyukjeom","hanja":"精肉店","alt":["푸줏간"],"def":"신선한 고기를 파는 가게."},
 "word-grocery-store": {"w":"동네 슈퍼","rom":"dongne syupeo","alt":["식료품점"],"def":"식료품과 작은 생활용품을 파는 가까운 가게."},
-"word-sobremesa": {"gl":"소브레메사: 식사 후 식탁에 앉아 이야기를 나누는 스페인의 관습"}
+"word-sobremesa": {"gl":"소브레메사: 식사 후 식탁에 앉아 이야기를 나누는 스페인의 관습"},
+"word-aperitivo": {"gl":"아페리티보: 저녁 식사 전에 가벼운 안주와 함께 마시는 이탈리아의 식전주 문화"},
+"word-fika": {"gl":"피카: 친구나 동료와 커피와 빵을 즐기는 스웨덴의 휴식 시간"},
+"word-nhau": {"gl":"녓: 여럿이 음식을 나눠 먹으며 맥주나 술을 마시는 베트남의 술자리"}
 }

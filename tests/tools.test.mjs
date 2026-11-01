@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { fullWidthPunctuation, hasAsciiPunctuation, labelGroups, stringifyLabels, targetProblem } from '../tools/lib/data.mjs';
+import { fullWidthPunctuation, hasAsciiPunctuation, italianArticle, labelGroups, lint, spellingProblems, stressProblems, stringifyLabels, targetProblem, unvowelizedWords } from '../tools/lib/data.mjs';
+import { allUnits, context, pendingSubset } from '../tools/gen/units.mjs';
 import { loadSqlJs } from '../tools/lib/sqljs.mjs';
 import { buildApkg } from '../src/deck/apkg.js';
 import { apkgFileName } from '../src/deck/names.js';
@@ -108,7 +109,8 @@ test('tools/bundle.mjs: the site serves the same data from its bundles as the so
     assert.deepEqual({ ...siteMeta, audio: null }, { ...sourceMeta, audio: null });
 
     // Audio: meta.json names the index of each language with clips; the packs give the very clips of data/audio.
-    assert.deepEqual(Object.keys(siteMeta.audio), ['en', 'ru', 'sr', 'ja', 'de'], 'the fixture languages with clips, in registry order');
+    const withClips = siteMeta.languages.active.filter((/** @type {string} */ c) => ['en', 'ru', 'sr', 'ja', 'de'].includes(c));
+    assert.deepEqual(Object.keys(siteMeta.audio), withClips, 'the fixture languages with clips, in registry order');
     for (const [code, a] of Object.entries(siteMeta.audio)) {
       assert.equal(a.voice, sourceMeta.audio[code].voice);
       assert.match(/** @type {string} */ (a.index), new RegExp(`^audio/${code}/index\\.[0-9a-f]{16}\\.json$`));
@@ -120,7 +122,7 @@ test('tools/bundle.mjs: the site serves the same data from its bundles as the so
         assert.deepEqual(fs.readFileSync(path.join(site, p.url)).subarray(p.offset, p.offset + p.length), fs.readFileSync(new URL(file.url, REPO)), `${code} ${hash}`);
       }
     }
-    assert.match(stdout, /audio\/: en \d+ clips [\d.]+ MB, ru /);
+    assert.match(stdout, /audio\/: en \d+ clips [\d.]+ MB, de /);
     assert.match(stdout, /site: [\d.]+ MB \(limit 900 MB\)/);
     const [bundled, source] = [await fromSite.getConcepts(), await fromSource.getConcepts()];
     assert.deepEqual(bundled.order, source.order);
@@ -261,6 +263,85 @@ test('batch.mjs reads the unit from the reply, also when the model corrects itse
   const braces = { unit: 'lang:ru:time:1', ex: { 'word-hour': [{ t: 'Прошёл {час}.' }] } };
   assert.deepEqual(parseOutput(`Here it is: ${JSON.stringify(braces)}`), braces, 'braces inside strings');
   assert.throws(() => parseOutput('no object here'), /no JSON object found/);
+  const fragment = `${JSON.stringify(braces)}\n\nWait — I need to correct one entry. The corrected entry is:\n\n"word-put":{"w":"покла́сти","forms":{"2sg":"покладе́ш"}}`;
+  assert.deepEqual(parseOutput(fragment), braces, 'a corrected entry alone is not the unit’s output');
+});
+
+test('lint knows the spelling of the languages added in 2026: stress, vowel marks, accents, articles, stray symbols', () => {
+  assert.deepEqual(stressProblems('вода́ мо́ва ніс', 'uk'), []);
+  assert.deepEqual(stressProblems('вода', 'uk'), ['вода: missing stress mark']);
+  assert.deepEqual(stressProblems('украї́нський', 'uk'), [], 'ї is a vowel that takes the mark');
+  assert.match(spellingProblems('uk', 'объявление').join(), /Russian letters in Ukrainian text: ъ/);
+  assert.match(spellingProblems('ga', 'òl').join(), /grave accent in Irish/);
+  assert.match(spellingProblems('gd', 'óran').join(), /acute accent in Scottish Gaelic/);
+  assert.deepEqual(spellingProblems('gd', 'lakcímkártya: cairt seòlaidh san Ungair', { quotes: true }), [], 'a gloss may quote a foreign term');
+  assert.match(spellingProblems('ar', 'بطاقة, NIE', { quotes: true }).join(), /ASCII punctuation in Arabic/, 'but its punctuation is its own');
+  assert.match(spellingProblems('hu', 'kõ').join(), /Hungarian writes ő ű/);
+  assert.match(spellingProblems('ar', 'كيف حالك?').join(), /ASCII punctuation in Arabic/);
+  assert.deepEqual(['ga', 'gd', 'hu', 'ar', 'uk'].flatMap((code) => spellingProblems(code, { ga: 'Tá sé go maith.', gd: 'Tha mi gu math.', hu: 'Nagyon jó.', ar: 'كيف حالك؟', uk: 'Дякую, будь ласка.' }[code])), []);
+  assert.deepEqual(unvowelizedWords('كتاب'), ['كتاب']);
+  assert.deepEqual(unvowelizedWords('أَنْتَ / أَنْتِ'), []);
+  /** @type {[string, string, string | null][]} */
+  const articles = [['acqua', 'f', "l'"], ['amico', 'm', "l'"], ['hotel', 'm', "l'"], ['studente', 'm', 'lo'], ['zaino', 'm', 'lo'], ['psicologo', 'm', 'lo'], ['iato', 'm', 'lo'], ['libro', 'm', null], ['casa', 'f', null], ['occhiali', 'm.pl', 'gli'], ['forbici', 'f.pl', null], ['artista', 'mf', "l'"], ['stilista', 'mf', 'lo/la'], ['cantante', 'mf', null]];
+  for (const [w, g, art] of articles) assert.equal(italianArticle(w, g), art, `${w} (${g})`);
+  // Targets with an Arabic article or a Gaelic mutation show their word.
+  assert.equal(targetProblem('شربت {الْمَاءَ} البارد.', { w: 'مَاء', alt: ['مِيَاه'] }, { locale: 'ar', script: 'Arabic', vowels: true }), null);
+  assert.equal(targetProblem('Chonaic mé an {bhean}.', { w: 'bean', alt: ['bé'] }, { locale: 'ga-IE', script: 'Latin' }), null);
+});
+
+test('lint checks the chip groups: every language in one group, English first, by speakers, "other" last, active in their order', () => {
+  const meta = fs.mkdtempSync(path.join(os.tmpdir(), 'ankigen-meta-'));
+  try {
+    fs.cpSync(new URL('data/meta', REPO), meta, { recursive: true });
+    const file = path.join(meta, 'languages.json');
+    const languages = JSON.parse(fs.readFileSync(file, 'utf8'));
+    /** The registry's problems after a change to it. @param {(l: any) => void} change */
+    const problems = (change) => {
+      const copy = structuredClone(languages);
+      change(copy);
+      fs.writeFileSync(file, JSON.stringify(copy));
+      return lint({ dataDir: 'tests/fixtures/data', metaDir: meta }).issues.filter((i) => i.file === 'meta/languages.json').map((i) => `${i.id}: ${i.msg}`);
+    };
+    const reordered = /^null: "active" must follow the order of the groups/;
+    assert.deepEqual(problems(() => {}), []);
+    const swapped = problems((l) => ([l.groups[2], l.groups[3]] = [l.groups[3], l.groups[2]]));
+    assert.ok(swapped.includes('romance: group has more speakers (1230 m) than "slavic" (300.2 m) before it'), swapped.join('\n'));
+    assert.ok(swapped.some((m) => reordered.test(m)));
+    assert.deepEqual(problems((l) => l.groups.unshift(l.groups.pop())).slice(0, 2), ['other: the group with English comes first', 'other: the "other" group comes last']);
+    const inGroup = problems((l) => (l.groups[0].languages = ['en', 'nl', 'de', 'sv']));
+    assert.ok(inGroup.includes('de: has more speakers than nl before it in group "germanic"'), inGroup.join('\n'));
+    assert.ok(problems((l) => (l.groups.at(-1).languages = l.groups.at(-1).languages.filter((/** @type {string} */ c) => c !== 'hu'))).includes('hu: in no group'));
+  } finally {
+    fs.rmSync(meta, { recursive: true, force: true });
+  }
+});
+
+test('local units add the own concepts of a staged language with a country; a lang unit then sends only what is missing', () => {
+  // Italian and Arabic staged again, as they were before their activation.
+  const meta = fs.mkdtempSync(path.join(os.tmpdir(), 'ankigen-meta-'));
+  try {
+    fs.cpSync(new URL('data/meta', REPO), meta, { recursive: true });
+    const file = path.join(meta, 'languages.json');
+    const languages = JSON.parse(fs.readFileSync(file, 'utf8'));
+    languages.active = languages.active.filter((/** @type {string} */ c) => !['it', 'ar'].includes(c));
+    languages.staged = ['it', 'ar'];
+    fs.writeFileSync(file, JSON.stringify(languages));
+    const units = allUnits(context(path.join(REPO.pathname, 'tests/fixtures/data'), meta));
+    assert.deepEqual(units.filter((u) => u.type === 'local').map((u) => u.id), ['local:it'], 'none for Arabic, which has no single country');
+    assert.ok(!units.find((u) => u.id === 'lang:de:core-1:1')?.deps.some((d) => d.startsWith('local:')), 'local concepts never go into a core module');
+    assert.ok(units.find((u) => u.id === 'lang:de:residence:1')?.deps.includes('local:it'), 'topical units wait for the local ones');
+  } finally {
+    fs.rmSync(meta, { recursive: true, force: true });
+  }
+  // a: complete; b: missing; c: another language's concept, glossed
+  const ctx = {
+    concepts: { byId: new Map([['a', { c: {} }], ['b', { c: {} }], ['c', { c: { only: ['ru'] } }]]) },
+    layers: { lang: { xx: new Map([['a', { w: 'a' }], ['c', { gl: 'c' }]]) }, ex: { xx: new Map([['a', [{ t: '{a}' }]]]) } },
+  };
+  const unit = (/** @type {string[]} */ slice) => ({ type: 'lang', lang: 'xx', slice });
+  assert.deepEqual(pendingSubset(ctx, unit(['a', 'b', 'c'])), ['b']);
+  assert.equal(pendingSubset(ctx, unit(['b'])), null, 'nothing there yet: the whole slice');
+  assert.equal(pendingSubset(ctx, unit(['a', 'c'])), null, 'nothing missing');
 });
 
 test('merge-unit holds a unit to its own language: other languages’ problems are not its errors', () => {
@@ -338,20 +419,23 @@ test('merge-unit writes a landing translation and checks it, and lint-data check
 test('lint-data --gate: the deploy needs an entry for every concept in every active language', () => {
   const failing = runStatus(['tools/lint-data.mjs', '--data', 'tests/fixtures/data', '--meta', 'data/meta', '--gate']);
   assert.equal(failing.status, 1);
-  assert.match(failing.stdout, /Deploy gate: 10 active language\(s\) incomplete: zh 0\/15, es 0\/15/);
+  const registry = JSON.parse(fs.readFileSync(new URL('data/meta/languages.json', REPO), 'utf8'));
+  const missing = registry.active.filter((/** @type {string} */ c) => !['en', 'ru', 'sr', 'ja', 'de'].includes(c));
+  assert.ok(failing.stdout.includes(`Deploy gate: ${missing.length} active language(s) incomplete: ${missing.map((/** @type {string} */ c) => `${c} 0/15`).join(', ')}`), failing.stdout);
 
-  // A registry with only the fixture languages active passes.
+  // A registry with only the fixture languages active (the others staged) passes.
   const meta = fs.mkdtempSync(path.join(os.tmpdir(), 'ankigen-meta-'));
   try {
     fs.cpSync(new URL('data/meta', REPO), meta, { recursive: true });
     const languages = JSON.parse(fs.readFileSync(path.join(meta, 'languages.json'), 'utf8'));
     const five = ['en', 'ru', 'sr', 'ja', 'de'];
-    languages.deferred = [...languages.active.filter((/** @type {string} */ c) => !five.includes(c)), ...languages.deferred];
-    languages.active = five;
+    languages.staged = [...languages.active.filter((/** @type {string} */ c) => !five.includes(c)), ...languages.staged];
+    for (const code of languages.staged) languages.languages[code].status = 'staged';
+    languages.active = languages.active.filter((/** @type {string} */ c) => five.includes(c));
     fs.writeFileSync(path.join(meta, 'languages.json'), JSON.stringify(languages));
     // labels.json lists its languages in registry order, which this changes.
     const labels = JSON.parse(fs.readFileSync(path.join(meta, 'labels.json'), 'utf8'));
-    fs.writeFileSync(path.join(meta, 'labels.json'), stringifyLabels(labels, [...languages.active, ...languages.deferred]));
+    fs.writeFileSync(path.join(meta, 'labels.json'), stringifyLabels(labels, [...languages.active, ...languages.staged, ...languages.deferred]));
     const passing = runStatus(['tools/lint-data.mjs', '--data', 'tests/fixtures/data', '--meta', meta, '--gate']);
     assert.match(passing.stdout, /Deploy gate: every active language has an entry for every concept/);
     assert.equal(passing.status, 0, passing.stdout);

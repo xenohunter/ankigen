@@ -1,8 +1,8 @@
 // @ts-check
 // The interface language menu in the header: a button with the current language's flag and code, and a menu of
 // the languages, each with its flag and native name. A flag is an image, img/flags/<country>.svg for the
-// language's country in languages.json, since Windows shows no flag emoji. Choosing a language switches the
-// page at once (main.js loads the translation and relabels everything).
+// language's country in languages.json (or its "flag", for a language of no one country), since Windows shows no
+// flag emoji. Choosing a language switches the page at once (main.js loads the translation and relabels everything).
 
 import { h, live, msg } from './dom.js';
 import { language, languageName, t } from './i18n.js';

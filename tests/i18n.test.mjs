@@ -27,10 +27,10 @@ const use = (code) => {
 test('a visitor gets the link’s language, else their last choice, else their browser’s, else English', () => {
   assert.equal(pickLanguage({ param: 'ru', saved: 'de', browser: ['ja-JP'] }), 'ru');
   assert.equal(pickLanguage({ param: 'xx', saved: 'de', browser: ['ja-JP'] }), 'de', 'an unknown ?lang= is ignored');
-  assert.equal(pickLanguage({ param: null, saved: null, browser: ['it-IT', 'pt-BR', 'en-US'] }), 'pt', 'the first browser language the page speaks');
+  assert.equal(pickLanguage({ param: null, saved: null, browser: ['fi-FI', 'pt-BR', 'en-US'] }), 'pt', 'the first browser language the page speaks');
   assert.equal(pickLanguage({ browser: ['sr-Latn-RS'] }), 'sr');
   assert.equal(pickLanguage({ browser: ['zh-TW'] }), 'zh');
-  assert.equal(pickLanguage({ browser: ['it'] }), 'en');
+  assert.equal(pickLanguage({ browser: ['fi'] }), 'en');
   assert.equal(pickLanguage({}), 'en');
 });
 

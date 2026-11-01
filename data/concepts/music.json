@@ -45,5 +45,7 @@
 "word-whistle": {"pos":"verb","mods":["music"],"note":"make a sound by blowing through the lips"},
 "word-hum": {"pos":"verb","mods":["music"],"note":"sing with closed lips"},
 "word-vinyl-record": {"pos":"noun","mods":["music"],"note":"vinyl record"},
-"word-instrument": {"pos":"noun","mods":["music"],"note":"musical instrument"}
+"word-instrument": {"pos":"noun","mods":["music"],"note":"musical instrument"},
+"word-ceili": {"pos":"noun","mods":["music"],"note":"Irish: céilí, a social gathering with traditional Irish music, song and group dancing","only":["ga"]},
+"word-mod-gaelic": {"pos":"noun","mods":["music"],"note":"Gaelic: mòd, a festival of Gaelic song, music, poetry and speech, e.g. the Royal National Mòd","only":["gd"]}
 }

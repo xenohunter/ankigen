@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: obligatorische technische Fahrzeugprüfung in Spanien"},
 "word-apk-nl": {"gl":"APK: niederländische regelmäßige Fahrzeugprüfung auf Verkehrssicherheit"},
 "word-kteo-gr": {"gl":"KTEO: griechisches technisches Prüfzentrum für Fahrzeuge"},
-"word-muayene-tr": {"gl":"araç muayenesi: regelmäßige Fahrzeuguntersuchung in der Türkei"}
+"word-muayene-tr": {"gl":"araç muayenesi: regelmäßige Fahrzeuguntersuchung in der Türkei"},
+"word-revisione-it": {"gl":"Revisione: italienische Pflicht-Hauptuntersuchung für Fahrzeuge"},
+"word-besiktning-se": {"gl":"Besiktning: schwedische Fahrzeugprüfung an einer zugelassenen Prüfstelle"},
+"word-tsc-mvs-ua": {"gl":"TSC MWS: ukrainische Behörde für Führerscheine, Zulassungen und Prüfungen"},
+"word-nct-ie": {"gl":"NCT: irische Pflichtprüfung der Verkehrssicherheit von Autos"},
+"word-mot-uk": {"gl":"MOT: britische jährliche Fahrzeugprüfung für Autos über drei Jahre"},
+"word-muszaki-vizsga-hu": {"gl":"Műszaki vizsga: ungarische Fahrzeugprüfung, per Plakette am Kennzeichen sichtbar"},
+"word-dang-kiem-vn": {"gl":"Đăng kiểm: vietnamesische Pflichtprüfung von Technik und Abgasen bei Fahrzeugen"}
 }

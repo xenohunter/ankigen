@@ -18,5 +18,6 @@
 "word-city-block": {"w":"quarteirão","g":"m","forms":{"pl":"quarteirões"},"def":"Zona de edifícios com ruas nos quatro lados."},
 "word-tourist-information": {"w":"posto de turismo","g":"m","alt":["turismo","centro de informação turística"],"def":"Escritório onde os visitantes pedem mapas e conselhos sobre um lugar."},
 "word-landmark": {"w":"ponto de referência","g":"m","alt":["marco"],"def":"Edifício ou lugar muito conhecido e fácil de reconhecer."},
-"word-outskirts": {"w":"arredores","g":"m.pl","alt":["periferia"],"def":"As zonas de uma cidade mais afastadas do centro."}
+"word-outskirts": {"w":"arredores","g":"m.pl","alt":["periferia"],"def":"As zonas de uma cidade mais afastadas do centro."},
+"word-passeggiata": {"gl":"passeggiata: passeio social italiano, ao fim da tarde ou ao domingo, para ver e ser visto"}
 }

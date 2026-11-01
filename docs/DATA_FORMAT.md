@@ -84,8 +84,8 @@ An entry is either a **word entry** (the language owns the concept, i.e. it has 
 | `forms` | key forms; allowed and required keys per language and POS are in `languages.json` → `forms`. Enum values: `aspect` ipf\|pf\|bi, `class` godan\|ichidan\|suru\|kuru, `type` i\|na, `aux` avoir\|être. |
 | `hint` | 1–3 words in this language that tell this concept apart from another concept with the same `w`. **Required** (and must differ) whenever two entries share `w`. No parentheses; the app adds them. |
 | `read` | ja kana reading (required if `w` has kanji); zh pinyin with tone marks (required) |
-| `rom` | stored romanization: ja (modified Hepburn with macrons), ko (Revised Romanization). Other scripts are romanized by rule at runtime: ru, sr→Latin, hy, el. |
-| `mw` | zh measure word / ja counter |
+| `rom` | stored romanization: ja (modified Hepburn with macrons), ko (Revised Romanization), ar (ALA-LC style, as pronounced: kitāb, ash-shams). Other scripts are romanized by rule at runtime: ru, uk, sr→Latin, hy, el. |
+| `mw` | zh measure word / ja counter / vi classifier (a Vietnamese word: con, cái, quyển) |
 | `hanja` | ko Sino-Korean characters |
 | `def` | same-language definition, ≤ 220 chars, never containing the headword. Required for word entries. |
 | `gl` | descriptive gloss for concepts this language doesn't own, ≤ ~12 words |
@@ -94,7 +94,10 @@ An entry is either a **word entry** (the language owns the concept, i.e. it has 
 Script rules:
 - Serbian is stored **Cyrillic only**.
 - Greek is monotonic.
-- Russian needs U+0301 on every polysyllabic word in `w`, `alt` and `forms` (ё counts as stressed).
+- Russian and Ukrainian need U+0301 on every polysyllabic word in `w`, `alt` and `forms` (in Russian, ё counts as stressed). Ukrainian never uses ы э ё ъ.
+- Arabic `w`, `alt` and `forms` are fully vowelized (harakat), in the citation form without case endings; `hint`, `def`, `gl` and example sentences are not, except an example's `{target}`. Arabic text takes ، ؛ ؟, never ASCII , ; ?. A bound suffix is written with the tatweel: ـِي "my". Where Arabic is the known language its vowel marks are not shown, so two words that differ only in them need hints.
+- Irish writes only acute accents (á), Scottish Gaelic only grave ones (à, the Gaelic Orthographic Conventions); Hungarian writes ő ű, never õ û.
+- No word or form contains * _ # @ $ % ^ & = + < > { } [ ] | \ ~ or `.
 - The language guides in `tools/gen/prompts/languages.md` give the full per-language conventions.
 
 ## 6. Examples (`ex/<code>/<module>.json`)
@@ -108,7 +111,9 @@ Script rules:
 - **Slot-parallel design**: English slot k is the source sentence. Another language's slot k is a translation of it (`p` omitted) or, when a natural translation would not contain the word, an independent sentence (`"p": 0`). In a deck A→B, the translation shown under A's slot k is B's slot k, but only when both are parallel. Slots never pair across indices.
 - Japanese `t` uses Anki-style furigana: `私[わたし]は 水[みず]を 飲[の]みます`. A space goes before a kanji run that follows other text; the renderer removes it. The target wraps the annotated form: `{食[た]べます}`.
 - Chinese adds `r`: the pinyin of the whole sentence (tone marks, ASCII punctuation, no braces).
-- Russian: stress marks only inside the `{target}`.
+- Russian and Ukrainian: stress marks only inside the `{target}`.
+- Arabic: vowel marks only inside the `{target}`, which takes the whole written word, with an article or preposition attached to it: `شربت {الْمَاءَ} البارد.`
+- Irish and Scottish Gaelic: the target is the word as the sentence has it, initial mutation included (`an {bhean}`).
 - Examples exist only for word entries, not glosses.
 
 ## 7. IPA (`ipa/<code>/<module>.json`)
@@ -134,7 +139,9 @@ No prose and no glosses, so it never needs translating. Lint warns on anything t
 
 ## 10. Languages, variants, deferred languages
 
-- `languages.json` → `active` lists shipped languages in UI order. `deferred` reserves codes (it, ga, gd, sv, …). To activate one, add its full feature block, including its `tts` locale, and generate its units; then its pronunciation audio (`node tools/audio.mjs run --lang <code>`, GENERATION.md §8).
+- `languages.json` → `active` lists shipped languages in UI order, the order of `groups`. `staged` languages have full feature blocks and generation units, but the page, the landing pages, the bundles and the deploy gate leave them out until they move to `active` (GENERATION.md §9). `deferred` reserves codes without feature blocks.
+- `groups` (the chips' groups, SPEC §1): `[{ id, languages }]`, every active and staged language in one. Each language has `speakers` (millions, L1 + L2). Lint checks the order: the group with English first, then by the sum of their speakers, `other` last; within a group by speakers; `active` in that order.
+- A language of no one country has `"country": null` and a `flag` (the image `img/flags/<flag>.svg`: Arabic's is `arab-league`). `dir: "rtl"` marks a right-to-left script; `vowels: true` the short-vowel marks the Vowel marks row hides (Arabic).
 - `tts`: the language's Google Cloud Text-to-Speech locale (`en-US`, `cmn-CN` for Mandarin), used only for the pronunciation audio (§13). `locale` stays the BCP 47 tag the cards and the page use. Lint warns when an active language has none.
 - Regional variants (pt-BR, es-MX, en-GB…) are separate registry entries with `"extends": "<base code>"` and their own files under `lang/<variant>/` containing **only entries that differ**. Missing entries and fields fall back to the base language. They appear as separate choices in the UI.
 
@@ -152,9 +159,10 @@ node tools/lint-data.mjs --data tests/fixtures/data --meta data/meta   # lint th
 What lint checks:
 - **Structure:** JSON validity, canonical format, allowed keys, enums.
 - **IDs:** ID syntax, uniqueness, retired IDs, references (`mods`, `ant`, `rel`, `only`), entries in the right file.
+- **Registry:** feature blocks of active and staged languages, the chips' `groups` and their order by speakers (§10).
 - **Groups and bands:** core-band exclusivity, groups not split across bands.
-- **Word entries:** ownership (`w` vs `gl`), script per language, full-width punctuation in Chinese and Japanese text (examples too), Russian stress, gender and article rules, form keys and required forms, readings and romanization formats, collisions → hints, definitions present and not containing the headword.
-- **Examples:** slot rules, target braces, targets showing `w` (not an alt), parallel slots having an English source, furigana syntax, pinyin.
+- **Word entries:** ownership (`w` vs `gl`), script per language, full-width punctuation in Chinese and Japanese text (examples too), Russian and Ukrainian stress, Arabic vowel marks and punctuation, each language's spelling slips (Russian letters in Ukrainian, a grave accent in Irish, an acute in Scottish Gaelic, õ û in Hungarian; not in glosses, which quote the foreign term they explain), stray symbols, gender and article rules (French and Italian articles before a vowel, Italian lo/gli), form keys and required forms, readings and romanization formats, collisions → hints, definitions present and not containing the headword.
+- **Examples:** slot rules, target braces, targets showing `w` (not an alt; an Arabic article and a Celtic initial mutation are not part of the word), Arabic targets with vowel marks, parallel slots having an English source, furigana syntax, pinyin.
 - **Optional layers:** IPA charset, etymology syntax.
 - **Labels:** completeness.
 - **Audio** (never an error for coverage): an active language without a `tts` locale, words without a current clip, missing or unused clip files (warnings); a malformed `meta/audio.json` (errors).
@@ -182,7 +190,8 @@ Written by `tools/audio.mjs` (GENERATION.md §7); `audio.json` may also be edite
 - `unsupported`: Google has no voice of those tiers for the locale. Every run checks again.
 - `text`, the rules for what is said (set from the registry when the voice is resolved):
   - `article: true`: the article the card shows with default settings (`das Wasser`, `l'eau`); a noun of either gender gets both (`el estudiante, la estudiante`). Languages whose Gender / article row shows an article.
-  - `stress`: Russian keeps its stress marks when `true`; `false` (the default) strips them. Words that differ only in stress then share a clip. The pilot of 2026-10-30 chose `false`: the voice handled the marks badly.
+  - `stress`: Russian and Ukrainian keep their stress marks when `true`; `false` (the default) strips them. Words that differ only in stress then share a clip. The pilot of 2026-10-30 chose `false` for Russian: the voice handled the marks badly.
+  - Arabic is said with its vowel marks, as stored: they tell the voice how to read the word.
   - `homographs`: for a word another entry spells the same way with another reading: `"reading"` says the reading (Japanese kana); `"pinyin"` wraps the word in an SSML pinyin phoneme, tone numbers (Chinese).
   - Always: Serbian in its stored Cyrillic; a slash reads as a list (`Pan/Pani` → `Pan, Pani`); the hyphen of a suffix or prefix is not said (`-den` → `den`).
 

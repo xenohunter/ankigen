@@ -1,11 +1,20 @@
 {
-  "$comment": "Language registry. 'active' = shipped in the UI, in this order. Deferred languages are listed so IDs/codes are reserved; they get full feature blocks when activated. Variants (e.g. pt-BR) are added later as separate entries with \"extends\": \"pt\" and only the files/entries that differ. See docs/DATA_FORMAT.md §Languages.",
-  "active": ["en", "ru", "sr", "ja", "zh", "de", "es", "pt", "pl", "ko", "nl", "fr", "hy", "tr", "el"],
-  "deferred": ["it", "ga", "gd", "sv"],
+  "$comment": "Language registry. 'active' = shipped in the UI, in the order of 'groups'. 'staged' = being generated: full feature blocks and generation units, but the page, the landing pages, the bundles and the deploy gate leave them out until they move to 'active'. 'deferred' = codes reserved for later, without feature blocks. 'groups' = how the page groups the language chips (SPEC §4): the group with English first, then by the speakers of their languages, 'other' last; languages within a group by 'speakers' (millions, L1 + L2: Ethnologue 2026, or Wikipedia's infobox for languages under 50 million; tools/lib/data.mjs checks the order). 'flag' names the flag image (img/flags/<flag>.svg) of a language without a country. 'dir': 'rtl' for right-to-left scripts. 'vowels': short-vowel marks (Arabic harakat) that the Vowel marks row can hide. Variants (e.g. pt-BR) are added later as separate entries with \"extends\": \"pt\" and only the files/entries that differ. See docs/DATA_FORMAT.md §Languages.",
+  "active": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
+  "staged": [],
+  "deferred": [],
+  "groups": [
+    { "id": "germanic", "languages": ["en", "de", "nl", "sv"] },
+    { "id": "asian", "languages": ["zh", "ja", "vi", "ko"] },
+    { "id": "romance", "languages": ["es", "fr", "pt", "it"] },
+    { "id": "slavic", "languages": ["ru", "pl", "uk", "sr"] },
+    { "id": "celtic", "languages": ["ga", "gd"] },
+    { "id": "other", "languages": ["ar", "tr", "el", "hu", "hy"] }
+  ],
   "languages": {
     "en": {
       "name": "English", "native": "English", "status": "active", "locale": "en-US", "tts": "en-US", "variantNote": "US English (spelling, vocabulary, IPA)",
-      "country": "US", "script": "Latin", "extends": null,
+      "country": "US", "script": "Latin", "extends": null, "speakers": 1493,
       "gender": null, "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
       "forms": {
@@ -16,7 +25,7 @@
     },
     "ru": {
       "name": "Russian", "native": "Русский", "status": "active", "locale": "ru-RU", "tts": "ru-RU", "variantNote": "Standard Russian; stress marks (U+0301) on every polysyllabic word; always write ё",
-      "country": "RU", "script": "Cyrillic", "extends": null,
+      "country": "RU", "script": "Cyrillic", "extends": null, "speakers": 210,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "mf", "pl"] },
       "stress": true, "reading": null,
       "romanization": { "source": "rule", "scheme": "ru-simple" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -28,7 +37,7 @@
     },
     "sr": {
       "name": "Serbian", "native": "Српски", "status": "active", "locale": "sr-RS", "tts": "sr-RS", "variantNote": "Ekavian standard of Serbia. Stored in Cyrillic; Latin is derived by rule at runtime",
-      "country": "RS", "script": "Cyrillic", "extends": null,
+      "country": "RS", "script": "Cyrillic", "extends": null, "speakers": 8.2,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "pl"] },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": { "script": "Latin", "rule": "sr-cyrl-latn" }, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -40,7 +49,7 @@
     },
     "ja": {
       "name": "Japanese", "native": "日本語", "status": "active", "locale": "ja-JP", "tts": "ja-JP", "variantNote": "Standard Japanese; usual written form (kanji where customary, kana where customary)",
-      "country": "JP", "script": "Japanese", "extends": null,
+      "country": "JP", "script": "Japanese", "extends": null, "speakers": 126,
       "gender": null, "stress": false, "reading": "kana",
       "romanization": { "source": "stored", "scheme": "hepburn-macron" }, "otherScript": null, "measureWord": "counter", "hanja": false, "ipa": false, "exampleReading": "furigana",
       "forms": {
@@ -50,14 +59,14 @@
     },
     "zh": {
       "name": "Chinese", "native": "中文", "status": "active", "locale": "zh-Hans-CN", "tts": "cmn-CN", "variantNote": "Mandarin (Putonghua), Simplified characters, mainland usage",
-      "country": "CN", "script": "Han", "extends": null,
+      "country": "CN", "script": "Han", "extends": null, "speakers": 1183,
       "gender": null, "stress": false, "reading": "pinyin",
       "romanization": { "source": "reading", "scheme": "pinyin-tone-marks" }, "otherScript": null, "measureWord": "measure-word", "hanja": false, "ipa": false, "exampleReading": "pinyin",
       "forms": {}
     },
     "de": {
       "name": "German", "native": "Deutsch", "status": "active", "locale": "de-DE", "tts": "de-DE", "variantNote": "Standard German of Germany",
-      "country": "DE", "script": "Latin", "extends": null,
+      "country": "DE", "script": "Latin", "extends": null, "speakers": 133,
       "gender": { "mode": "article", "values": ["m", "f", "n", "pl"], "articles": { "m": "der", "f": "die", "n": "das", "pl": "die" } },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -69,7 +78,7 @@
     },
     "es": {
       "name": "Spanish", "native": "Español", "status": "active", "locale": "es-ES", "tts": "es-ES", "variantNote": "Peninsular Spanish (Spain)",
-      "country": "ES", "script": "Latin", "extends": null,
+      "country": "ES", "script": "Latin", "extends": null, "speakers": 561,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "el", "f": "la", "mf": "el/la", "m.pl": "los", "f.pl": "las" } },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -81,7 +90,7 @@
     },
     "pt": {
       "name": "Portuguese", "native": "Português", "status": "active", "locale": "pt-PT", "tts": "pt-PT", "variantNote": "European Portuguese (Portugal)",
-      "country": "PT", "script": "Latin", "extends": null,
+      "country": "PT", "script": "Latin", "extends": null, "speakers": 269,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "o", "f": "a", "mf": "o/a", "m.pl": "os", "f.pl": "as" } },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -93,7 +102,7 @@
     },
     "pl": {
       "name": "Polish", "native": "Polski", "status": "active", "locale": "pl-PL", "tts": "pl-PL", "variantNote": "Standard Polish",
-      "country": "PL", "script": "Latin", "extends": null,
+      "country": "PL", "script": "Latin", "extends": null, "speakers": 43,
       "gender": { "mode": "marker", "values": ["m", "f", "n", "pl"] },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -105,7 +114,7 @@
     },
     "ko": {
       "name": "Korean", "native": "한국어", "status": "active", "locale": "ko-KR", "tts": "ko-KR", "variantNote": "Standard South Korean",
-      "country": "KR", "script": "Hangul", "extends": null,
+      "country": "KR", "script": "Hangul", "extends": null, "speakers": 82,
       "gender": null, "stress": false, "reading": null,
       "romanization": { "source": "stored", "scheme": "revised-romanization" }, "otherScript": null, "measureWord": null, "hanja": true, "ipa": true, "exampleReading": null,
       "forms": {
@@ -115,7 +124,7 @@
     },
     "nl": {
       "name": "Dutch", "native": "Nederlands", "status": "active", "locale": "nl-NL", "tts": "nl-NL", "variantNote": "Netherlands Dutch",
-      "country": "NL", "script": "Latin", "extends": null,
+      "country": "NL", "script": "Latin", "extends": null, "speakers": 30,
       "gender": { "mode": "article", "values": ["c", "n", "pl"], "articles": { "c": "de", "n": "het", "pl": "de" } },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -127,7 +136,7 @@
     },
     "fr": {
       "name": "French", "native": "Français", "status": "active", "locale": "fr-FR", "tts": "fr-FR", "variantNote": "Standard French of France",
-      "country": "FR", "script": "Latin", "extends": null,
+      "country": "FR", "script": "Latin", "extends": null, "speakers": 334,
       "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "le", "f": "la", "mf": "le/la", "m.pl": "les", "f.pl": "les" }, "elision": true },
       "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -139,7 +148,7 @@
     },
     "hy": {
       "name": "Armenian", "native": "Հայերեն", "status": "active", "locale": "hy-AM", "tts": "hy-AM", "variantNote": "Eastern Armenian, reformed (Soviet) orthography, as used in Armenia",
-      "country": "AM", "script": "Armenian", "extends": null,
+      "country": "AM", "script": "Armenian", "extends": null, "speakers": 5.3,
       "gender": null, "stress": false, "reading": null,
       "romanization": { "source": "rule", "scheme": "hy-bgn-pcgn" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
       "forms": {
@@ -149,7 +158,7 @@
     },
     "tr": {
       "name": "Turkish", "native": "Türkçe", "status": "active", "locale": "tr-TR", "tts": "tr-TR", "variantNote": "Standard Turkish (Turkey)",
-      "country": "TR", "script": "Latin", "extends": null,
+      "country": "TR", "script": "Latin", "extends": null, "speakers": 94,
       "gender": null, "stress": false, "reading": null,
       "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
       "forms": {
@@ -159,7 +168,7 @@
     },
     "el": {
       "name": "Greek", "native": "Ελληνικά", "status": "active", "locale": "el-GR", "tts": "el-GR", "variantNote": "Modern Greek, monotonic orthography",
-      "country": "GR", "script": "Greek", "extends": null,
+      "country": "GR", "script": "Greek", "extends": null, "speakers": 13.5,
       "gender": { "mode": "article", "values": ["m", "f", "n", "mf", "m.pl", "f.pl", "n.pl"], "articles": { "m": "ο", "f": "η", "n": "το", "mf": "ο/η", "m.pl": "οι", "f.pl": "οι", "n.pl": "τα" } },
       "stress": false, "reading": null,
       "romanization": { "source": "rule", "scheme": "el-elot-743" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
@@ -169,9 +178,95 @@
         "adj": { "keys": ["f", "n"], "required": ["f", "n"], "note": "feminine and neuter nominative singular" }
       }
     },
-    "it": { "name": "Italian", "native": "Italiano", "status": "deferred", "locale": "it-IT", "country": "IT", "script": "Latin" },
-    "ga": { "name": "Irish", "native": "Gaeilge", "status": "deferred", "locale": "ga-IE", "country": "IE", "script": "Latin" },
-    "gd": { "name": "Scottish Gaelic", "native": "Gàidhlig", "status": "deferred", "locale": "gd-GB", "country": "GB", "script": "Latin" },
-    "sv": { "name": "Swedish", "native": "Svenska", "status": "deferred", "locale": "sv-SE", "country": "SE", "script": "Latin" }
+    "it": {
+      "name": "Italian", "native": "Italiano", "status": "active", "locale": "it-IT", "tts": "it-IT", "variantNote": "Standard Italian of Italy",
+      "country": "IT", "script": "Latin", "extends": null, "speakers": 66,
+      "gender": { "mode": "article", "values": ["m", "f", "mf", "m.pl", "f.pl"], "articles": { "m": "il", "f": "la", "mf": "il/la", "m.pl": "i", "f.pl": "le" }, "elision": true },
+      "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["pl", "f"], "required": [], "note": "pl only when irregular (uomo → uomini, uovo → uova); f = feminine counterpart of a person noun (attore → attrice)" },
+        "verb": { "keys": ["1sg", "pp", "aux"], "required": ["1sg", "pp", "aux"], "note": "1sg present (faccio); pp = past participle (fatto); aux: avere|essere" },
+        "adj": { "keys": ["f", "pl"], "required": [], "note": "f when it differs (bello → bella); pl = masculine plural when irregular (bianco → bianchi)" }
+      }
+    },
+    "sv": {
+      "name": "Swedish", "native": "Svenska", "status": "active", "locale": "sv-SE", "tts": "sv-SE", "variantNote": "Standard Swedish of Sweden (rikssvenska), not Finland Swedish",
+      "country": "SE", "script": "Latin", "extends": null, "speakers": 13,
+      "gender": { "mode": "article", "values": ["c", "n", "pl"], "articles": { "c": "en", "n": "ett" } },
+      "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["def", "pl"], "required": ["def"], "note": "def = definite singular (bilen, huset, flickan); pl = indefinite plural whenever it exists (bilar, hus, flickor)" },
+        "verb": { "keys": ["pres", "pret", "supine"], "required": ["pres", "pret", "supine"], "note": "pres = present (skriver); pret = past (skrev); supine (skrivit)" },
+        "adj": { "keys": ["n", "pl", "comp", "sup"], "required": [], "note": "n = neuter and pl = plural/definite when not simply -t / -a (gammal → gammalt, gamla); comp, sup when irregular (större, störst)" }
+      }
+    },
+    "uk": {
+      "name": "Ukrainian", "native": "Українська", "status": "active", "locale": "uk-UA", "tts": "uk-UA", "variantNote": "Standard Ukrainian (Ukraine), 2019 orthography; stress marks (U+0301) on every polysyllabic word",
+      "country": "UA", "script": "Cyrillic", "extends": null, "speakers": 39,
+      "gender": { "mode": "marker", "values": ["m", "f", "n", "mf", "pl"] },
+      "stress": true, "reading": null,
+      "romanization": { "source": "rule", "scheme": "uk-national" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["gen", "pl", "f"], "required": ["gen"], "note": "gen = genitive singular (genitive plural for pluralia tantum); pl = nominative plural when it exists; f = feminine counterpart of a person noun (учи́тель → учи́телька)" },
+        "verb": { "keys": ["aspect", "pair", "1sg", "2sg", "3pl", "past"], "required": ["aspect", "1sg", "2sg"], "note": "aspect: ipf|pf|bi; pair = aspect partner; 1sg/2sg/3pl = present (ipf) or simple future (pf); past = 'm, f' only when stress shifts or stem is irregular" },
+        "adj": { "keys": ["comp"], "required": [], "note": "comp only when irregular (до́брий → кра́щий)" }
+      }
+    },
+    "ga": {
+      "name": "Irish", "native": "Gaeilge", "status": "active", "locale": "ga-IE", "tts": "ga-IE", "variantNote": "Standard Irish (An Caighdeán Oifigiúil) spelling and grammar; IPA follows Connacht Irish",
+      "country": "IE", "script": "Latin", "extends": null, "speakers": 2.1,
+      "gender": { "mode": "marker", "values": ["m", "f", "pl"] },
+      "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["gen", "pl"], "required": ["gen"], "note": "gen = genitive singular, without the article (fear → fir, bean → mná); pl = nominative plural when it exists (fir, mná)" },
+        "verb": { "keys": ["vn", "past", "fut"], "required": ["vn", "past"], "note": "lemma = 2sg imperative, the dictionary form (ól, téigh); vn = verbal noun (ól, dul); past (d'ól, chuaigh); fut only when irregular (rachaidh)" },
+        "adj": { "keys": ["comp"], "required": [], "note": "comp = the form after níos, only when irregular (mór → mó, maith → fearr)" }
+      }
+    },
+    "gd": {
+      "name": "Scottish Gaelic", "native": "Gàidhlig", "status": "active", "locale": "gd-GB", "tts": "gd-GB", "variantNote": "Standard Scottish Gaelic: Gaelic Orthographic Conventions (grave accents only); IPA follows a general Hebridean pronunciation",
+      "country": "GB-SCT", "script": "Latin", "extends": null, "speakers": 0.07,
+      "gender": { "mode": "marker", "values": ["m", "f", "pl"] },
+      "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["gen", "pl"], "required": ["gen"], "note": "gen = genitive singular, without the article (cù → coin, bean → mnà); pl = plural when it exists (coin, mnathan)" },
+        "verb": { "keys": ["vn", "past", "fut"], "required": ["vn", "past"], "note": "lemma = 2sg imperative, the dictionary form (òl, rach); vn = verbal noun (òl, dol); past = independent past (dh'òl, chaidh); fut only when irregular (thèid)" },
+        "adj": { "keys": ["comp"], "required": [], "note": "comp = the form after nas, only when irregular (mòr → motha, math → fheàrr)" }
+      }
+    },
+    "hu": {
+      "name": "Hungarian", "native": "Magyar", "status": "active", "locale": "hu-HU", "tts": "hu-HU", "variantNote": "Standard Hungarian (Hungary)",
+      "country": "HU", "script": "Latin", "extends": null, "speakers": 12,
+      "gender": null, "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["pl", "acc", "poss3"], "required": ["pl", "acc"], "note": "pl = plural (házak); acc = accusative (házat); poss3 = his/her (háza) when irregular (víz → vize)" },
+        "verb": { "keys": ["inf", "past"], "required": ["inf", "past"], "note": "lemma = 3sg present indefinite, the dictionary form (ír, eszik, megy); inf = infinitive (írni, enni, menni); past = 3sg past indefinite (írt, evett, ment)" },
+        "adj": { "keys": ["comp"], "required": [], "note": "comp only when irregular (jó → jobb, szép → szebb)" }
+      }
+    },
+    "ar": {
+      "name": "Arabic", "native": "العربية", "status": "active", "locale": "ar", "tts": "ar-XA", "variantNote": "Modern Standard Arabic (fuṣḥā), not a dialect; full vowel marks (harakat) on the word, its forms and the example's target; citation form without case endings",
+      "country": null, "flag": "arab-league", "script": "Arabic", "dir": "rtl", "extends": null, "speakers": 335,
+      "gender": { "mode": "marker", "values": ["m", "f", "pl"] },
+      "stress": false, "vowels": true, "reading": null,
+      "romanization": { "source": "stored", "scheme": "ar-ala-lc" }, "otherScript": null, "measureWord": null, "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {
+        "noun": { "keys": ["pl", "f"], "required": [], "note": "pl = plural, broken or sound, whenever it exists (كِتَاب → كُتُب); f = feminine counterpart of a person noun (مُعَلِّم → مُعَلِّمَة)" },
+        "verb": { "keys": ["pres", "vn"], "required": ["pres", "vn"], "note": "lemma = 3sg masculine past, the dictionary form (كَتَبَ); pres = 3sg masculine present (يَكْتُبُ); vn = verbal noun, maṣdar (كِتَابَة)" },
+        "adj": { "keys": ["f", "pl"], "required": [], "note": "f when not simply + ة (أَحْمَر → حَمْرَاء); pl = broken plural when common (كَبِير → كِبَار)" }
+      }
+    },
+    "vi": {
+      "name": "Vietnamese", "native": "Tiếng Việt", "status": "active", "locale": "vi-VN", "tts": "vi-VN", "variantNote": "Standard Northern (Hà Nội) Vietnamese: vocabulary, spelling and IPA",
+      "country": "VN", "script": "Latin", "extends": null, "speakers": 97,
+      "gender": null, "stress": false, "reading": null,
+      "romanization": null, "otherScript": null, "measureWord": "classifier", "hanja": false, "ipa": true, "exampleReading": null,
+      "forms": {}
+    }
   }
 }

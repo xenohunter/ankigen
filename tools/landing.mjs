@@ -54,6 +54,7 @@ import { fullWidthLang, hasAsciiPunctuation } from './lib/data.mjs';
  * @property {any} ui       the app's texts in that language (data/ui), or null for English
  * @property {boolean} own  the pages are in their visitors' language (translated, or for English speakers)
  * @property {string} tag   lang attribute
+ * @property {boolean} rtl   written right to left (Arabic): dir="rtl" on the page
  * @property {string} lang  the interface language its links open the app in (?lang=)
  * @property {string} locale
  * @property {Intl.PluralRules} plural
@@ -177,6 +178,7 @@ export const SCRIPT_LETTERS = /** @type {Record<string, RegExp>} */ ({
   Hangul: /\p{Script=Hangul}/u,
   Han: /\p{Script=Han}/u,
   Japanese: /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u,
+  Arabic: /\p{Script=Arabic}/u,
 });
 
 /**
@@ -251,7 +253,8 @@ export function translatedLanguages(meta, translations) {
 
 /**
  * Lint issues of data/landing (tools/lint-data.mjs): errors for unreadable files, unknown languages and
- * checkTexts() problems; a warning for a translation of older English texts (its pages stay in English).
+ * checkTexts() problems; a warning for a translation of older English texts (its pages stay in English, so its
+ * problems, such as the texts added to the English since, are warnings too until landing:<code> runs again).
  * @param {string} dataDir @param {any} meta
  */
 export function landingIssues(dataDir, meta) {
@@ -270,12 +273,13 @@ export function landingIssues(dataDir, meta) {
       add('error', `invalid JSON: ${/** @type {Error} */ (e).message}`);
       continue;
     }
-    if (code === 'en' || !meta.languages.active.includes(code)) {
-      add('error', 'not an active language other than English');
+    if (code === 'en' || ![...meta.languages.active, ...(meta.languages.staged ?? [])].includes(code)) {
+      add('error', 'not an active or staged language other than English');
       continue;
     }
-    for (const problem of checkTexts(t, meta, code)) add('error', problem);
-    if (t.source !== textsSource(meta, code)) add('warning', `translated from older English texts, so its pages are in English: rerun landing:${code}`);
+    const stale = t.source !== textsSource(meta, code);
+    for (const problem of checkTexts(t, meta, code)) add(stale ? 'warning' : 'error', problem);
+    if (stale) add('warning', `translated from older English texts, so its pages are in English: rerun landing:${code}`);
   }
   return issues;
 }
@@ -289,6 +293,7 @@ function voice(meta, know, translation, ui = null) {
     ui: translation ? ui : null,
     own: Boolean(translation) || know === 'en',
     tag,
+    rtl: Boolean(translation) && reg.dir === 'rtl',
     lang: UI_LANGUAGES.includes(know) ? know : 'en',
     locale,
     plural: new Intl.PluralRules(locale),
@@ -310,11 +315,11 @@ const fill = (text, values) => text.replace(/\{(\w+)\}/g, (m, key) => values[key
 /** The HTML of a text whose {placeholders} are markup. @param {string} text @param {Record<string, string>} html */
 const fillHtml = (text, html) => escapeHtml(text).replace(/\{(\w+)\}/g, (m, key) => html[key] ?? m);
 
-/** og:locale: ru_RU, zh_CN. @param {string} locale */
+/** og:locale: ru_RU, zh_CN; Modern Standard Arabic, of no one country, as ar_AR. @param {string} locale */
 function ogLocale(locale) {
   const [lang, ...rest] = locale.split('-');
   const region = rest.find((part) => /^[A-Z]{2}$/.test(part));
-  return region ? `${lang}_${region}` : lang;
+  return region ? `${lang}_${region}` : lang === 'ar' ? 'ar_AR' : lang;
 }
 
 // ---------------------------------------------------------------- pairs
@@ -423,7 +428,7 @@ function pageHtml({ v, dir, title, description, trail, body, alternates = [], ab
   });
   const author = fillHtml(appText(v, 'foot.author'), { name: `<a href="${AUTHOR_URL}" ${EXTERNAL}>${escapeHtml(AUTHOR_NAME)}</a>` });
   return `<!doctype html>
-<html lang="${v.tag}">
+<html lang="${v.tag}"${v.rtl ? ' dir="rtl"' : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -444,7 +449,7 @@ ${languages}<meta name="color-scheme" content="light dark">
 <meta property="og:image" content="${SITE_URL}og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AnkiGen: free Anki vocabulary decks in 15 languages, with a sample card for the Japanese word 水, water.">
+<meta property="og:image:alt" content="AnkiGen: free Anki vocabulary decks in 23 languages, with a sample card for the Japanese word 水, water.">
 <meta property="og:locale" content="${ogLocale(v.locale)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@${AUTHOR_URL.split('/').pop()}">
@@ -509,7 +514,7 @@ function pairHtml(pair, list, meta, voices, alternates) {
 
 <h2>${escapeHtml(t.texts.cardsHeading)}</h2>
 <p>${escapeHtml(t.texts.cardsIntro)}</p>
-${fieldsHtml(pair, meta, t)}${caption ? `\n<p>${fillHtml(t.texts.captions, { caption: `<span lang="${ctx.know.tag}">${escapeHtml(caption)}</span>` })}</p>` : ''}
+${fieldsHtml(pair, meta, t)}${caption ? `\n<p>${fillHtml(t.texts.captions, { caption: `<span${ctx.know.attrs}>${escapeHtml(caption)}</span>` })}</p>` : ''}
 
 <h2>${escapeHtml(t.texts.modulesHeading)}</h2>
 <p>${escapeHtml(t.texts.modulesIntro)}</p>
@@ -580,7 +585,7 @@ function moduleHtml(pair, m, href, v) {
   const list = picks.length ? `\n<ul class="lp-words" aria-label="${escapeAttr(t.texts.sampleWords)}">${picks.map((note) => sampleHtml(note, pair.ctx)).join('')}</ul>` : '';
   const local = pair.local.get(m.id);
   const localText = local
-    ? `\n<p class="lp-local">${fillHtml(t.texts.local, { count: escapeHtml(counted(v, 'word', local.count)), example: `<span lang="${pair.ctx.learn.tag}">${escapeHtml(local.example)}</span>` })}</p>`
+    ? `\n<p class="lp-local">${fillHtml(t.texts.local, { count: escapeHtml(counted(v, 'word', local.count)), example: `<span${pair.ctx.learn.attrs}>${escapeHtml(local.example)}</span>` })}</p>`
     : '';
   return `<li class="lp-mod">
 <h4><a href="${href}">${escapeHtml(t.modules[m.id].name)}</a>${badge} <span class="lp-count">${escapeHtml(counted(v, 'word', m.words))}</span></h4>
@@ -617,8 +622,8 @@ function spread(notes, n) {
 /** "word (caption) — translation", as the app's word list shows it. @param {Note} note @param {import('../src/deck/fields.js').DeckContext} ctx */
 function sampleHtml(note, ctx) {
   const s = noteSummary(note, ctx);
-  const caption = s.disambig ? ` <span class="lp-dis" lang="${ctx.know.tag}">(${escapeHtml(s.disambig)})</span>` : '';
-  return `<li><span lang="${ctx.learn.tag}">${escapeHtml(s.word)}</span>${caption} — <span class="lp-tr" lang="${ctx.know.tag}">${escapeHtml(s.translation)}</span></li>`;
+  const caption = s.disambig ? ` <span class="lp-dis"${ctx.know.attrs}>(${escapeHtml(s.disambig)})</span>` : '';
+  return `<li><span${ctx.learn.attrs}>${escapeHtml(s.word)}</span>${caption} — <span class="lp-tr"${ctx.know.attrs}>${escapeHtml(s.translation)}</span></li>`;
 }
 
 /**
@@ -656,7 +661,7 @@ function hubHtml(list, meta, voices) {
       if (!pages.length) return '';
       const reg = meta.languages.languages[know];
       const v = /** @type {Voice} */ (voices.get(know));
-      const native = reg.native !== reg.name ? ` <span class="lp-native" lang="${langTag(reg, know, 'cyrl')}">${escapeHtml(reg.native)}</span>` : '';
+      const native = reg.native !== reg.name ? ` <span class="lp-native" lang="${langTag(reg, know, 'cyrl')}"${reg.dir === 'rtl' ? ' dir="rtl"' : ''}>${escapeHtml(reg.native)}</span>` : '';
       const links = pages.map((p) => `<li><a href="${p.dir.slice(DECKS_DIR.length)}" lang="${v.tag}">${escapeHtml(v.t.languages[p.learn])}</a></li>`);
       return `<h2>For ${escapeHtml(reg.name)} speakers${native}</h2>\n<ul class="lp-pairs">${links.join('')}</ul>`;
     })

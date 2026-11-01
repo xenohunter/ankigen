@@ -175,7 +175,7 @@ input[type="checkbox"] {
   top: -0.09rem;
   width: 1.15rem;
   height: 1.15rem;
-  margin-left: 0.35rem;
+  margin-inline-start: 0.35rem;
   vertical-align: middle;
 }
 
@@ -282,7 +282,7 @@ html:not(.js) .layout {
 .head-support.is-pinned {
   position: fixed;
   top: 0;
-  right: var(--pin-right, 1.5rem);
+  inset-inline-end: var(--pin-end, 1.5rem);
   z-index: 8;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--line);
@@ -330,7 +330,7 @@ html:has(.is-pinned) {
   content: "";
   width: 0.4rem;
   height: 0.4rem;
-  margin-left: 0.1rem;
+  margin-inline-start: 0.1rem;
   border-right: 1.5px solid var(--muted);
   border-bottom: 1.5px solid var(--muted);
   transform: translateY(-2px) rotate(45deg);
@@ -409,8 +409,8 @@ html:has(.is-pinned) {
 
 .loc-item[aria-checked="true"]::after {
   content: "✓";
-  margin-left: auto;
-  padding-left: 0.75rem;
+  margin-inline-start: auto;
+  padding-inline-start: 0.75rem;
 }
 
 /* A translation is on its way (see index.html): the page's texts wait for it, the English stays hidden. */
@@ -578,6 +578,26 @@ html:has(.is-pinned) {
   cursor: not-allowed;
 }
 
+/* Steps 1–2: the languages in their groups, the group's name beside its chips (above them on phones). */
+.lang-groups {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.lang-group {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.35rem 0.75rem;
+  align-items: start;
+}
+
+.lang-group-name {
+  padding-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
 /* Step 2: "Same language" on a row of its own, set apart from the languages. */
 .same-row {
   display: flex;
@@ -648,7 +668,7 @@ html:has(.is-pinned) {
 
 .help-pop ul {
   margin: 0.25rem 0 0;
-  padding-left: 1.1rem;
+  padding-inline-start: 1.1rem;
 }
 
 .help-pop li + li {
@@ -686,7 +706,7 @@ html:has(.is-pinned) {
 }
 
 .seg label + label span {
-  border-left: 1px solid var(--line-strong);
+  border-inline-start: 1px solid var(--line-strong);
 }
 
 .seg input:checked + span {
@@ -731,7 +751,7 @@ html:has(.is-pinned) {
   content: "";
   position: absolute;
   top: 2px;
-  left: 2px;
+  inset-inline-start: 2px;
   width: calc(1.4rem - 4px);
   height: calc(1.4rem - 4px);
   border-radius: 50%;
@@ -746,6 +766,10 @@ html:has(.is-pinned) {
 
 .switch input:checked::after {
   transform: translateX(1rem);
+}
+
+[dir="rtl"] .switch input:checked::after {
+  transform: translateX(-1rem);
 }
 
 .switch input:disabled {
@@ -793,6 +817,11 @@ html:has(.is-pinned) {
   transform: translateY(-2px) rotate(45deg);
 }
 
+/* Right to left, a closed category's chevron points left. */
+[dir="rtl"] .cat-toggle[aria-expanded="false"]::before {
+  transform: translateX(1px) rotate(135deg);
+}
+
 .cat-toggle:hover {
   background: var(--accent-soft);
 }
@@ -810,7 +839,7 @@ html:has(.is-pinned) {
 }
 
 .cat-tally {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--muted);
   font-size: 0.85rem;
 }
@@ -831,7 +860,7 @@ html:has(.is-pinned) {
 }
 
 .mod-words {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--muted);
   font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
@@ -916,7 +945,7 @@ html:has(.is-pinned) {
 
 /* Closed, it names the rows that are on. */
 .f-more-on {
-  margin-left: 0.3rem;
+  margin-inline-start: 0.3rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -944,7 +973,7 @@ html:has(.is-pinned) {
 }
 
 .opt-label {
-  margin-right: 0.2rem;
+  margin-inline-end: 0.2rem;
 }
 
 /* The pronunciation audio toggle (ui/audio.js): last in Card options, after a line, its warning always in sight. */
@@ -1116,8 +1145,8 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 .pv-faces {
   flex: 1 1 auto;
   min-height: 0;
-  margin-right: -0.6rem;
-  padding-right: 0.6rem;
+  margin-inline-end: -0.6rem;
+  padding-inline-end: 0.6rem;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -1151,7 +1180,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 .pv-actions {
   display: flex;
   gap: 0.5rem;
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 
@@ -1252,8 +1281,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 
 .cl-row {
   position: absolute;
-  right: 0;
-  left: 0;
+  inset-inline: 0;
   display: flex;
   align-items: center;
   height: 2.6rem;
@@ -1273,7 +1301,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
   background: none;
   color: inherit;
   font: inherit;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
 }
 
@@ -1422,7 +1450,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 
 .fab {
   position: fixed;
-  right: 1rem;
+  inset-inline-end: 1rem;
   bottom: 1rem;
   z-index: 6;
   display: inline-flex;
@@ -1591,7 +1619,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 /* The honeypot: off screen, out of the tab order, hidden from screen readers. */
 .fb-hp {
   position: absolute;
-  left: -10000px;
+  inset-inline-start: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -1615,7 +1643,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 }
 
 .fb-keys {
-  margin-right: auto;
+  margin-inline-end: auto;
   color: var(--muted);
   font-size: 0.85rem;
 }
@@ -1669,7 +1697,11 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 
 .crumbs li + li::before {
   content: "›";
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
+}
+
+[dir="rtl"] .crumbs li + li::before {
+  content: "‹";
 }
 
 .crumbs a {
@@ -1783,7 +1815,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 }
 
 .lp-count {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 400;
@@ -1835,7 +1867,7 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
 }
 
 .lp-native {
-  margin-left: 0.35rem;
+  margin-inline-start: 0.35rem;
   color: var(--muted);
   font-weight: 400;
 }
@@ -1847,11 +1879,22 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
   padding-bottom: 4.5rem;
 }
 
+.lang-sect {
+  margin-top: 1.75rem;
+}
+
+.lp .lang-sect-name {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .lang-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
   gap: 0.75rem;
-  margin: 1.75rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -1875,12 +1918,23 @@ html:has(.is-pinned) .side:has(> .cards-panel:not([hidden])) {
   margin: 0;
 }
 
+.lang > div {
+  min-width: 0;
+}
+
+/* The native name and the name in the interface language; a long pair wraps (Gàidhlig / Schottisch-Gälisch). */
+.lang-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.45rem;
+}
+
 .lang-native {
   font-weight: 600;
 }
 
 .lang-name {
-  margin-left: 0.45rem;
   color: var(--muted);
 }
 
@@ -1934,8 +1988,7 @@ html:not(.js) .lang-ask {
 
   /* Pinned: a bar across the top. */
   .head-support.is-pinned {
-    right: 0;
-    left: 0;
+    inset-inline: 0;
     justify-content: center;
     padding-inline: 1rem;
     border-width: 0 0 1px;
@@ -1965,7 +2018,7 @@ html:not(.js) .lang-ask {
   }
 
   .mobile-bar .button {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   /* Above the bar, as a round flag. */
@@ -2009,6 +2062,19 @@ html:not(.js) .lang-ask {
     padding-inline: 1rem;
   }
 
+  .lang-group {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Two columns of the languages, read down, fit a phone. */
+  .loc-menu:popover-open {
+    grid-template-rows: repeat(12, auto);
+  }
+
+  .lang-group-name {
+    padding-top: 0;
+  }
+
   /* A slim bar: the two buttons speak for themselves. */
   .head-support.is-pinned > span:first-child {
     display: none;
@@ -2032,7 +2098,7 @@ html:not(.js) .lang-ask {
   }
 
   .mod-list {
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
   }
 }
 

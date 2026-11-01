@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "词汇由 AI 起草，目前只有一部分经过人工审核。非常欢迎你的反馈。",
     "head.draftTopic": "词汇草稿",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "卡片上显示的是用所学语言写的简短释义，而不是翻译。适合已经能读懂这门语言简单句子的学习者。",
     "lang.loading": "正在加载单词（{language}）…",
     "lang.failed": "无法加载单词（{language}）。请检查网络连接，然后重新加载页面。",
+    "group.germanic": "日耳曼语族",
+    "group.asian": "东亚和东南亚",
+    "group.romance": "罗曼语族",
+    "group.slavic": "斯拉夫语族",
+    "group.celtic": "凯尔特语族",
+    "group.other": "其他",
     "modules.hint": "选择你想要的主题，之后还可以再添加。",
     "modules.show": "显示{category}模块",
     "modules.tally": "{n}/{total}",

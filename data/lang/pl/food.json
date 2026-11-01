@@ -82,5 +82,8 @@
 "word-picnic": {"w":"piknik","g":"m","forms":{"gen":"pikniku","pl":"pikniki"},"def":"Posiłek jedzony na świeżym powietrzu, często w parku."},
 "word-butcher-shop": {"w":"sklep mięsny","g":"m","forms":{"gen":"sklepu mięsnego"},"def":"Sklep ze świeżą wołowiną, wieprzowiną i wędlinami."},
 "word-grocery-store": {"w":"sklep spożywczy","g":"m","forms":{"gen":"sklepu spożywczego"},"def":"Sklep z żywnością i drobnymi artykułami domowymi."},
-"word-sobremesa": {"gl":"sobremesa: hiszpański zwyczaj siedzenia przy stole i rozmów po posiłku"}
+"word-sobremesa": {"gl":"sobremesa: hiszpański zwyczaj siedzenia przy stole i rozmów po posiłku"},
+"word-aperitivo": {"gl":"aperitivo: włoski drink przed kolacją, podawany z przekąskami w barze"},
+"word-fika": {"gl":"fika: szwedzka przerwa na kawę i ciastka ze znajomymi lub współpracownikami"},
+"word-nhau": {"gl":"nhậu: wietnamskie towarzyskie picie piwa lub wódki ze wspólnie jedzonymi daniami"}
 }

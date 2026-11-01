@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"Naturschutzgebiet","g":"n","alt":["Schutzgebiet"],"forms":{"pl":"Naturschutzgebiete"},"def":"Gebiet, in dem wilde Tiere und Pflanzen vor Schäden geschützt werden."},
 "word-environment-protection": {"w":"Umweltschutz","g":"m","def":"Maßnahmen, die Luft, Wasser und Boden sauber halten und vor Schäden bewahren."},
 "word-climate-change": {"w":"Klimawandel","g":"m","alt":["globale Erwärmung"],"def":"Der langfristige Anstieg der Erdtemperatur und die Veränderung des Wetters."},
-"word-renewable-energy": {"w":"erneuerbare Energie","g":"f","alt":["regenerative Energie"],"forms":{"pl":"erneuerbare Energien"},"def":"Strom oder Wärme aus Quellen, die nie aufgebraucht werden, wie Sonne und Wind."}
+"word-renewable-energy": {"w":"erneuerbare Energie","g":"f","alt":["regenerative Energie"],"forms":{"pl":"erneuerbare Energien"},"def":"Strom oder Wärme aus Quellen, die nie aufgebraucht werden, wie Sonne und Wind."},
+"word-allemansratten": {"gl":"Allemansrätten: schwedisches Jedermannsrecht, fast überall zu wandern, zu zelten und Beeren zu pflücken"},
+"word-machair": {"gl":"Machair: fruchtbares flaches Küstengrasland auf Muschelsand, typisch für die Hebriden"}
 }

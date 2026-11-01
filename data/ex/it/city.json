@@ -1,0 +1,23 @@
+{
+"word-town-hall": [{"t":"Il matrimonio sarà in {municipio} sabato."},{"t":"Puoi ritirare il modulo in {municipio}."},{"t":"Il sindaco lavora nel {municipio}."}],
+"word-fire-station": [{"t":"La {caserma dei pompieri} è accanto alla scuola."},{"t":"I bambini hanno visitato la {caserma dei pompieri} venerdì."},{"t":"Nella nostra città c'è una nuova {caserma dei pompieri}."}],
+"word-mosque": [{"t":"Vanno alla {moschea} ogni venerdì."},{"t":"La {moschea} ha una bellissima cupola blu."},{"t":"Durante il viaggio abbiamo visitato una famosa {moschea}."}],
+"word-synagogue": [{"t":"La {sinagoga} è all'angolo di via Roma."},{"t":"La sua famiglia va alla {sinagoga} il sabato."},{"t":"La vecchia {sinagoga} è stata costruita nel 1890."}],
+"word-cathedral": [{"t":"La {cattedrale} è l'edificio più antico della città."},{"t":"Siamo saliti sulla torre della {cattedrale}."},{"t":"Centinaia di persone sono venute in {cattedrale} per il concerto."}],
+"word-laundromat": [{"t":"La mia lavatrice è rotta, quindi vado alla {lavanderia self-service}."},{"t":"C'è una {lavanderia self-service} dall'altra parte della strada."},{"t":"Porta un po' di monete alla {lavanderia self-service}."}],
+"word-art-gallery": [{"t":"Abbiamo passato il pomeriggio alla {galleria d'arte}."},{"t":"La {galleria d'arte} è gratuita la domenica."},{"t":"Ha un quadro in una piccola {galleria d'arte} del centro."}],
+"word-nightclub": [{"t":"Hanno ballato tutta la notte in {discoteca}."},{"t":"Bisogna essere maggiorenni per entrare in {discoteca}."},{"t":"La {discoteca} apre alle dieci e chiude alle quattro."}],
+"word-old-town": [{"t":"Dopo pranzo abbiamo camminato nel {centro storico}."},{"t":"Il {centro storico} ha strade strette e piccoli caffè."},{"t":"Molti turisti alloggiano nel {centro storico}."}],
+"word-skyscraper": [{"t":"Da quel {grattacielo} si vede tutta la città."},{"t":"Stanno costruendo un nuovo {grattacielo} in centro."},{"t":"Il mio ufficio è al quarantesimo piano di un {grattacielo}."}],
+"word-apartment-block": [{"t":"Abitiamo in un grande {condominio} vicino al parco."},{"t":"Il {condominio} ha l'ascensore."},{"t":"In questo {condominio} vivono venti famiglie."}],
+"word-avenue": [{"t":"L'albergo è su un ampio {viale} alberato."},{"t":"Gira a sinistra alla fine del {viale}."},{"t":"Il {viale} della stazione è lunghissimo.","p":0}],
+"word-pedestrian-zone": [{"t":"Il centro della città è una {zona pedonale}."},{"t":"Le auto non possono entrare nella {zona pedonale}."},{"t":"Abbiamo preso un caffè nella {zona pedonale}."}],
+"word-bench": [{"t":"Sediamoci un attimo su quella {panchina}."},{"t":"Un vecchio leggeva su una {panchina} del parco."},{"t":"La {panchina} era bagnata di pioggia."}],
+"word-fountain": [{"t":"I bambini giocavano vicino alla {fontana}."},{"t":"Nella piazza principale c'è una bellissima {fontana}."},{"t":"Abbiamo lanciato delle monete nella {fontana}."}],
+"word-opposite": [{"t":"La banca è {di fronte} alla posta."},{"t":"Si è seduta {di fronte a} me al tavolo."},{"t":"C'è un panificio {di fronte a} casa nostra."}],
+"word-city-block": [{"t":"Il negozio è a due {isolati} da qui."},{"t":"Abbiamo fatto il giro dell'{isolato} per prendere un po' d'aria."},{"t":"La fermata dell'autobus è nell'{isolato} successivo."}],
+"word-tourist-information": [{"t":"Chiediamo una mappa all'{ufficio turistico}."},{"t":"L'{ufficio turistico} è accanto alla stazione."},{"t":"L'{ufficio turistico} chiude alle cinque."}],
+"word-landmark": [{"t":"La torre è il {punto di riferimento} più famoso della città."},{"t":"Usa quella grande chiesa come {punto di riferimento}."},{"t":"Durante il tour abbiamo fotografato tutti i {punti di riferimento}."}],
+"word-outskirts": [{"t":"Vivono nella {periferia} della città."},{"t":"L'aeroporto è nella {periferia} della città."},{"t":"Le case costano meno in {periferia}."}],
+"word-passeggiata": [{"t":"La domenica pomeriggio tutto il paese fa la {passeggiata} in piazza.","p":0},{"t":"Dopo cena facciamo una {passeggiata} lungo il corso.","p":0},{"t":"La {passeggiata} serale è una tradizione in molte città italiane.","p":0}]
+}

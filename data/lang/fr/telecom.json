@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"code QR","g":"m","alt":["QR code"],"def":"Carré de petits points noirs et blancs qu'un appareil photo de téléphone peut lire."},
 "word-notification": {"w":"notification","g":"f","alt":["alerte"],"def":"Court message qui s'affiche sur le téléphone pour annoncer quelque chose de nouveau."},
 "word-landline": {"w":"téléphone fixe","g":"m","alt":["fixe"],"def":"Appareil relié par des fils, et non par un réseau mobile."},
-"word-postal-worker": {"w":"facteur","g":"m","alt":["postier"],"forms":{"f":"factrice"},"def":"Personne dont le métier est d'apporter les lettres et les colis chez les gens."}
+"word-postal-worker": {"w":"facteur","g":"m","alt":["postier"],"forms":{"f":"factrice"},"def":"Personne dont le métier est d'apporter les lettres et les colis chez les gens."},
+"word-eircode-ie": {"gl":"Eircode : code postal irlandais de sept caractères qui identifie chaque adresse individuelle"}
 }

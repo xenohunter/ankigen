@@ -9,24 +9,26 @@ Run everything from the repo root (`/home/xenohunter/projects/ankigen`). You nee
 | Phase | Unit IDs | What | Weight | Count (≈) |
 |---|---|---|---|---|
 | 1. Concept inventory | `concepts:core-1:1` … `concepts:core-3:4`, then `concepts:<module>` | language-neutral concepts, IDs, modules, groups, local concepts | 2 / 1.5–2 | 41 units |
+| | `local:<code>` | the country-specific and untranslatable concepts of a language added later (a staged one with a country), appended to the topical modules | 1 | 1 per new language |
 | 2. Card labels | `labels:<code>` | card captions per language | 0.5 | 13 |
 | | `landing:<code>` | the landing pages' texts for that language's speakers (all but English) | 1 | 14 |
-| 3. Languages | `lang:<code>:<module>:<n>` | words, forms, hints, definitions, 3 example slots for ≤ 100 concepts | 2 (ja/zh 2.5) | 53 per language |
+| 3. Languages | `lang:<code>:<module>:<n>` | words, forms, hints, definitions, 3 example slots for ≤ 100 concepts | 2 (ja/zh/ar 2.5) | 53 per language |
 | | `review:<code>` | fix collisions and warnings, spot-check | 1 | 15 |
 | 4. IPA | `ipa:<code>:<module>` | pronunciation (all but zh, ja) | 0.5 | ≈ 36 per language |
 | 5. Example fixes | `exfix:<code>:<n>` | rewrite example slots whose target is an alt, not a form of `w` (or, in Chinese, lacks the word); one unit per 250 concepts, sending only the flagged ones | 0.03 per concept | 14 per language |
 | — Etymology | (dropped for now; the app hides the field) | one-line schematics | — | — |
 
 Dependencies (enforced by `units.mjs`):
-- Concept units run strictly in sequence.
-- Lang units appear once the inventory is complete.
+- Concept units run strictly in sequence, and local units one after another after them.
+- Lang units appear once the inventory is complete; those of the topical modules also wait for the local units, which add to those modules.
+- A lang unit whose slice is partly there already (concepts added to its module later) sends only the concepts still missing (`pendingSubset`), so a new language's local concepts cost every other language a few glosses, not whole units again.
 - Non-English lang units wait for `review:en`, because English examples are the source of the parallel example slots.
 - IPA waits for that language's review.
 - Example fixes wait for that language's review, and non-English ones for English's fixes (the slots they translate).
 
 Completion of lang, IPA, label and example-fix units is checked against the files themselves. Concept and review units are recorded in `tools/gen/progress.json`.
 
-The concept inventory is complete: **3,498 concepts** in 36 modules (83 of them country- or language-specific). 1 weight point ≈ 10k output tokens; `plan.mjs status` shows about 1,900 points left, ~85% of it in phase 3.
+The concept inventory is complete: **3,554 concepts** in 36 modules (139 of them country- or language-specific; 56 came with the languages of November 2026). 1 weight point ≈ 10k output tokens; `plan.mjs status` shows about 1,900 points left, ~85% of it in phase 3.
 
 ## 2. Running it through the API (primary path)
 
@@ -140,7 +142,7 @@ What `run` does, in this order:
 2. **Checks again** the languages marked unsupported (and those whose locale in `languages.json` changed), so a language gains audio as soon as Google adds a voice.
 3. **Makes the clips** that are missing or whose key changed. The key is the text sent, the locale, the voice and the format: a corrected word, or another voice picked by hand in `audio.json`, regenerates; everything else is skipped. Each distinct text is synthesized once, and identical texts share one file. Manifests are written as it goes, so it can be stopped (Ctrl+C) and run again.
 
-Without `--lang` it covers every language with data; a language whose data is still incomplete is fine, a later run picks up its new words. It stops before sending more than `--max-chars` characters (default 900,000) and says so. Characters are billed for every request, SSML included; Chirp 3 HD costs $30 per million (check the current price and free tier). The first full run, on 2026-10-28, sent 357,483 characters for 45,591 clips in 14 languages and took about 4 hours; with the pilot and tests the day's total was about 366,000 characters. The clips take 241 MB.
+Without `--lang` it covers every language with data; a language whose data is still incomplete is fine, a later run picks up its new words. It stops before sending more than `--max-chars` characters (default 900,000) and says so. Characters are billed for every request, SSML included; Chirp 3 HD costs $30 per million (check the current price and free tier). The first full run, on 2026-10-28, sent 357,483 characters for 45,591 clips in 14 languages and took about 4 hours; with the pilot and tests the day's total was about 366,000 characters. The clips take 241 MB. The six new languages with a voice (it, sv, uk, hu, ar, vi), on 2026-11-01, took 176,364 characters for 19,623 clips in under 2 hours, about 175 clips a minute; they take 101 MB.
 
 Robustness:
 - Requests keep to Google's per-project quotas, at 90% (Chirp 3 HD: 200 a minute, so about 4 hours for 14 languages; Neural2 and WaveNet: 1,000), six at a time. 429 and 5xx are retried with backoff. Other failures are logged to `tmp/audio-failures.jsonl` and the run goes on; the next run tries them again.
@@ -155,3 +157,16 @@ Listening: `pilot` makes about 20 clips per language (homographs, special texts,
 2. `node tools/audio.mjs run --lang <code>`
 
 That is all: the bundle packs its clips, and the deck and the page offer audio for it with no code change. If Google has no voice of a usable tier for the locale, `audio.json` says so, and every later `run` checks again.
+
+## 9. Adding a language
+
+As done for the languages of November 2026 (it, sv, uk, ga, gd, hu, ar, vi):
+
+1. **Registry** (`data/meta/languages.json`): a full feature block (gender, forms, romanization, `tts`, `speakers`…) with `"status": "staged"`, its code in `staged` and in one of the `groups` (by speakers; lint checks the order). A staged language gets its units but stays off the page, the landing pages, the bundles and the deploy gate, so the site keeps deploying meanwhile. Captions for new form keys go into `labels.json` (`keys` and `en`); every language's `labels` unit then adds them.
+2. **Guides and checks**: its section in `tools/gen/prompts/languages.md` and its standard in `ipa.md`; lint rules if its orthography needs them (`spellingProblems`, stress, vowel marks in `tools/lib/data.mjs`); app support if its script does (romanization in `src/text/translit.js`, search folding in `src/text/normalize.js`, right to left).
+3. **Pilot**: one core unit (`batch.mjs submit --type lang --units lang:<code>:core-1:1`, then `collect`). Read it and fix the guide before the rest.
+4. **Generate**: `auto --type local` (its own concepts), `auto --type lang --lang en` (English glosses for them), `auto --type lang --incomplete` (the new language, and every other language's glosses for its concepts), `auto --type labels`, `auto --type review`, `auto --type ipa`.
+5. **Activate**: move it from `staged` to `active` (`"status": "active"`), in the order of the groups; its interface translation (`data/ui/<code>.json`, stamped; `UI_LANGUAGES`; the early check of `index.html` and `languages.html`); its flag; the static pages (the list of `languages.html`, the lists and counts of `index.html`, `og-image.png`). Then `auto --type landing`: a new language name changes the English of every landing translation.
+6. **Audio** (§8).
+
+Measured for those eight, at batch pricing: about $82 in all. The pilot $1.83, local concepts $0.48, English glosses $0.07, labels $0.29, the lang batch $65.72 (612 units, 1.5× its estimate of $43.80) and $0.48 for its retry, reviews $3.24, IPA $8.34 (1.56× its estimate), the 22 landing translations $1.70. Audio: 176,364 characters (§8).

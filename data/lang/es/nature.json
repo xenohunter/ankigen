@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"reserva natural","g":"f","alt":["espacio natural protegido"],"def":"Zona donde se protege a los animales y plantas silvestres."},
 "word-environment-protection": {"w":"protección del medio ambiente","g":"f","alt":["protección medioambiental"],"def":"Acciones que mantienen limpios y a salvo de daños el aire, el agua y la tierra."},
 "word-climate-change": {"w":"cambio climático","g":"m","alt":["calentamiento global"],"def":"Aumento duradero de la temperatura de la Tierra y variación de los patrones del tiempo."},
-"word-renewable-energy": {"w":"energía renovable","g":"f","def":"Fuerza que se obtiene de fuentes que no se acaban, como el sol y el viento."}
+"word-renewable-energy": {"w":"energía renovable","g":"f","def":"Fuerza que se obtiene de fuentes que no se acaban, como el sol y el viento."},
+"word-allemansratten": {"gl":"allemansrätten: derecho sueco de acceso público para caminar, acampar y recoger bayas en casi cualquier terreno"},
+"word-machair": {"gl":"machair: pradera costera baja y fértil sobre arena de conchas, típica de las Hébridas"}
 }

@@ -1,0 +1,458 @@
+{
+  "source": "58be6a6f5b1b",
+  "texts": {
+    "decks": "Paklik",
+    "cta": "Állítsd össze a paklidat",
+    "ctaNote": "Megnyitja az AnkiGent ezzel a nyelvpárral; kiválasztott modul: {module}.",
+    "deck": "Anki-pakli: {deck}",
+    "intro": "Az AnkiGen ingyenes Anki-paklikat készít közvetlenül a böngésződben: témák szerint csoportosított szavakat fordítással és példamondatokkal. Válaszd ki a modulokat és azt, hogy mit mutasson az egyes kártya, majd töltsd le az .apkg fájlt Ankihoz vagy AnkiDroidhoz. Nincs fiók, nem kell semmit telepíteni.",
+    "cardsHeading": "Mit mutatnak a kártyák",
+    "cardsIntro": "Minden kártya a tanult szót és a fordítását mutatja. Te döntöd el, mi jelenjen meg még, és melyik oldalon:",
+    "captions": "A kártyák feliratai, például „{caption}”, magyarul vannak.",
+    "modulesHeading": "Modulok",
+    "modulesIntro": "Ha egy szó több modulhoz is tartozik, a pakliban csak egyszer szerepel. Minden modul úgy nyitja meg az AnkiGent, hogy csak az az egy van kiválasztva; ott továbbiakat is hozzáadhatsz.",
+    "sampleWords": "Példaszavak",
+    "local": "Csak ebben a nyelvben létező szavak: {count}, például {example}. Más nyelvekben nincs pontos megfelelőjük, ezért a kártyák magyarul magyarázzák el őket.",
+    "howHeading": "Hogyan működik",
+    "step1": "Válaszd ki a kívánt modulokat. Mindegyiknél látszik, hány szó tartozik hozzá a nyelvpárodhoz.",
+    "step2": "Válaszd ki, mit mutasson az egyes kártya, és melyik oldalon. Az előnézet közben valódi kártyákat mutat.",
+    "step3": "Töltsd le az .apkg fájlt, és nyisd meg Ankival (File → Import), vagy koppints rá a telefonodon, hogy AnkiDroidban nyíljon meg.",
+    "update": "Módosítottál mezőket, adtál hozzá modulokat, vagy frissebb adatokat szeretnél? Töltsd le újra, és importáld az új fájlt Ankiba (File → Import) az alapbeállításokkal. Az Anki frissíti a meglévő jegyzeteket és azok megjelenését, az új szavakat ugyanabba a pakliba teszi, a tanulási előrehaladásodat pedig megőrzi.",
+    "aboutHeading": "A szókincsről",
+    "about": "A szavakat, fordításokat és példamondatokat mesterséges intelligenciával készítettük el, és nyelvenként folyamatosan ellenőrzik emberek. Ha valami hibásnak tűnik, jelöld ki az AnkiGen egyik előnézeti kártyáján, és nyomd meg a Ctrl+Enter billentyűkombinációt (Macen ⌘+Enter), vagy használd ott a Visszajelzés gombot. Minden bejelentés segít javítani a paklit mindenkinek.",
+    "moreHeading": "További paklik",
+    "moreForYou": "További paklik magyarul beszélőknek",
+    "allDecks": "Az összes pakli nyelvpár szerint"
+  },
+  "languages": {
+    "en": "Angol",
+    "de": "Német",
+    "nl": "Holland",
+    "sv": "Svéd",
+    "zh": "Kínai",
+    "ja": "Japán",
+    "vi": "Vietnámi",
+    "ko": "Koreai",
+    "es": "Spanyol",
+    "fr": "Francia",
+    "pt": "Portugál",
+    "it": "Olasz",
+    "ru": "Orosz",
+    "pl": "Lengyel",
+    "uk": "Ukrán",
+    "sr": "Szerb",
+    "ga": "Ír",
+    "gd": "Skót gael",
+    "ar": "Arab",
+    "tr": "Török",
+    "el": "Görög",
+    "hu": "Magyar",
+    "hy": "Örmény"
+  },
+  "categories": {
+    "foundations": "Alapok",
+    "communication": "Kommunikáció",
+    "daily-life": "Mindennapok",
+    "getting-around": "Úton",
+    "living-abroad": "Élet külföldön",
+    "health-safety": "Egészség és biztonság",
+    "interests": "Érdeklődési körök",
+    "adult": "18+"
+  },
+  "modules": {
+    "core-1": {
+      "name": "Alap I",
+      "desc": "A ~500 leggyakoribb szó, amely minden nyelvben közös."
+    },
+    "core-2": {
+      "name": "Alap II",
+      "desc": "A következő ~500 leggyakoribb szó."
+    },
+    "core-3": {
+      "name": "Alap III",
+      "desc": "A következő ~800 leggyakoribb szó."
+    },
+    "numbers": {
+      "name": "Számok és matematika",
+      "desc": "Tő- és sorszámok, törtek, számtan, mértékegységek."
+    },
+    "time": {
+      "name": "Idő és naptár",
+      "desc": "Napok, hónapok, évszakok, óraidő, dátumok, gyakoriság."
+    },
+    "phrases": {
+      "name": "Túlélőmondatok",
+      "desc": "Köszönések, udvariassági formák és teljes mondatok mindennapi helyzetekre."
+    },
+    "countries": {
+      "name": "Országok, nemzetiségek és nyelvek",
+      "desc": "Nagyobb országok, lakosaik, melléknevek és nyelvek."
+    },
+    "language-learning": {
+      "name": "Nyelvtanulás",
+      "desc": "Beszéd a nyelvről: nyelvtani fogalmak, kiejtés, segítségkérés."
+    },
+    "family": {
+      "name": "Család és kapcsolatok",
+      "desc": "Rokonok, párok, barátok, életesemények."
+    },
+    "feelings": {
+      "name": "Érzelmek és jellem",
+      "desc": "Érzelmek, hangulatok, személyiségjegyek."
+    },
+    "food": {
+      "name": "Ételek és italok",
+      "desc": "Élelmiszerek, ételek, italok, étkezés étteremben."
+    },
+    "cooking": {
+      "name": "Főzés és konyha",
+      "desc": "Főzési igék, eszközök, készülékek, receptek."
+    },
+    "shopping": {
+      "name": "Vásárlás és ruházat",
+      "desc": "Boltok, fizetés, méretek, ruhák, visszaváltás."
+    },
+    "housing": {
+      "name": "Lakhatás és bérlés",
+      "desc": "Bérlés, szerződések, főbérlők, rezsi, helyiségek."
+    },
+    "household": {
+      "name": "Háztartás és javítás",
+      "desc": "Házimunka, bútorok, szerszámok, javítások, vízszerelés, villanyszerelés."
+    },
+    "nature": {
+      "name": "Időjárás és természet",
+      "desc": "Időjárás, éghajlat, táj, növények."
+    },
+    "animals": {
+      "name": "Házi kedvencek és állatok",
+      "desc": "Házi kedvencek, gondozásuk, állatorvosi látogatás, gyakori állatok."
+    },
+    "city": {
+      "name": "Város és útbaigazítás",
+      "desc": "Helyek a városban, útbaigazítás kérése és adása."
+    },
+    "transport": {
+      "name": "Közlekedés és utazás",
+      "desc": "Tömegközlekedés, jegyek, repülőterek, szállodák, poggyász."
+    },
+    "driving": {
+      "name": "Vezetés és KRESZ",
+      "desc": "Autóalkatrészek, közlekedési szabályok, táblák, vizsgák, bírságok, balesetek."
+    },
+    "signs": {
+      "name": "Táblák és feliratok",
+      "desc": "Amit ajtókon, boltokon és utcákon olvashatsz: Húzni, Kijárat, Nem működik."
+    },
+    "residence": {
+      "name": "Tartózkodás és jogi ügyek",
+      "desc": "Vízumok, engedélyek, bejelentés, iratok, hivatalok – plusz országspecifikus kifejezések."
+    },
+    "money": {
+      "name": "Pénz és bankolás",
+      "desc": "Számlák, kártyák, átutalások, adók, hitelek."
+    },
+    "work": {
+      "name": "Munka és foglalkoztatás",
+      "desc": "Állások, szerződések, fizetés, irodai élet, álláskeresés."
+    },
+    "telecom": {
+      "name": "Posta, telefon és internet",
+      "desc": "Csomagok, SIM-kártyák, mobil előfizetések, internet, fiókok."
+    },
+    "education": {
+      "name": "Oktatás",
+      "desc": "Iskola, egyetem, tanfolyamok, vizsgák."
+    },
+    "health": {
+      "name": "Egészség és orvoslás",
+      "desc": "Test, tünetek, orvosok, gyógyszertár, biztosítás."
+    },
+    "emergencies": {
+      "name": "Vészhelyzetek",
+      "desc": "Rendőrség, tűzoltóság, mentők, balesetek, katasztrófák."
+    },
+    "hobbies": {
+      "name": "Hobbik",
+      "desc": "Gyakori időtöltések, kézművesség, gyűjtés, szabadtéri tevékenységek."
+    },
+    "sports": {
+      "name": "Sport",
+      "desc": "Sportágak, felszerelés, versenyek, fitnesz."
+    },
+    "music": {
+      "name": "Zene",
+      "desc": "Hangszerek, műfajok, játék és hallgatás."
+    },
+    "video-games": {
+      "name": "Videójátékok",
+      "desc": "Játékszókincs játékhoz és csevegéshez."
+    },
+    "tabletop": {
+      "name": "Társasjátékok",
+      "desc": "Kockák, kártyák, körök és szabályok – játékestékhez."
+    },
+    "tech": {
+      "name": "Technika és számítógépek",
+      "desc": "Eszközök, szoftverek, web, hibaelhárítás."
+    },
+    "science": {
+      "name": "Tudomány",
+      "desc": "Fizika, kémia, biológia, csillagászat alapszókincse."
+    },
+    "profanity": {
+      "name": "Durva szavak",
+      "desc": "Káromkodások és sértések, nyelvek között erősség szerint párosítva."
+    }
+  },
+  "fields": {
+    "gender": {
+      "label": "Nem / névelő",
+      "help": "Megmutatja a névelőt (der Tisch, la mesa) vagy a nem jelölését (m/f/n) a szó mellett."
+    },
+    "stress": {
+      "label": "Hangsúlyjelek",
+      "help": "A hangsúlyos magánhangzót jelöli (молоко́). A szóra, az alakjaira és a példákban kiemelt szóra vonatkozik."
+    },
+    "vowels": {
+      "label": "Magánhangzójelek",
+      "help": "A rövid magánhangzók jelei (harakat) a betűk fölött és alatt: كِتَاب, nem كتاب. A szóra, az alakjaira és a példákban kiemelt szóra vonatkozik."
+    },
+    "reading": {
+      "label": "Olvasat (furigana)",
+      "help": "Kana olvasat a kandzsik fölött. A példamondatok furiganáját is ez vezérli."
+    },
+    "romanization": {
+      "label": "Latin betűs átírás",
+      "help": "A szó latin betűkkel: Hepburn (japán), pinyin (kínai), Revised Romanization (koreai), ALA-LC (arab), átírás (orosz, ukrán, örmény, görög). Kínainál a példamondatok pinyinjét is ez vezérli."
+    },
+    "otherScript": {
+      "label": "Másik írásrendszer",
+      "help": "A szót a szerb nyelv másik írásrendszerével mutatja (latin, ha a pakli cirill, és fordítva)."
+    },
+    "measureWord": {
+      "label": "Számlálószó",
+      "help": "A főnév számlálásakor használt szó (一本书, 鉛筆を三本, ba con mèo)."
+    },
+    "hanja": {
+      "label": "Hanja",
+      "help": "A kínai eredetű koreai szavak mögötti kínai írásjegyek (은행 → 銀行). Csak azoknál a szavaknál jelenik meg, amelyeknek van."
+    },
+    "forms": {
+      "label": "Fő alakok",
+      "help": "A szó használatához szükséges néhány alak: többes szám, birtokos eset, múlt idő, igeaspektus-pár, igeosztály… nem teljes táblázatok."
+    },
+    "ipa": {
+      "label": "IPA",
+      "help": "Kiejtés a Nemzetközi Fonetikai Ábécé jelöléseivel."
+    },
+    "examples": {
+      "label": "Példák",
+      "help": "Példamondatok kiemelt szóval. A csúszkával választhatod ki a számukat (0–3)."
+    },
+    "exampleTranslations": {
+      "label": "Példák fordítása",
+      "help": "Minden példát megmutat magyarul, ha van hozzá fordítás. Néhány példa eredetileg az adott nyelven készült, ezekhez nincs fordítás."
+    },
+    "related": {
+      "label": "Ellentétek és rokon szavak",
+      "help": "Ellentétes és szorosan kapcsolódó szavak a tanult nyelven."
+    },
+    "pos": {
+      "label": "Szófaj",
+      "help": "főnév, ige, melléknév…"
+    },
+    "register": {
+      "label": "Stílusréteg",
+      "help": "Jelöli a bizalmas, formális, vulgáris vagy sértő szavakat."
+    },
+    "emoji": {
+      "label": "Emoji",
+      "help": "Képi segítség konkrét szavakhoz (💧 víz). A legtöbb elvont szónak nincs."
+    },
+    "conceptId": {
+      "label": "Fogalomazonosító",
+      "help": "Apró kód a kártya alján (pl. word-water). Ha tanulás közben hibát találsz az Ankiban, add meg ezt a kódot a jelentésben, hogy megtaláljuk a pontos szócikket."
+    }
+  },
+  "options": {
+    "reverse": {
+      "label": "Fordított kártyák",
+      "help": "Szavanként egy második kártyát ad hozzá: magyar → a tanult nyelv. A fordított kártyákon a tanult szóval kapcsolatos minden a válaszoldalra kerül, hogy semmi ne árulja el a megoldást."
+    },
+    "typeAnswer": {
+      "label": "Válasz beírása",
+      "help": "A fordított kártyákon nem csak felidézed a szót, hanem be is írod. Az Anki összeveti a helyesírásodat a fő alakkal (névelőkkel együtt, a hangsúly- és magánhangzójeleket figyelmen kívül hagyva)."
+    },
+    "srScript": {
+      "label": "Szerb írásrendszer",
+      "help": "A szerbet cirill és latin betűkkel is írják. Válaszd ki a kártyáidon használtat."
+    }
+  },
+  "pairs": {
+    "en": {
+      "name": "Angol magyaroknak",
+      "title": "Ingyenes angol Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes angol Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli angol szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Angol más nyelvet beszélőknek"
+    },
+    "de": {
+      "name": "Német magyaroknak",
+      "title": "Ingyenes német Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes német Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli német szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Német más nyelvet beszélőknek"
+    },
+    "nl": {
+      "name": "Holland magyaroknak",
+      "title": "Ingyenes holland Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes holland Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli holland szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Holland más nyelvet beszélőknek"
+    },
+    "sv": {
+      "name": "Svéd magyaroknak",
+      "title": "Ingyenes svéd Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes svéd Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli svéd szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Svéd más nyelvet beszélőknek"
+    },
+    "zh": {
+      "name": "Kínai magyaroknak",
+      "title": "Ingyenes kínai Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes kínai Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli kínai szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Kínai más nyelvet beszélőknek"
+    },
+    "ja": {
+      "name": "Japán magyaroknak",
+      "title": "Ingyenes japán Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes japán Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli japán szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Japán más nyelvet beszélőknek"
+    },
+    "vi": {
+      "name": "Vietnámi magyaroknak",
+      "title": "Ingyenes vietnámi Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes vietnámi Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli vietnámi szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Vietnámi más nyelvet beszélőknek"
+    },
+    "ko": {
+      "name": "Koreai magyaroknak",
+      "title": "Ingyenes koreai Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes koreai Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli koreai szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Koreai más nyelvet beszélőknek"
+    },
+    "es": {
+      "name": "Spanyol magyaroknak",
+      "title": "Ingyenes spanyol Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes spanyol Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli spanyol szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Spanyol más nyelvet beszélőknek"
+    },
+    "fr": {
+      "name": "Francia magyaroknak",
+      "title": "Ingyenes francia Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes francia Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli francia szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Francia más nyelvet beszélőknek"
+    },
+    "pt": {
+      "name": "Portugál magyaroknak",
+      "title": "Ingyenes portugál Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes portugál Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli portugál szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Portugál más nyelvet beszélőknek"
+    },
+    "it": {
+      "name": "Olasz magyaroknak",
+      "title": "Ingyenes olasz Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes olasz Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli olasz szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Olasz más nyelvet beszélőknek"
+    },
+    "ru": {
+      "name": "Orosz magyaroknak",
+      "title": "Ingyenes orosz Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes orosz Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli orosz szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Orosz más nyelvet beszélőknek"
+    },
+    "pl": {
+      "name": "Lengyel magyaroknak",
+      "title": "Ingyenes lengyel Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes lengyel Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli lengyel szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Lengyel más nyelvet beszélőknek"
+    },
+    "uk": {
+      "name": "Ukrán magyaroknak",
+      "title": "Ingyenes ukrán Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes ukrán Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli ukrán szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Ukrán más nyelvet beszélőknek"
+    },
+    "sr": {
+      "name": "Szerb magyaroknak",
+      "title": "Ingyenes szerb Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes szerb Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli szerb szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Szerb más nyelvet beszélőknek"
+    },
+    "ga": {
+      "name": "Ír magyaroknak",
+      "title": "Ingyenes ír Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes ír Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli ír szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Ír más nyelvet beszélőknek"
+    },
+    "gd": {
+      "name": "Skót gael magyaroknak",
+      "title": "Ingyenes skót gael Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes skót gael Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli skót gael szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Skót gael más nyelvet beszélőknek"
+    },
+    "ar": {
+      "name": "Arab magyaroknak",
+      "title": "Ingyenes arab Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes arab Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli arab szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Arab más nyelvet beszélőknek"
+    },
+    "tr": {
+      "name": "Török magyaroknak",
+      "title": "Ingyenes török Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes török Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli török szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Török más nyelvet beszélőknek"
+    },
+    "el": {
+      "name": "Görög magyaroknak",
+      "title": "Ingyenes görög Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes görög Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli görög szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Görög más nyelvet beszélőknek"
+    },
+    "hy": {
+      "name": "Örmény magyaroknak",
+      "title": "Ingyenes örmény Anki-pakli magyaroknak — AnkiGen",
+      "description": "Ingyenes örmény Anki-pakli magyaroknak. Tartalom: {words}, {modules}; magyar fordításokkal és példamondatokkal. Ankihoz és AnkiDroidhoz.",
+      "lede": "Ingyenes Anki-pakli örmény szavakkal és magyar fordításokkal, közvetlenül a böngésződben összeállítva.",
+      "others": "Örmény más nyelvet beszélőknek"
+    }
+  },
+  "plural": {
+    "word": {
+      "one": "{n} szó",
+      "other": "{n} szó"
+    },
+    "module": {
+      "one": "{n} modul",
+      "other": "{n} modul"
+    }
+  }
+}

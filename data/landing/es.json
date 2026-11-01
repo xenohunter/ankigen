@@ -1,5 +1,5 @@
 {
-  "source": "c76200e4b871",
+  "source": "39bb0f131826",
   "texts": {
     "decks": "Mazos",
     "cta": "Crea tu mazo",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "Inglés",
-    "ru": "Ruso",
-    "sr": "Serbio",
-    "ja": "Japonés",
-    "zh": "Chino",
     "de": "Alemán",
-    "es": "Español",
-    "pt": "Portugués",
-    "pl": "Polaco",
+    "nl": "Neerlandés",
+    "sv": "Sueco",
+    "zh": "Chino",
+    "ja": "Japonés",
+    "vi": "Vietnamita",
     "ko": "Coreano",
-    "nl": "Holandés",
+    "es": "Español",
     "fr": "Francés",
-    "hy": "Armenio",
+    "pt": "Portugués",
+    "it": "Italiano",
+    "ru": "Ruso",
+    "pl": "Polaco",
+    "uk": "Ucraniano",
+    "sr": "Serbio",
+    "ga": "Irlandés",
+    "gd": "Gaélico escocés",
+    "ar": "Árabe",
     "tr": "Turco",
-    "el": "Griego"
+    "el": "Griego",
+    "hu": "Húngaro",
+    "hy": "Armenio"
   },
   "categories": {
     "foundations": "Fundamentos",
@@ -206,13 +214,17 @@
       "label": "Acentuación",
       "help": "Marca la vocal tónica (молоко́). Se aplica a la palabra, sus formas y la palabra resaltada en los ejemplos."
     },
+    "vowels": {
+      "label": "Vocales (harakat)",
+      "help": "Los signos de las vocales breves (harakat) sobre y bajo las letras: كِتَاب en lugar de كتاب. Se aplica a la palabra, sus formas y la palabra resaltada en los ejemplos."
+    },
     "reading": {
       "label": "Lectura (furigana)",
       "help": "Lectura en kana sobre los kanji. También controla el furigana en las frases de ejemplo."
     },
     "romanization": {
       "label": "Romanización",
-      "help": "La palabra en letras latinas: Hepburn (japonés), pinyin (chino), Romanización Revisada (coreano), transliteración (ruso, armenio, griego). En chino también controla el pinyin en las frases de ejemplo."
+      "help": "La palabra en letras latinas: Hepburn (japonés), pinyin (chino), Romanización Revisada (coreano), ALA-LC (árabe), transliteración (ruso, ucraniano, armenio, griego). En chino también controla el pinyin en las frases de ejemplo."
     },
     "otherScript": {
       "label": "Otra escritura",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Clasificador / contador",
-      "help": "El clasificador que se usa al contar este sustantivo (一本书, 鉛筆を三本)."
+      "help": "El clasificador que se usa al contar este sustantivo (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Escribir la respuesta",
-      "help": "En las tarjetas inversas escribes la palabra en lugar de solo recordarla. Anki compara tu ortografía con la forma principal (con artículos, sin tener en cuenta los acentos de tonicidad)."
+      "help": "En las tarjetas inversas escribes la palabra en lugar de solo recordarla. Anki compara tu ortografía con la forma principal (con artículos, sin tener en cuenta los acentos de tonicidad ni las vocales breves)."
     },
     "srScript": {
       "label": "Escritura del serbio",
@@ -285,26 +297,26 @@
       "lede": "Un mazo de Anki gratuito con palabras en inglés y traducciones al español, creado en tu navegador.",
       "others": "Inglés para hablantes de otros idiomas"
     },
-    "ru": {
-      "name": "Ruso para hispanohablantes",
-      "title": "Mazo de Anki de ruso para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender ruso: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en ruso y traducciones al español, creado en tu navegador.",
-      "others": "Ruso para hablantes de otros idiomas"
+    "de": {
+      "name": "Alemán para hispanohablantes",
+      "title": "Mazo de Anki de alemán para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender alemán: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en alemán y traducciones al español, creado en tu navegador.",
+      "others": "Alemán para hablantes de otros idiomas"
     },
-    "sr": {
-      "name": "Serbio para hispanohablantes",
-      "title": "Mazo de Anki de serbio para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender serbio: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en serbio y traducciones al español, creado en tu navegador.",
-      "others": "Serbio para hablantes de otros idiomas"
+    "nl": {
+      "name": "Neerlandés para hispanohablantes",
+      "title": "Mazo de Anki de neerlandés para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender neerlandés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en neerlandés y traducciones al español, creado en tu navegador.",
+      "others": "Neerlandés para hablantes de otros idiomas"
     },
-    "ja": {
-      "name": "Japonés para hispanohablantes",
-      "title": "Mazo de Anki de japonés para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender japonés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en japonés y traducciones al español, creado en tu navegador.",
-      "others": "Japonés para hablantes de otros idiomas"
+    "sv": {
+      "name": "Sueco para hispanohablantes",
+      "title": "Mazo de Anki de sueco para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender sueco: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en sueco y traducciones al español, creado en tu navegador.",
+      "others": "Sueco para hablantes de otros idiomas"
     },
     "zh": {
       "name": "Chino para hispanohablantes",
@@ -313,26 +325,19 @@
       "lede": "Un mazo de Anki gratuito con palabras en chino y traducciones al español, creado en tu navegador.",
       "others": "Chino para hablantes de otros idiomas"
     },
-    "de": {
-      "name": "Alemán para hispanohablantes",
-      "title": "Mazo de Anki de alemán para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender alemán: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en alemán y traducciones al español, creado en tu navegador.",
-      "others": "Alemán para hablantes de otros idiomas"
+    "ja": {
+      "name": "Japonés para hispanohablantes",
+      "title": "Mazo de Anki de japonés para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender japonés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en japonés y traducciones al español, creado en tu navegador.",
+      "others": "Japonés para hablantes de otros idiomas"
     },
-    "pt": {
-      "name": "Portugués para hispanohablantes",
-      "title": "Mazo de Anki de portugués para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender portugués: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en portugués y traducciones al español, creado en tu navegador.",
-      "others": "Portugués para hablantes de otros idiomas"
-    },
-    "pl": {
-      "name": "Polaco para hispanohablantes",
-      "title": "Mazo de Anki de polaco para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender polaco: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en polaco y traducciones al español, creado en tu navegador.",
-      "others": "Polaco para hablantes de otros idiomas"
+    "vi": {
+      "name": "Vietnamita para hispanohablantes",
+      "title": "Mazo de Anki de vietnamita para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender vietnamita: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en vietnamita y traducciones al español, creado en tu navegador.",
+      "others": "Vietnamita para hablantes de otros idiomas"
     },
     "ko": {
       "name": "Coreano para hispanohablantes",
@@ -341,13 +346,6 @@
       "lede": "Un mazo de Anki gratuito con palabras en coreano y traducciones al español, creado en tu navegador.",
       "others": "Coreano para hablantes de otros idiomas"
     },
-    "nl": {
-      "name": "Holandés para hispanohablantes",
-      "title": "Mazo de Anki de holandés para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender holandés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en holandés y traducciones al español, creado en tu navegador.",
-      "others": "Holandés para hablantes de otros idiomas"
-    },
     "fr": {
       "name": "Francés para hispanohablantes",
       "title": "Mazo de Anki de francés para hispanohablantes — AnkiGen",
@@ -355,12 +353,68 @@
       "lede": "Un mazo de Anki gratuito con palabras en francés y traducciones al español, creado en tu navegador.",
       "others": "Francés para hablantes de otros idiomas"
     },
-    "hy": {
-      "name": "Armenio para hispanohablantes",
-      "title": "Mazo de Anki de armenio para hispanohablantes — AnkiGen",
-      "description": "Mazo de Anki gratis para aprender armenio: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
-      "lede": "Un mazo de Anki gratuito con palabras en armenio y traducciones al español, creado en tu navegador.",
-      "others": "Armenio para hablantes de otros idiomas"
+    "pt": {
+      "name": "Portugués para hispanohablantes",
+      "title": "Mazo de Anki de portugués para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender portugués: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en portugués y traducciones al español, creado en tu navegador.",
+      "others": "Portugués para hablantes de otros idiomas"
+    },
+    "it": {
+      "name": "Italiano para hispanohablantes",
+      "title": "Mazo de Anki de italiano para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender italiano: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en italiano y traducciones al español, creado en tu navegador.",
+      "others": "Italiano para hablantes de otros idiomas"
+    },
+    "ru": {
+      "name": "Ruso para hispanohablantes",
+      "title": "Mazo de Anki de ruso para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender ruso: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en ruso y traducciones al español, creado en tu navegador.",
+      "others": "Ruso para hablantes de otros idiomas"
+    },
+    "pl": {
+      "name": "Polaco para hispanohablantes",
+      "title": "Mazo de Anki de polaco para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender polaco: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en polaco y traducciones al español, creado en tu navegador.",
+      "others": "Polaco para hablantes de otros idiomas"
+    },
+    "uk": {
+      "name": "Ucraniano para hispanohablantes",
+      "title": "Mazo de Anki de ucraniano para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender ucraniano: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en ucraniano y traducciones al español, creado en tu navegador.",
+      "others": "Ucraniano para hablantes de otros idiomas"
+    },
+    "sr": {
+      "name": "Serbio para hispanohablantes",
+      "title": "Mazo de Anki de serbio para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender serbio: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en serbio y traducciones al español, creado en tu navegador.",
+      "others": "Serbio para hablantes de otros idiomas"
+    },
+    "ga": {
+      "name": "Irlandés para hispanohablantes",
+      "title": "Mazo de Anki de irlandés para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender irlandés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en irlandés y traducciones al español, creado en tu navegador.",
+      "others": "Irlandés para hablantes de otros idiomas"
+    },
+    "gd": {
+      "name": "Gaélico escocés para hispanohablantes",
+      "title": "Anki de gaélico escocés para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender gaélico escocés: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en gaélico escocés y traducciones al español, creado en tu navegador.",
+      "others": "Gaélico escocés para hablantes de otros idiomas"
+    },
+    "ar": {
+      "name": "Árabe para hispanohablantes",
+      "title": "Mazo de Anki de árabe para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender árabe: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en árabe y traducciones al español, creado en tu navegador.",
+      "others": "Árabe para hablantes de otros idiomas"
     },
     "tr": {
       "name": "Turco para hispanohablantes",
@@ -375,6 +429,20 @@
       "description": "Mazo de Anki gratis para aprender griego: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
       "lede": "Un mazo de Anki gratuito con palabras en griego y traducciones al español, creado en tu navegador.",
       "others": "Griego para hablantes de otros idiomas"
+    },
+    "hu": {
+      "name": "Húngaro para hispanohablantes",
+      "title": "Mazo de Anki de húngaro para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender húngaro: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en húngaro y traducciones al español, creado en tu navegador.",
+      "others": "Húngaro para hablantes de otros idiomas"
+    },
+    "hy": {
+      "name": "Armenio para hispanohablantes",
+      "title": "Mazo de Anki de armenio para hispanohablantes — AnkiGen",
+      "description": "Mazo de Anki gratis para aprender armenio: {words} en {modules}, con traducciones al español y ejemplos. Para Anki y AnkiDroid.",
+      "lede": "Un mazo de Anki gratuito con palabras en armenio y traducciones al español, creado en tu navegador.",
+      "others": "Armenio para hablantes de otros idiomas"
     }
   },
   "plural": {

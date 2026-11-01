@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"QR-Code","g":"m","forms":{"pl":"QR-Codes"},"def":"Quadratisches Muster aus schwarzen und weißen Punkten, das man mit der Handykamera einlesen kann."},
 "word-notification": {"w":"Benachrichtigung","g":"f","alt":["Push-Nachricht"],"forms":{"pl":"Benachrichtigungen"},"def":"Kurze Meldung auf dem Handy, die etwas Neues anzeigt."},
 "word-landline": {"w":"Festnetztelefon","g":"n","alt":["Festnetz"],"forms":{"pl":"Festnetztelefone"},"def":"Telefon, das über Kabel angeschlossen ist und nicht über ein Mobilfunknetz funktioniert."},
-"word-postal-worker": {"w":"Postbote","g":"m","alt":["Briefträger","Zusteller"],"forms":{"pl":"Postboten","gen":"Postboten","f":"Postbotin"},"def":"Person, die beruflich Briefe und Pakete zu den Haushalten bringt."}
+"word-postal-worker": {"w":"Postbote","g":"m","alt":["Briefträger","Zusteller"],"forms":{"pl":"Postboten","gen":"Postboten","f":"Postbotin"},"def":"Person, die beruflich Briefe und Pakete zu den Haushalten bringt."},
+"word-eircode-ie": {"gl":"Eircode: irischer siebenstelliger Postcode, der jede einzelne Adresse eindeutig kennzeichnet"}
 }

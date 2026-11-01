@@ -1,0 +1,460 @@
+{
+  "source": "0c79b9ff26ca",
+  "texts": {
+    "decks": "Mazzi",
+    "cta": "Crea il tuo mazzo",
+    "ctaNote": "Apre AnkiGen con questa coppia di lingue e il modulo «{module}» selezionato.",
+    "deck": "Mazzo Anki: {deck}",
+    "intro": "AnkiGen crea mazzi Anki gratuiti direttamente nel tuo browser: parole divise per argomento, ciascuna con la traduzione e frasi di esempio. Scegli i moduli e cosa mostra ogni scheda, poi scarica un file .apkg per Anki o AnkiDroid. Nessun account, nulla da installare.",
+    "cardsHeading": "Cosa mostrano le schede",
+    "cardsIntro": "Ogni scheda mostra la parola che stai imparando e la sua traduzione. Sei tu a scegliere cos'altro mostrare e su quale lato:",
+    "captions": "Le didascalie delle schede, come «{caption}», sono in italiano.",
+    "modulesHeading": "Moduli",
+    "modulesIntro": "Una parola che appartiene a più moduli compare una sola volta nel mazzo. Ogni modulo apre AnkiGen con quel solo modulo selezionato; lì puoi aggiungerne altri.",
+    "sampleWords": "Parole di esempio",
+    "local": "Parole che esistono solo in questa lingua: {count}, per esempio {example}. Le altre lingue non hanno una parola esatta per queste, quindi le tue schede le spiegano in italiano.",
+    "howHeading": "Come funziona",
+    "step1": "Scegli i moduli che ti servono. Ognuno indica quante parole contiene per la tua coppia di lingue.",
+    "step2": "Scegli cosa mostra ogni scheda e su quale lato. L'anteprima mostra schede vere mentre scegli.",
+    "step3": "Scarica il file .apkg e aprilo con Anki (File → Import), oppure toccalo sul telefono per aprirlo in AnkiDroid.",
+    "update": "Hai cambiato i campi, aggiunto moduli o vuoi dati più recenti? Scarica di nuovo e importa il nuovo file in Anki (File → Import) con le opzioni predefinite. Anki aggiorna le note esistenti e la loro impaginazione, aggiunge le parole nuove allo stesso mazzo e conserva i tuoi progressi di ripasso.",
+    "aboutHeading": "Sul vocabolario",
+    "about": "Parole, traduzioni e frasi di esempio sono state redatte con un modello di IA e vengono controllate da persone, lingua per lingua. Se qualcosa ti sembra sbagliato, selezionalo su una scheda dell'anteprima in AnkiGen e premi Ctrl+Invio (⌘+Invio su Mac), oppure usa il pulsante Feedback. Ogni segnalazione aiuta a correggere il mazzo per tutti.",
+    "moreHeading": "Altri mazzi",
+    "moreForYou": "Altri mazzi per chi parla italiano",
+    "allDecks": "Tutti i mazzi per coppia di lingue"
+  },
+  "languages": {
+    "en": "Inglese",
+    "de": "Tedesco",
+    "nl": "Olandese",
+    "sv": "Svedese",
+    "zh": "Cinese",
+    "ja": "Giapponese",
+    "vi": "Vietnamita",
+    "ko": "Coreano",
+    "es": "Spagnolo",
+    "fr": "Francese",
+    "pt": "Portoghese",
+    "it": "Italiano",
+    "ru": "Russo",
+    "pl": "Polacco",
+    "uk": "Ucraino",
+    "sr": "Serbo",
+    "ga": "Irlandese",
+    "gd": "Gaelico scozzese",
+    "ar": "Arabo",
+    "tr": "Turco",
+    "el": "Greco",
+    "hu": "Ungherese",
+    "hy": "Armeno"
+  },
+  "categories": {
+    "foundations": "Basi",
+    "communication": "Comunicazione",
+    "daily-life": "Vita quotidiana",
+    "getting-around": "Spostarsi",
+    "living-abroad": "Vivere all'estero",
+    "health-safety": "Salute e sicurezza",
+    "interests": "Interessi",
+    "adult": "18+"
+  },
+  "modules": {
+    "core-1": {
+      "name": "Core I",
+      "desc": "Le ~500 parole più frequenti, comuni a tutte le lingue."
+    },
+    "core-2": {
+      "name": "Core II",
+      "desc": "Le successive ~500 parole più frequenti."
+    },
+    "core-3": {
+      "name": "Core III",
+      "desc": "Le successive ~800 parole più frequenti."
+    },
+    "numbers": {
+      "name": "Numeri e matematica",
+      "desc": "Numeri cardinali e ordinali, frazioni, aritmetica, misure."
+    },
+    "time": {
+      "name": "Tempo e calendario",
+      "desc": "Giorni, mesi, stagioni, ore, date, frequenza."
+    },
+    "phrases": {
+      "name": "Frasi di sopravvivenza",
+      "desc": "Saluti, cortesia e frasi intere per le situazioni di ogni giorno."
+    },
+    "countries": {
+      "name": "Paesi, nazionalità e lingue",
+      "desc": "I principali paesi, i loro abitanti, gli aggettivi e le lingue."
+    },
+    "language-learning": {
+      "name": "Imparare le lingue",
+      "desc": "Parlare di lingua: termini grammaticali, pronuncia, chiedere aiuto."
+    },
+    "family": {
+      "name": "Famiglia e relazioni",
+      "desc": "Parenti, partner, amici, eventi della vita."
+    },
+    "feelings": {
+      "name": "Sentimenti e carattere",
+      "desc": "Emozioni, stati d'animo, tratti della personalità."
+    },
+    "food": {
+      "name": "Cibo e bevande",
+      "desc": "Spesa, piatti, bevande, mangiare fuori."
+    },
+    "cooking": {
+      "name": "Cucina e cucinare",
+      "desc": "Verbi della cucina, utensili, elettrodomestici, ricette."
+    },
+    "shopping": {
+      "name": "Acquisti e abbigliamento",
+      "desc": "Negozi, pagamenti, taglie, vestiti, resi."
+    },
+    "housing": {
+      "name": "Casa e affitto",
+      "desc": "Affitto, contratti, proprietari, utenze, stanze."
+    },
+    "household": {
+      "name": "Casa e riparazioni",
+      "desc": "Faccende, mobili, attrezzi, riparazioni, idraulica, elettricità."
+    },
+    "nature": {
+      "name": "Meteo e natura",
+      "desc": "Meteo, clima, paesaggio, piante."
+    },
+    "animals": {
+      "name": "Animali domestici e animali",
+      "desc": "Animali domestici, cura, visite dal veterinario, animali comuni."
+    },
+    "city": {
+      "name": "Città e indicazioni",
+      "desc": "Luoghi della città, chiedere e dare indicazioni."
+    },
+    "transport": {
+      "name": "Trasporti e viaggi",
+      "desc": "Mezzi pubblici, biglietti, aeroporti, hotel, bagagli."
+    },
+    "driving": {
+      "name": "Guida e codice della strada",
+      "desc": "Parti dell'auto, regole del traffico, segnali stradali, esami di patente, multe, incidenti."
+    },
+    "signs": {
+      "name": "Cartelli e avvisi",
+      "desc": "Cosa si legge su porte, negozi e strade: Spingere, Uscita, Guasto."
+    },
+    "residence": {
+      "name": "Residenza e pratiche legali",
+      "desc": "Visti, permessi, registrazione, documenti, uffici — più termini specifici di ogni paese."
+    },
+    "money": {
+      "name": "Soldi e banca",
+      "desc": "Conti, carte, bonifici, tasse, prestiti."
+    },
+    "work": {
+      "name": "Lavoro e occupazione",
+      "desc": "Mestieri, contratti, stipendio, vita d'ufficio, ricerca di lavoro."
+    },
+    "telecom": {
+      "name": "Posta, telefono e internet",
+      "desc": "Pacchi, SIM, piani mobili, internet, account."
+    },
+    "education": {
+      "name": "Istruzione",
+      "desc": "Scuola, università, corsi, esami."
+    },
+    "health": {
+      "name": "Salute e medicina",
+      "desc": "Corpo, sintomi, medici, farmacia, assicurazione."
+    },
+    "emergencies": {
+      "name": "Emergenze",
+      "desc": "Polizia, vigili del fuoco, ambulanza, incidenti, calamità."
+    },
+    "hobbies": {
+      "name": "Hobby",
+      "desc": "Passatempi comuni, lavori manuali, collezionismo, attività all'aperto."
+    },
+    "sports": {
+      "name": "Sport",
+      "desc": "Sport, attrezzatura, competizioni, fitness."
+    },
+    "music": {
+      "name": "Musica",
+      "desc": "Strumenti, generi, suonare e ascoltare."
+    },
+    "video-games": {
+      "name": "Videogiochi",
+      "desc": "Vocabolario da gamer per giocare e chattare."
+    },
+    "tabletop": {
+      "name": "Giochi da tavolo",
+      "desc": "Dadi, carte, turni e regole — per le serate di gioco."
+    },
+    "tech": {
+      "name": "Tecnologia e computer",
+      "desc": "Dispositivi, software, web, risoluzione dei problemi."
+    },
+    "science": {
+      "name": "Scienze",
+      "desc": "Vocabolario di base di fisica, chimica, biologia, astronomia."
+    },
+    "profanity": {
+      "name": "Parolacce",
+      "desc": "Imprecazioni e insulti, abbinati per intensità tra le lingue."
+    }
+  },
+  "fields": {
+    "gender": {
+      "label": "Genere / articolo",
+      "help": "Mostra l'articolo (der Tisch, la mesa) o un indicatore di genere (m/f/n) accanto alla parola."
+    },
+    "stress": {
+      "label": "Accenti tonici",
+      "help": "Segna la vocale accentata (молоко́). Vale per la parola, le sue forme e la parola evidenziata negli esempi."
+    },
+    "vowels": {
+      "label": "Segni vocalici",
+      "help": "I segni delle vocali brevi (harakat) sopra e sotto le lettere: كِتَاب invece di كتاب. Vale per la parola, le sue forme e la parola evidenziata negli esempi."
+    },
+    "reading": {
+      "label": "Lettura (furigana)",
+      "help": "Lettura in kana sopra i kanji. Controlla anche i furigana nelle frasi di esempio."
+    },
+    "romanization": {
+      "label": "Romanizzazione",
+      "help": "La parola in lettere latine: Hepburn (giapponese), pinyin (cinese), Revised Romanization (coreano), ALA-LC (arabo), traslitterazione (russo, ucraino, armeno, greco). Per il cinese controlla anche il pinyin nelle frasi di esempio."
+    },
+    "otherScript": {
+      "label": "Altro alfabeto",
+      "help": "Mostra la parola nell'altro alfabeto del serbo (latino se il mazzo usa il cirillico, e viceversa)."
+    },
+    "measureWord": {
+      "label": "Classificatore / contatore",
+      "help": "Il classificatore usato per contare questo nome (一本书, 鉛筆を三本, ba con mèo)."
+    },
+    "hanja": {
+      "label": "Hanja",
+      "help": "I caratteri cinesi dietro le parole sino-coreane (은행 → 銀行). Compaiono solo per le parole che li hanno."
+    },
+    "forms": {
+      "label": "Forme principali",
+      "help": "Le poche forme che servono per usare la parola: plurale, genitivo, passato, partner aspettuale, classe del verbo… non le tabelle complete."
+    },
+    "ipa": {
+      "label": "IPA",
+      "help": "Pronuncia nell'Alfabeto Fonetico Internazionale."
+    },
+    "examples": {
+      "label": "Esempi",
+      "help": "Frasi di esempio con la parola evidenziata. Usa il cursore per scegliere quante (0–3)."
+    },
+    "exampleTranslations": {
+      "label": "Traduzioni degli esempi",
+      "help": "Mostra ogni esempio nella tua lingua quando esiste una traduzione corrispondente. Alcuni esempi sono scritti direttamente nella lingua di studio e non hanno traduzione."
+    },
+    "related": {
+      "label": "Contrari e affini",
+      "help": "Parole opposte e strettamente collegate, nella lingua che stai imparando."
+    },
+    "pos": {
+      "label": "Parte del discorso",
+      "help": "nome, verbo, aggettivo…"
+    },
+    "register": {
+      "label": "Registro",
+      "help": "Segnala le parole informali, formali, volgari o offensive."
+    },
+    "emoji": {
+      "label": "Emoji",
+      "help": "Un aiuto visivo per le parole concrete (💧 acqua). La maggior parte delle parole astratte non ne ha."
+    },
+    "conceptId": {
+      "label": "ID del concetto",
+      "help": "Un piccolo codice in fondo alla scheda (es. word-water). Se trovi un errore mentre studi in Anki, includi questo codice nella segnalazione, così possiamo trovare la voce esatta."
+    }
+  },
+  "options": {
+    "reverse": {
+      "label": "Schede inverse",
+      "help": "Aggiunge una seconda scheda per ogni parola: la tua lingua → la lingua che impari. Nelle schede inverse tutto ciò che riguarda la parola da imparare passa sul lato della risposta, così nulla svela la soluzione."
+    },
+    "typeAnswer": {
+      "label": "Scrivi la risposta",
+      "help": "Nelle schede inverse scrivi la parola invece di limitarti a ricordarla. Anki confronta la tua ortografia con la forma principale (articoli inclusi, accenti tonici e segni vocalici ignorati)."
+    },
+    "srScript": {
+      "label": "Alfabeto serbo",
+      "help": "Il serbo si scrive sia in cirillico sia in latino. Scegli quello usato nelle tue schede."
+    }
+  },
+  "pairs": {
+    "en": {
+      "name": "Inglese per italiani",
+      "title": "Mazzo Anki di inglese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di inglese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in inglese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Inglese per chi parla altre lingue"
+    },
+    "de": {
+      "name": "Tedesco per italiani",
+      "title": "Mazzo Anki di tedesco per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di tedesco per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in tedesco, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Tedesco per chi parla altre lingue"
+    },
+    "nl": {
+      "name": "Olandese per italiani",
+      "title": "Mazzo Anki di olandese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di olandese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in olandese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Olandese per chi parla altre lingue"
+    },
+    "sv": {
+      "name": "Svedese per italiani",
+      "title": "Mazzo Anki di svedese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di svedese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in svedese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Svedese per chi parla altre lingue"
+    },
+    "zh": {
+      "name": "Cinese per italiani",
+      "title": "Mazzo Anki di cinese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di cinese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in cinese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Cinese per chi parla altre lingue"
+    },
+    "ja": {
+      "name": "Giapponese per italiani",
+      "title": "Mazzo Anki di giapponese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di giapponese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in giapponese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Giapponese per chi parla altre lingue"
+    },
+    "vi": {
+      "name": "Vietnamita per italiani",
+      "title": "Mazzo Anki di vietnamita per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di vietnamita per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in vietnamita, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Vietnamita per chi parla altre lingue"
+    },
+    "ko": {
+      "name": "Coreano per italiani",
+      "title": "Mazzo Anki di coreano per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di coreano per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in coreano, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Coreano per chi parla altre lingue"
+    },
+    "es": {
+      "name": "Spagnolo per italiani",
+      "title": "Mazzo Anki di spagnolo per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di spagnolo per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in spagnolo, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Spagnolo per chi parla altre lingue"
+    },
+    "fr": {
+      "name": "Francese per italiani",
+      "title": "Mazzo Anki di francese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di francese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in francese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Francese per chi parla altre lingue"
+    },
+    "pt": {
+      "name": "Portoghese per italiani",
+      "title": "Mazzo Anki di portoghese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di portoghese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in portoghese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Portoghese per chi parla altre lingue"
+    },
+    "ru": {
+      "name": "Russo per italiani",
+      "title": "Mazzo Anki di russo per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di russo per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in russo, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Russo per chi parla altre lingue"
+    },
+    "pl": {
+      "name": "Polacco per italiani",
+      "title": "Mazzo Anki di polacco per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di polacco per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in polacco, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Polacco per chi parla altre lingue"
+    },
+    "uk": {
+      "name": "Ucraino per italiani",
+      "title": "Mazzo Anki di ucraino per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di ucraino per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in ucraino, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Ucraino per chi parla altre lingue"
+    },
+    "sr": {
+      "name": "Serbo per italiani",
+      "title": "Mazzo Anki di serbo per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di serbo per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in serbo, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Serbo per chi parla altre lingue"
+    },
+    "ga": {
+      "name": "Irlandese per italiani",
+      "title": "Mazzo Anki di irlandese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di irlandese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in irlandese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Irlandese per chi parla altre lingue"
+    },
+    "gd": {
+      "name": "Gaelico scozzese per italiani",
+      "title": "Mazzo Anki di gaelico scozzese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di gaelico scozzese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in gaelico scozzese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Gaelico scozzese per chi parla altre lingue"
+    },
+    "ar": {
+      "name": "Arabo per italiani",
+      "title": "Mazzo Anki di arabo per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di arabo per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in arabo, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Arabo per chi parla altre lingue"
+    },
+    "tr": {
+      "name": "Turco per italiani",
+      "title": "Mazzo Anki di turco per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di turco per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in turco, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Turco per chi parla altre lingue"
+    },
+    "el": {
+      "name": "Greco per italiani",
+      "title": "Mazzo Anki di greco per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di greco per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in greco, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Greco per chi parla altre lingue"
+    },
+    "hu": {
+      "name": "Ungherese per italiani",
+      "title": "Mazzo Anki di ungherese per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di ungherese per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in ungherese, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Ungherese per chi parla altre lingue"
+    },
+    "hy": {
+      "name": "Armeno per italiani",
+      "title": "Mazzo Anki di armeno per italiani — AnkiGen",
+      "description": "Mazzo Anki gratuito di armeno per italiani: {words} in {modules}, con traduzioni in italiano ed esempi, per Anki e AnkiDroid.",
+      "lede": "Un mazzo Anki gratuito di parole in armeno, con traduzioni in italiano, creato nel tuo browser.",
+      "others": "Armeno per chi parla altre lingue"
+    }
+  },
+  "plural": {
+    "word": {
+      "one": "{n} parola",
+      "many": "{n} di parole",
+      "other": "{n} parole"
+    },
+    "module": {
+      "one": "{n} modulo",
+      "many": "{n} di moduli",
+      "other": "{n} moduli"
+    }
+  }
+}

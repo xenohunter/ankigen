@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"w":"dygn","g":"n","forms":{"def":"dygnet","pl":"dygn"},"def":"Tidsperiod på 24 timmar, med både dag och natt."},
+"word-day-off": {"w":"ledig dag","g":"c","alt":["klämdag"],"forms":{"def":"lediga dagen","pl":"lediga dagar"},"def":"En dag då man inte behöver gå till jobbet eller skolan."},
+"word-working-day": {"w":"arbetsdag","g":"c","alt":["vardag"],"forms":{"def":"arbetsdagen","pl":"arbetsdagar"},"def":"En dag då de flesta människor jobbar, oftast måndag till fredag."},
+"word-on-time": {"w":"i tid","alt":["punktligt"],"def":"Vid rätt tillfälle, varken för sent eller för tidigt."},
+"word-date-of-birth": {"w":"födelsedatum","g":"n","alt":["födelsedag"],"forms":{"def":"födelsedatumet","pl":"födelsedatum"},"def":"Dag, månad och år då en människa kom till världen."},
+"word-time-zone": {"w":"tidszon","g":"c","forms":{"def":"tidszonen","pl":"tidszoner"},"def":"Ett område på jorden där alla klockor visar samma tid."},
+"word-o-clock": {"w":"klockan","def":"Ord som står före en siffra när man anger en exakt timme på dygnet."},
+"word-lifetime": {"w":"livstid","g":"c","alt":["människoliv"],"forms":{"def":"livstiden","pl":"livstider"},"def":"Hela den tid som en människa lever."},
+"word-hogmanay": {"gl":"hogmanay: skotsk nyårsafton med firande, första besök och Auld Lang Syne"}
+}

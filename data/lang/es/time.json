@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"fecha de nacimiento","g":"f","def":"Día, mes y año en que nació una persona."},
 "word-time-zone": {"w":"huso horario","g":"m","alt":["zona horaria"],"def":"Región del mundo donde todos los relojes marcan la misma hora."},
 "word-o-clock": {"w":"en punto","def":"Expresión que se usa tras la hora para indicar que es exacta, sin minutos."},
-"word-lifetime": {"w":"vida","g":"f","hint":"duración","alt":["toda una vida"],"def":"Todo el tiempo que una persona está viva, desde que nace hasta que muere."}
+"word-lifetime": {"w":"vida","g":"f","hint":"duración","alt":["toda una vida"],"def":"Todo el tiempo que una persona está viva, desde que nace hasta que muere."},
+"word-hogmanay": {"gl":"Hogmanay: Nochevieja escocesa, con visitas de buena suerte y «Auld Lang Syne»"}
 }

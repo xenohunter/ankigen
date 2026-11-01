@@ -45,5 +45,7 @@
 "word-whistle": {"w":"silbar","forms":{"1sg":"silbo","pret":"silbó","pp":"silbado"},"def":"Producir un sonido agudo soplando aire entre los labios."},
 "word-hum": {"w":"tararear","forms":{"1sg":"tarareo","pret":"tarareó","pp":"tarareado"},"def":"Cantar una melodía con los labios cerrados."},
 "word-vinyl-record": {"w":"disco de vinilo","g":"m","alt":["vinilo"],"def":"Disco plano y negro que suena cuando una aguja pasa sobre él."},
-"word-instrument": {"w":"instrumento","g":"m","alt":["instrumento musical"],"def":"Objeto, como una guitarra o un piano, que se toca para hacer música."}
+"word-instrument": {"w":"instrumento","g":"m","alt":["instrumento musical"],"def":"Objeto, como una guitarra o un piano, que se toca para hacer música."},
+"word-ceili": {"gl":"céilí: reunión social irlandesa con música tradicional, canciones y baile en grupo"},
+"word-mod-gaelic": {"gl":"mòd: festival escocés de canto, música, poesía y habla en gaélico"}
 }

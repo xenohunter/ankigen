@@ -1,5 +1,5 @@
 {
-  "source": "09e485b33d7e",
+  "source": "aca2e4f5afeb",
   "texts": {
     "decks": "Talie",
     "cta": "Stwórz swoją talię",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "Angielski",
-    "ru": "Rosyjski",
-    "sr": "Serbski",
-    "ja": "Japoński",
-    "zh": "Chiński",
     "de": "Niemiecki",
-    "es": "Hiszpański",
-    "pt": "Portugalski",
-    "pl": "Polski",
-    "ko": "Koreański",
     "nl": "Niderlandzki",
+    "sv": "Szwedzki",
+    "zh": "Chiński",
+    "ja": "Japoński",
+    "vi": "Wietnamski",
+    "ko": "Koreański",
+    "es": "Hiszpański",
     "fr": "Francuski",
-    "hy": "Ormiański",
+    "pt": "Portugalski",
+    "it": "Włoski",
+    "ru": "Rosyjski",
+    "pl": "Polski",
+    "uk": "Ukraiński",
+    "sr": "Serbski",
+    "ga": "Irlandzki",
+    "gd": "Szkocki gaelicki",
+    "ar": "Arabski",
     "tr": "Turecki",
-    "el": "Grecki"
+    "el": "Grecki",
+    "hu": "Węgierski",
+    "hy": "Ormiański"
   },
   "categories": {
     "foundations": "Podstawy",
@@ -206,13 +214,17 @@
       "label": "Akcent",
       "help": "Zaznacza samogłoskę akcentowaną (молоко́). Dotyczy słowa, jego form i wyróżnionego słowa w przykładach."
     },
+    "vowels": {
+      "label": "Znaki samogłoskowe",
+      "help": "Krótkie znaki samogłoskowe (harakat) nad literami i pod nimi: كِتَاب zamiast كتاب. Dotyczy słowa, jego form i wyróżnionego słowa w przykładach."
+    },
     "reading": {
       "label": "Czytanie (furigana)",
       "help": "Zapis kaną nad kanji. Steruje też furiganą w zdaniach przykładowych."
     },
     "romanization": {
       "label": "Romanizacja",
-      "help": "Słowo zapisane literami łacińskimi: Hepburn (japoński), pinyin (chiński), Revised Romanization (koreański), transliteracja (rosyjski, ormiański, grecki). W chińskim steruje też pinyin w zdaniach przykładowych."
+      "help": "Słowo zapisane literami łacińskimi: Hepburn (japoński), pinyin (chiński), Revised Romanization (koreański), ALA-LC (arabski), transliteracja (rosyjski, ukraiński, ormiański, grecki). W chińskim steruje też pinyin w zdaniach przykładowych."
     },
     "otherScript": {
       "label": "Drugie pismo",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Klasyfikator / licznik",
-      "help": "Klasyfikator używany przy liczeniu tego rzeczownika (一本书, 鉛筆を三本)."
+      "help": "Klasyfikator używany przy liczeniu tego rzeczownika (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Wpisywanie odpowiedzi",
-      "help": "Na fiszkach odwrotnych słowo wpisujesz, zamiast tylko je sobie przypominać. Anki porównuje pisownię z główną formą (razem z rodzajnikami, bez uwzględniania akcentów)."
+      "help": "Na fiszkach odwrotnych słowo wpisujesz, zamiast tylko je sobie przypominać. Anki porównuje pisownię z główną formą (razem z rodzajnikami, bez uwzględniania akcentów i znaków samogłoskowych)."
     },
     "srScript": {
       "label": "Pismo serbskie",
@@ -285,61 +297,12 @@
       "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów angielskich, tworzona w przeglądarce.",
       "others": "Angielski dla osób mówiących innymi językami"
     },
-    "ru": {
-      "name": "Rosyjski dla Polaków",
-      "title": "Rosyjski dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki rosyjskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów rosyjskich, tworzona w przeglądarce.",
-      "others": "Rosyjski dla osób mówiących innymi językami"
-    },
-    "sr": {
-      "name": "Serbski dla Polaków",
-      "title": "Serbski dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki serbskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów serbskich, tworzona w przeglądarce.",
-      "others": "Serbski dla osób mówiących innymi językami"
-    },
-    "ja": {
-      "name": "Japoński dla Polaków",
-      "title": "Japoński dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki japońskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów japońskich, tworzona w przeglądarce.",
-      "others": "Japoński dla osób mówiących innymi językami"
-    },
-    "zh": {
-      "name": "Chiński dla Polaków",
-      "title": "Chiński dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki chińskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów chińskich, tworzona w przeglądarce.",
-      "others": "Chiński dla osób mówiących innymi językami"
-    },
     "de": {
       "name": "Niemiecki dla Polaków",
       "title": "Niemiecki dla Polaków: darmowa talia Anki — AnkiGen",
       "description": "Darmowa talia Anki do nauki niemieckiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
       "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów niemieckich, tworzona w przeglądarce.",
       "others": "Niemiecki dla osób mówiących innymi językami"
-    },
-    "es": {
-      "name": "Hiszpański dla Polaków",
-      "title": "Hiszpański dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki hiszpańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów hiszpańskich, tworzona w przeglądarce.",
-      "others": "Hiszpański dla osób mówiących innymi językami"
-    },
-    "pt": {
-      "name": "Portugalski dla Polaków",
-      "title": "Portugalski dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki portugalskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów portugalskich, tworzona w przeglądarce.",
-      "others": "Portugalski dla osób mówiących innymi językami"
-    },
-    "ko": {
-      "name": "Koreański dla Polaków",
-      "title": "Koreański dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki koreańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów koreańskich, tworzona w przeglądarce.",
-      "others": "Koreański dla osób mówiących innymi językami"
     },
     "nl": {
       "name": "Niderlandzki dla Polaków",
@@ -348,6 +311,48 @@
       "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów niderlandzkich, tworzona w przeglądarce.",
       "others": "Niderlandzki dla osób mówiących innymi językami"
     },
+    "sv": {
+      "name": "Szwedzki dla Polaków",
+      "title": "Szwedzki dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki szwedzkiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów szwedzkich, tworzona w przeglądarce.",
+      "others": "Szwedzki dla osób mówiących innymi językami"
+    },
+    "zh": {
+      "name": "Chiński dla Polaków",
+      "title": "Chiński dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki chińskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów chińskich, tworzona w przeglądarce.",
+      "others": "Chiński dla osób mówiących innymi językami"
+    },
+    "ja": {
+      "name": "Japoński dla Polaków",
+      "title": "Japoński dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki japońskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów japońskich, tworzona w przeglądarce.",
+      "others": "Japoński dla osób mówiących innymi językami"
+    },
+    "vi": {
+      "name": "Wietnamski dla Polaków",
+      "title": "Wietnamski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki wietnamskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów wietnamskich, tworzona w przeglądarce.",
+      "others": "Wietnamski dla osób mówiących innymi językami"
+    },
+    "ko": {
+      "name": "Koreański dla Polaków",
+      "title": "Koreański dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki koreańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów koreańskich, tworzona w przeglądarce.",
+      "others": "Koreański dla osób mówiących innymi językami"
+    },
+    "es": {
+      "name": "Hiszpański dla Polaków",
+      "title": "Hiszpański dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki hiszpańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów hiszpańskich, tworzona w przeglądarce.",
+      "others": "Hiszpański dla osób mówiących innymi językami"
+    },
     "fr": {
       "name": "Francuski dla Polaków",
       "title": "Francuski dla Polaków: darmowa talia Anki — AnkiGen",
@@ -355,12 +360,61 @@
       "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów francuskich, tworzona w przeglądarce.",
       "others": "Francuski dla osób mówiących innymi językami"
     },
-    "hy": {
-      "name": "Ormiański dla Polaków",
-      "title": "Ormiański dla Polaków: darmowa talia Anki — AnkiGen",
-      "description": "Darmowa talia Anki do nauki ormiańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
-      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów ormiańskich, tworzona w przeglądarce.",
-      "others": "Ormiański dla osób mówiących innymi językami"
+    "pt": {
+      "name": "Portugalski dla Polaków",
+      "title": "Portugalski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki portugalskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów portugalskich, tworzona w przeglądarce.",
+      "others": "Portugalski dla osób mówiących innymi językami"
+    },
+    "it": {
+      "name": "Włoski dla Polaków",
+      "title": "Włoski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki włoskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów włoskich, tworzona w przeglądarce.",
+      "others": "Włoski dla osób mówiących innymi językami"
+    },
+    "ru": {
+      "name": "Rosyjski dla Polaków",
+      "title": "Rosyjski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki rosyjskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów rosyjskich, tworzona w przeglądarce.",
+      "others": "Rosyjski dla osób mówiących innymi językami"
+    },
+    "uk": {
+      "name": "Ukraiński dla Polaków",
+      "title": "Ukraiński dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki ukraińskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów ukraińskich, tworzona w przeglądarce.",
+      "others": "Ukraiński dla osób mówiących innymi językami"
+    },
+    "sr": {
+      "name": "Serbski dla Polaków",
+      "title": "Serbski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki serbskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów serbskich, tworzona w przeglądarce.",
+      "others": "Serbski dla osób mówiących innymi językami"
+    },
+    "ga": {
+      "name": "Irlandzki dla Polaków",
+      "title": "Irlandzki dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki irlandzkiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów irlandzkich, tworzona w przeglądarce.",
+      "others": "Irlandzki dla osób mówiących innymi językami"
+    },
+    "gd": {
+      "name": "Szkocki gaelicki dla Polaków",
+      "title": "Szkocki gaelicki dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki szkockiego gaelickiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów szkockiego gaelickiego, tworzona w przeglądarce.",
+      "others": "Szkocki gaelicki dla osób mówiących innymi językami"
+    },
+    "ar": {
+      "name": "Arabski dla Polaków",
+      "title": "Arabski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki arabskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów arabskich, tworzona w przeglądarce.",
+      "others": "Arabski dla osób mówiących innymi językami"
     },
     "tr": {
       "name": "Turecki dla Polaków",
@@ -375,6 +429,20 @@
       "description": "Darmowa talia Anki do nauki greckiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
       "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów greckich, tworzona w przeglądarce.",
       "others": "Grecki dla osób mówiących innymi językami"
+    },
+    "hu": {
+      "name": "Węgierski dla Polaków",
+      "title": "Węgierski dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki węgierskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów węgierskich, tworzona w przeglądarce.",
+      "others": "Węgierski dla osób mówiących innymi językami"
+    },
+    "hy": {
+      "name": "Ormiański dla Polaków",
+      "title": "Ormiański dla Polaków: darmowa talia Anki — AnkiGen",
+      "description": "Darmowa talia Anki do nauki ormiańskiego. Słowa: {words}, moduły: {modules}. Polskie tłumaczenia i przykłady, dla Anki i AnkiDroid.",
+      "lede": "Darmowa talia Anki z polskimi tłumaczeniami słów ormiańskich, tworzona w przeglądarce.",
+      "others": "Ormiański dla osób mówiących innymi językami"
     }
   },
   "plural": {

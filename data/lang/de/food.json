@@ -82,5 +82,8 @@
 "word-picnic": {"w":"Picknick","g":"n","forms":{"pl":"Picknicks"},"def":"Mahlzeit, die man draußen isst, oft im Park."},
 "word-butcher-shop": {"w":"Metzgerei","g":"f","alt":["Fleischerei"],"forms":{"pl":"Metzgereien"},"def":"Geschäft, in dem man frisches Fleisch und Wurst kauft."},
 "word-grocery-store": {"w":"Lebensmittelgeschäft","g":"n","alt":["Tante-Emma-Laden"],"forms":{"pl":"Lebensmittelgeschäfte"},"def":"Kleiner Laden, in dem man Essen und einfache Haushaltswaren kauft."},
-"word-sobremesa": {"gl":"Sobremesa: spanischer Brauch, nach dem Essen noch am Tisch zu plaudern"}
+"word-sobremesa": {"gl":"Sobremesa: spanischer Brauch, nach dem Essen noch am Tisch zu plaudern"},
+"word-aperitivo": {"gl":"Aperitivo: italienischer Drink am frühen Abend, serviert mit kleinen Snacks in der Bar"},
+"word-fika": {"gl":"Fika: schwedische Kaffeepause mit Gebäck, gemeinsam mit Freunden oder Kollegen"},
+"word-nhau": {"gl":"Nhậu: vietnamesisches geselliges Trinken von Bier oder Schnaps mit gemeinsamen Speisen"}
 }

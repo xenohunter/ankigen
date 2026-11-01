@@ -1,0 +1,10 @@
+{
+"word-day-off": [{"t":"Tha {latha saor} agam a-màireach."},{"t":"Bidh i a' gabhail {latha saor} gach Diciadain."},{"t":"Feumaidh mi {latha saor} airson fois a ghabhail."}],
+"word-working-day": [{"t":"'S e Diluain a' chiad {latha obrach} den t-seachdain."},{"t":"Tha {latha obrach} àbhaisteach ochd uairean a thìde."},{"t":"Ruigidh am pasgan ann an trì {làithean obrach}."}],
+"word-on-time": [{"t":"Ràinig an trèana {air an àm}."},{"t":"Feuch gum bi thu {air an àm} airson na coinneimh."},{"t":"Bidh i an-còmhnaidh a' pàigheadh a màil {air an àm}."}],
+"word-date-of-birth": [{"t":"Sgrìobh do {cheann-là breith} air an fhoirm."},{"t":"'S e an 4mh den Chèitean 1990 mo {cheann-là breith}."},{"t":"Dh'iarr iad m' ainm is mo {cheann-là breith} orm."}],
+"word-time-zone": [{"t":"Tha Nuadh Eabhrac ann an {roinn-tìde} eadar-dhealaichte bho Los Angeles."},{"t":"Bha duilgheadas cadail agam às dèidh dhomh {roinnean-tìde} atharrachadh."},{"t":"Dè an {roinn-tìde} a tha thu ann?"}],
+"word-o-clock": [{"t":"Tha am film a' tòiseachadh aig ochd {uairean}."},{"t":"Tha e dìreach còig {uairean} a-nis."},{"t":"Bidh sinn a' gabhail lòn aig dà {uair} dheug."}],
+"word-lifetime": [{"t":"Chunnaic e mòran atharrachaidhean rè a {fad-beatha}."},{"t":"Is e seo cothrom {fad-beatha}.","p":0},{"t":"Chuir i seachad a {fad-beatha} gu lèir san aon bhaile."}],
+"word-hogmanay": [{"t":"Bidh sinn a' dol gu pàrtaidh air {Oidhche Challainn}.","p":0},{"t":"Tha {Oidhche Challainn} mòr ann an Dùn Èideann.","p":0},{"t":"Air {Oidhche Challainn} bidh daoine a' seinn \"Auld Lang Syne\".","p":0}]
+}

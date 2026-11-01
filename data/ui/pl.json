@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "Słownictwo zostało przygotowane maszynowo i jest tylko częściowo sprawdzone. Uwagi są bardzo mile widziane.",
     "head.draftTopic": "wstępna wersja słownictwa",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "Zamiast tłumaczenia fiszki pokazują krótką definicję w języku, którego się uczysz. Dobre, gdy potrafisz już czytać w nim proste zdania.",
     "lang.loading": "Wczytywanie słów ({language})…",
     "lang.failed": "Nie udało się wczytać słów ({language}). Sprawdź połączenie i odśwież stronę.",
+    "group.germanic": "Germańskie",
+    "group.asian": "Azja Wschodnia i Południowo-Wschodnia",
+    "group.romance": "Romańskie",
+    "group.slavic": "Słowiańskie",
+    "group.celtic": "Celtyckie",
+    "group.other": "Inne",
     "modules.hint": "Wybierz tematy, które cię interesują; później możesz dodać kolejne.",
     "modules.show": "Pokaż moduły: {category}",
     "modules.tally": "{n} z {total}",

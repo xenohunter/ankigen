@@ -1,0 +1,456 @@
+{
+  "source": "2b54bc14bffa",
+  "texts": {
+    "decks": "Bộ thẻ",
+    "cta": "Tạo bộ thẻ của bạn",
+    "ctaNote": "Mở AnkiGen với cặp ngôn ngữ này và mô-đun “{module}” đã được chọn.",
+    "deck": "Bộ thẻ Anki: {deck}",
+    "intro": "AnkiGen tạo bộ thẻ Anki miễn phí ngay trong trình duyệt: từ vựng theo chủ đề, mỗi từ có bản dịch và câu ví dụ. Bạn chọn các mô-đun và nội dung hiện trên mỗi thẻ, rồi tải về tệp .apkg để dùng với Anki hoặc AnkiDroid. Không cần tài khoản, không cần cài đặt gì.",
+    "cardsHeading": "Thẻ hiển thị những gì",
+    "cardsIntro": "Mỗi thẻ có từ bạn đang học và bản dịch của từ đó. Bạn chọn thêm nội dung nào sẽ hiện và hiện ở mặt nào:",
+    "captions": "Chú thích trên thẻ, chẳng hạn “{caption}”, bằng tiếng Việt.",
+    "modulesHeading": "Mô-đun",
+    "modulesIntro": "Từ thuộc nhiều mô-đun chỉ xuất hiện một lần trong bộ thẻ. Mỗi mô-đun mở AnkiGen với riêng mô-đun đó được chọn; bạn có thể chọn thêm ở đó.",
+    "sampleWords": "Từ mẫu",
+    "local": "Từ chỉ có trong ngôn ngữ này: {count}, ví dụ {example}. Các ngôn ngữ khác không có từ tương đương chính xác, nên thẻ sẽ giải thích chúng bằng tiếng Việt.",
+    "howHeading": "Cách hoạt động",
+    "step1": "Chọn các mô-đun bạn muốn. Mỗi mô-đun cho biết có bao nhiêu từ cho cặp ngôn ngữ của bạn.",
+    "step2": "Chọn nội dung hiện trên mỗi thẻ và hiện ở mặt nào. Phần xem trước hiển thị thẻ thật ngay khi bạn chọn.",
+    "step3": "Tải tệp .apkg về và mở bằng Anki (File → Import), hoặc chạm vào tệp trên điện thoại để mở bằng AnkiDroid.",
+    "update": "Đã đổi trường, thêm mô-đun hoặc muốn dữ liệu mới hơn? Hãy tải lại rồi nhập tệp mới vào Anki (File → Import) với các tùy chọn mặc định. Anki sẽ cập nhật các ghi chú và bố cục hiện có, thêm từ mới vào cùng bộ thẻ và giữ nguyên tiến độ ôn tập của bạn.",
+    "aboutHeading": "Về từ vựng",
+    "about": "Từ, bản dịch và câu ví dụ được soạn thảo bằng mô hình AI và đang được con người kiểm tra lần lượt từng ngôn ngữ. Nếu thấy chỗ nào sai, hãy chọn đoạn đó trên thẻ xem trước trong AnkiGen rồi nhấn Ctrl+Enter (⌘+Enter trên máy Mac), hoặc dùng nút Góp ý ở đó. Mỗi báo cáo đều giúp sửa bộ thẻ cho mọi người.",
+    "moreHeading": "Thêm bộ thẻ",
+    "moreForYou": "Thêm bộ thẻ cho người nói tiếng Việt",
+    "allDecks": "Tất cả bộ thẻ theo cặp ngôn ngữ"
+  },
+  "languages": {
+    "en": "Tiếng Anh",
+    "de": "Tiếng Đức",
+    "nl": "Tiếng Hà Lan",
+    "sv": "Tiếng Thụy Điển",
+    "zh": "Tiếng Trung",
+    "ja": "Tiếng Nhật",
+    "vi": "Tiếng Việt",
+    "ko": "Tiếng Hàn",
+    "es": "Tiếng Tây Ban Nha",
+    "fr": "Tiếng Pháp",
+    "pt": "Tiếng Bồ Đào Nha",
+    "it": "Tiếng Ý",
+    "ru": "Tiếng Nga",
+    "pl": "Tiếng Ba Lan",
+    "uk": "Tiếng Ukraina",
+    "sr": "Tiếng Serbia",
+    "ga": "Tiếng Ireland",
+    "gd": "Tiếng Gaelic Scotland",
+    "ar": "Tiếng Ả Rập",
+    "tr": "Tiếng Thổ Nhĩ Kỳ",
+    "el": "Tiếng Hy Lạp",
+    "hu": "Tiếng Hungary",
+    "hy": "Tiếng Armenia"
+  },
+  "categories": {
+    "foundations": "Nền tảng",
+    "communication": "Giao tiếp",
+    "daily-life": "Đời sống hằng ngày",
+    "getting-around": "Đi lại",
+    "living-abroad": "Sống ở nước ngoài",
+    "health-safety": "Sức khỏe & an toàn",
+    "interests": "Sở thích",
+    "adult": "18+"
+  },
+  "modules": {
+    "core-1": {
+      "name": "Cốt lõi I",
+      "desc": "Khoảng 500 từ thông dụng nhất, chung cho mọi ngôn ngữ."
+    },
+    "core-2": {
+      "name": "Cốt lõi II",
+      "desc": "Khoảng 500 từ thông dụng tiếp theo."
+    },
+    "core-3": {
+      "name": "Cốt lõi III",
+      "desc": "Khoảng 800 từ thông dụng tiếp theo."
+    },
+    "numbers": {
+      "name": "Số đếm & toán học",
+      "desc": "Số đếm, số thứ tự, phân số, phép tính, đơn vị đo lường."
+    },
+    "time": {
+      "name": "Thời gian & lịch",
+      "desc": "Ngày, tháng, mùa, giờ giấc, ngày tháng, tần suất."
+    },
+    "phrases": {
+      "name": "Câu giao tiếp thiết yếu",
+      "desc": "Lời chào, phép lịch sự và những câu hoàn chỉnh cho các tình huống hằng ngày."
+    },
+    "countries": {
+      "name": "Quốc gia, quốc tịch & ngôn ngữ",
+      "desc": "Các quốc gia lớn, người dân, tính từ chỉ quốc tịch và ngôn ngữ."
+    },
+    "language-learning": {
+      "name": "Học ngôn ngữ",
+      "desc": "Nói về ngôn ngữ: thuật ngữ ngữ pháp, phát âm, nhờ giúp đỡ."
+    },
+    "family": {
+      "name": "Gia đình & các mối quan hệ",
+      "desc": "Họ hàng, bạn đời, bạn bè, các sự kiện trong đời."
+    },
+    "feelings": {
+      "name": "Cảm xúc & tính cách",
+      "desc": "Cảm xúc, tâm trạng, đặc điểm tính cách."
+    },
+    "food": {
+      "name": "Đồ ăn & thức uống",
+      "desc": "Thực phẩm, món ăn, đồ uống, ăn ngoài."
+    },
+    "cooking": {
+      "name": "Nấu ăn & nhà bếp",
+      "desc": "Động từ nấu nướng, dụng cụ, thiết bị, công thức."
+    },
+    "shopping": {
+      "name": "Mua sắm & quần áo",
+      "desc": "Cửa hàng, thanh toán, cỡ số, quần áo, đổi trả."
+    },
+    "housing": {
+      "name": "Nhà ở & thuê nhà",
+      "desc": "Thuê nhà, hợp đồng, chủ nhà, tiện ích, các phòng."
+    },
+    "household": {
+      "name": "Việc nhà & sửa chữa",
+      "desc": "Việc nhà, đồ nội thất, dụng cụ, sửa chữa, ống nước, điện."
+    },
+    "nature": {
+      "name": "Thời tiết & thiên nhiên",
+      "desc": "Thời tiết, khí hậu, phong cảnh, cây cối."
+    },
+    "animals": {
+      "name": "Thú cưng & động vật",
+      "desc": "Thú cưng, chăm sóc thú cưng, đi khám thú y, các loài vật thường gặp."
+    },
+    "city": {
+      "name": "Thành phố & chỉ đường",
+      "desc": "Các địa điểm trong thành phố, hỏi và chỉ đường."
+    },
+    "transport": {
+      "name": "Giao thông & du lịch",
+      "desc": "Phương tiện công cộng, vé, sân bay, khách sạn, hành lý."
+    },
+    "driving": {
+      "name": "Lái xe & luật giao thông",
+      "desc": "Bộ phận ô tô, luật giao thông, biển báo, thi bằng lái, tiền phạt, tai nạn."
+    },
+    "signs": {
+      "name": "Biển báo & thông báo",
+      "desc": "Những gì bạn đọc trên cửa, cửa hàng và đường phố: Đẩy, Lối ra, Hỏng."
+    },
+    "residence": {
+      "name": "Cư trú & thủ tục pháp lý",
+      "desc": "Thị thực, giấy phép, đăng ký, giấy tờ, cơ quan hành chính — cùng các thuật ngữ riêng của từng nước."
+    },
+    "money": {
+      "name": "Tiền bạc & ngân hàng",
+      "desc": "Tài khoản, thẻ, chuyển khoản, thuế, khoản vay."
+    },
+    "work": {
+      "name": "Công việc & việc làm",
+      "desc": "Nghề nghiệp, hợp đồng, lương, đời sống văn phòng, tìm việc."
+    },
+    "telecom": {
+      "name": "Bưu điện, điện thoại & internet",
+      "desc": "Bưu kiện, SIM, gói cước di động, internet, tài khoản."
+    },
+    "education": {
+      "name": "Giáo dục",
+      "desc": "Trường học, đại học, khóa học, kỳ thi."
+    },
+    "health": {
+      "name": "Sức khỏe & y tế",
+      "desc": "Cơ thể, triệu chứng, bác sĩ, hiệu thuốc, bảo hiểm."
+    },
+    "emergencies": {
+      "name": "Tình huống khẩn cấp",
+      "desc": "Công an, cứu hỏa, cấp cứu, tai nạn, thiên tai."
+    },
+    "hobbies": {
+      "name": "Sở thích",
+      "desc": "Thú tiêu khiển phổ biến, thủ công, sưu tầm, hoạt động ngoài trời."
+    },
+    "sports": {
+      "name": "Thể thao",
+      "desc": "Các môn thể thao, dụng cụ, giải đấu, thể hình."
+    },
+    "music": {
+      "name": "Âm nhạc",
+      "desc": "Nhạc cụ, thể loại, chơi và nghe nhạc."
+    },
+    "video-games": {
+      "name": "Trò chơi điện tử",
+      "desc": "Từ vựng game để chơi và trò chuyện."
+    },
+    "tabletop": {
+      "name": "Trò chơi bàn",
+      "desc": "Xúc xắc, bài, lượt chơi và luật — cho những buổi chơi game cùng bạn bè."
+    },
+    "tech": {
+      "name": "Công nghệ & máy tính",
+      "desc": "Thiết bị, phần mềm, web, xử lý sự cố."
+    },
+    "science": {
+      "name": "Khoa học",
+      "desc": "Từ vựng cơ bản về vật lý, hóa học, sinh học, thiên văn."
+    },
+    "profanity": {
+      "name": "Từ thô tục",
+      "desc": "Chửi thề và lăng mạ, xếp tương ứng theo mức độ mạnh giữa các ngôn ngữ."
+    }
+  },
+  "fields": {
+    "gender": {
+      "label": "Giống / mạo từ",
+      "help": "Hiện mạo từ (der Tisch, la mesa) hoặc ký hiệu giống (m/f/n) bên cạnh từ."
+    },
+    "stress": {
+      "label": "Dấu trọng âm",
+      "help": "Đánh dấu nguyên âm được nhấn (молоко́). Áp dụng cho từ, các dạng của từ và từ được tô sáng trong câu ví dụ."
+    },
+    "vowels": {
+      "label": "Dấu nguyên âm",
+      "help": "Các dấu nguyên âm ngắn (harakat) đặt trên và dưới chữ cái: كِتَاب thay vì كتاب. Áp dụng cho từ, các dạng của từ và từ được tô sáng trong câu ví dụ."
+    },
+    "reading": {
+      "label": "Cách đọc (furigana)",
+      "help": "Cách đọc bằng kana phía trên chữ kanji. Cũng điều khiển furigana trong câu ví dụ."
+    },
+    "romanization": {
+      "label": "La-tinh hóa",
+      "help": "Từ viết bằng chữ cái La-tinh: Hepburn (tiếng Nhật), pinyin (tiếng Trung), Revised Romanization (tiếng Hàn), ALA-LC (tiếng Ả Rập), phiên âm (tiếng Nga, Ukraina, Armenia, Hy Lạp). Với tiếng Trung, tùy chọn này cũng điều khiển pinyin trong câu ví dụ."
+    },
+    "otherScript": {
+      "label": "Chữ viết khác",
+      "help": "Hiện từ bằng chữ viết còn lại của tiếng Serbia (La-tinh nếu bộ thẻ dùng Cyrillic, và ngược lại)."
+    },
+    "measureWord": {
+      "label": "Lượng từ / loại từ",
+      "help": "Loại từ dùng khi đếm danh từ này (一本书, 鉛筆を三本, ba con mèo)."
+    },
+    "hanja": {
+      "label": "Hanja",
+      "help": "Chữ Hán đứng sau các từ Hán-Hàn (은행 → 銀行). Chỉ hiện với những từ có chữ Hán."
+    },
+    "forms": {
+      "label": "Các dạng chính",
+      "help": "Một vài dạng cần có để dùng từ: số nhiều, sở hữu cách, thì quá khứ, cặp thể, loại động từ… chứ không phải bảng chia đầy đủ."
+    },
+    "ipa": {
+      "label": "IPA",
+      "help": "Phát âm theo Bảng ký hiệu ngữ âm quốc tế."
+    },
+    "examples": {
+      "label": "Ví dụ",
+      "help": "Câu ví dụ với từ được tô sáng. Dùng thanh trượt để chọn số câu (0–3)."
+    },
+    "exampleTranslations": {
+      "label": "Bản dịch câu ví dụ",
+      "help": "Hiện mỗi câu ví dụ bằng tiếng Việt khi có bản dịch tương ứng. Một số câu ví dụ được viết trực tiếp bằng ngôn ngữ đích nên không có bản dịch."
+    },
+    "related": {
+      "label": "Từ trái nghĩa & liên quan",
+      "help": "Từ đối nghĩa và các từ có liên quan chặt chẽ, bằng ngôn ngữ bạn đang học."
+    },
+    "pos": {
+      "label": "Từ loại",
+      "help": "danh từ, động từ, tính từ…"
+    },
+    "register": {
+      "label": "Sắc thái",
+      "help": "Đánh dấu từ thân mật, trang trọng, thô tục hoặc xúc phạm."
+    },
+    "emoji": {
+      "label": "Emoji",
+      "help": "Hình gợi ý cho các từ cụ thể (💧 nước). Hầu hết từ trừu tượng không có emoji."
+    },
+    "conceptId": {
+      "label": "Mã khái niệm",
+      "help": "Một mã nhỏ ở cuối thẻ (ví dụ word-water). Nếu bạn thấy lỗi khi học trong Anki, hãy gửi kèm mã này trong báo cáo để chúng tôi tìm đúng mục đó."
+    }
+  },
+  "options": {
+    "reverse": {
+      "label": "Thẻ ngược",
+      "help": "Thêm thẻ thứ hai cho mỗi từ: tiếng Việt → ngôn ngữ bạn học. Ở thẻ ngược, mọi thông tin về từ đang học đều chuyển sang mặt đáp án để không có gì lộ đáp án."
+    },
+    "typeAnswer": {
+      "label": "Gõ đáp án",
+      "help": "Ở thẻ ngược, bạn gõ từ thay vì chỉ nhớ lại. Anki so sánh chính tả của bạn với dạng chính (kể cả mạo từ, bỏ qua dấu trọng âm và dấu nguyên âm)."
+    },
+    "srScript": {
+      "label": "Chữ viết tiếng Serbia",
+      "help": "Tiếng Serbia được viết bằng cả Cyrillic và La-tinh. Hãy chọn kiểu dùng trên thẻ của bạn."
+    }
+  },
+  "pairs": {
+    "en": {
+      "name": "Tiếng Anh cho người Việt",
+      "title": "Tiếng Anh: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Anh: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Anh kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Anh cho người nói các ngôn ngữ khác"
+    },
+    "de": {
+      "name": "Tiếng Đức cho người Việt",
+      "title": "Tiếng Đức: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Đức: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Đức kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Đức cho người nói các ngôn ngữ khác"
+    },
+    "nl": {
+      "name": "Tiếng Hà Lan cho người Việt",
+      "title": "Tiếng Hà Lan: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Hà Lan: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Hà Lan kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Hà Lan cho người nói các ngôn ngữ khác"
+    },
+    "sv": {
+      "name": "Tiếng Thụy Điển cho người Việt",
+      "title": "Tiếng Thụy Điển: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Thụy Điển: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Thụy Điển kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Thụy Điển cho người nói các ngôn ngữ khác"
+    },
+    "zh": {
+      "name": "Tiếng Trung cho người Việt",
+      "title": "Tiếng Trung: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Trung: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Trung kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Trung cho người nói các ngôn ngữ khác"
+    },
+    "ja": {
+      "name": "Tiếng Nhật cho người Việt",
+      "title": "Tiếng Nhật: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Nhật: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Nhật kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Nhật cho người nói các ngôn ngữ khác"
+    },
+    "ko": {
+      "name": "Tiếng Hàn cho người Việt",
+      "title": "Tiếng Hàn: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Hàn: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Hàn kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Hàn cho người nói các ngôn ngữ khác"
+    },
+    "es": {
+      "name": "Tiếng Tây Ban Nha cho người Việt",
+      "title": "Tiếng Tây Ban Nha: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Tây Ban Nha: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Tây Ban Nha kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Tây Ban Nha cho người nói các ngôn ngữ khác"
+    },
+    "fr": {
+      "name": "Tiếng Pháp cho người Việt",
+      "title": "Tiếng Pháp: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Pháp: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Pháp kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Pháp cho người nói các ngôn ngữ khác"
+    },
+    "pt": {
+      "name": "Tiếng Bồ Đào Nha cho người Việt",
+      "title": "Tiếng Bồ Đào Nha: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Bồ Đào Nha: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Bồ Đào Nha kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Bồ Đào Nha cho người nói các ngôn ngữ khác"
+    },
+    "it": {
+      "name": "Tiếng Ý cho người Việt",
+      "title": "Tiếng Ý: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Ý: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Ý kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Ý cho người nói các ngôn ngữ khác"
+    },
+    "ru": {
+      "name": "Tiếng Nga cho người Việt",
+      "title": "Tiếng Nga: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Nga: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Nga kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Nga cho người nói các ngôn ngữ khác"
+    },
+    "pl": {
+      "name": "Tiếng Ba Lan cho người Việt",
+      "title": "Tiếng Ba Lan: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Ba Lan: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Ba Lan kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Ba Lan cho người nói các ngôn ngữ khác"
+    },
+    "uk": {
+      "name": "Tiếng Ukraina cho người Việt",
+      "title": "Tiếng Ukraina: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Ukraina: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Ukraina kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Ukraina cho người nói các ngôn ngữ khác"
+    },
+    "sr": {
+      "name": "Tiếng Serbia cho người Việt",
+      "title": "Tiếng Serbia: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Serbia: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Serbia kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Serbia cho người nói các ngôn ngữ khác"
+    },
+    "ga": {
+      "name": "Tiếng Ireland cho người Việt",
+      "title": "Tiếng Ireland: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Ireland: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Ireland kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Ireland cho người nói các ngôn ngữ khác"
+    },
+    "gd": {
+      "name": "Tiếng Gaelic Scotland cho người Việt",
+      "title": "Tiếng Gaelic Scotland: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Gaelic Scotland: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Gaelic Scotland kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Gaelic Scotland cho người nói các ngôn ngữ khác"
+    },
+    "ar": {
+      "name": "Tiếng Ả Rập cho người Việt",
+      "title": "Tiếng Ả Rập: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Ả Rập: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Ả Rập kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Ả Rập cho người nói các ngôn ngữ khác"
+    },
+    "tr": {
+      "name": "Tiếng Thổ Nhĩ Kỳ cho người Việt",
+      "title": "Tiếng Thổ Nhĩ Kỳ: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Thổ Nhĩ Kỳ: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Thổ Nhĩ Kỳ kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Thổ Nhĩ Kỳ cho người nói các ngôn ngữ khác"
+    },
+    "el": {
+      "name": "Tiếng Hy Lạp cho người Việt",
+      "title": "Tiếng Hy Lạp: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Hy Lạp: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Hy Lạp kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Hy Lạp cho người nói các ngôn ngữ khác"
+    },
+    "hu": {
+      "name": "Tiếng Hungary cho người Việt",
+      "title": "Tiếng Hungary: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Hungary: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Hungary kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Hungary cho người nói các ngôn ngữ khác"
+    },
+    "hy": {
+      "name": "Tiếng Armenia cho người Việt",
+      "title": "Tiếng Armenia: bộ thẻ Anki miễn phí — AnkiGen",
+      "description": "Bộ thẻ Anki miễn phí để học tiếng Armenia: {words} trong {modules}, có nghĩa tiếng Việt và câu ví dụ, dùng cho Anki và AnkiDroid.",
+      "lede": "Bộ thẻ Anki miễn phí gồm các từ tiếng Armenia kèm nghĩa tiếng Việt, tạo ngay trong trình duyệt của bạn.",
+      "others": "Tiếng Armenia cho người nói các ngôn ngữ khác"
+    }
+  },
+  "plural": {
+    "word": {
+      "other": "{n} từ"
+    },
+    "module": {
+      "other": "{n} mô-đun"
+    }
+  }
+}

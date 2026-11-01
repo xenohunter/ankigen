@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"w":"전세","rom":"jeonse","hanja":"傳貰","def":"큰 보증금을 집주인에게 맡기고 월세 없이 사는 계약, 또는 그 돈."},
 "word-cold-rent-de": {"gl":"칼트미테: 독일에서 공과금을 뺀 순수 집세"},
 "word-warm-rent-de": {"gl":"바름미테: 독일에서 공과금을 포함한 집세"},
-"word-communal-apartment-ru": {"gl":"코무날카: 러시아에서 여러 가족이 함께 쓰는 아파트"}
+"word-communal-apartment-ru": {"gl":"코무날카: 러시아에서 여러 가족이 함께 쓰는 아파트"},
+"word-council-tax-uk": {"gl":"카운슬 택스: 영국에서 집의 가치 등급에 따라 내는 지방세"}
 }

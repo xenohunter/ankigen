@@ -109,5 +109,6 @@
 "word-nationality": {"w":"国籍","read":"guójí","mw":"个","def":"一个人属于某个国家的法律身份，护照上会写明。","hint":"护照上"},
 "word-continent": {"w":"大洲","read":"dàzhōu","mw":"个","def":"地球上面积非常大的陆地，一共有七块。"},
 "word-immigrant": {"w":"移民","read":"yímín","mw":"个","def":"从一个国家搬到另一个国家长期居住的人。","hint":"人"},
-"word-homeland": {"w":"祖国","read":"zǔguó","mw":"个","def":"一个人出生并感到自己属于的那个国家。"}
+"word-homeland": {"w":"祖国","read":"zǔguó","mw":"个","def":"一个人出生并感到自己属于的那个国家。"},
+"word-gaeltacht": {"gl":"盖尔特赫特：爱尔兰以爱尔兰语为日常交流语言的地区"}
 }

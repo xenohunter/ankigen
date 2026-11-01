@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"kozmetik","alt":["makyaj malzemesi"],"forms":{"acc":"kozmetiği","poss3":"kozmetiği"},"def":"İnsanların yüzünü veya cildini güzelleştirmek için sürdüğü ürünler."},
 "word-small-size": {"w":"küçük beden","alt":["S beden"],"def":"Orta ölçünün altındaki giysi ölçüsü."},
 "word-medium-size": {"w":"orta beden","alt":["M beden"],"def":"Küçük ile büyük arasındaki giysi ölçüsü."},
-"word-large-size": {"w":"büyük beden","alt":["L beden"],"def":"Orta ölçünün üstündeki giysi ölçüsü."}
+"word-large-size": {"w":"büyük beden","alt":["L beden"],"def":"Orta ölçünün üstündeki giysi ölçüsü."},
+"word-vyshyvanka": {"gl":"vışivanka: geleneksel nakışlı Ukrayna gömleği, ulusal sembol"}
 }

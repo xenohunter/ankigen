@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"gl":"jeonse: Koreaanse grote waarborgsom in plaats van maandelijkse huur"},
 "word-cold-rent-de": {"gl":"Kaltmiete: Duitse huur zonder bijkomende kosten"},
 "word-warm-rent-de": {"gl":"Warmmiete: Duitse huur inclusief bijkomende kosten"},
-"word-communal-apartment-ru": {"gl":"kommunalka: Russisch appartement gedeeld door meerdere gezinnen"}
+"word-communal-apartment-ru": {"gl":"kommunalka: Russisch appartement gedeeld door meerdere gezinnen"},
+"word-council-tax-uk": {"gl":"council tax: Britse gemeentelijke belasting op woningen, gebaseerd op de waarde van het huis"}
 }

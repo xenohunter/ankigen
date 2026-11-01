@@ -82,5 +82,8 @@
 "word-picnic": {"w":"picnic","g":"m","def":"Comida que se toma al aire libre, a menudo en un parque."},
 "word-butcher-shop": {"w":"carnicería","g":"f","def":"Tienda donde se vende carne fresca."},
 "word-grocery-store": {"w":"tienda de comestibles","g":"f","alt":["tienda de alimentación","colmado"],"def":"Establecimiento pequeño donde se venden alimentos y artículos básicos para el hogar."},
-"word-sobremesa": {"w":"sobremesa","g":"f","def":"Tiempo que se pasa charlando en la mesa después de comer."}
+"word-sobremesa": {"w":"sobremesa","g":"f","def":"Tiempo que se pasa charlando en la mesa después de comer."},
+"word-aperitivo": {"gl":"aperitivo italiano: bebida antes de la cena, servida con aperitivos en un bar"},
+"word-fika": {"gl":"fika: pausa social sueca para tomar café y dulces con amigos o colegas"},
+"word-nhau": {"gl":"nhậu: costumbre vietnamita de beber cerveza o licores con platos para compartir"}
 }

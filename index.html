@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AnkiGen — free Anki vocabulary decks in 15 languages</title>
-<meta name="description" content="Build free Anki vocabulary decks right in your browser: 15 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.">
+<title>AnkiGen — free Anki vocabulary decks in 23 languages</title>
+<meta name="description" content="Build free Anki vocabulary decks right in your browser: 23 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.">
 <meta name="author" content="Phil Filippak">
 <meta name="google-site-verification" content="CVVJ-6nZA48CJzuK8J69mahfxQ6KOre7-QNwDtC4SGk">
 <link rel="canonical" href="https://xenohunter.github.io/ankigen/">
@@ -16,12 +16,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AnkiGen">
 <meta property="og:url" content="https://xenohunter.github.io/ankigen/">
-<meta property="og:title" content="AnkiGen — free Anki vocabulary decks in 15 languages">
-<meta property="og:description" content="Build free Anki vocabulary decks right in your browser: 15 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.">
+<meta property="og:title" content="AnkiGen — free Anki vocabulary decks in 23 languages">
+<meta property="og:description" content="Build free Anki vocabulary decks right in your browser: 23 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.">
 <meta property="og:image" content="https://xenohunter.github.io/ankigen/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AnkiGen: free Anki vocabulary decks in 15 languages, with a sample card for the Japanese word 水, water.">
+<meta property="og:image:alt" content="AnkiGen: free Anki vocabulary decks in 23 languages, with a sample card for the Japanese word 水, water.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@blisstweeting">
@@ -36,15 +36,15 @@
       "url": "https://xenohunter.github.io/ankigen/",
       "image": "https://xenohunter.github.io/ankigen/og-image.png",
       "screenshot": "https://xenohunter.github.io/ankigen/og-image.png",
-      "description": "Build free Anki vocabulary decks right in your browser: 15 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.",
+      "description": "Build free Anki vocabulary decks right in your browser: 23 languages, topic modules and the card fields you want. Download an .apkg for Anki or AnkiDroid.",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Any",
       "browserRequirements": "Requires JavaScript",
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "inLanguage": ["en", "ru", "sr", "ja", "zh", "de", "es", "pt", "pl", "ko", "nl", "fr", "hy", "tr", "el"],
+      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
       "featureList": [
-        "Vocabulary decks for any pair of 15 languages, or with definitions in the language you learn",
+        "Vocabulary decks for any pair of 23 languages, or with definitions in the language you learn",
         "Topic modules, from the most frequent words to food, housing, health, work and travel",
         "Card fields you choose, on the side you choose: readings, romanization, key forms, IPA, example sentences",
         "Reverse cards and typing the answer",
@@ -60,7 +60,7 @@
       "@id": "https://xenohunter.github.io/ankigen/#site",
       "name": "AnkiGen",
       "url": "https://xenohunter.github.io/ankigen/",
-      "inLanguage": ["en", "ru", "sr", "ja", "zh", "de", "es", "pt", "pl", "ko", "nl", "fr", "hy", "tr", "el"],
+      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
       "publisher": { "@id": "https://xenohunter.github.io/ankigen/#author" }
     },
     {
@@ -75,11 +75,12 @@
 </script>
 <!-- With scripts the app renders its steps (without, the noscript text replaces them); the footer then waits
      for the first render, so it does not jump down as the steps appear. When the interface language will not
-     be English (the rule of pickLanguage in src/ui/i18n.js), the page's texts wait for their translation too. -->
+     be English (the rule of pickLanguage in src/ui/i18n.js), the page's texts wait for their translation too,
+     and a right-to-left one (Arabic) mirrors the page at once. -->
 <script>
   (function () {
     var root = document.documentElement;
-    var ui = 'en ru sr ja zh de es pt pl ko nl fr hy tr el'.split(' ');
+    var ui = 'en de nl sv zh ja vi ko es fr pt it ru pl uk sr ga gd ar tr el hu hy'.split(' ');
     var picks = [new URLSearchParams(location.search).get('lang')];
     try { picks.push(localStorage.getItem('ankigen:lang')); } catch (e) {}
     var browser = navigator.languages || [navigator.language];
@@ -88,6 +89,7 @@
     for (var j = 0; j < picks.length; j++) {
       if (picks[j] && ui.indexOf(picks[j]) >= 0) {
         if (picks[j] !== 'en') root.classList.add('i18n-pending');
+        if (picks[j] === 'ar') root.dir = 'rtl';
         break;
       }
     }
@@ -128,7 +130,7 @@
 <header class="site-head app-head">
   <div class="head-main">
     <h1 class="logo">AnkiGen</h1>
-    <p class="lede" data-plural="lede">Free Anki vocabulary decks in 15 languages, built right in your browser.</p>
+    <p class="lede" data-plural="lede">Free Anki vocabulary decks in 23 languages, built right in your browser.</p>
     <p class="draft"><span data-t="head.draft">The vocabulary is machine-drafted and only partly reviewed. Feedback is very welcome.</span><span class="help-slot" id="draft-help"></span></p>
   </div>
   <div class="head-support-slot">
@@ -139,7 +141,7 @@
 
 <noscript>
   <div class="noscript">
-    <p>AnkiGen builds free Anki vocabulary decks right in your browser. You pick the language you are learning and one you speak, among English, Russian, Serbian, Japanese, Chinese, German, Spanish, Portuguese, Polish, Korean, Dutch, French, Armenian, Turkish and Greek. Then you choose topic modules, from the most frequent words to food, housing, health, work and travel, and what each card shows. AnkiGen gives you an .apkg file for Anki or AnkiDroid.</p>
+    <p>AnkiGen builds free Anki vocabulary decks right in your browser. You pick the language you are learning and one you speak, among English, German, Dutch, Swedish, Chinese, Japanese, Vietnamese, Korean, Spanish, French, Portuguese, Italian, Russian, Polish, Ukrainian, Serbian, Irish, Scottish Gaelic, Arabic, Turkish, Greek, Hungarian and Armenian. Then you choose topic modules, from the most frequent words to food, housing, health, work and travel, and what each card shows. AnkiGen gives you an .apkg file for Anki or AnkiDroid.</p>
     <p>It needs JavaScript: please enable it and reload the page. Without it you can still browse the <a href="decks/">decks by language pair</a>, with their modules and sample words.</p>
   </div>
 </noscript>
@@ -148,13 +150,13 @@
   <main class="steps" id="steps">
     <section class="step" id="step-learn" aria-labelledby="h-learn">
       <h2 id="h-learn"><span class="step-num" aria-hidden="true">1</span><span data-t="step.learn">I’m learning</span></h2>
-      <div class="chips" id="learn-chips" role="radiogroup" aria-labelledby="h-learn"></div>
+      <div class="lang-groups" id="learn-chips" role="radiogroup" aria-labelledby="h-learn"></div>
       <p class="status" id="learn-status" role="status"></p>
     </section>
 
     <section class="step" id="step-know" aria-labelledby="h-know" hidden>
       <h2 id="h-know"><span class="step-num" aria-hidden="true">2</span><span data-t="step.know">I speak</span></h2>
-      <div class="know-chips" id="know-chips" role="radiogroup" aria-labelledby="h-know"></div>
+      <div class="lang-groups" id="know-chips" role="radiogroup" aria-labelledby="h-know"></div>
       <p class="status" id="know-status" role="status"></p>
     </section>
 

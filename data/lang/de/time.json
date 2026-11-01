@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"Geburtsdatum","g":"n","forms":{"pl":"Geburtsdaten"},"def":"Tag, Monat und Jahr, an dem ein Mensch zur Welt gekommen ist."},
 "word-time-zone": {"w":"Zeitzone","g":"f","forms":{"pl":"Zeitzonen"},"def":"Gebiet der Erde, in dem alle Uhren dieselbe Zeit anzeigen."},
 "word-o-clock": {"w":"Uhr","def":"Wort nach einer Zahl, das die volle Stunde angibt.","hint":"Uhrzeit"},
-"word-lifetime": {"w":"Lebenszeit","g":"f","alt":["Leben"],"forms":{"pl":"Lebenszeiten"},"def":"Die ganze Zeitspanne, in der ein Mensch lebt."}
+"word-lifetime": {"w":"Lebenszeit","g":"f","alt":["Leben"],"forms":{"pl":"Lebenszeiten"},"def":"Die ganze Zeitspanne, in der ein Mensch lebt."},
+"word-hogmanay": {"gl":"Hogmanay: schottischer Silvesterabend mit Neujahrsbesuchen und „Auld Lang Syne“"}
 }

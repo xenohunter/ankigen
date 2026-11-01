@@ -45,5 +45,7 @@
 "word-whistle": {"w":"whistle","def":"to make a high sound by blowing air through your lips"},
 "word-hum": {"w":"hum","def":"to sing a tune with your lips closed"},
 "word-vinyl-record": {"w":"vinyl record","alt":["record"],"def":"a flat black disc that plays music when a needle moves over it"},
-"word-instrument": {"w":"instrument","alt":["musical instrument"],"def":"a thing such as a guitar or piano that you play to make music"}
+"word-instrument": {"w":"instrument","alt":["musical instrument"],"def":"a thing such as a guitar or piano that you play to make music"},
+"word-ceili": {"gl":"céilí: Irish social gathering with traditional music, song and group dancing"},
+"word-mod-gaelic": {"gl":"mòd: Scottish Gaelic festival of song, music, poetry and speech"}
 }

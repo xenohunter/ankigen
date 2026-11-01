@@ -82,5 +82,8 @@
 "word-picnic": {"w":"野餐","read":"yěcān","def":"在户外，常在公园里吃的一顿饭。"},
 "word-butcher-shop": {"w":"肉店","read":"ròudiàn","mw":"家","alt":["肉铺"],"def":"出售新鲜肉类的商店。"},
 "word-grocery-store": {"w":"杂货店","read":"záhuòdiàn","mw":"家","alt":["食品店"],"def":"出售食品和小件日用品的商店。"},
-"word-sobremesa": {"gl":"sobremesa：西班牙习俗，饭后留在餐桌旁聊天"}
+"word-sobremesa": {"gl":"sobremesa：西班牙习俗，饭后留在餐桌旁聊天"},
+"word-aperitivo": {"gl":"意式餐前酒文化：傍晚在酒吧边喝酒边吃小食"},
+"word-fika": {"gl":"瑞典式休息时间：和朋友或同事一起喝咖啡、吃点心"},
+"word-nhau": {"gl":"越南式聚饮：几个人一起喝啤酒或烈酒，同时分享菜肴"}
 }

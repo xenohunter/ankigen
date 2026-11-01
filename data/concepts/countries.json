@@ -109,5 +109,6 @@
 "word-nationality": {"pos":"noun","mods":["countries","residence"],"note":"legal belonging to a nation; citizenship"},
 "word-continent": {"pos":"noun","mods":["countries","science"],"note":"large landmass: Europe, Asia…"},
 "word-immigrant": {"pos":"noun","mods":["countries","residence"],"note":"person who moved to another country to live"},
-"word-homeland": {"pos":"noun","mods":["countries"],"note":"country where one was born"}
+"word-homeland": {"pos":"noun","mods":["countries"],"note":"country where one was born"},
+"word-gaeltacht": {"pos":"noun","mods":["countries"],"note":"Irish: Gaeltacht, a region of Ireland where Irish is the main community language, popular for summer language courses","only":["ga"]}
 }

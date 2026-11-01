@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"gl":"チョンセ：韓国で、月々の家賃の代わりに大金の保証金を預ける制度"},
 "word-cold-rent-de": {"gl":"カルトミーテ：ドイツの、光熱費を含まない家賃"},
 "word-warm-rent-de": {"gl":"ヴァルムミーテ：ドイツの、光熱費を含む家賃"},
-"word-communal-apartment-ru": {"gl":"コムナルカ：複数の家族が共同で住むロシアのアパート"}
+"word-communal-apartment-ru": {"gl":"コムナルカ：複数の家族が共同で住むロシアのアパート"},
+"word-council-tax-uk": {"gl":"カウンシルタックス：イギリスの自治体が住宅に課す地方税。物件の価値の区分で決まる"}
 }

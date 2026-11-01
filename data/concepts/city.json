@@ -18,5 +18,6 @@
 "word-city-block": {"pos":"noun","mods":["city"],"note":"area between streets"},
 "word-tourist-information": {"pos":"noun","mods":["city","transport"],"note":"tourist information office"},
 "word-landmark": {"pos":"noun","mods":["city","transport"],"note":"famous building or place"},
-"word-outskirts": {"pos":"noun","mods":["city"],"note":"edge of a city"}
+"word-outskirts": {"pos":"noun","mods":["city"],"note":"edge of a city"},
+"word-passeggiata": {"pos":"noun","mods":["city"],"note":"Italian: leisurely social stroll, typically in the evening or on Sundays, to see and be seen","only":["it"]}
 }

@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"natuurgebied","g":"n","alt":["natuurreservaat"],"forms":{"pl":"natuurgebieden"},"def":"Een gebied waar wilde dieren en planten veilig zijn voor schade."},
 "word-environment-protection": {"w":"milieubescherming","g":"c","def":"Maatregelen die lucht, water en land schoon en veilig houden."},
 "word-climate-change": {"w":"klimaatverandering","g":"c","alt":["opwarming van de aarde"],"forms":{"pl":"klimaatveranderingen"},"def":"De langdurige stijging van de temperatuur op aarde en de verschuiving van het weerpatroon."},
-"word-renewable-energy": {"w":"hernieuwbare energie","g":"c","alt":["duurzame energie"],"def":"Stroom en warmte uit bronnen die niet opraken, zoals zon en wind."}
+"word-renewable-energy": {"w":"hernieuwbare energie","g":"c","alt":["duurzame energie"],"def":"Stroom en warmte uit bronnen die niet opraken, zoals zon en wind."},
+"word-allemansratten": {"gl":"allemansrätten: Zweeds recht om vrij te struinen, kamperen en bessen te plukken"},
+"word-machair": {"gl":"machair: vruchtbaar laag kustgrasland op schelpenzand, typisch voor de Hebriden"}
 }

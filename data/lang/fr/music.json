@@ -45,5 +45,7 @@
 "word-whistle": {"w":"siffler","forms":{"1sg":"siffle","1pl":"sifflons","pp":"sifflé","aux":"avoir"},"def":"Produire un son aigu en soufflant de l'air entre les lèvres."},
 "word-hum": {"w":"fredonner","forms":{"1sg":"fredonne","1pl":"fredonnons","pp":"fredonné","aux":"avoir"},"def":"Chanter un air les lèvres fermées."},
 "word-vinyl-record": {"w":"disque vinyle","g":"m","alt":["vinyle"],"def":"Disque noir et plat qui joue de la musique quand une aiguille glisse dessus."},
-"word-instrument": {"w":"instrument","g":"m","art":"l'","alt":["instrument de musique"],"def":"Objet comme une guitare ou un piano dont on joue pour faire de la musique."}
+"word-instrument": {"w":"instrument","g":"m","art":"l'","alt":["instrument de musique"],"def":"Objet comme une guitare ou un piano dont on joue pour faire de la musique."},
+"word-ceili": {"gl":"céilí : soirée irlandaise avec musique, chants et danses traditionnels en groupe"},
+"word-mod-gaelic": {"gl":"mòd : festival écossais de chant, musique, poésie et langue gaélique"}
 }

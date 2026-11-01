@@ -109,5 +109,6 @@
 "word-nationality": {"w":"Staatsangehörigkeit","g":"f","alt":["Nationalität"],"forms":{"pl":"Staatsangehörigkeiten"},"def":"Die rechtliche Zugehörigkeit zu einem Staat, die man im Pass sieht."},
 "word-continent": {"w":"Kontinent","g":"m","alt":["Erdteil"],"forms":{"pl":"Kontinente"},"def":"Eines der sieben sehr großen Landgebiete der Erde."},
 "word-immigrant": {"w":"Einwanderer","g":"m","alt":["Immigrant"],"forms":{"pl":"Einwanderer","f":"Einwanderin"},"def":"Person, die in ein fremdes Land gezogen ist, um dort dauerhaft zu leben."},
-"word-homeland": {"w":"Heimat","g":"f","alt":["Heimatland"],"def":"Das Land oder der Ort, wo man geboren ist und zu dem man sich zugehörig fühlt."}
+"word-homeland": {"w":"Heimat","g":"f","alt":["Heimatland"],"def":"Das Land oder der Ort, wo man geboren ist und zu dem man sich zugehörig fühlt."},
+"word-gaeltacht": {"gl":"Gaeltacht: Region in Irland, in der Irisch die alltägliche Gemeinschaftssprache ist"}
 }

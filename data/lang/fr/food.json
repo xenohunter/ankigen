@@ -82,5 +82,8 @@
 "word-picnic": {"w":"pique-nique","g":"m","def":"Repas pris en plein air, souvent dans un parc."},
 "word-butcher-shop": {"w":"boucherie","g":"f","def":"Magasin qui vend de la viande fraîche."},
 "word-grocery-store": {"w":"épicerie","g":"f","art":"l'","alt":["supérette"],"def":"Petit magasin qui vend de la nourriture et des articles ménagers."},
-"word-sobremesa": {"gl":"sobremesa : coutume espagnole de rester à table à bavarder après le repas"}
+"word-sobremesa": {"gl":"sobremesa : coutume espagnole de rester à table à bavarder après le repas"},
+"word-aperitivo": {"gl":"aperitivo : apéritif italien servi avec des amuse-bouches dans un bar en début de soirée"},
+"word-fika": {"gl":"fika : pause suédoise pour prendre un café et des pâtisseries entre amis ou collègues"},
+"word-nhau": {"gl":"nhậu : façon vietnamienne de boire de la bière ou de l'alcool en mangeant des plats partagés"}
 }

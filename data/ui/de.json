@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "Das Vokabular wurde maschinell entworfen und ist erst teilweise geprüft. Feedback ist sehr willkommen.",
     "head.draftTopic": "Vokabular-Entwurf",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "Die Karten zeigen statt einer Übersetzung eine kurze Definition in der Sprache, die du lernst. Gut, sobald du darin einfache Sätze lesen kannst.",
     "lang.loading": "Wörter werden geladen ({language})…",
     "lang.failed": "Die Wörter konnten nicht geladen werden ({language}). Prüfe deine Verbindung und lade die Seite neu.",
+    "group.germanic": "Germanisch",
+    "group.asian": "Ost- und Südostasiatisch",
+    "group.romance": "Romanisch",
+    "group.slavic": "Slawisch",
+    "group.celtic": "Keltisch",
+    "group.other": "Andere",
     "modules.hint": "Wähle die Themen, die du willst; weitere kannst du später hinzufügen.",
     "modules.show": "Module anzeigen: {category}",
     "modules.tally": "{n} von {total}",

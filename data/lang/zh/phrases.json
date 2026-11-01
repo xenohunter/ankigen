@@ -87,5 +87,7 @@
 "phrase-thanks-for-hard-work": {"w":"辛苦了","read":"xīnkǔ le","alt":["辛苦你了"],"def":"对付出努力、工作劳累的人表示感谢和慰问的话。"},
 "phrase-kolay-gelsin": {"gl":"kolay gelsin：土耳其语“愿你轻松”，对正在工作的人说"},
 "phrase-kalo-mina": {"gl":"kalo mina：希腊语“好月份”，在每月第一天说的祝福"},
-"phrase-s-lyogkim-parom": {"gl":"s legkim parom：俄语，对刚洗完澡或桑拿的人说的祝福话"}
+"phrase-s-lyogkim-parom": {"gl":"s legkim parom：俄语，对刚洗完澡或桑拿的人说的祝福话"},
+"phrase-kezcsokolom": {"gl":"“Kezét csókolom”：匈牙利语“我吻您的手”，对女士或长辈表示尊敬的问候"},
+"phrase-have-you-eaten-yet": {"gl":"“Ăn cơm chưa?”：越南语“吃饭了吗？”，表示关心的日常问候"}
 }

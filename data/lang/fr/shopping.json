@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"cosmétiques","g":"m.pl","alt":["maquillage"],"def":"Produits qu'on met sur le visage ou la peau pour se faire plus beau."},
 "word-small-size": {"w":"taille S","def":"Format de vêtement plus petit que le format moyen."},
 "word-medium-size": {"w":"taille M","def":"Format de vêtement entre le petit et le grand."},
-"word-large-size": {"w":"taille L","def":"Format de vêtement supérieur au format moyen."}
+"word-large-size": {"w":"taille L","def":"Format de vêtement supérieur au format moyen."},
+"word-vyshyvanka": {"gl":"vychyvanka : chemise ukrainienne à broderie traditionnelle, symbole national"}
 }

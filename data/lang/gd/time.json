@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"gl":"latha slàn de 24 uairean, an latha is an oidhche còmhla"},
+"word-day-off": {"w":"latha saor","g":"m","forms":{"gen":"latha shaoir","pl":"làithean saora"},"def":"Ùine nuair nach fheum thu a dhol dhan obair no dhan sgoil."},
+"word-working-day": {"w":"latha obrach","g":"m","forms":{"gen":"latha obrach","pl":"làithean obrach"},"def":"Mar as trice bho Diluain gu Dihaoine, an àm nuair a bhios a' mhòr-chuid de dhaoine anns an dreuchd aca."},
+"word-on-time": {"w":"air an àm","alt":["ann an àm"],"def":"Aig an dearbh mhionaid cheart, gun a bhith fadalach no tràth."},
+"word-date-of-birth": {"w":"ceann-là breith","g":"m","forms":{"gen":"cinn-là breith","pl":"cinn-là breith"},"def":"An latha, am mìos agus a' bhliadhna anns na rugadh neach."},
+"word-time-zone": {"w":"roinn-tìde","g":"f","forms":{"gen":"roinne-tìde","pl":"roinnean-tìde"},"def":"Sgìre den t-saoghal far a bheil a h-uile cloc a' sealltainn an aon àm."},
+"word-o-clock": {"w":"uair","def":"Facal a thèid a chur ri àireamh gus an dearbh àm air cloc a ràdh, mar ochd.","hint":"air cloc"},
+"word-lifetime": {"w":"fad-beatha","g":"m","forms":{"gen":"fad-beatha"},"def":"An ùine gu lèir a bhios duine beò, bho bhreith gu bàs."},
+"word-hogmanay": {"w":"Oidhche Challainn","g":"f","alt":["Hogmanay"],"forms":{"gen":"Oidhche Challainn"},"def":"An dealachadh eadar seann bhliadhna is bliadhna ùr, air a chomharrachadh le cèilidhean is ceòl."}
+}

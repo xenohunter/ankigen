@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"cosmetics","alt":["makeup"],"def":"products that people put on their face or skin to look better"},
 "word-small-size": {"w":"small","hint":"clothing size","def":"a clothing size below medium"},
 "word-medium-size": {"w":"medium","def":"a clothing size between small and large"},
-"word-large-size": {"w":"large","hint":"clothing size","def":"a clothing size above medium"}
+"word-large-size": {"w":"large","hint":"clothing size","def":"a clothing size above medium"},
+"word-vyshyvanka": {"gl":"vyshyvanka: Ukrainian shirt with traditional embroidery, a national symbol"}
 }

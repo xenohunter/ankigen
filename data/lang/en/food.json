@@ -82,5 +82,8 @@
 "word-picnic": {"w":"picnic","def":"a meal eaten outdoors, often in a park"},
 "word-butcher-shop": {"w":"butcher shop","def":"a store that sells fresh meat"},
 "word-grocery-store": {"w":"grocery store","def":"a store that sells food and small household items"},
-"word-sobremesa": {"gl":"sobremesa: Spanish custom of staying at the table to chat after a meal"}
+"word-sobremesa": {"gl":"sobremesa: Spanish custom of staying at the table to chat after a meal"},
+"word-aperitivo": {"gl":"aperitivo: Italian early-evening drink served with snacks at a bar"},
+"word-fika": {"gl":"fika: Swedish social break for coffee and pastries with friends or colleagues"},
+"word-nhau": {"gl":"nhậu: Vietnamese social drinking of beer or spirits with shared food"}
 }

@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: İspanya'da araçlar için zorunlu teknik muayene"},
 "word-apk-nl": {"gl":"APK: Hollanda'da araçlar için periyodik güvenlik muayenesi"},
 "word-kteo-gr": {"gl":"KTEO: Yunanistan'daki araç teknik muayene merkezi"},
-"word-muayene-tr": {"w":"araç muayenesi","hint":"Türkiye","forms":{"acc":"araç muayenesini"},"def":"Türkiye'de taşıtların belirli aralıklarla girmesi gereken zorunlu teknik kontrol."}
+"word-muayene-tr": {"w":"araç muayenesi","hint":"Türkiye","forms":{"acc":"araç muayenesini"},"def":"Türkiye'de taşıtların belirli aralıklarla girmesi gereken zorunlu teknik kontrol."},
+"word-revisione-it": {"gl":"revisione: İtalya'da araçlar için zorunlu periyodik muayene"},
+"word-besiktning-se": {"gl":"besiktning: İsveç'te onaylı istasyonda yapılan zorunlu araç muayenesi"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS: Ukrayna'da ehliyet, araç tescili ve sınav işlemleri bürosu"},
+"word-nct-ie": {"gl":"NCT: İrlanda'da zorunlu araç yol güvenliği muayenesi (Ulusal Araç Testi)"},
+"word-mot-uk": {"gl":"MOT: Britanya'da üç yaşından büyük araçlar için yıllık yol güvenliği testi"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga: Macaristan'da plaka etiketiyle gösterilen periyodik araç muayenesi"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm: Vietnam'da araçların zorunlu teknik ve emisyon muayenesi"}
 }

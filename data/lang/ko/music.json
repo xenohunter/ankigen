@@ -45,5 +45,7 @@
 "word-whistle": {"w":"휘파람을 불다","rom":"hwiparameul bulda","forms":{"haeyo":"휘파람을 불어요","past":"휘파람을 불었어요"},"def":"입술을 모으고 숨을 내보내 높은 소리를 내다."},
 "word-hum": {"w":"흥얼거리다","rom":"heungeolgeorida","forms":{"haeyo":"흥얼거려요","past":"흥얼거렸어요"},"def":"입을 열지 않고 낮은 소리로 노래의 가락을 따라 내다."},
 "word-vinyl-record": {"w":"레코드판","rom":"rekodeupan","alt":["레코드","엘피"],"def":"바늘이 위를 지나가면 음악이 나오는 납작하고 검은 원반."},
-"word-instrument": {"w":"악기","rom":"akgi","hanja":"樂器","def":"기타나 피아노처럼 연주해서 음악을 만드는 도구."}
+"word-instrument": {"w":"악기","rom":"akgi","hanja":"樂器","def":"기타나 피아노처럼 연주해서 음악을 만드는 도구."},
+"word-ceili": {"gl":"케일리: 아일랜드 전통 음악, 노래, 집단 춤이 있는 사교 모임"},
+"word-mod-gaelic": {"gl":"모드: 스코틀랜드 게일어 노래, 음악, 시, 말하기 축제"}
 }

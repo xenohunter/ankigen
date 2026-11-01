@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"date de naissance","g":"f","def":"Jour, mois et année où une personne est venue au monde."},
 "word-time-zone": {"w":"fuseau horaire","g":"m","def":"Partie du monde où toutes les horloges indiquent le même temps."},
 "word-o-clock": {"w":"heures","def":"Mot qui suit un nombre pour indiquer le moment précis sur une horloge."},
-"word-lifetime": {"w":"vie","g":"f","hint":"durée","def":"Temps pendant lequel une personne respire et existe, de sa naissance à sa mort."}
+"word-lifetime": {"w":"vie","g":"f","hint":"durée","def":"Temps pendant lequel une personne respire et existe, de sa naissance à sa mort."},
+"word-hogmanay": {"gl":"Hogmanay : réveillon du Nouvel An écossais, avec visites et chants traditionnels"}
 }

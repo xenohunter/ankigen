@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"自然保護区","read":"しぜんほごく","rom":"shizen hogoku","def":"野生の動物や植物が傷つけられないように守られている地域。"},
 "word-environment-protection": {"w":"環境保護","read":"かんきょうほご","rom":"kankyō hogo","def":"空気や水や土地をきれいに保ち、傷つけないようにする取り組み。"},
 "word-climate-change": {"w":"気候変動","read":"きこうへんどう","rom":"kikō hendō","alt":["地球温暖化"],"def":"地球の気温が長い年月で上がり、天気の様子が変わっていくこと。"},
-"word-renewable-energy": {"w":"再生可能エネルギー","read":"さいせいかのうエネルギー","rom":"saisei kanō enerugī","def":"太陽や風など、使ってもなくならない資源から得る電気や熱。"}
+"word-renewable-energy": {"w":"再生可能エネルギー","read":"さいせいかのうエネルギー","rom":"saisei kanō enerugī","def":"太陽や風など、使ってもなくならない資源から得る電気や熱。"},
+"word-allemansratten": {"gl":"アレマンスラッテン：スウェーデンの自然享受権。他人の土地でも歩いたり野営したりベリーを摘んだりできる権利"},
+"word-machair": {"gl":"マハイル：ヘブリディーズ諸島に多い、貝殻砂の上に広がる肥沃な低地の海岸草原"}
 }

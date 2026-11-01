@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"doğum tarihi","forms":{"acc":"doğum tarihini","poss3":"doğum tarihi"},"def":"Bir kişinin doğduğu günü, ayı ve yılı gösteren bilgi."},
 "word-time-zone": {"w":"saat dilimi","forms":{"acc":"saat dilimini","poss3":"saat dilimi"},"def":"Dünyanın, aynı vakti kullanan bölgelerinden her biri."},
 "word-o-clock": {"w":"saat","hint":"tam saat","def":"Sayıdan önce gelerek günün belirli bir anını bildiren sözcük."},
-"word-lifetime": {"w":"ömür","forms":{"acc":"ömrü","poss3":"ömrü"},"def":"Bir insanın doğumundan ölümüne kadar geçen süre."}
+"word-lifetime": {"w":"ömür","forms":{"acc":"ömrü","poss3":"ömrü"},"def":"Bir insanın doğumundan ölümüne kadar geçen süre."},
+"word-hogmanay": {"gl":"Hogmanay: İskoçya'da yılbaşı gecesi kutlaması, first-footing geleneği ve Auld Lang Syne ile"}
 }

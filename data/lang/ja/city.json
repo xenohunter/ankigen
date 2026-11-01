@@ -18,5 +18,6 @@
 "word-city-block": {"w":"ブロック","rom":"burokku","alt":["区画"],"def":"四方を道に囲まれた、建物が並ぶ一つのまとまり。"},
 "word-tourist-information": {"w":"観光案内所","read":"かんこうあんないじょ","rom":"kankō annaijo","def":"旅行者に地図やその土地の情報を教えてくれる場所。"},
 "word-landmark": {"w":"ランドマーク","rom":"randomāku","alt":["目印"],"def":"有名で見つけやすい建物や場所。"},
-"word-outskirts": {"w":"郊外","read":"こうがい","rom":"kōgai","def":"都市の中心から遠い地域。","hint":"町のはずれ"}
+"word-outskirts": {"w":"郊外","read":"こうがい","rom":"kōgai","def":"都市の中心から遠い地域。","hint":"町のはずれ"},
+"word-passeggiata": {"gl":"パッセジャータ：イタリアの、夕方や日曜日にのんびり街を散歩する習慣"}
 }

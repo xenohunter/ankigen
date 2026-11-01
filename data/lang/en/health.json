@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"contact lenses","alt":["contacts"],"def":"small curved pieces of plastic worn on the eyes to see clearly"},
 "word-wheelchair": {"w":"wheelchair","def":"a chair with large wheels for people who cannot walk easily"},
 "word-crutches": {"w":"crutches","def":"sticks that fit under the arms to help an injured person walk"},
-"word-patient-person": {"w":"patient","hint":"sick person","def":"a person who is getting medical care from a doctor or in a hospital"}
+"word-patient-person": {"w":"patient","hint":"sick person","def":"a person who is getting medical care from a doctor or in a hospital"},
+"word-doctor-declaration-ua": {"gl":"deklaratsiia: Ukrainian agreement with a family doctor for free primary care"},
+"word-medical-card-ie": {"gl":"Irish HSE card giving eligible people free GP visits and health services"},
+"word-nhs-uk": {"gl":"Scottish public health service, mostly free when you use it; register with a GP"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: Vietnamese health insurance card for reimbursed care"}
 }

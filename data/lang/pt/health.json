@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"lentes de contacto","g":"f.pl","def":"Pequenas peças de plástico curvas que se põem nos olhos para ver bem."},
 "word-wheelchair": {"w":"cadeira de rodas","g":"f","def":"Cadeira com rodas grandes para quem não consegue andar bem."},
 "word-crutches": {"w":"muletas","g":"f.pl","def":"Paus que se põem debaixo dos braços para ajudar quem está magoado a andar."},
-"word-patient-person": {"w":"paciente","g":"mf","hint":"no hospital","alt":["doente"],"def":"Pessoa que recebe cuidados de um médico ou num hospital."}
+"word-patient-person": {"w":"paciente","g":"mf","hint":"no hospital","alt":["doente"],"def":"Pessoa que recebe cuidados de um médico ou num hospital."},
+"word-doctor-declaration-ua": {"gl":"declaração com o médico de família: acordo ucraniano para cuidados primários gratuitos"},
+"word-medical-card-ie": {"gl":"cartão médico irlandês (HSE) que dá a quem tem direito consultas e serviços de saúde gratuitos"},
+"word-nhs-uk": {"gl":"NHS escocês: serviço público de saúde, quase sempre gratuito; inscrição num médico de família"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: cartão vietnamita de seguro de saúde para cuidados comparticipados"}
 }

@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"QR-code","g":"c","forms":{"pl":"QR-codes"},"def":"Vierkant patroon van zwarte en witte stipjes dat je met de camera van je telefoon kunt scannen."},
 "word-notification": {"w":"melding","g":"c","alt":["notificatie"],"forms":{"pl":"meldingen"},"def":"Kort bericht op je telefoon dat je laat weten dat er iets nieuws is."},
 "word-landline": {"w":"vaste telefoon","g":"c","alt":["vaste lijn"],"forms":{"pl":"vaste telefoons"},"def":"Telefoon die met draden is verbonden, niet met een mobiel netwerk."},
-"word-postal-worker": {"w":"postbode","g":"c","alt":["brievenbesteller"],"forms":{"pl":"postbodes"},"def":"Persoon die als werk brieven en pakketten bij mensen thuis bezorgt."}
+"word-postal-worker": {"w":"postbode","g":"c","alt":["brievenbesteller"],"forms":{"pl":"postbodes"},"def":"Persoon die als werk brieven en pakketten bij mensen thuis bezorgt."},
+"word-eircode-ie": {"gl":"Eircode: Ierse postcode van zeven tekens die elk afzonderlijk adres aanduidt"}
 }

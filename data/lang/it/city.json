@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"municipio","g":"m","alt":["palazzo comunale"],"def":"L'edificio in cui lavorano il sindaco e l'amministrazione della città."},
+"word-fire-station": {"w":"caserma dei pompieri","g":"f","alt":["caserma dei vigili del fuoco"],"def":"Edificio dove stanno i vigili del fuoco con i loro mezzi, pronti a intervenire nelle emergenze."},
+"word-mosque": {"w":"moschea","g":"f","def":"Edificio dove i musulmani si riuniscono per pregare."},
+"word-synagogue": {"w":"sinagoga","g":"f","def":"Edificio dove gli ebrei pregano e studiano."},
+"word-cathedral": {"w":"cattedrale","g":"f","alt":["duomo"],"def":"Chiesa molto grande e importante, dove ha sede il vescovo."},
+"word-laundromat": {"w":"lavanderia self-service","g":"f","alt":["lavanderia a gettoni"],"def":"Locale pubblico dove si lavano e si asciugano i vestiti con macchine a pagamento."},
+"word-art-gallery": {"w":"galleria d'arte","g":"f","def":"Edificio o sala dove si mostrano al pubblico quadri e altre opere."},
+"word-nightclub": {"w":"discoteca","g":"f","alt":["locale notturno"],"def":"Locale aperto fino a tardi, con musica, balli e bevande."},
+"word-old-town": {"w":"centro storico","g":"m","def":"La parte più antica di una città, con edifici antichi e vie strette."},
+"word-skyscraper": {"w":"grattacielo","g":"m","def":"Edificio altissimo con moltissimi piani."},
+"word-apartment-block": {"w":"condominio","g":"m","alt":["palazzo"],"def":"Grande edificio diviso in tanti appartamenti su più piani."},
+"word-avenue": {"w":"viale","g":"m","def":"Strada larga di città, spesso con alberi ai lati."},
+"word-pedestrian-zone": {"w":"zona pedonale","g":"f","alt":["isola pedonale"],"def":"Parte della città dove le auto non possono entrare, così si cammina in sicurezza."},
+"word-bench": {"w":"panchina","g":"f","def":"Sedile lungo per più persone, di solito all'aperto."},
+"word-fountain": {"w":"fontana","g":"f","def":"Struttura che lancia l'acqua in aria, di solito in un parco o in una piazza."},
+"word-opposite": {"w":"di fronte a","def":"Dall'altra parte di qualcosa, rivolto verso di esso."},
+"word-city-block": {"w":"isolato","g":"m","art":"l'","def":"Gruppo di edifici circondato da strade su tutti e quattro i lati."},
+"word-tourist-information": {"w":"ufficio turistico","g":"m","art":"l'","alt":["ufficio informazioni turistiche"],"def":"Ufficio dove i visitatori ricevono mappe e consigli su un luogo."},
+"word-landmark": {"w":"punto di riferimento","g":"m","forms":{"pl":"punti di riferimento"},"def":"Edificio o luogo molto noto e facile da riconoscere, che aiuta a orientarsi."},
+"word-outskirts": {"w":"periferia","g":"f","def":"Le zone di una città più lontane dal centro."},
+"word-passeggiata": {"w":"passeggiata","g":"f","def":"Giro a piedi lento e tranquillo, di solito la sera o la domenica, per incontrare gente e farsi vedere."}
+}

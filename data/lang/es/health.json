@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"lentillas","g":"f.pl","alt":["lentes de contacto"],"def":"Pequeñas piezas curvas de plástico que se ponen en los ojos para ver bien."},
 "word-wheelchair": {"w":"silla de ruedas","g":"f","forms":{"pl":"sillas de ruedas"},"def":"Asiento con ruedas grandes para quien no puede caminar con facilidad."},
 "word-crutches": {"w":"muletas","g":"f.pl","def":"Palos que se ponen bajo los brazos para ayudar a caminar a una persona lesionada."},
-"word-patient-person": {"w":"paciente","g":"mf","hint":"enfermo","def":"Persona que recibe atención de un médico o está en un hospital."}
+"word-patient-person": {"w":"paciente","g":"mf","hint":"enfermo","def":"Persona que recibe atención de un médico o está en un hospital."},
+"word-doctor-declaration-ua": {"gl":"declaración con el médico de familia en Ucrania para recibir atención primaria gratuita"},
+"word-medical-card-ie": {"gl":"tarjeta sanitaria irlandesa (HSE) con médico de cabecera y servicios gratuitos"},
+"word-nhs-uk": {"gl":"sistema público de salud escocés, casi gratuito; hay que inscribirse con un médico de cabecera"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: tarjeta vietnamita de seguro médico para atención reembolsada"}
 }

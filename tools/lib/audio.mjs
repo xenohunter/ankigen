@@ -350,7 +350,7 @@ export function planClips({ inputs, setting, manifest, has }) {
   for (const [id, text] of inputs) {
     const m = known.get(clipKey(text, setting.locale, setting.voice, setting.format));
     if (m) {
-      next[id] = { file: m.file, text, voice: m.voice, bytes: m.bytes };
+      next[id] = { file: m.file, text, voice: m.voice, bytes: m.bytes, ...(m.sent ? { sent: m.sent } : {}) };
       continue;
     }
     todo.set(text, [...(todo.get(text) ?? []), id]);

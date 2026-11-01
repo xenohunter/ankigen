@@ -18,5 +18,6 @@
 "word-city-block": {"w":"블록","rom":"beullok","def":"사방이 길로 둘러싸인 건물들의 한 무리."},
 "word-tourist-information": {"w":"관광 안내소","hanja":"觀光案內所","rom":"gwangwang annaeso","def":"여행자가 지도를 얻고 그곳에 대한 조언을 들을 수 있는 사무실."},
 "word-landmark": {"w":"랜드마크","rom":"raendeumakeu","alt":["명소"],"def":"유명하고 알아보기 쉬운 건물이나 장소."},
-"word-outskirts": {"w":"교외","hanja":"郊外","rom":"gyooe","alt":["변두리"],"def":"도시의 중심에서 가장 먼 지역.","hint":"도시 끝"}
+"word-outskirts": {"w":"교외","hanja":"郊外","rom":"gyooe","alt":["변두리"],"def":"도시의 중심에서 가장 먼 지역.","hint":"도시 끝"},
+"word-passeggiata": {"gl":"파세자타: 저녁이나 일요일에 사람들과 어울리며 천천히 걷는 이탈리아의 산책 문화"}
 }

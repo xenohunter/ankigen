@@ -29,7 +29,8 @@ export function stored(storage, key) {
 }
 
 /**
- * Switch the page's texts to a language: the strings, the lang attribute, the title and description.
+ * Switch the page's texts to a language: the strings, the lang and dir attributes (Arabic is right to left), the
+ * title and description.
  * @param {any} meta @param {string} code @param {Translation | null} translation @param {Head} head
  */
 function useTexts(meta, code, translation, head) {
@@ -37,6 +38,7 @@ function useTexts(meta, code, translation, head) {
   useLanguage(code, { tag: code === 'en' ? 'en' : langTag(reg, code, 'cyrl'), locale: reg?.locale ?? code }, translation);
   const { title, description } = head(meta);
   document.documentElement.lang = languageTag();
+  document.documentElement.dir = reg?.dir === 'rtl' ? 'rtl' : 'ltr';
   document.title = title;
   document.querySelector('meta[name="description"]')?.setAttribute('content', description);
 }
@@ -110,7 +112,7 @@ export async function startPage({ loader, storage, head }) {
         code,
         native: registry[code].native,
         name: registry[code].name,
-        country: registry[code].country,
+        country: registry[code].flag ?? registry[code].country, // the flag image: a language without a country has one
         tag: langTag(registry[code], code, 'cyrl'),
       }));
       import('./locale.js').then(({ mountLocale }) => mountLocale(root, { choices, choose }), () => {});

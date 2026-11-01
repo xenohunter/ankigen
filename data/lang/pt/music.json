@@ -45,5 +45,7 @@
 "word-whistle": {"w":"assobiar","forms":{"1sg":"assobio","pret":"assobiei","pp":"assobiado"},"def":"Fazer um som agudo soprando ar pelos lábios."},
 "word-hum": {"w":"cantarolar","alt":["trautear"],"forms":{"1sg":"cantarolo","pret":"cantarolei","pp":"cantarolado"},"def":"Cantar uma melodia com os lábios fechados."},
 "word-vinyl-record": {"w":"disco de vinil","g":"m","alt":["vinil"],"def":"Disco preto e plano que toca música quando uma agulha passa sobre ele."},
-"word-instrument": {"w":"instrumento","g":"m","alt":["instrumento musical"],"def":"Objeto que se toca para fazer música."}
+"word-instrument": {"w":"instrumento","g":"m","alt":["instrumento musical"],"def":"Objeto que se toca para fazer música."},
+"word-ceili": {"gl":"céilí: encontro social irlandês com música tradicional, canto e dança em grupo"},
+"word-mod-gaelic": {"gl":"mòd: festival escocês de canto, música, poesia e declamação em gaélico"}
 }

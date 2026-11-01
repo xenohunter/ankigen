@@ -6,27 +6,36 @@ Repo: https://github.com/xenohunter/ankigen (branch `master`). Site: https://xen
 
 ## 1. Languages
 
-- **Active (15):**
+- **Active (23)**, in the order the page shows them, in their groups (§4):
 
-  | Language | Variant |
-  |---|---|
-  | English | US |
-  | Russian | |
-  | Serbian | ekavian; stored in Cyrillic, Latin derived |
-  | Japanese | |
-  | Chinese | Mandarin, Simplified, mainland |
-  | German | Germany |
-  | Spanish | Spain |
-  | Portuguese | Portugal |
-  | Polish | |
-  | Korean | South Korea |
-  | Dutch | Netherlands |
-  | French | France |
-  | Armenian | Eastern, reformed orthography |
-  | Turkish | Turkey |
-  | Greek | modern, monotonic |
+  | Group | Language | Variant |
+  |---|---|---|
+  | Germanic | English | US |
+  | | German | Germany |
+  | | Dutch | Netherlands |
+  | | Swedish | Sweden (rikssvenska) |
+  | East and Southeast Asian | Chinese | Mandarin, Simplified, mainland |
+  | | Japanese | |
+  | | Vietnamese | Northern (Hà Nội): vocabulary, spelling, IPA |
+  | | Korean | South Korea |
+  | Romance | Spanish | Spain |
+  | | French | France |
+  | | Portuguese | Portugal |
+  | | Italian | Italy |
+  | Slavic | Russian | |
+  | | Polish | |
+  | | Ukrainian | Ukraine, 2019 orthography; stress marks as in Russian |
+  | | Serbian | ekavian; stored in Cyrillic, Latin derived |
+  | Celtic | Irish | An Caighdeán Oifigiúil; IPA: Connacht |
+  | | Scottish Gaelic | Gaelic Orthographic Conventions; IPA: a general Hebridean pronunciation |
+  | Other | Arabic | Modern Standard; full vowel marks (harakat), which a row can hide |
+  | | Turkish | Turkey |
+  | | Greek | modern, monotonic |
+  | | Hungarian | Hungary |
+  | | Armenian | Eastern, reformed orthography |
 
-- **Deferred** (codes reserved, added later): Italian, Irish, Scottish Gaelic, Swedish, and more to come.
+- **Groups:** Germanic, Romance, Slavic and Celtic are branches of Indo-European; East and Southeast Asian is a region (its four languages belong to four families); Other holds the rest. The group with English comes first and Other last; the other groups, and the languages within every group, go by their number of speakers (L1 + L2: Ethnologue 2026, or Wikipedia's infobox for languages under 50 million; `speakers` in `languages.json`, whose order lint checks).
+- **Adding a language:** it is first *staged*: generated, but not shown; once complete it becomes active (GENERATION.md §9).
 - **Regional variants** (pt-BR, es-MX, en-GB, …) are added later as separate dropdown entries backed by override files (`extends`).
 - **Modes:**
   - Bilingual: *I'm learning* X, *I speak* Y.
@@ -55,7 +64,7 @@ How modules behave:
 - **Forward:** learned word → translation (or definition).
 - **Reverse** (optional): translation → learned word.
   - On reverse cards **every field about the learned word moves to the answer side**. Only the translation with its hint, plus concept-level fields the user placed on the front (part of speech, register, emoji), stay on the question side.
-- **Type the answer** (optional, only when reverse cards are on): the user types the learned word on reverse cards. The answer is compared with a clean field: main form, no hint, no stress marks, articles included for German and Dutch, CJK in native script. Forward cards never use typing.
+- **Type the answer** (optional, only when reverse cards are on): the user types the learned word on reverse cards. The answer is compared with a clean field: main form, no hint, no stress marks (Russian, Ukrainian) or vowel marks (Arabic), articles included for German, Dutch and Swedish, CJK in native script. The language's own accents stay (está, café, νερό, Tiếng Việt). Forward cards never use typing.
 
 ### Field table (step 4)
 Each row is Off / Front / Back (some rows have fewer choices). Defaults are in `data/meta/fields.json`. Rows are shown only when relevant to the chosen language:
@@ -64,12 +73,13 @@ Each row is Off / Front / Back (some rows have fewer choices). Defaults are in `
 |---|---|---|
 | Word | Front (fixed) | |
 | Translation | Back (fixed) | "Definition" in same-language mode; includes hint and synonyms |
-| Gender / article | With the word | de nl fr es pt el ru sr pl |
-| Stress marks | On | ru |
+| Gender / article | With the word | de nl sv fr es pt it el ru uk sr pl ga gd ar; an article (der Tisch, en bil, l'acqua) or a mark (m./f.) |
+| Stress marks | On | ru uk |
+| Vowel marks | On | ar: the short-vowel marks (harakat) |
 | Reading (furigana) | Back | ja |
-| Romanization | Back | ja zh ko hy el; ru default Off |
+| Romanization | Back | ja zh ko ar hy el ru uk; ru and uk default Off |
 | Other script | Off | sr |
-| Measure word / counter | Back | zh ja |
+| Measure word / counter | Back | zh ja vi (the Vietnamese classifier, under its own caption) |
 | Hanja | Back | ko |
 | Key forms | Back | |
 | IPA | Back | all but zh ja |
@@ -88,8 +98,8 @@ Each row is Off / Front / Back (some rows have fewer choices). Defaults are in `
 
 ### Pronunciation audio (prototype)
 The most experimental part of the app, and labelled as such.
-- **What:** one machine-made clip per learned word: its main form as the card shows it with default settings. That is the article where the Gender / article row shows one (das Wasser, l'eau; a noun of either gender gets both: el estudiante, la estudiante), Russian without stress marks, Serbian in its stored Cyrillic, a Japanese word as its kana reading when another word is spelled the same with another reading, and such a Chinese word with an SSML pinyin phoneme. Merged notes share one clip. No examples, translations or definitions.
-- **Voices:** Google Cloud Text-to-Speech only, for the language's exact locale (never a sibling such as pt-BR for pt-PT): a Chirp 3 HD voice (Kore, female, wherever it exists), else Neural2, else WaveNet, else no audio. Today: Chirp 3 HD for 13 languages, WaveNet for Portuguese, none for Armenian.
+- **What:** one machine-made clip per learned word: its main form as the card shows it with default settings. That is the article where the Gender / article row shows one (das Wasser, l'eau; a noun of either gender gets both: el estudiante, la estudiante), Russian and Ukrainian without stress marks, Arabic with its vowel marks, Serbian in its stored Cyrillic, a Japanese word as its kana reading when another word is spelled the same with another reading, and such a Chinese word with an SSML pinyin phoneme. Merged notes share one clip. No examples, translations or definitions.
+- **Voices:** Google Cloud Text-to-Speech only, for the language's exact locale (never a sibling such as pt-BR for pt-PT): a Chirp 3 HD voice (Kore, female, wherever it exists), else Neural2, else WaveNet, else no audio. Today: Chirp 3 HD for 19 languages, WaveNet for Portuguese, none for Armenian, Irish and Scottish Gaelic (Google has no voice for them).
 - **On cards:** the clip plays on the front of forward cards and on the back of reverse cards, never on the reverse question; the forward answer doesn't play it again.
 - **Page:** only when the learned language has audio, the Card options block ends with a line, the "Pronunciation audio" toggle and, always in sight, a muted warning: the most experimental, prototype part of the app; clips are machine-generated and unchecked; stress, readings and accent may be wrong; don't rely on them; native speakers who find them poor are asked to tell us with the Feedback button, and a language's audio is taken down if needed. Its "?" says it covers words only, that the voices are Google Cloud Text-to-Speech's, and how to remove the files (Tools → Check Media). For other languages the block ends as before.
 - While the toggle is on, a light warning frame under it tells people who imported an AnkiGen deck before audio was added to tick "Merge note types" the first time they import an update (§6).
@@ -100,13 +110,13 @@ The most experimental part of the app, and labelled as such.
 
 Minimal, clean, fast. Card captions use the language the user speaks, via `labels.json`.
 
-**Interface language:** the page is in any of the 15 languages, chosen with a menu in the header's top-right corner: the current language's flag and code, opening a list of the languages with their flags and native names. A flag is the language's country in `languages.json`, drawn as an image (Windows shows no flag emoji). Choosing one switches every text at once, without a reload.
+**Interface language:** the page is in any of the 23 languages, chosen with a menu in the header's top-right corner: the current language's flag and code, opening a list of the languages, in the order of the chips, with their flags and native names. A flag is the language's country in `languages.json`, drawn as an image (Windows shows no flag emoji); Arabic, the language of no one country, has the Arab League's flag, and Scottish Gaelic Scotland's. Choosing one switches every text at once, without a reload. In Arabic the page is mirrored: it reads right to left.
 - The language is in the address (`?lang=ru`), so a shared link opens in it. Without one, the page takes the visitor's last choice, else the browser's language when the page speaks it, else English.
 - Module, field and option texts and the language names come from the landing pages' translations (`data/landing`); the page's own texts are in `data/ui`. A text a translation lacks is shown in English.
 
 1. **Title + short description**, plus a one-line disclaimer: vocabulary is machine-drafted and partly unreviewed, and feedback is welcome. Top right, beside the interface language: "Support this project:" with Patreon and Buy Me a Coffee (as in the footer, but outlined in orange there).
-2. **I'm learning:** language chips with native names (Српски, 日本語, Հայերեն) and the names in the interface language as tooltips.
-3. **I speak:** first a **Same language** button on a row of its own, with "— word definitions" in muted text (the interface language's clearest phrase: ru «толковый словарь»), set apart from the language chips below by a thin line.
+2. **I'm learning:** language chips with native names (Српски, 日本語, Հայերեն) and the names in the interface language as tooltips, under the names of their groups (§1), the name beside its chips (above them on phones).
+3. **I speak:** first a **Same language** button on a row of its own, with "— word definitions" in muted text (the interface language's clearest phrase: ru «толковый словарь»), set apart from the language chips below by a thin line; the chips are grouped as in step 2.
 4. **Modules:** a tree with expand/collapse and checkboxes at module and category level, a selected count, and an 18+ badge on Profanity.
 5. **Card fields:** the field table and examples slider; the rarely used rows under "More…" (§3).
 6. **Reverse cards / Type the answer** toggles, and the Pronunciation audio toggle where the learned language has audio (§3).
@@ -130,7 +140,7 @@ Always-visible elements:
   - the licenses;
   - "Created by Phil Filippak", the name linking to https://x.com/blisstweeting.
 
-**Supported languages** (`languages.html`, linked from the footer): the languages, each with its flag, native name, name in the interface language, the field rows only some languages have ("Cards can also show: Reading (furigana) · Romanization · …") and "Build a deck", which opens the app with it as the learned language. Below: "Missing a language?" with **Request a language**, which opens the feedback dialog with the category New language chosen and a question in place of the card line ("Which language would you like to see here? Tell us which language you speak, too."). Same header language menu, footer and Feedback button as the app.
+**Supported languages** (`languages.html`, linked from the footer): the languages under the names of their groups, each with its flag, native name, name in the interface language, the field rows only some languages have ("Cards can also show: Reading (furigana) · Romanization · …") and "Build a deck", which opens the app with it as the learned language. Below: "Missing a language?" with **Request a language**, which opens the feedback dialog with the category New language chosen and a question in place of the card line ("Which language would you like to see here? Tell us which language you speak, too."). Same header language menu, footer and Feedback button as the app.
 
 ## 5. Feedback and error reports
 
@@ -171,7 +181,7 @@ Always-visible elements:
 ## 7. Data
 
 - See `docs/DATA_FORMAT.md`. The data is concept-centric, with per-language layer files, permanent IDs, a linter, and a golden sample in `tests/fixtures/data`.
-- Data is generated in resumable units (`docs/GENERATION.md`). The site deploys once all 15 languages are complete. IPA comes last. Pronunciation audio is made from the finished words by its own tool (`docs/GENERATION.md` §7) and never holds up a deploy. Etymology is dropped for now: the note type keeps an empty Etymology field, so it can come back without changing the note type.
+- Data is generated in resumable units (`docs/GENERATION.md`). The site deploys once every active language is complete (staged ones don't count, §1). IPA comes last. Pronunciation audio is made from the finished words by its own tool (`docs/GENERATION.md` §7) and never holds up a deploy. Etymology is dropped for now: the note type keeps an empty Etymology field, so it can come back without changing the note type.
 
 ## 8. Non-goals (for now)
 

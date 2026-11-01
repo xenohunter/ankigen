@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"réserve naturelle","g":"f","def":"Zone où les animaux et les plantes sauvages sont protégés."},
 "word-environment-protection": {"w":"protection de l'environnement","g":"f","def":"Ensemble d'actions qui gardent l'air, l'eau et la terre propres et à l'abri des dégâts."},
 "word-climate-change": {"w":"changement climatique","g":"m","alt":["réchauffement climatique"],"def":"Hausse durable de la température de la Terre et évolution du temps qu'il fait."},
-"word-renewable-energy": {"w":"énergie renouvelable","g":"f","art":"l'","def":"Force tirée de sources qui ne s'épuisent pas, comme le soleil et le vent."}
+"word-renewable-energy": {"w":"énergie renouvelable","g":"f","art":"l'","def":"Force tirée de sources qui ne s'épuisent pas, comme le soleil et le vent."},
+"word-allemansratten": {"gl":"allemansrätten : droit suédois de circuler, camper et cueillir des baies sur la plupart des terres"},
+"word-machair": {"gl":"machair : prairie côtière basse et fertile sur sable coquillier, typique des Hébrides"}
 }

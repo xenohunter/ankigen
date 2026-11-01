@@ -35,6 +35,12 @@ export const STRINGS = {
     'Cards show a short definition in the language you are learning instead of a translation. Good once you can read simple sentences in it.',
   'lang.loading': 'Loading {language} words…',
   'lang.failed': 'Could not load the {language} words. Check your connection and reload the page.',
+  'group.germanic': 'Germanic',
+  'group.asian': 'East and Southeast Asian',
+  'group.romance': 'Romance',
+  'group.slavic': 'Slavic',
+  'group.celtic': 'Celtic',
+  'group.other': 'Other',
 
   'modules.hint': 'Pick the topics you want; you can add more later.',
   'modules.show': 'Show {category} modules',

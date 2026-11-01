@@ -82,5 +82,8 @@
 "word-picnic": {"w":"piknik","forms":{"acc":"pikniği"},"def":"Çoğunlukla parkta, dışarıda yenen yemek."},
 "word-butcher-shop": {"w":"kasap dükkânı","alt":["kasap"],"forms":{"acc":"kasap dükkânını"},"def":"Taze et satılan işyeri."},
 "word-grocery-store": {"w":"bakkal","forms":{"acc":"bakkalı"},"def":"Yiyecek ve küçük ev eşyaları satan küçük dükkân."},
-"word-sobremesa": {"gl":"sobremesa: yemekten sonra masada oturup sohbet etme İspanyol geleneği"}
+"word-sobremesa": {"gl":"sobremesa: yemekten sonra masada oturup sohbet etme İspanyol geleneği"},
+"word-aperitivo": {"gl":"aperitivo: İtalya'da akşam üstü atıştırmalıklarla barda içilen içki"},
+"word-fika": {"gl":"fika: İsveç'te arkadaşlarla veya iş arkadaşlarıyla kahve ve hamur işi molası"},
+"word-nhau": {"gl":"nhậu: Vietnam'da paylaşılan yemeklerle birlikte sosyal olarak bira veya içki içme"}
 }

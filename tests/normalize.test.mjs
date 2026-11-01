@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fold, stripStress, toHiragana, kanaToRomaji, searchKey, prepareQuery, matches } from '../src/text/normalize.js';
+import { fold, stripStress, stripVowels, toHiragana, kanaToRomaji, searchKey, prepareQuery, matches } from '../src/text/normalize.js';
 import { srToLatin } from '../src/text/translit.js';
 
 test('fold: case, accents, stress, special letters', () => {
@@ -22,6 +22,22 @@ test('fold: case, accents, stress, special letters', () => {
     "  l'eau  ": 'l eau',
   };
   for (const [input, expected] of Object.entries(cases)) assert.equal(fold(input), expected, input);
+});
+
+test('fold: Arabic without its vowel marks, hamza seats and tatweel; ة and ى as they are often typed', () => {
+  const cases = {
+    'الْمَدْرَسَةُ': 'المدرسه',
+    'مدرسة': 'مدرسه',
+    'إِلَى': 'الي',
+    'أَكَلَ': 'اكل',
+    'سُؤَال': 'سوال',
+    'كتـــاب': 'كتاب',
+    'Tiếng Việt': 'tieng viet',
+    'Українська': 'украінська',
+  };
+  for (const [input, expected] of Object.entries(cases)) assert.equal(fold(input), expected, input);
+  assert.equal(stripVowels('مُعَلِّمَة'), 'معلمة');
+  assert.equal(stripVowels('كِتَابٌ / كُتُبٌ'), 'كتاب / كتب');
 });
 
 test('fold: kana', () => {

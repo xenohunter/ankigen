@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"gl":"un giorno intero di 24 ore, giorno e notte insieme"},
+"word-day-off": {"w":"giorno libero","g":"m","alt":["giorno di riposo"],"forms":{"pl":"giorni liberi"},"def":"Giorno in cui non si deve andare al lavoro o a scuola."},
+"word-working-day": {"w":"giorno lavorativo","g":"m","alt":["giorno feriale"],"forms":{"pl":"giorni lavorativi"},"def":"Giorno in cui la maggior parte delle persone lavora, di solito dal lunedì al venerdì."},
+"word-on-time": {"w":"in orario","alt":["puntuale"],"def":"Al momento giusto, né troppo tardi né troppo presto."},
+"word-date-of-birth": {"w":"data di nascita","g":"f","forms":{"pl":"date di nascita"},"def":"Giorno, mese e anno in cui una persona è venuta al mondo."},
+"word-time-zone": {"w":"fuso orario","g":"m","forms":{"pl":"fusi orari"},"def":"Zona della Terra in cui tutti gli orologi segnano la stessa ora."},
+"word-o-clock": {"w":"in punto","def":"Espressione che si dice dopo l'ora per indicare che non ci sono minuti in più."},
+"word-lifetime": {"w":"vita","g":"f","alt":["arco della vita"],"forms":{"pl":"vite"},"hint":"durata","def":"L'intero periodo di tempo in cui una persona è viva."},
+"word-hogmanay": {"gl":"Hogmanay: Capodanno scozzese con il primo ospite e il canto di Auld Lang Syne"}
+}

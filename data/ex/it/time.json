@@ -1,0 +1,9 @@
+{
+"word-day-off": [{"t":"Domani è il mio {giorno libero}."},{"t":"Ogni mercoledì lei ha un {giorno libero}."},{"t":"Ho bisogno di un {giorno libero} per riposare."}],
+"word-working-day": [{"t":"Il lunedì è il primo {giorno lavorativo} della settimana."},{"t":"Un normale {giorno lavorativo} dura otto ore."},{"t":"Il pacco arriverà in tre {giorni lavorativi}."}],
+"word-on-time": [{"t":"Il treno è arrivato {in orario}."},{"t":"Cerca di arrivare {in orario} alla riunione, per favore."},{"t":"Lei paga sempre l'affitto {in orario}."}],
+"word-date-of-birth": [{"t":"Scrivi la tua {data di nascita} sul modulo, per favore."},{"t":"La mia {data di nascita} è il 4 maggio 1990."},{"t":"Mi hanno chiesto il nome e la {data di nascita}."}],
+"word-time-zone": [{"t":"New York è in un {fuso orario} diverso da Los Angeles."},{"t":"Dopo aver cambiato {fuso orario} ho dormito male.","p":0},{"t":"In che {fuso orario} sei?"}],
+"word-o-clock": [{"t":"Il film inizia alle otto {in punto}."},{"t":"Adesso sono le cinque {in punto}."},{"t":"Pranziamo alle dodici {in punto}."}],
+"word-lifetime": [{"t":"Nella sua {vita} ha visto molti cambiamenti."},{"t":"Questo è il viaggio di una {vita}."},{"t":"Ha passato tutta la {vita} nella stessa città."}]
+}

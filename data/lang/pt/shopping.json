@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"cosméticos","g":"m.pl","alt":["maquilhagem"],"def":"Produtos que se aplicam no rosto ou na pele para ficar mais bonito."},
 "word-small-size": {"w":"pequeno","hint":"de roupa","forms":{"f":"pequena"},"def":"Tamanho de roupa abaixo do médio."},
 "word-medium-size": {"w":"médio","forms":{"f":"média"},"def":"Tamanho de roupa entre o pequeno e o grande.","hint":"de roupa"},
-"word-large-size": {"w":"grande","hint":"de roupa","def":"Tamanho de roupa acima do médio."}
+"word-large-size": {"w":"grande","hint":"de roupa","def":"Tamanho de roupa acima do médio."},
+"word-vyshyvanka": {"gl":"vyshyvanka: camisa ucraniana com bordado tradicional, símbolo nacional"}
 }

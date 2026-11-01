@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"soczewki kontaktowe","g":"pl","alt":["szkła kontaktowe"],"forms":{"gen":"soczewek kontaktowych"},"def":"Małe, wygięte kawałki przezroczystego tworzywa noszone na oczach, by lepiej widzieć."},
 "word-wheelchair": {"w":"wózek inwalidzki","g":"m","forms":{"gen":"wózka inwalidzkiego","pl":"wózki inwalidzkie"},"def":"Fotel na dużych kołach dla osób, które nie mogą chodzić."},
 "word-crutches": {"w":"kule","g":"pl","forms":{"gen":"kul"},"def":"Laski podpierane pod pachami, które pomagają chodzić osobie z urazem."},
-"word-patient-person": {"w":"pacjent","g":"m","forms":{"gen":"pacjenta","pl":"pacjenci","f":"pacjentka"},"def":"Osoba, którą leczy lekarz lub która leży w szpitalu."}
+"word-patient-person": {"w":"pacjent","g":"m","forms":{"gen":"pacjenta","pl":"pacjenci","f":"pacjentka"},"def":"Osoba, którą leczy lekarz lub która leży w szpitalu."},
+"word-doctor-declaration-ua": {"gl":"deklaracja z lekarzem: ukraińska umowa z lekarzem rodzinnym o bezpłatnej opiece podstawowej"},
+"word-medical-card-ie": {"gl":"irlandzka karta HSE dająca uprawnionym bezpłatne wizyty u lekarza rodzinnego i inne usługi zdrowotne"},
+"word-nhs-uk": {"gl":"szkocka publiczna służba zdrowia, zwykle bezpłatna; trzeba się zarejestrować u lekarza rodzinnego"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế: wietnamska karta ubezpieczenia zdrowotnego, dzięki której koszty leczenia są zwracane"}
 }

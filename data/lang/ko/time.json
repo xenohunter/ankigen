@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"생년월일","hanja":"生年月日","rom":"saengnyeonworil","def":"사람이 태어난 해와 달과 날."},
 "word-time-zone": {"w":"시간대","hanja":"時間帶","rom":"sigandae","def":"세계에서 모든 시계가 같은 시각을 가리키는 지역."},
 "word-o-clock": {"w":"시","hanja":"時","rom":"si","def":"숫자 뒤에 붙여 시계가 가리키는 정각을 말할 때 쓰는 말.","hint":"시각"},
-"word-lifetime": {"w":"평생","hanja":"平生","rom":"pyeongsaeng","alt":["일생"],"def":"사람이 태어나서 죽을 때까지의 모든 기간."}
+"word-lifetime": {"w":"평생","hanja":"平生","rom":"pyeongsaeng","alt":["일생"],"def":"사람이 태어나서 죽을 때까지의 모든 기간."},
+"word-hogmanay": {"gl":"호그매니: 스코틀랜드의 12월 31일 섣달그믐 밤 축제와 새해맞이 풍습"}
 }

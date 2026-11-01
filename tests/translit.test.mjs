@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ruToLatin, srToLatin, srToCyrillic, hyToLatin, elToLatin, SCHEMES } from '../src/text/translit.js';
+import { ruToLatin, ukToLatin, srToLatin, srToCyrillic, hyToLatin, elToLatin, SCHEMES } from '../src/text/translit.js';
 
 /** @param {(s: string) => string} fn @param {Record<string, string>} cases */
 function check(fn, cases) {
@@ -34,6 +34,35 @@ test('Russian: readable scheme with optional stress', () => {
     'ребёнок': 'rebyonok',
     'ма́ленький, небольшо́й': 'malenkiy, nebolshoy',
   });
+});
+
+test('Ukrainian: the national system of 2010 (examples from its table), with optional stress', () => {
+  check((s) => ukToLatin(s, { stress: false }), {
+    'Алушта': 'Alushta',
+    'Борщагівка': 'Borshchahivka',
+    'Вінниця': 'Vinnytsia',
+    'Гадяч': 'Hadiach',
+    'Згорани': 'Zghorany',
+    'Розгон': 'Rozghon',
+    'Ґалаґан': 'Galagan',
+    'Єнакієве': 'Yenakiieve',
+    'Гаєвич': 'Haievych',
+    'Закарпаття': 'Zakarpattia',
+    'Їжакевич': 'Yizhakevych',
+    'Кадиївка': 'Kadyivka',
+    'Йосипівка': 'Yosypivka',
+    'Стрий': 'Stryi',
+    'Харків': 'Kharkiv',
+    'Біла Церква': 'Bila Tserkva',
+    'Гоща': 'Hoshcha',
+    'Юрій': 'Yurii',
+    'Корюківка': 'Koriukivka',
+    'Яготин': 'Yahotyn',
+    'Ічня': 'Ichnia',
+    'Знам’янка': 'Znamianka',
+    'ЦНАП': 'TSNAP',
+  });
+  check(ukToLatin, { 'вода́': 'vodá', 'сім’я́': 'simiá', 'Украї́на': 'Ukraína' });
 });
 
 test('Serbian Cyrillic → Latin is exact', () => {
@@ -177,7 +206,7 @@ test('Greek: ELOT 743 (examples from the PCGN table)', () => {
 
 test('schemes are registered under the names languages.json uses', async () => {
   const { default: languages } = await import('../data/meta/languages.json', { with: { type: 'json' } });
-  for (const code of languages.active) {
+  for (const code of [...languages.active, ...languages.staged]) {
     const lang = languages.languages[code];
     if (lang.romanization?.source === 'rule') assert.ok(SCHEMES[lang.romanization.scheme], lang.romanization.scheme);
     if (lang.otherScript) assert.ok(SCHEMES[lang.otherScript.rule], lang.otherScript.rule);

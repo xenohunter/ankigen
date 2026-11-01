@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@500&family=Noto+Sans+KR:wght@500&family=Noto+Sans+Armenian:wght@500&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@500&family=Noto+Sans+KR:wght@500&family=Noto+Sans+Armenian:wght@500&family=Noto+Sans+Arabic:wght@500&display=block" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -25,14 +25,16 @@
   :lang(zh) { font-family: "Noto Sans SC", sans-serif; }
   :lang(ko) { font-family: "Noto Sans KR", sans-serif; }
   :lang(hy) { font-family: "Noto Sans Armenian", sans-serif; }
-  .wrap { display: grid; grid-template-columns: 700px 1fr; height: 100%; padding: 64px 0 56px 72px; }
+  :lang(ar) { font-family: "Noto Sans Arabic", sans-serif; }
+  .wrap { display: grid; grid-template-columns: 700px 1fr; height: 100%; padding: 52px 0 56px 72px; }
   .brand { display: flex; align-items: center; gap: 22px; }
   .brand img { width: 76px; height: 76px; }
   h1 { margin: 0; font-size: 76px; font-weight: 700; letter-spacing: -0.02em; }
-  .tagline { margin: 34px 0 0; font-size: 44px; line-height: 1.18; font-weight: 600; }
-  .sub { margin: 18px 0 0; color: #5d636d; font-size: 26px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; max-width: 690px; }
-  .chip { padding: 5px 14px; border: 1.5px solid #c4c7c2; border-radius: 999px; background: #fff; font-size: 20px; }
+  .tagline { margin: 26px 0 0; font-size: 44px; line-height: 1.18; font-weight: 600; }
+  .sub { margin: 14px 0 0; color: #5d636d; font-size: 26px; }
+  .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 24px; max-width: 690px; }
+  .chip { padding: 4px 12px; border: 1.5px solid #c4c7c2; border-radius: 999px; background: #fff; font-size: 18px; line-height: 1.35; }
+  .chip:lang(ar) { line-height: 1.1; padding-block: 5px; }
   .chip.on { border-color: #2c6db0; background: #2c6db0; color: #fff; }
   .url { position: absolute; left: 72px; bottom: 40px; color: #5d636d; font-size: 24px; }
   .cards { position: relative; }
@@ -60,14 +62,17 @@
 <div class="wrap">
   <div>
     <div class="brand"><img src="../favicon.svg" alt=""><h1>AnkiGen</h1></div>
-    <p class="tagline">Free Anki vocabulary decks<br>in 15 languages</p>
+    <p class="tagline">Free Anki vocabulary decks<br>in 23 languages</p>
     <p class="sub">Built in your browser · an .apkg for Anki and AnkiDroid</p>
     <div class="chips">
-      <span class="chip" lang="en">English</span><span class="chip" lang="ru">Русский</span><span class="chip" lang="sr">Српски</span>
-      <span class="chip on" lang="ja">日本語</span><span class="chip" lang="zh">中文</span><span class="chip" lang="de">Deutsch</span>
-      <span class="chip" lang="es">Español</span><span class="chip" lang="pt">Português</span><span class="chip" lang="pl">Polski</span>
-      <span class="chip" lang="ko">한국어</span><span class="chip" lang="nl">Nederlands</span><span class="chip" lang="fr">Français</span>
-      <span class="chip" lang="hy">Հայերեն</span><span class="chip" lang="tr">Türkçe</span><span class="chip" lang="el">Ελληνικά</span>
+      <span class="chip" lang="en">English</span><span class="chip" lang="de">Deutsch</span><span class="chip" lang="nl">Nederlands</span>
+      <span class="chip" lang="sv">Svenska</span><span class="chip" lang="zh">中文</span><span class="chip on" lang="ja">日本語</span>
+      <span class="chip" lang="vi">Tiếng Việt</span><span class="chip" lang="ko">한국어</span><span class="chip" lang="es">Español</span>
+      <span class="chip" lang="fr">Français</span><span class="chip" lang="pt">Português</span><span class="chip" lang="it">Italiano</span>
+      <span class="chip" lang="ru">Русский</span><span class="chip" lang="pl">Polski</span><span class="chip" lang="uk">Українська</span>
+      <span class="chip" lang="sr">Српски</span><span class="chip" lang="ga">Gaeilge</span><span class="chip" lang="gd">Gàidhlig</span>
+      <span class="chip" lang="ar" dir="rtl">العربية</span><span class="chip" lang="tr">Türkçe</span><span class="chip" lang="el">Ελληνικά</span>
+      <span class="chip" lang="hu">Magyar</span><span class="chip" lang="hy">Հայերեն</span>
     </div>
   </div>
   <div class="cards">

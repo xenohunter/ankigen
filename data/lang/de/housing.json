@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"gl":"Jeonse: hohe Kaution in Korea statt monatlicher Miete"},
 "word-cold-rent-de": {"w":"Kaltmiete","g":"f","def":"Monatlicher Preis für die Wohnung selbst, ohne Heizung, Wasser und andere Nebenkosten."},
 "word-warm-rent-de": {"w":"Warmmiete","g":"f","def":"Monatlicher Betrag für die Wohnung einschließlich Heizung, Wasser und anderer Nebenkosten."},
-"word-communal-apartment-ru": {"gl":"Kommunalka: russische Wohnung, die sich mehrere Familien teilen"}
+"word-communal-apartment-ru": {"gl":"Kommunalka: russische Wohnung, die sich mehrere Familien teilen"},
+"word-council-tax-uk": {"gl":"Council Tax: britische Gemeindesteuer auf Wohnungen, nach Wertklassen gestaffelt"}
 }

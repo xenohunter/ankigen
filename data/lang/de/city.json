@@ -18,5 +18,6 @@
 "word-city-block": {"w":"Häuserblock","g":"m","alt":["Block"],"forms":{"pl":"Häuserblöcke"},"def":"Gruppe von Gebäuden, die auf allen vier Seiten von Straßen umgeben ist."},
 "word-tourist-information": {"w":"Touristeninformation","g":"f","alt":["Tourist-Info"],"forms":{"pl":"Touristeninformationen"},"def":"Büro, in dem Besucher Stadtpläne und Tipps zu einem Ort bekommen."},
 "word-landmark": {"w":"Wahrzeichen","g":"n","forms":{"pl":"Wahrzeichen"},"def":"Bekanntes Bauwerk oder bekannter Ort, den man leicht wiedererkennt und der für einen Ort steht."},
-"word-outskirts": {"w":"Stadtrand","g":"m","forms":{"pl":"Stadtränder"},"def":"Gebiet am äußeren Ende eines Ortes, weit vom Zentrum entfernt."}
+"word-outskirts": {"w":"Stadtrand","g":"m","forms":{"pl":"Stadtränder"},"def":"Gebiet am äußeren Ende eines Ortes, weit vom Zentrum entfernt."},
+"word-passeggiata": {"gl":"Passeggiata: italienischer gemütlicher Abendspaziergang, um zu sehen und gesehen zu werden"}
 }

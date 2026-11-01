@@ -109,5 +109,6 @@
 "word-nationality": {"w":"国籍","read":"こくせき","rom":"kokuseki","hint":"どの国の人か","def":"ある国の国民であるという法律上の資格。パスポートに書かれる。"},
 "word-continent": {"w":"大陸","read":"たいりく","rom":"tairiku","def":"地球上にある、とても大きな陸地。アジアやアフリカなど。"},
 "word-immigrant": {"w":"移民","read":"いみん","rom":"imin","mw":"人","hint":"移り住む人","def":"よりよい生活を求めて、外国に引っ越してずっと住む人。"},
-"word-homeland": {"w":"母国","read":"ぼこく","rom":"bokoku","alt":["祖国"],"def":"自分が生まれた国で、自分の国だと感じる場所。"}
+"word-homeland": {"w":"母国","read":"ぼこく","rom":"bokoku","alt":["祖国"],"def":"自分が生まれた国で、自分の国だと感じる場所。"},
+"word-gaeltacht": {"gl":"ゲールタハト：アイルランド語が日常語として使われるアイルランドの地域"}
 }

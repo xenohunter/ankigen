@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"código QR","g":"m","def":"Dibujo cuadrado de puntos negros y blancos que la cámara del móvil puede leer."},
 "word-notification": {"w":"notificación","g":"f","alt":["aviso"],"def":"Mensaje corto que sale en el teléfono para decirte que hay algo nuevo."},
 "word-landline": {"w":"teléfono fijo","g":"m","alt":["fijo"],"def":"Aparato que se conecta con cables a la red y no es un móvil."},
-"word-postal-worker": {"w":"cartero","g":"m","forms":{"f":"cartera"},"def":"Persona cuyo trabajo es llevar cartas y paquetes a las casas."}
+"word-postal-worker": {"w":"cartero","g":"m","forms":{"f":"cartera"},"def":"Persona cuyo trabajo es llevar cartas y paquetes a las casas."},
+"word-eircode-ie": {"gl":"Eircode: código postal irlandés de siete caracteres que identifica cada dirección"}
 }

@@ -1,5 +1,5 @@
 {
-  "source": "e486707e8ba6",
+  "source": "e549835442ce",
   "texts": {
     "decks": "牌组",
     "cta": "制作你的牌组",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "英语",
-    "ru": "俄语",
-    "sr": "塞尔维亚语",
-    "ja": "日语",
-    "zh": "中文",
     "de": "德语",
-    "es": "西班牙语",
-    "pt": "葡萄牙语",
-    "pl": "波兰语",
-    "ko": "韩语",
     "nl": "荷兰语",
+    "sv": "瑞典语",
+    "zh": "中文",
+    "ja": "日语",
+    "vi": "越南语",
+    "ko": "韩语",
+    "es": "西班牙语",
     "fr": "法语",
-    "hy": "亚美尼亚语",
+    "pt": "葡萄牙语",
+    "it": "意大利语",
+    "ru": "俄语",
+    "pl": "波兰语",
+    "uk": "乌克兰语",
+    "sr": "塞尔维亚语",
+    "ga": "爱尔兰语",
+    "gd": "苏格兰盖尔语",
+    "ar": "阿拉伯语",
     "tr": "土耳其语",
-    "el": "希腊语"
+    "el": "希腊语",
+    "hu": "匈牙利语",
+    "hy": "亚美尼亚语"
   },
   "categories": {
     "foundations": "基础",
@@ -206,13 +214,17 @@
       "label": "重音标记",
       "help": "标出重读元音（молоко́）。适用于单词、其变化形式以及例句中突出显示的词。"
     },
+    "vowels": {
+      "label": "元音符号",
+      "help": "字母上下的短元音符号（harakat）：كِتَاب 而不是 كتاب。适用于单词、其变化形式以及例句中突出显示的词。"
+    },
     "reading": {
       "label": "读音（振假名）",
       "help": "在汉字上方标注假名读音。同时控制例句中的振假名。"
     },
     "romanization": {
       "label": "拉丁转写",
-      "help": "用拉丁字母写出单词：日语用平文式罗马字，中文用拼音，韩语用修订罗马字，俄语、亚美尼亚语、希腊语用转写。对中文来说，它同时控制例句中的拼音。"
+      "help": "用拉丁字母写出单词：日语用平文式罗马字，中文用拼音，韩语用修订罗马字，阿拉伯语用 ALA-LC，俄语、乌克兰语、亚美尼亚语、希腊语用转写。对中文来说，它同时控制例句中的拼音。"
     },
     "otherScript": {
       "label": "另一种文字",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "量词",
-      "help": "数这个名词时使用的量词（一本书、鉛筆を三本）。"
+      "help": "数这个名词时使用的量词（一本书、鉛筆を三本、ba con mèo）。"
     },
     "hanja": {
       "label": "汉字词（Hanja）",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "输入答案",
-      "help": "在反向卡片上，你需要输入单词，而不只是回想。Anki 会把你的拼写与主要形式比对（包括冠词，忽略重音标记）。"
+      "help": "在反向卡片上，你需要输入单词，而不只是回想。Anki 会把你的拼写与主要形式比对（包括冠词，忽略重音标记和元音符号）。"
     },
     "srScript": {
       "label": "塞尔维亚语文字",
@@ -285,61 +297,12 @@
       "lede": "在浏览器中生成的免费英语 Anki 牌组，单词附中文释义。",
       "others": "其他语言用户学英语"
     },
-    "ru": {
-      "name": "中文用户学俄语",
-      "title": "免费俄语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习俄语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费俄语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学俄语"
-    },
-    "sr": {
-      "name": "中文用户学塞尔维亚语",
-      "title": "免费塞尔维亚语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习塞尔维亚语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费塞尔维亚语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学塞尔维亚语"
-    },
-    "ja": {
-      "name": "中文用户学日语",
-      "title": "免费日语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习日语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费日语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学日语"
-    },
     "de": {
       "name": "中文用户学德语",
       "title": "免费德语 Anki 牌组，中文用户适用 — AnkiGen",
       "description": "免费 Anki 牌组，供中文用户学习德语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
       "lede": "在浏览器中生成的免费德语 Anki 牌组，单词附中文释义。",
       "others": "其他语言用户学德语"
-    },
-    "es": {
-      "name": "中文用户学西班牙语",
-      "title": "免费西班牙语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习西班牙语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费西班牙语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学西班牙语"
-    },
-    "pt": {
-      "name": "中文用户学葡萄牙语",
-      "title": "免费葡萄牙语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习葡萄牙语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费葡萄牙语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学葡萄牙语"
-    },
-    "pl": {
-      "name": "中文用户学波兰语",
-      "title": "免费波兰语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习波兰语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费波兰语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学波兰语"
-    },
-    "ko": {
-      "name": "中文用户学韩语",
-      "title": "免费韩语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习韩语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费韩语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学韩语"
     },
     "nl": {
       "name": "中文用户学荷兰语",
@@ -348,6 +311,41 @@
       "lede": "在浏览器中生成的免费荷兰语 Anki 牌组，单词附中文释义。",
       "others": "其他语言用户学荷兰语"
     },
+    "sv": {
+      "name": "中文用户学瑞典语",
+      "title": "免费瑞典语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习瑞典语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费瑞典语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学瑞典语"
+    },
+    "ja": {
+      "name": "中文用户学日语",
+      "title": "免费日语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习日语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费日语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学日语"
+    },
+    "vi": {
+      "name": "中文用户学越南语",
+      "title": "免费越南语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习越南语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费越南语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学越南语"
+    },
+    "ko": {
+      "name": "中文用户学韩语",
+      "title": "免费韩语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习韩语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费韩语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学韩语"
+    },
+    "es": {
+      "name": "中文用户学西班牙语",
+      "title": "免费西班牙语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习西班牙语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费西班牙语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学西班牙语"
+    },
     "fr": {
       "name": "中文用户学法语",
       "title": "免费法语 Anki 牌组，中文用户适用 — AnkiGen",
@@ -355,12 +353,68 @@
       "lede": "在浏览器中生成的免费法语 Anki 牌组，单词附中文释义。",
       "others": "其他语言用户学法语"
     },
-    "hy": {
-      "name": "中文用户学亚美尼亚语",
-      "title": "免费亚美尼亚语 Anki 牌组，中文用户适用 — AnkiGen",
-      "description": "免费 Anki 牌组，供中文用户学习亚美尼亚语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
-      "lede": "在浏览器中生成的免费亚美尼亚语 Anki 牌组，单词附中文释义。",
-      "others": "其他语言用户学亚美尼亚语"
+    "pt": {
+      "name": "中文用户学葡萄牙语",
+      "title": "免费葡萄牙语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习葡萄牙语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费葡萄牙语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学葡萄牙语"
+    },
+    "it": {
+      "name": "中文用户学意大利语",
+      "title": "免费意大利语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习意大利语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费意大利语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学意大利语"
+    },
+    "ru": {
+      "name": "中文用户学俄语",
+      "title": "免费俄语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习俄语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费俄语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学俄语"
+    },
+    "pl": {
+      "name": "中文用户学波兰语",
+      "title": "免费波兰语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习波兰语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费波兰语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学波兰语"
+    },
+    "uk": {
+      "name": "中文用户学乌克兰语",
+      "title": "免费乌克兰语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习乌克兰语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费乌克兰语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学乌克兰语"
+    },
+    "sr": {
+      "name": "中文用户学塞尔维亚语",
+      "title": "免费塞尔维亚语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习塞尔维亚语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费塞尔维亚语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学塞尔维亚语"
+    },
+    "ga": {
+      "name": "中文用户学爱尔兰语",
+      "title": "免费爱尔兰语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习爱尔兰语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费爱尔兰语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学爱尔兰语"
+    },
+    "gd": {
+      "name": "中文用户学苏格兰盖尔语",
+      "title": "免费苏格兰盖尔语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习苏格兰盖尔语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费苏格兰盖尔语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学苏格兰盖尔语"
+    },
+    "ar": {
+      "name": "中文用户学阿拉伯语",
+      "title": "免费阿拉伯语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习阿拉伯语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费阿拉伯语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学阿拉伯语"
     },
     "tr": {
       "name": "中文用户学土耳其语",
@@ -375,6 +429,20 @@
       "description": "免费 Anki 牌组，供中文用户学习希腊语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
       "lede": "在浏览器中生成的免费希腊语 Anki 牌组，单词附中文释义。",
       "others": "其他语言用户学希腊语"
+    },
+    "hu": {
+      "name": "中文用户学匈牙利语",
+      "title": "免费匈牙利语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习匈牙利语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费匈牙利语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学匈牙利语"
+    },
+    "hy": {
+      "name": "中文用户学亚美尼亚语",
+      "title": "免费亚美尼亚语 Anki 牌组，中文用户适用 — AnkiGen",
+      "description": "免费 Anki 牌组，供中文用户学习亚美尼亚语：{words}，涵盖 {modules}，附中文释义和例句，适用于 Anki 和 AnkiDroid。",
+      "lede": "在浏览器中生成的免费亚美尼亚语 Anki 牌组，单词附中文释义。",
+      "others": "其他语言用户学亚美尼亚语"
     }
   },
   "plural": {

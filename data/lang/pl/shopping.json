@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"kosmetyki","g":"pl","forms":{"gen":"kosmetyków"},"def":"Produkty, które nakłada się na twarz lub skórę, żeby lepiej wyglądać."},
 "word-small-size": {"w":"S","hint":"rozmiar","def":"Rozmiar ubrania poniżej średniego."},
 "word-medium-size": {"w":"M","hint":"rozmiar","def":"Rozmiar ubrania pomiędzy małym a dużym."},
-"word-large-size": {"w":"L","hint":"rozmiar","def":"Rozmiar ubrania powyżej średniego."}
+"word-large-size": {"w":"L","hint":"rozmiar","def":"Rozmiar ubrania powyżej średniego."},
+"word-vyshyvanka": {"gl":"wyszywanka: ukraińska koszula z tradycyjnym haftem, symbol narodowy"}
 }

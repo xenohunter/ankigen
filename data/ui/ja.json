@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "語彙は AI で下書きしたもので、確認はまだ一部だけです。ご意見をお待ちしています。",
     "head.draftTopic": "語彙の下書き",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "訳の代わりに、学習している言語での短い定義がカードに表示されます。その言語で簡単な文が読めるようになったらおすすめです。",
     "lang.loading": "単語を読み込んでいます（{language}）…",
     "lang.failed": "単語を読み込めませんでした（{language}）。接続を確認して、ページを再読み込みしてください。",
+    "group.germanic": "ゲルマン語派",
+    "group.asian": "東アジア・東南アジア",
+    "group.romance": "ロマンス語派",
+    "group.slavic": "スラヴ語派",
+    "group.celtic": "ケルト語派",
+    "group.other": "その他",
     "modules.hint": "必要なトピックを選んでください。あとから追加できます。",
     "modules.show": "{category}のモジュールを表示",
     "modules.tally": "{n}/{total}",

@@ -1,5 +1,5 @@
 {
-  "source": "7349fabc4b79",
+  "source": "9ad48a7961b9",
   "texts": {
     "decks": "Desteler",
     "cta": "Destenizi oluşturun",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "İngilizce",
-    "ru": "Rusça",
-    "sr": "Sırpça",
-    "ja": "Japonca",
-    "zh": "Çince",
     "de": "Almanca",
-    "es": "İspanyolca",
-    "pt": "Portekizce",
-    "pl": "Lehçe",
-    "ko": "Korece",
     "nl": "Hollandaca",
+    "sv": "İsveççe",
+    "zh": "Çince",
+    "ja": "Japonca",
+    "vi": "Vietnamca",
+    "ko": "Korece",
+    "es": "İspanyolca",
     "fr": "Fransızca",
-    "hy": "Ermenice",
+    "pt": "Portekizce",
+    "it": "İtalyanca",
+    "ru": "Rusça",
+    "pl": "Lehçe",
+    "uk": "Ukraynaca",
+    "sr": "Sırpça",
+    "ga": "İrlandaca",
+    "gd": "İskoç Gaelcesi",
+    "ar": "Arapça",
     "tr": "Türkçe",
-    "el": "Yunanca"
+    "el": "Yunanca",
+    "hu": "Macarca",
+    "hy": "Ermenice"
   },
   "categories": {
     "foundations": "Temeller",
@@ -206,13 +214,17 @@
       "label": "Vurgu işaretleri",
       "help": "Vurgulu ünlüyü işaretler (молоко́). Kelimeye, çekimlerine ve örneklerde vurgulanan kelimeye uygulanır."
     },
+    "vowels": {
+      "label": "Ünlü işaretleri",
+      "help": "Harflerin üstündeki ve altındaki kısa ünlü işaretleri (harekât): كتاب yerine كِتَاب. Kelimeye, çekimlerine ve örneklerde vurgulanan kelimeye uygulanır."
+    },
     "reading": {
       "label": "Okunuş (furigana)",
       "help": "Kanjinin üstünde kana okunuşu. Örnek cümlelerdeki furiganayı da denetler."
     },
     "romanization": {
       "label": "Latin harfleriyle yazım",
-      "help": "Kelimenin Latin harfleriyle yazılışı: Hepburn (Japonca), pinyin (Çince), Revised Romanization (Korece), çeviri yazı (Rusça, Ermenice, Yunanca). Çincede örnek cümlelerdeki pinyini de denetler."
+      "help": "Kelimenin Latin harfleriyle yazılışı: Hepburn (Japonca), pinyin (Çince), Revised Romanization (Korece), ALA-LC (Arapça), çeviri yazı (Rusça, Ukraynaca, Ermenice, Yunanca). Çincede örnek cümlelerdeki pinyini de denetler."
     },
     "otherScript": {
       "label": "Diğer alfabe",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Ölçü sözcüğü / sayaç",
-      "help": "Bu ismi sayarken kullanılan sınıflandırıcı (一本书, 鉛筆を三本)."
+      "help": "Bu ismi sayarken kullanılan sınıflandırıcı (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Cevabı yazın",
-      "help": "Ters kartlarda kelimeyi yalnızca hatırlamak yerine yazarsınız. Anki yazdığınızı ana biçimle karşılaştırır (artikeller dâhil, vurgu işaretleri yok sayılır)."
+      "help": "Ters kartlarda kelimeyi yalnızca hatırlamak yerine yazarsınız. Anki yazdığınızı ana biçimle karşılaştırır (artikeller dâhil, vurgu ve ünlü işaretleri yok sayılır)."
     },
     "srScript": {
       "label": "Sırpça alfabe",
@@ -285,68 +297,12 @@
       "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İngilizce kelimelerden oluşan ücretsiz bir Anki destesi.",
       "others": "Diğer dilleri konuşanlar için İngilizce"
     },
-    "ru": {
-      "name": "Türkçe konuşanlar için Rusça",
-      "title": "Türkçe konuşanlar için Rusça Anki destesi — AnkiGen",
-      "description": "Rusça öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Rusça kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Rusça"
-    },
-    "sr": {
-      "name": "Türkçe konuşanlar için Sırpça",
-      "title": "Türkçe konuşanlar için Sırpça Anki destesi — AnkiGen",
-      "description": "Sırpça öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Sırpça kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Sırpça"
-    },
-    "ja": {
-      "name": "Türkçe konuşanlar için Japonca",
-      "title": "Türkçe konuşanlar için Japonca Anki destesi — AnkiGen",
-      "description": "Japonca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Japonca kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Japonca"
-    },
-    "zh": {
-      "name": "Türkçe konuşanlar için Çince",
-      "title": "Türkçe konuşanlar için Çince Anki destesi — AnkiGen",
-      "description": "Çince öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Çince kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Çince"
-    },
     "de": {
       "name": "Türkçe konuşanlar için Almanca",
       "title": "Türkçe konuşanlar için Almanca Anki destesi — AnkiGen",
       "description": "Almanca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
       "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Almanca kelimelerden oluşan ücretsiz bir Anki destesi.",
       "others": "Diğer dilleri konuşanlar için Almanca"
-    },
-    "es": {
-      "name": "Türkçe konuşanlar için İspanyolca",
-      "title": "Türkçe konuşanlar için İspanyolca Anki destesi — AnkiGen",
-      "description": "İspanyolca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İspanyolca kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için İspanyolca"
-    },
-    "pt": {
-      "name": "Türkçe konuşanlar için Portekizce",
-      "title": "Türkçe konuşanlar için Portekizce Anki destesi — AnkiGen",
-      "description": "Portekizce öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Portekizce kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Portekizce"
-    },
-    "pl": {
-      "name": "Türkçe konuşanlar için Lehçe",
-      "title": "Türkçe konuşanlar için Lehçe Anki destesi — AnkiGen",
-      "description": "Lehçe öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Lehçe kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Lehçe"
-    },
-    "ko": {
-      "name": "Türkçe konuşanlar için Korece",
-      "title": "Türkçe konuşanlar için Korece Anki destesi — AnkiGen",
-      "description": "Korece öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Korece kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Korece"
     },
     "nl": {
       "name": "Türkçe konuşanlar için Hollandaca",
@@ -355,6 +311,48 @@
       "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Hollandaca kelimelerden oluşan ücretsiz bir Anki destesi.",
       "others": "Diğer dilleri konuşanlar için Hollandaca"
     },
+    "sv": {
+      "name": "Türkçe konuşanlar için İsveççe",
+      "title": "Türkçe konuşanlar için İsveççe Anki destesi — AnkiGen",
+      "description": "İsveççe öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İsveççe kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için İsveççe"
+    },
+    "zh": {
+      "name": "Türkçe konuşanlar için Çince",
+      "title": "Türkçe konuşanlar için Çince Anki destesi — AnkiGen",
+      "description": "Çince öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Çince kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Çince"
+    },
+    "ja": {
+      "name": "Türkçe konuşanlar için Japonca",
+      "title": "Türkçe konuşanlar için Japonca Anki destesi — AnkiGen",
+      "description": "Japonca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Japonca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Japonca"
+    },
+    "vi": {
+      "name": "Türkçe konuşanlar için Vietnamca",
+      "title": "Türkçe konuşanlar için Vietnamca Anki destesi — AnkiGen",
+      "description": "Vietnamca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Vietnamca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Vietnamca"
+    },
+    "ko": {
+      "name": "Türkçe konuşanlar için Korece",
+      "title": "Türkçe konuşanlar için Korece Anki destesi — AnkiGen",
+      "description": "Korece öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Korece kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Korece"
+    },
+    "es": {
+      "name": "Türkçe konuşanlar için İspanyolca",
+      "title": "Türkçe konuşanlar için İspanyolca Anki destesi — AnkiGen",
+      "description": "İspanyolca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İspanyolca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için İspanyolca"
+    },
     "fr": {
       "name": "Türkçe konuşanlar için Fransızca",
       "title": "Türkçe konuşanlar için Fransızca Anki destesi — AnkiGen",
@@ -362,12 +360,68 @@
       "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Fransızca kelimelerden oluşan ücretsiz bir Anki destesi.",
       "others": "Diğer dilleri konuşanlar için Fransızca"
     },
-    "hy": {
-      "name": "Türkçe konuşanlar için Ermenice",
-      "title": "Türkçe konuşanlar için Ermenice Anki destesi — AnkiGen",
-      "description": "Ermenice öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
-      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Ermenice kelimelerden oluşan ücretsiz bir Anki destesi.",
-      "others": "Diğer dilleri konuşanlar için Ermenice"
+    "pt": {
+      "name": "Türkçe konuşanlar için Portekizce",
+      "title": "Türkçe konuşanlar için Portekizce Anki destesi — AnkiGen",
+      "description": "Portekizce öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Portekizce kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Portekizce"
+    },
+    "it": {
+      "name": "Türkçe konuşanlar için İtalyanca",
+      "title": "Türkçe konuşanlar için İtalyanca Anki destesi — AnkiGen",
+      "description": "İtalyanca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İtalyanca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için İtalyanca"
+    },
+    "ru": {
+      "name": "Türkçe konuşanlar için Rusça",
+      "title": "Türkçe konuşanlar için Rusça Anki destesi — AnkiGen",
+      "description": "Rusça öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Rusça kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Rusça"
+    },
+    "pl": {
+      "name": "Türkçe konuşanlar için Lehçe",
+      "title": "Türkçe konuşanlar için Lehçe Anki destesi — AnkiGen",
+      "description": "Lehçe öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Lehçe kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Lehçe"
+    },
+    "uk": {
+      "name": "Türkçe konuşanlar için Ukraynaca",
+      "title": "Türkçe konuşanlar için Ukraynaca Anki destesi — AnkiGen",
+      "description": "Ukraynaca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Ukraynaca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Ukraynaca"
+    },
+    "sr": {
+      "name": "Türkçe konuşanlar için Sırpça",
+      "title": "Türkçe konuşanlar için Sırpça Anki destesi — AnkiGen",
+      "description": "Sırpça öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Sırpça kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Sırpça"
+    },
+    "ga": {
+      "name": "Türkçe konuşanlar için İrlandaca",
+      "title": "Türkçe konuşanlar için İrlandaca Anki destesi — AnkiGen",
+      "description": "İrlandaca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İrlandaca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için İrlandaca"
+    },
+    "gd": {
+      "name": "Türkçe konuşanlar için İskoç Gaelcesi",
+      "title": "Türkçe konuşanlar için İskoç Gaelcesi destesi — AnkiGen",
+      "description": "İskoç Gaelcesi öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili İskoç Gaelcesi kelimelerinden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için İskoç Gaelcesi"
+    },
+    "ar": {
+      "name": "Türkçe konuşanlar için Arapça",
+      "title": "Türkçe konuşanlar için Arapça Anki destesi — AnkiGen",
+      "description": "Arapça öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Arapça kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Arapça"
     },
     "el": {
       "name": "Türkçe konuşanlar için Yunanca",
@@ -375,6 +429,20 @@
       "description": "Yunanca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
       "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Yunanca kelimelerden oluşan ücretsiz bir Anki destesi.",
       "others": "Diğer dilleri konuşanlar için Yunanca"
+    },
+    "hu": {
+      "name": "Türkçe konuşanlar için Macarca",
+      "title": "Türkçe konuşanlar için Macarca Anki destesi — AnkiGen",
+      "description": "Macarca öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Macarca kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Macarca"
+    },
+    "hy": {
+      "name": "Türkçe konuşanlar için Ermenice",
+      "title": "Türkçe konuşanlar için Ermenice Anki destesi — AnkiGen",
+      "description": "Ermenice öğrenen Türkçe konuşanlar için ücretsiz Anki destesi: {words}, {modules} içinde; çeviri ve örneklerle. Anki ve AnkiDroid için.",
+      "lede": "Tarayıcınızda hazırlanan, Türkçe çevirili Ermenice kelimelerden oluşan ücretsiz bir Anki destesi.",
+      "others": "Diğer dilleri konuşanlar için Ermenice"
     }
   },
   "plural": {

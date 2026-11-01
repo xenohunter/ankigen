@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "O vocabulário foi redigido por uma máquina e só está revisto em parte. As tuas sugestões são muito bem-vindas.",
     "head.draftTopic": "o vocabulário em rascunho",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "Os cartões mostram uma definição curta na língua que estás a aprender em vez de uma tradução. Bom quando já consegues ler frases simples nessa língua.",
     "lang.loading": "A carregar palavras ({language})…",
     "lang.failed": "Não foi possível carregar as palavras ({language}). Verifica a ligação e recarrega a página.",
+    "group.germanic": "Germânicas",
+    "group.asian": "Ásia Oriental e do Sudeste",
+    "group.romance": "Românicas",
+    "group.slavic": "Eslavas",
+    "group.celtic": "Célticas",
+    "group.other": "Outras",
     "modules.hint": "Escolhe os temas que queres; podes juntar mais depois.",
     "modules.show": "Mostrar módulos: {category}",
     "modules.tally": "{n} de {total}",

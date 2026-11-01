@@ -10,7 +10,7 @@ import { appMeta, englishTexts, readTranslations } from '../landing.mjs';
 
 export function langInfo(reg, code) {
   const l = reg.languages.languages[code];
-  return { code, name: l.name, native: l.native, locale: l.locale, variantNote: l.variantNote, country: l.country, script: l.script, gender: l.gender, stress: l.stress, reading: l.reading, romanization: l.romanization, measureWord: l.measureWord, hanja: l.hanja, exampleReading: l.exampleReading, forms: l.forms };
+  return { code, name: l.name, native: l.native, locale: l.locale, variantNote: l.variantNote, country: l.country, script: l.script, gender: l.gender, stress: l.stress, vowels: l.vowels, reading: l.reading, romanization: l.romanization, measureWord: l.measureWord, hanja: l.hanja, exampleReading: l.exampleReading, forms: l.forms };
 }
 
 export function outputPath(unitId) {
@@ -40,7 +40,28 @@ export function buildInput(ctx, u, opts = {}) {
       alreadyInThisModule: moduleConceptIds(ctx, u.module).length,
       alreadyCrossListedHere: crossListed.length,
       modules: reg.modules.map((x) => `${x.id} (${x.name})`),
-      countries: reg.languages.active.map((c) => `${c}:${reg.languages.languages[c].country}`).join(' '),
+      countries: reg.languages.active.filter((c) => reg.languages.languages[c].country).map((c) => `${c}:${reg.languages.languages[c].country}`).join(' '),
+      existingConceptIds: existing,
+    };
+  }
+  if (u.type === 'local') {
+    const l = reg.languages.languages[u.lang];
+    // The other languages' own concepts are the models: what kind of term, how many, which modules, how noted.
+    const models = {};
+    for (const id of concepts.order) {
+      const { c, module } = concepts.byId.get(id);
+      if (c.only) (models[c.only.join(',')] ??= []).push(`${id} [${module}] ${c.note}`);
+    }
+    const existing = {};
+    for (const mod of reg.modules) {
+      const ids = moduleConceptIds(ctx, mod.id);
+      if (ids.length) existing[mod.id] = ids.join(' ');
+    }
+    return {
+      ...base,
+      lang: { code: u.lang, name: l.name, native: l.native, country: l.country, variantNote: l.variantNote },
+      modules: reg.modules.filter((m) => !m.core).map((m) => `${m.id} (${m.name})`),
+      otherLanguagesOwn: models,
       existingConceptIds: existing,
     };
   }
@@ -201,10 +222,10 @@ export function systemBlocks(rootDir, u) {
     '# Data format\n' + read(rootDir, 'docs/DATA_FORMAT.md'),
     '# Unit instructions\n' + read(rootDir, `tools/gen/prompts/${u.type}.md`),
   ];
-  if (u.type === 'concepts') shared.push('# Golden sample (concept files)\n' + fixtureFiles(rootDir, ['concepts']));
+  if (u.type === 'concepts' || u.type === 'local') shared.push('# Golden sample (concept files)\n' + fixtureFiles(rootDir, ['concepts']));
   if (u.type === 'lang' || u.type === 'review') shared.push('# Golden sample (concepts, entries, examples)\n' + fixtureFiles(rootDir, ['concepts', 'lang', 'ex']));
   if (u.type === 'exfix') shared.push('# Golden sample (examples)\n' + fixtureFiles(rootDir, ['ex']));
   const blocks = [{ type: 'text', text: shared.join('\n\n'), cache_control: { type: 'ephemeral' } }];
-  if (u.lang && u.type !== 'labels') blocks.push({ type: 'text', text: '# Language guide\n' + languageSection(rootDir, u.lang) });
+  if (u.lang && u.type !== 'labels' && u.type !== 'local') blocks.push({ type: 'text', text: '# Language guide\n' + languageSection(rootDir, u.lang) });
   return blocks;
 }

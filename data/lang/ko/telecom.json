@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"큐알 코드","rom":"kyual kodeu","def":"검은색과 흰색 점이 네모 모양으로 모인, 휴대폰 카메라로 읽는 무늬."},
 "word-notification": {"w":"알림","rom":"allim","def":"휴대폰 화면에 뜨는, 새 소식을 전하는 짧은 메시지."},
 "word-landline": {"w":"집 전화","rom":"jip jeonhwa","alt":["유선 전화"],"def":"휴대폰이 아니라 선으로 이어서 쓰는 전화."},
-"word-postal-worker": {"w":"집배원","hanja":"集配員","rom":"jipbaewon","alt":["우체부"],"def":"집집마다 편지와 소포를 가져다주는 일을 하는 사람."}
+"word-postal-worker": {"w":"집배원","hanja":"集配員","rom":"jipbaewon","alt":["우체부"],"def":"집집마다 편지와 소포를 가져다주는 일을 하는 사람."},
+"word-eircode-ie": {"gl":"에어코드: 아일랜드의 주소별 7자리 우편번호"}
 }

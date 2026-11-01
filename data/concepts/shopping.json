@@ -38,5 +38,6 @@
 "word-cosmetics": {"pos":"noun","mods":["shopping"],"emoji":"💄","note":"makeup"},
 "word-small-size": {"pos":"adj","mods":["shopping"],"note":"size S"},
 "word-medium-size": {"pos":"adj","mods":["shopping"],"note":"size M"},
-"word-large-size": {"pos":"adj","mods":["shopping"],"note":"size L"}
+"word-large-size": {"pos":"adj","mods":["shopping"],"note":"size L"},
+"word-vyshyvanka": {"pos":"noun","mods":["shopping"],"note":"Ukrainian: traditional shirt or blouse with folk embroidery, also worn as a national symbol (вишиванка)","only":["uk"]}
 }

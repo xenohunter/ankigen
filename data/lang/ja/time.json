@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"生年月日","read":"せいねんがっぴ","rom":"seinengappi","alt":["誕生日"],"def":"その人が生まれた年と月と日。"},
 "word-time-zone": {"w":"時間帯","read":"じかんたい","rom":"jikantai","alt":["タイムゾーン"],"def":"世界で同じ時刻を使う地域の区分。"},
 "word-o-clock": {"w":"時","read":"じ","rom":"ji","def":"数のあとにつけて、時計の何時かを言う言葉。"},
-"word-lifetime": {"w":"一生","read":"いっしょう","rom":"isshō","alt":["生涯"],"def":"人が生まれてから死ぬまでの全部の期間。"}
+"word-lifetime": {"w":"一生","read":"いっしょう","rom":"isshō","alt":["生涯"],"def":"人が生まれてから死ぬまでの全部の期間。"},
+"word-hogmanay": {"gl":"ホグマナイ：スコットランドの大晦日のお祝い。ファーストフットや「蛍の光」で新年を迎える"}
 }

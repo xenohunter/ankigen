@@ -1,5 +1,5 @@
 {
-  "source": "c93840e0a852",
+  "source": "86f01846fac3",
   "texts": {
     "decks": "Decks",
     "cta": "Créer votre deck",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "Anglais",
-    "ru": "Russe",
-    "sr": "Serbe",
-    "ja": "Japonais",
-    "zh": "Chinois",
     "de": "Allemand",
-    "es": "Espagnol",
-    "pt": "Portugais",
-    "pl": "Polonais",
-    "ko": "Coréen",
     "nl": "Néerlandais",
+    "sv": "Suédois",
+    "zh": "Chinois",
+    "ja": "Japonais",
+    "vi": "Vietnamien",
+    "ko": "Coréen",
+    "es": "Espagnol",
     "fr": "Français",
-    "hy": "Arménien",
+    "pt": "Portugais",
+    "it": "Italien",
+    "ru": "Russe",
+    "pl": "Polonais",
+    "uk": "Ukrainien",
+    "sr": "Serbe",
+    "ga": "Irlandais",
+    "gd": "Gaélique écossais",
+    "ar": "Arabe",
     "tr": "Turc",
-    "el": "Grec"
+    "el": "Grec",
+    "hu": "Hongrois",
+    "hy": "Arménien"
   },
   "categories": {
     "foundations": "Bases",
@@ -206,13 +214,17 @@
       "label": "Accents toniques",
       "help": "Marque la voyelle accentuée (молоко́). S'applique au mot, à ses formes et au mot mis en évidence dans les exemples."
     },
+    "vowels": {
+      "label": "Signes de voyelles",
+      "help": "Les signes de voyelles brèves (harakat) au-dessus et au-dessous des lettres : كِتَاب plutôt que كتاب. S'applique au mot, à ses formes et au mot mis en évidence dans les exemples."
+    },
     "reading": {
       "label": "Lecture (furigana)",
       "help": "Lecture en kana au-dessus des kanji. Contrôle aussi les furigana dans les phrases d'exemple."
     },
     "romanization": {
       "label": "Romanisation",
-      "help": "Le mot en lettres latines : Hepburn (japonais), pinyin (chinois), romanisation révisée (coréen), translittération (russe, arménien, grec). Pour le chinois, contrôle aussi le pinyin dans les phrases d'exemple."
+      "help": "Le mot en lettres latines : Hepburn (japonais), pinyin (chinois), romanisation révisée (coréen), ALA-LC (arabe), translittération (russe, ukrainien, arménien, grec). Pour le chinois, contrôle aussi le pinyin dans les phrases d'exemple."
     },
     "otherScript": {
       "label": "Autre alphabet",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Spécificatif / classificateur",
-      "help": "Le classificateur utilisé pour compter ce nom (一本书, 鉛筆を三本)."
+      "help": "Le classificateur utilisé pour compter ce nom (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Saisir la réponse",
-      "help": "Sur les cartes inversées, vous tapez le mot au lieu de simplement vous en souvenir. Anki compare votre orthographe avec la forme principale (articles compris, accents toniques ignorés)."
+      "help": "Sur les cartes inversées, vous tapez le mot au lieu de simplement vous en souvenir. Anki compare votre orthographe avec la forme principale (articles compris, accents toniques et signes de voyelles ignorés)."
     },
     "srScript": {
       "label": "Alphabet serbe",
@@ -285,26 +297,26 @@
       "lede": "Un deck Anki gratuit de mots d'anglais avec traductions en français, créé dans votre navigateur.",
       "others": "Anglais pour les locuteurs d'autres langues"
     },
-    "ru": {
-      "name": "Russe pour francophones",
-      "title": "Russe pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent le russe : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots de russe avec traductions en français, créé dans votre navigateur.",
-      "others": "Russe pour les locuteurs d'autres langues"
+    "de": {
+      "name": "Allemand pour francophones",
+      "title": "Allemand pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'allemand : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'allemand avec traductions en français, créé dans votre navigateur.",
+      "others": "Allemand pour les locuteurs d'autres langues"
     },
-    "sr": {
-      "name": "Serbe pour francophones",
-      "title": "Serbe pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent le serbe : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots de serbe avec traductions en français, créé dans votre navigateur.",
-      "others": "Serbe pour les locuteurs d'autres langues"
+    "nl": {
+      "name": "Néerlandais pour francophones",
+      "title": "Néerlandais pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le néerlandais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de néerlandais avec traductions en français, créé dans votre navigateur.",
+      "others": "Néerlandais pour les locuteurs d'autres langues"
     },
-    "ja": {
-      "name": "Japonais pour francophones",
-      "title": "Japonais pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent le japonais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots de japonais avec traductions en français, créé dans votre navigateur.",
-      "others": "Japonais pour les locuteurs d'autres langues"
+    "sv": {
+      "name": "Suédois pour francophones",
+      "title": "Suédois pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le suédois : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de suédois avec traductions en français, créé dans votre navigateur.",
+      "others": "Suédois pour les locuteurs d'autres langues"
     },
     "zh": {
       "name": "Chinois pour francophones",
@@ -313,12 +325,26 @@
       "lede": "Un deck Anki gratuit de mots de chinois avec traductions en français, créé dans votre navigateur.",
       "others": "Chinois pour les locuteurs d'autres langues"
     },
-    "de": {
-      "name": "Allemand pour francophones",
-      "title": "Allemand pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent l'allemand : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots d'allemand avec traductions en français, créé dans votre navigateur.",
-      "others": "Allemand pour les locuteurs d'autres langues"
+    "ja": {
+      "name": "Japonais pour francophones",
+      "title": "Japonais pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le japonais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de japonais avec traductions en français, créé dans votre navigateur.",
+      "others": "Japonais pour les locuteurs d'autres langues"
+    },
+    "vi": {
+      "name": "Vietnamien pour francophones",
+      "title": "Vietnamien pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le vietnamien : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de vietnamien avec traductions en français, créé dans votre navigateur.",
+      "others": "Vietnamien pour les locuteurs d'autres langues"
+    },
+    "ko": {
+      "name": "Coréen pour francophones",
+      "title": "Coréen pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le coréen : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de coréen avec traductions en français, créé dans votre navigateur.",
+      "others": "Coréen pour les locuteurs d'autres langues"
     },
     "es": {
       "name": "Espagnol pour francophones",
@@ -334,6 +360,20 @@
       "lede": "Un deck Anki gratuit de mots de portugais avec traductions en français, créé dans votre navigateur.",
       "others": "Portugais pour les locuteurs d'autres langues"
     },
+    "it": {
+      "name": "Italien pour francophones",
+      "title": "Italien pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'italien : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'italien avec traductions en français, créé dans votre navigateur.",
+      "others": "Italien pour les locuteurs d'autres langues"
+    },
+    "ru": {
+      "name": "Russe pour francophones",
+      "title": "Russe pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le russe : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de russe avec traductions en français, créé dans votre navigateur.",
+      "others": "Russe pour les locuteurs d'autres langues"
+    },
     "pl": {
       "name": "Polonais pour francophones",
       "title": "Polonais pour francophones, deck Anki gratuit — AnkiGen",
@@ -341,26 +381,40 @@
       "lede": "Un deck Anki gratuit de mots de polonais avec traductions en français, créé dans votre navigateur.",
       "others": "Polonais pour les locuteurs d'autres langues"
     },
-    "ko": {
-      "name": "Coréen pour francophones",
-      "title": "Coréen pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent le coréen : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots de coréen avec traductions en français, créé dans votre navigateur.",
-      "others": "Coréen pour les locuteurs d'autres langues"
+    "uk": {
+      "name": "Ukrainien pour francophones",
+      "title": "Ukrainien pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'ukrainien : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'ukrainien avec traductions en français, créé dans votre navigateur.",
+      "others": "Ukrainien pour les locuteurs d'autres langues"
     },
-    "nl": {
-      "name": "Néerlandais pour francophones",
-      "title": "Néerlandais pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent le néerlandais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots de néerlandais avec traductions en français, créé dans votre navigateur.",
-      "others": "Néerlandais pour les locuteurs d'autres langues"
+    "sr": {
+      "name": "Serbe pour francophones",
+      "title": "Serbe pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le serbe : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de serbe avec traductions en français, créé dans votre navigateur.",
+      "others": "Serbe pour les locuteurs d'autres langues"
     },
-    "hy": {
-      "name": "Arménien pour francophones",
-      "title": "Arménien pour francophones, deck Anki gratuit — AnkiGen",
-      "description": "Deck Anki gratuit pour francophones qui apprennent l'arménien : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
-      "lede": "Un deck Anki gratuit de mots d'arménien avec traductions en français, créé dans votre navigateur.",
-      "others": "Arménien pour les locuteurs d'autres langues"
+    "ga": {
+      "name": "Irlandais pour francophones",
+      "title": "Irlandais pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'irlandais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'irlandais avec traductions en français, créé dans votre navigateur.",
+      "others": "Irlandais pour les locuteurs d'autres langues"
+    },
+    "gd": {
+      "name": "Gaélique écossais pour francophones",
+      "title": "Gaélique écossais pour francophones, deck Anki — AnkiGen",
+      "description": "Deck Anki gratuit pour apprendre le gaélique écossais : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de gaélique écossais avec traductions en français, créé dans votre navigateur.",
+      "others": "Gaélique écossais pour les locuteurs d'autres langues"
+    },
+    "ar": {
+      "name": "Arabe pour francophones",
+      "title": "Arabe pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'arabe : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'arabe avec traductions en français, créé dans votre navigateur.",
+      "others": "Arabe pour les locuteurs d'autres langues"
     },
     "tr": {
       "name": "Turc pour francophones",
@@ -375,6 +429,20 @@
       "description": "Deck Anki gratuit pour francophones qui apprennent le grec : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
       "lede": "Un deck Anki gratuit de mots de grec avec traductions en français, créé dans votre navigateur.",
       "others": "Grec pour les locuteurs d'autres langues"
+    },
+    "hu": {
+      "name": "Hongrois pour francophones",
+      "title": "Hongrois pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent le hongrois : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots de hongrois avec traductions en français, créé dans votre navigateur.",
+      "others": "Hongrois pour les locuteurs d'autres langues"
+    },
+    "hy": {
+      "name": "Arménien pour francophones",
+      "title": "Arménien pour francophones, deck Anki gratuit — AnkiGen",
+      "description": "Deck Anki gratuit pour francophones qui apprennent l'arménien : {words} dans {modules}, avec traductions et exemples, pour Anki et AnkiDroid.",
+      "lede": "Un deck Anki gratuit de mots d'arménien avec traductions en français, créé dans votre navigateur.",
+      "others": "Arménien pour les locuteurs d'autres langues"
     }
   },
   "plural": {

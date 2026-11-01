@@ -8,6 +8,7 @@
 //
 // Output file shapes (see tools/gen/prompts/*.md):
 //   concepts: {"unit","concepts":{id:concept},"addMods":{existingId:[moduleId,...]}}
+//   local:    {"unit","concepts":{id:concept}} → appended to the file of each concept's first module
 //   labels:   {"unit","labels":{key:text}}
 //   lang:     {"unit","lang":{id:entry},"ex":{id:[{t,p?,r?}]},"patch":{otherId:{field:value|null}}}
 //   review:   {"unit","patch":{id:{field:value|null}},"lang":{id:entry},"ex":{id:[...]}}
@@ -43,6 +44,9 @@ const touchedFiles = new Set();
 const problems = [];
 
 const layerPath = (layer, code, mod) => path.join(dataDir, layer, code, `${mod}.json`);
+// Data text is NFC (lint). Models often write combining marks in another order (Arabic shadda before its vowel),
+// which is the same text; normalize it here.
+const nfc = (v) => (typeof v === 'string' ? v.normalize('NFC') : Array.isArray(v) ? v.map(nfc) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, nfc(x)])) : v);
 const load = (f) => (exists(f) ? readJson(f).data : {});
 
 function writeLayer(layer, code, mod, data) {
@@ -57,7 +61,7 @@ function upsert(layer, code, entries, allowed) {
     const ce = ctx.concepts.byId.get(id);
     if (!ce) { problems.push(`${layer}: unknown concept ${id}`); continue; }
     if (allowed && !allowed.has(id)) { problems.push(`${layer}: ${id} is not in this unit's slice`); continue; }
-    (byMod[ce.module] ??= {})[id] = v;
+    (byMod[ce.module] ??= {})[id] = nfc(v);
     touchedIds.add(id);
   }
   for (const [mod, items] of Object.entries(byMod)) {
@@ -81,7 +85,7 @@ function patch(code, patches) {
       if (!data[id]) { problems.push(`patch: ${code} has no entry for ${id} yet`); continue; }
       for (const [k, v] of Object.entries(fields)) {
         if (v === null) delete data[id][k];
-        else data[id][k] = v;
+        else data[id][k] = nfc(v);
       }
     }
     writeLayer('lang', code, mod, data);
@@ -103,7 +107,7 @@ function setSlots(code, slots, allowed) {
       if (!Array.isArray(list)) { problems.push(`slots: ${code} has no examples for ${id}`); continue; }
       for (const [slot, ex] of Object.entries(bySlot || {})) {
         if (!/^[1-3]$/.test(slot) || Number(slot) > list.length) { problems.push(`slots: ${id} has no slot ${slot}`); continue; }
-        list[Number(slot) - 1] = ex;
+        list[Number(slot) - 1] = nfc(ex);
         touchedIds.add(id);
       }
     }
@@ -137,6 +141,27 @@ switch (unit.type) {
       touchedFiles.add(`concepts/${ce.module}.json`);
     }
     for (const [cf, d] of Object.entries(perFile)) writeCanonical(cf, d, Object.keys(d));
+    break;
+  }
+  case 'local': {
+    const byModule = {};
+    for (const [id, c] of Object.entries(out.concepts || {})) {
+      const mod = c?.mods?.[0];
+      const other = ctx.concepts.byId.get(id);
+      // merging the same output again replaces this language's concepts in place
+      if (other && !(other.module === mod && other.c.only?.includes(unit.lang))) { problems.push(`concept ${id} already exists in ${other.module}`); continue; }
+      if (!ctx.reg.moduleById.has(mod) || ctx.reg.moduleById.get(mod).core) { problems.push(`${id}: the first of mods must be a topical module`); continue; }
+      if (!Array.isArray(c.only) || !c.only.includes(unit.lang)) { problems.push(`${id}: only must include ${unit.lang}`); continue; }
+      (byModule[mod] ??= {})[id] = c;
+      touchedIds.add(id);
+    }
+    for (const [mod, items] of Object.entries(byModule)) {
+      const f = path.join(dataDir, 'concepts', `${mod}.json`);
+      const data = load(f);
+      Object.assign(data, items);
+      writeCanonical(f, data, Object.keys(data));
+      touchedFiles.add(`concepts/${mod}.json`);
+    }
     break;
   }
   case 'labels': {
@@ -238,7 +263,7 @@ if (partial) {
   process.exit(0);
 }
 const prog = loadProgress(ROOT);
-if (unit.type === 'concepts' || unit.type === 'review') prog.done[unit.id] = { at: new Date().toISOString() };
+if (['concepts', 'local', 'review'].includes(unit.type)) prog.done[unit.id] = { at: new Date().toISOString() };
 if (prog.session && !prog.session.units.includes(unit.id)) {
   prog.session.units.push(unit.id);
   prog.session.spent += unit.weight;

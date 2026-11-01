@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"二维码","read":"èrwéimǎ","mw":"个","def":"由黑白小方点组成的方形图案，用手机照一下就能读出内容。"},
 "word-notification": {"w":"通知","read":"tōngzhī","hint":"手机上","mw":"条","def":"手机上跳出来告诉你有新情况的短消息。"},
 "word-landline": {"w":"座机","read":"zuòjī","alt":["固定电话"],"mw":"部","def":"用电线连接、不用手机网络的电话。"},
-"word-postal-worker": {"w":"邮递员","read":"yóudìyuán","alt":["邮差"],"mw":"位","def":"工作是把信和包裹送到人们家里的人。"}
+"word-postal-worker": {"w":"邮递员","read":"yóudìyuán","alt":["邮差"],"mw":"位","def":"工作是把信和包裹送到人们家里的人。"},
+"word-eircode-ie": {"gl":"Eircode：爱尔兰的七位邮政编码，每个地址对应一个唯一编码"}
 }

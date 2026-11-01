@@ -27,6 +27,7 @@
 "word-how-much": {"file":"45689ea079e1b556.mp3","text":"сколько","voice":"ru-RU-Chirp3-HD-Kore","bytes":6144},
 "word-how-many": {"file":"45689ea079e1b556.mp3","text":"сколько","voice":"ru-RU-Chirp3-HD-Kore","bytes":6144},
 "word-which": {"file":"00466ea1f27797cd.mp3","text":"какой","voice":"ru-RU-Chirp3-HD-Kore","bytes":4512},
+"word-and": {"file":"58f7077324550a99.mp3","text":"и","voice":"ru-RU-Chirp3-HD-Kore","bytes":4704,"sent":"И."},
 "word-but": {"file":"60843b4fe04f0158.mp3","text":"но","voice":"ru-RU-Chirp3-HD-Kore","bytes":4704},
 "word-or": {"file":"3032688977567bf3.mp3","text":"или","voice":"ru-RU-Chirp3-HD-Kore","bytes":4032},
 "word-because": {"file":"ab5a7a7d1bf8943f.mp3","text":"потому что","voice":"ru-RU-Chirp3-HD-Kore","bytes":6912},

@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"data urodzenia","g":"f","forms":{"gen":"daty urodzenia","pl":"daty urodzenia"},"def":"Dzień, miesiąc i rok, w którym ktoś przyszedł na świat."},
 "word-time-zone": {"w":"strefa czasowa","g":"f","forms":{"gen":"strefy czasowej","pl":"strefy czasowe"},"def":"Obszar świata, w którym wszystkie zegary pokazują tę samą godzinę."},
 "word-o-clock": {"w":"o godzinie","def":"Wyrażenie używane przed liczbą, by podać dokładną porę na zegarze."},
-"word-lifetime": {"w":"życie","g":"n","hint":"cały okres","forms":{"gen":"życia","pl":"życia"},"def":"Cały okres od narodzin do śmierci człowieka."}
+"word-lifetime": {"w":"życie","g":"n","hint":"cały okres","forms":{"gen":"życia","pl":"życia"},"def":"Cały okres od narodzin do śmierci człowieka."},
+"word-hogmanay": {"gl":"Hogmanay: szkockie obchody sylwestra z pierwszym gościem i pieśnią Auld Lang Syne"}
 }

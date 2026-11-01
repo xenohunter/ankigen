@@ -12,9 +12,11 @@ export function mountSupport(block) {
   let sticky = false;
   let pinned = false;
 
+  // The gap between the place's end (its right edge, or its left one right to left) and the window's edge.
   const align = () => {
-    const right = document.documentElement.clientWidth - place.getBoundingClientRect().right;
-    block.style.setProperty('--pin-right', `${Math.max(0, right)}px`);
+    const r = place.getBoundingClientRect();
+    const end = document.documentElement.dir === 'rtl' ? r.left : document.documentElement.clientWidth - r.right;
+    block.style.setProperty('--pin-end', `${Math.max(0, end)}px`);
   };
 
   /** @param {boolean} on */

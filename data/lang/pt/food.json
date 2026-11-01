@@ -82,5 +82,8 @@
 "word-picnic": {"w":"piquenique","g":"m","def":"Refeição feita ao ar livre, muitas vezes num jardim ou parque."},
 "word-butcher-shop": {"w":"talho","g":"m","def":"Loja que vende carne fresca."},
 "word-grocery-store": {"w":"mercearia","g":"f","def":"Loja que vende comida e pequenos artigos para a casa."},
-"word-sobremesa": {"gl":"sobremesa: costume espanhol de ficar à mesa a conversar depois da refeição"}
+"word-sobremesa": {"gl":"sobremesa: costume espanhol de ficar à mesa a conversar depois da refeição"},
+"word-aperitivo": {"gl":"aperitivo: bebida italiana do fim da tarde, servida com petiscos num bar"},
+"word-fika": {"gl":"fika: pausa social sueca para café e doces com amigos ou colegas"},
+"word-nhau": {"gl":"nhậu: convívio vietnamita para beber cerveja ou aguardente com comida partilhada"}
 }

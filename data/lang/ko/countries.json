@@ -109,5 +109,6 @@
 "word-nationality": {"w":"국적","rom":"gukjeok","hanja":"國籍","def":"한 나라의 국민이라는 법적인 자격. 여권에 적혀 있다."},
 "word-continent": {"w":"대륙","rom":"daeryuk","hanja":"大陸","def":"지구에 있는 일곱 개의 아주 넓은 땅덩어리 중 하나."},
 "word-immigrant": {"w":"이민자","rom":"iminja","hanja":"移民者","def":"다른 나라에 가서 계속 살려고 옮겨 간 사람."},
-"word-homeland": {"w":"고국","rom":"goguk","hanja":"故國","alt":["모국"],"def":"자기가 태어났고 마음의 고향이라고 느끼는 나라."}
+"word-homeland": {"w":"고국","rom":"goguk","hanja":"故國","alt":["모국"],"def":"자기가 태어났고 마음의 고향이라고 느끼는 나라."},
+"word-gaeltacht": {"gl":"가엘타흐트: 아일랜드어를 일상 공동체 언어로 쓰는 아일랜드의 지역"}
 }

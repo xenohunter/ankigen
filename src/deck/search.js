@@ -1,9 +1,9 @@
 // @ts-check
 // Search in the card list (SPEC §4, ARCHITECTURE §8). A note is found by its words in both languages and by
 // the other ways a learner may type them: synonyms, readings, romanization (stored, by rule, or kana as
-// romaji) and Serbian in both scripts, whatever the field settings show; in same-language decks also by its
-// definition, ranked below the words. Index and query are folded alike (text/normalize.js), so case, accents
-// and stress marks never matter. The index is built on the first search.
+// romaji), Serbian in both scripts and Vietnamese đ as d, whatever the field settings show; in same-language decks
+// also by its definition, ranked below the words. Index and query are folded alike (text/normalize.js), so case,
+// accents, stress and vowel marks never matter. The index is built on the first search.
 
 import { kanaToRomaji, matches, prepareQuery, searchKey } from '../text/normalize.js';
 import { SCHEMES, srToLatin } from '../text/translit.js';
@@ -16,6 +16,9 @@ import { noteSummary } from './fields.js';
 
 /** @type {Record<string, (text: string) => string>} */
 const RULES = SCHEMES;
+
+/** Other spellings a learner may type: Serbian in Latin, Vietnamese đ as d (the fold makes it dj, as in Serbian). */
+const VARIANTS = /** @type {Record<string, (text: string) => string>} */ ({ sr: srToLatin, vi: (text) => text.replace(/[đĐ]/g, 'd') });
 
 /**
  * The strings a note can be found by: its words, and (same-language decks) its definitions.
@@ -31,14 +34,14 @@ export function searchParts(note, ctx) {
     const spellings = [e.w, ...(e.alt ?? [])];
     parts.push(...spellings, e.read, e.rom, e.hanja);
     if (rule) parts.push(...spellings.map((s) => rule(s)));
-    if (ctx.learn.code === 'sr') parts.push(...spellings.map(srToLatin));
+    if (VARIANTS[ctx.learn.code]) parts.push(...spellings.map(VARIANTS[ctx.learn.code]));
     if (ctx.learn.code === 'ja' && e.read) parts.push(kanaToRomaji(e.read));
   }
   if (!ctx.same) {
     for (const e of note.knowEntries) {
       const spellings = [e.w, e.gl, ...(e.alt ?? [])].filter(Boolean);
       parts.push(...spellings);
-      if (ctx.know.code === 'sr') parts.push(...spellings.map(srToLatin));
+      if (VARIANTS[ctx.know.code]) parts.push(...spellings.map(VARIANTS[ctx.know.code]));
     }
   }
   return { words: [...new Set(/** @type {string[]} */ (parts.filter(Boolean)))], definitions: ctx.same ? [translation] : [] };

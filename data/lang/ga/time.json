@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"gl":"lá iomlán 24 uair an chloig, an lá agus an oíche le chéile"},
+"word-day-off": {"w":"lá saor","g":"m","forms":{"gen":"lae shaoir","pl":"laethanta saora"},"def":"Tréimhse iomlán nuair nach gcaithfidh tú dul ag obair ná ar scoil."},
+"word-working-day": {"w":"lá oibre","g":"m","forms":{"gen":"lae oibre","pl":"laethanta oibre"},"def":"Luan go hAoine de ghnáth, nuair a bhíonn formhór na ndaoine ag a bpost."},
+"word-on-time": {"w":"in am","def":"Ag an nóiméad ceart, gan a bheith déanach ná róluath."},
+"word-date-of-birth": {"w":"dáta breithe","g":"m","forms":{"gen":"dáta breithe","pl":"dátaí breithe"},"def":"An lá, an mhí agus an bhliain inar rugadh duine."},
+"word-time-zone": {"w":"crios ama","g":"m","forms":{"gen":"criosa ama","pl":"criosanna ama"},"def":"Limistéar den domhan ina léiríonn gach uaireadóir an uair chéanna."},
+"word-o-clock": {"w":"a chlog","def":"Focal a chuirtear i ndiaidh uimhreach chun uair chruinn a ainmniú."},
+"word-lifetime": {"w":"saol","g":"m","forms":{"gen":"saoil","pl":"saolta"},"def":"An tréimhse iomlán a mhaireann duine beo.","hint":"fad beatha"},
+"word-hogmanay": {"gl":"Hogmanay: Oíche Chinn Bliana in Albain agus na féilte a bhaineann léi"}
+}

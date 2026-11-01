@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"化粧品","read":"けしょうひん","rom":"keshōhin","alt":["コスメ"],"def":"顔や肌につけて、きれいに見せるための品物。"},
 "word-small-size": {"w":"Sサイズ","rom":"esu saizu","forms":{"type":"na"},"def":"Mより小さい服の大きさ。"},
 "word-medium-size": {"w":"Mサイズ","rom":"emu saizu","forms":{"type":"na"},"def":"SとLの間の服の大きさ。"},
-"word-large-size": {"w":"Lサイズ","rom":"eru saizu","forms":{"type":"na"},"def":"Mより大きい服の大きさ。"}
+"word-large-size": {"w":"Lサイズ","rom":"eru saizu","forms":{"type":"na"},"def":"Mより大きい服の大きさ。"},
+"word-vyshyvanka": {"gl":"ヴィシヴァンカ：ウクライナの伝統的な刺繍入りシャツ、民族の象徴"}
 }

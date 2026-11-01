@@ -18,5 +18,6 @@
 "word-city-block": {"w":"kwartał","g":"m","hint":"w mieście","alt":["przecznica"],"forms":{"gen":"kwartału","pl":"kwartały"},"def":"Obszar zabudowy otoczony z czterech stron ulicami."},
 "word-tourist-information": {"w":"informacja turystyczna","g":"f","forms":{"gen":"informacji turystycznej","pl":"informacje turystyczne"},"def":"Biuro, w którym odwiedzający dostają mapy i porady o okolicy."},
 "word-landmark": {"w":"punkt orientacyjny","g":"m","alt":["symbol miasta"],"forms":{"gen":"punktu orientacyjnego","pl":"punkty orientacyjne"},"def":"Budynek lub miejsce znane wszystkim i łatwe do rozpoznania."},
-"word-outskirts": {"w":"peryferie","g":"pl","alt":["obrzeża"],"forms":{"gen":"peryferii"},"def":"Części miasta najbardziej oddalone od centrum."}
+"word-outskirts": {"w":"peryferie","g":"pl","alt":["obrzeża"],"forms":{"gen":"peryferii"},"def":"Części miasta najbardziej oddalone od centrum."},
+"word-passeggiata": {"gl":"passeggiata: włoski wieczorny lub niedzielny spacer, by pokazać się ludziom i innych zobaczyć"}
 }

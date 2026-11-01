@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"Kosmetik","g":"f","alt":["Schminke"],"def":"Produkte, die man auf Gesicht oder Haut aufträgt, um besser auszusehen."},
 "word-small-size": {"w":"klein","hint":"Kleidergröße","alt":["S"],"def":"Das Maß für Kleidung, das unter mittel liegt."},
 "word-medium-size": {"w":"mittelgroß","alt":["M"],"def":"Das Maß für Kleidung, das zwischen S und L liegt."},
-"word-large-size": {"w":"groß","hint":"Kleidergröße","alt":["L"],"def":"Das Maß für Kleidung, das über mittel liegt."}
+"word-large-size": {"w":"groß","hint":"Kleidergröße","alt":["L"],"def":"Das Maß für Kleidung, das über mittel liegt."},
+"word-vyshyvanka": {"gl":"Wyschywanka: ukrainisches Hemd mit traditioneller Stickerei, ein Nationalsymbol"}
 }

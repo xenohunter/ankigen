@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: obowiązkowy przegląd techniczny pojazdów w Hiszpanii"},
 "word-apk-nl": {"gl":"APK: holenderski okresowy przegląd stanu technicznego pojazdów"},
 "word-kteo-gr": {"gl":"KTEO: grecka stacja kontroli technicznej pojazdów"},
-"word-muayene-tr": {"gl":"araç muayenesi: okresowy przegląd techniczny pojazdów w Turcji"}
+"word-muayene-tr": {"gl":"araç muayenesi: okresowy przegląd techniczny pojazdów w Turcji"},
+"word-revisione-it": {"gl":"revisione: obowiązkowy okresowy przegląd techniczny pojazdu we Włoszech"},
+"word-besiktning-se": {"gl":"besiktning: szwedzki obowiązkowy przegląd pojazdu w uprawnionej stacji kontroli"},
+"word-tsc-mvs-ua": {"gl":"TSC MWS: ukraiński urząd od praw jazdy, rejestracji pojazdów i egzaminów"},
+"word-nct-ie": {"gl":"NCT: irlandzki obowiązkowy test techniczny samochodu (National Car Test)"},
+"word-mot-uk": {"gl":"MOT: brytyjski coroczny przegląd techniczny pojazdów starszych niż trzy lata"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga: węgierski okresowy przegląd pojazdu, potwierdzany naklejką na tablicy"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm: wietnamski obowiązkowy przegląd techniczny i emisji spalin pojazdów"}
 }

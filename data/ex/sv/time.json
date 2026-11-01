@@ -1,0 +1,10 @@
+{
+"word-day-24h": [{"t":"Det är tjugofyra timmar i ett {dygn}.","p":0},{"t":"Hon sov nästan ett helt {dygn} efter resan.","p":0},{"t":"Apoteket har öppet hela {dygnet}.","p":0}],
+"word-day-off": [{"t":"I morgon är min {lediga dag}."},{"t":"Hon tar en {ledig dag} varje onsdag."},{"t":"Jag behöver en {ledig dag} för att vila."}],
+"word-working-day": [{"t":"Måndag är veckans första {arbetsdag}."},{"t":"En vanlig {arbetsdag} är åtta timmar lång."},{"t":"Paketet kommer fram inom tre {arbetsdagar}."}],
+"word-on-time": [{"t":"Tåget kom {i tid}."},{"t":"Försök att komma {i tid} till mötet."},{"t":"Hon betalar alltid hyran {i tid}."}],
+"word-date-of-birth": [{"t":"Skriv ditt {födelsedatum} på blanketten."},{"t":"Mitt {födelsedatum} är den fjärde maj 1990."},{"t":"De frågade efter mitt namn och {födelsedatum}."}],
+"word-time-zone": [{"t":"New York ligger i en annan {tidszon} än Los Angeles."},{"t":"Jag hade svårt att sova efter att ha bytt {tidszon}."},{"t":"Vilken {tidszon} bor du i?"}],
+"word-o-clock": [{"t":"Filmen börjar {klockan} åtta."},{"t":"Det är exakt {klockan} fem nu."},{"t":"Vi äter lunch {klockan} tolv."}],
+"word-lifetime": [{"t":"Han upplevde många förändringar under sin {livstid}."},{"t":"Det här är resan för hela {livstiden}.","p":0},{"t":"Hon bodde hela sin {livstid} i samma stad."}]
+}

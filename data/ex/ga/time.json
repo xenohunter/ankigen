@@ -1,0 +1,9 @@
+{
+"word-day-off": [{"t":"Is é amárach mo {lá saor}."},{"t":"Glacann sí {lá saor} gach Céadaoin."},{"t":"Teastaíonn {lá saor} uaim le scíth a ligean."}],
+"word-working-day": [{"t":"Is é an Luan an chéad {lá oibre} den seachtain."},{"t":"Tá ocht n-uaire an chloig i {lá oibre} gnáth."},{"t":"Sroichfidh an beart i gceann trí {lá oibre}."}],
+"word-on-time": [{"t":"Tháinig an traein {in am}."},{"t":"Déan iarracht a bheith {in am} don chruinniú."},{"t":"Íocann sí a cíos i gcónaí {in am}."}],
+"word-date-of-birth": [{"t":"Scríobh do {dháta breithe} ar an bhfoirm, le do thoil."},{"t":"Is é an ceathrú lá de Bhealtaine 1990 mo {dháta breithe}."},{"t":"D'iarr siad m'ainm agus mo {dháta breithe} orm."}],
+"word-time-zone": [{"t":"Tá Nua-Eabhrac i {gcrios ama} difriúil ó Los Angeles."},{"t":"Bhí deacracht agam codladh tar éis dom {criosanna ama} a athrú."},{"t":"Cén {crios ama} a bhfuil tú ann?"}],
+"word-o-clock": [{"t":"Tosaíonn an scannán ar a hocht {a chlog}."},{"t":"Tá sé a cúig {a chlog} go díreach anois."},{"t":"Bíonn lón againn ar a dó dhéag {a chlog}."}],
+"word-lifetime": [{"t":"Chonaic sé go leor athruithe ina {shaol}."},{"t":"Ní dhéanfaidh tú dearmad air i do {shaol}.","p":0},{"t":"Chaith sí a {saol} ar fad sa bhaile céanna."}]
+}

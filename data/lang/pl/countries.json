@@ -109,5 +109,6 @@
 "word-nationality": {"w":"narodowość","g":"f","alt":["obywatelstwo"],"forms":{"gen":"narodowości","pl":"narodowości"},"def":"Przynależność do określonego narodu lub państwa, potwierdzana na przykład paszportem."},
 "word-continent": {"w":"kontynent","g":"m","alt":["część świata"],"forms":{"gen":"kontynentu","pl":"kontynenty"},"def":"Jeden z siedmiu bardzo dużych lądów na Ziemi."},
 "word-immigrant": {"w":"imigrant","g":"m","forms":{"gen":"imigranta","pl":"imigranci","f":"imigrantka"},"def":"Osoba, która przeprowadziła się do obcego kraju, żeby zostać tam na stałe."},
-"word-homeland": {"w":"ojczyzna","g":"f","forms":{"gen":"ojczyzny","pl":"ojczyzny"},"def":"Kraj, w którym ktoś się urodził i z którym czuje się związany."}
+"word-homeland": {"w":"ojczyzna","g":"f","forms":{"gen":"ojczyzny","pl":"ojczyzny"},"def":"Kraj, w którym ktoś się urodził i z którym czuje się związany."},
+"word-gaeltacht": {"gl":"Gaeltacht: region Irlandii, gdzie irlandzki jest codziennym językiem mieszkańców"}
 }

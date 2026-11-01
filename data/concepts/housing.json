@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"pos":"noun","mods":["housing"],"note":"Korea: large lump-sum deposit instead of monthly rent (전세)","only":["ko"]},
 "word-cold-rent-de": {"pos":"noun","mods":["housing"],"note":"Germany: rent without utilities (Kaltmiete)","only":["de"]},
 "word-warm-rent-de": {"pos":"noun","mods":["housing"],"note":"Germany: rent including utilities (Warmmiete)","only":["de"]},
-"word-communal-apartment-ru": {"pos":"noun","mods":["housing"],"note":"Russia: apartment shared by several families (коммуналка)","only":["ru"]}
+"word-communal-apartment-ru": {"pos":"noun","mods":["housing"],"note":"Russia: apartment shared by several families (коммуналка)","only":["ru"]},
+"word-council-tax-uk": {"pos":"noun","mods":["housing","money"],"note":"UK: council tax, the local tax on homes paid to the local council, banded by property value","only":["gd"]}
 }

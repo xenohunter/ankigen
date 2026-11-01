@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"talla a' bhaile","g":"f","forms":{"gen":"talla a' bhaile","pl":"tallaichean a' bhaile"},"def":"Togalach far a bheil comhairle ionadail na cathrach ag obair."},
+"word-fire-station": {"w":"stèisean smàlaidh","g":"m","forms":{"gen":"stèisein smàlaidh","pl":"stèiseanan smàlaidh"},"def":"Togalach far a bheil na fir-teine agus na làraidhean aca a' feitheamh ri èiginn."},
+"word-mosque": {"w":"mosg","g":"f","forms":{"gen":"mosga","pl":"mosgaichean"},"def":"Togalach far am bi Muslamaich a' dol a ghabhail ùrnaigh."},
+"word-synagogue": {"w":"sionagog","g":"f","forms":{"gen":"sionagoige","pl":"sionagogan"},"def":"Togalach far am bi Iùdhaich a' dol a ghabhail ùrnaigh agus a dh'ionnsachadh."},
+"word-cathedral": {"w":"cathair-eaglais","g":"f","forms":{"gen":"cathrach-eaglais","pl":"cathraichean-eaglais"},"def":"Taigh-aoraidh glè mhòr is cudromach air a stiùireadh le easbaig."},
+"word-laundromat": {"w":"taigh-nighe","g":"m","alt":["laundrette"],"forms":{"gen":"taighe-nighe","pl":"taighean-nighe"},"def":"Àite poblach far an glan thu is an tioraich thu d' aodach ann an innealan a ghabhas bonn-airgid."},
+"word-art-gallery": {"w":"gailearaidh-ealain","g":"m","alt":["gailearaidh"],"forms":{"gen":"gailearaidh-ealain","pl":"gailearaidhean-ealain"},"def":"Togalach no seòmar far a bheil dealbhan is obraichean cruthachail eile ri faicinn dhan phoball."},
+"word-nightclub": {"w":"club-oidhche","g":"m","forms":{"gen":"cluba-oidhche","pl":"clubaichean-oidhche"},"def":"Àite a bhios fosgailte gu anmoch le ceòl, dannsa is deochan."},
+"word-old-town": {"w":"seann bhaile","g":"m","forms":{"gen":"seann bhaile","pl":"seann bhailtean"},"def":"A' phàirt as sine de chathair, le togalaichean eachdraidheil agus sràidean cumhang."},
+"word-skyscraper": {"w":"sgrìobadair-speur","g":"m","alt":["togalach àrd"],"forms":{"gen":"sgrìobadair-speur","pl":"sgrìobadairean-speur"},"def":"Togalach glè àrd le mòran làr."},
+"word-apartment-block": {"w":"bloc-flataichean","g":"m","forms":{"gen":"bloc-flataichean","pl":"blocaichean-flataichean"},"def":"Togalach mòr air a roinn ann an mòran dhachaighean air diofar làir."},
+"word-avenue": {"w":"sràid leathann","g":"f","forms":{"gen":"sràide leathainn","pl":"sràidean leathann"},"def":"Rathad farsaing ann an cathair, gu tric le craobhan air gach taobh."},
+"word-pedestrian-zone": {"w":"raon coiseachd","g":"m","forms":{"gen":"raoin choiseachd","pl":"raointean coiseachd"},"def":"Pàirt de bhaile far nach fhaod càraichean a dhol, 's urrainn do dhaoine siubhal air chois gu sàbhailte."},
+"word-bench": {"w":"being","g":"f","forms":{"gen":"beinge","pl":"beingean"},"def":"Suidheachan fada do dhaoine, mar as trice a-muigh."},
+"word-fountain": {"w":"fuaran","g":"m","forms":{"gen":"fuarain","pl":"fuaranan"},"def":"Togail a tha a' tilgeil uisge dhan adhar, mar as trice ann am pàirc no ceàrnag."},
+"word-opposite": {"w":"mu choinneimh","alt":["fa chomhair"],"def":"Air taobh eile rudeigin, ga fhaicinn dìreach."},
+"word-city-block": {"w":"bloc","g":"m","forms":{"gen":"bloca","pl":"blocaichean"},"def":"Ceàrnag de thogalaichean le sràidean air gach taobh."},
+"word-tourist-information": {"w":"ionad fiosrachaidh luchd-turais","g":"m","alt":["ionad-tadhail"],"forms":{"gen":"ionaid fhiosrachaidh luchd-turais","pl":"ionadan fiosrachaidh luchd-turais"},"def":"Oifis far am faigh daoine a tha a' tadhal mapaichean is comhairle mu àite."},
+"word-landmark": {"w":"comharra-tìre","g":"m","forms":{"gen":"comharra-tìre","pl":"comharran-tìre"},"def":"Togalach no àite ainmeil a tha furasta aithneachadh."},
+"word-outskirts": {"w":"iomall a' bhaile","g":"m","forms":{"gen":"iomaill a' bhaile","pl":"iomallan a' bhaile"},"def":"Na pàirtean de chathair as fhaide bhon mheadhan."},
+"word-passeggiata": {"gl":"passeggiata: cuairt shocair Eadailteach feasgar no Didòmhnaich, a' coimhead is ri bhith air do choimhead"}
+}

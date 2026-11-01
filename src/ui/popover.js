@@ -12,7 +12,7 @@ let nextId = 0;
 /** @type {{ pop: HTMLElement, anchor: HTMLElement, align: Align } | null} */
 let open = null;
 
-/** @typedef {'center' | 'end'} Align  centered under the button, or ending where it ends */
+/** @typedef {'center' | 'end'} Align  centered under the button, or ending where it ends (its left edge right to left) */
 
 /** @param {HTMLElement} pop @param {HTMLElement} anchor @param {Align} [align] */
 function place(pop, anchor, align = 'center') {
@@ -22,7 +22,8 @@ function place(pop, anchor, align = 'center') {
   const viewport = document.documentElement.clientWidth;
   const width = Math.min(align === 'end' ? pop.offsetWidth : 340, viewport - 2 * margin);
   if (align === 'center') pop.style.width = `${width}px`;
-  const left = align === 'end' ? r.right - width : r.left + r.width / 2 - width / 2;
+  const end = document.documentElement.dir === 'rtl' ? r.left : r.right - width;
+  const left = align === 'end' ? end : r.left + r.width / 2 - width / 2;
   pop.style.left = `${Math.min(Math.max(margin, left), viewport - width - margin)}px`;
   const height = pop.offsetHeight;
   const below = r.bottom + gap;

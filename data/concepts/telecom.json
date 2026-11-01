@@ -32,5 +32,6 @@
 "word-qr-code": {"pos":"noun","mods":["telecom","tech"],"note":"QR code"},
 "word-notification": {"pos":"noun","mods":["telecom","tech"],"note":"alert on a phone"},
 "word-landline": {"pos":"noun","mods":["telecom"],"note":"fixed telephone line"},
-"word-postal-worker": {"pos":"noun","mods":["telecom","work"],"note":"mail carrier"}
+"word-postal-worker": {"pos":"noun","mods":["telecom","work"],"note":"mail carrier"},
+"word-eircode-ie": {"pos":"noun","mods":["telecom","housing"],"note":"Ireland: Eircode, the unique seven-character postcode identifying each individual address, used on post and forms","only":["ga"]}
 }

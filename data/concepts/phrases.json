@@ -87,5 +87,7 @@
 "phrase-thanks-for-hard-work": {"pos":"phrase","mods":["phrases","work"],"note":"acknowledging someone's effort (ja お疲れ様, ko 수고하셨습니다, zh 辛苦了)","only":["ja","ko","zh"]},
 "phrase-kolay-gelsin": {"pos":"phrase","mods":["phrases","work"],"note":"\"may it be easy\" — said to someone working (tr kolay gelsin)","only":["tr"]},
 "phrase-kalo-mina": {"pos":"phrase","mods":["phrases","time"],"note":"\"have a good month\" — wish on the first day of a month (el καλό μήνα)","only":["el"]},
-"phrase-s-lyogkim-parom": {"pos":"phrase","mods":["phrases","household"],"note":"said to someone after a bath or sauna (ru с лёгким паром)","only":["ru"]}
+"phrase-s-lyogkim-parom": {"pos":"phrase","mods":["phrases","household"],"note":"said to someone after a bath or sauna (ru с лёгким паром)","only":["ru"]},
+"phrase-kezcsokolom": {"pos":"phrase","mods":["phrases"],"note":"Hungarian: 'I kiss your hand', a traditional respectful greeting to women or older people, used by men and children","only":["hu"]},
+"phrase-have-you-eaten-yet": {"pos":"phrase","mods":["phrases"],"note":"Vietnamese: Ăn cơm chưa?, 'Have you eaten rice yet?', a caring everyday greeting or opener that is not a real question about food","only":["vi"]}
 }

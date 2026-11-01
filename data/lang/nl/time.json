@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"geboortedatum","g":"c","forms":{"pl":"geboortedata"},"def":"De dag, de maand en het jaar waarop een mens ter wereld kwam."},
 "word-time-zone": {"w":"tijdzone","g":"c","forms":{"pl":"tijdzones"},"def":"Een gebied op aarde waar alle klokken dezelfde uren aanwijzen."},
 "word-o-clock": {"w":"uur","hint":"op de klok","def":"Woord dat na een getal staat om een exact heel tijdstip op de klok aan te geven."},
-"word-lifetime": {"w":"levensduur","g":"c","def":"De periode dat een mens, dier of ding bestaat of bruikbaar blijft."}
+"word-lifetime": {"w":"levensduur","g":"c","def":"De periode dat een mens, dier of ding bestaat of bruikbaar blijft."},
+"word-hogmanay": {"gl":"Hogmanay: Schotse oudejaarsavond met feestelijke tradities en bezoek na middernacht"}
 }

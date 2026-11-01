@@ -6,16 +6,18 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { paths, loadRegistry, loadConcepts, readJson, exists, listDirs, listJson, targetProblems } from '../lib/data.mjs';
+import { paths, loadRegistry, loadConcepts, readJson, exists, listDirs, listJson, targetProblems, dataLanguages } from '../lib/data.mjs';
 import { appMeta, readTranslations, translatedLanguages } from '../landing.mjs';
 
 export const CORE_PART = 250;   // concepts per core inventory unit
 export const LANG_SLICE = 100;  // concepts per language unit
 export const EXFIX_SLICE = 250; // concepts per example-fix unit (only the flagged ones are sent)
-export const LANG_ORDER = ['en', 'ru', 'sr', 'ja', 'zh', 'de', 'es', 'pt', 'pl', 'ko', 'nl', 'fr', 'hy', 'tr', 'el'];
+export const LANG_ORDER = ['en', 'ru', 'sr', 'ja', 'zh', 'de', 'es', 'pt', 'pl', 'ko', 'nl', 'fr', 'hy', 'tr', 'el', 'it', 'sv', 'uk', 'ga', 'gd', 'hu', 'ar', 'vi'];
 
 // Relative cost of a unit (1 point ≈ 10k output tokens). Calibrate progress.sessionBudget, not these.
-export const WEIGHTS = { concepts: 2, conceptsSmall: 1.5, labels: 0.5, landing: 1, lang: 2, langCJK: 2.5, review: 1, ipa: 0.5, exfix: 0.03 /* per flagged concept */ };
+export const WEIGHTS = { concepts: 2, conceptsSmall: 1.5, local: 1, labels: 0.5, landing: 1, lang: 2, langCJK: 2.5, review: 1, ipa: 0.5, exfix: 0.03 /* per flagged concept */ };
+/** Languages whose text takes more output tokens per concept (writing systems, vowel marks). */
+const HEAVY = ['ja', 'zh', 'ar'];
 
 export function repoRoot() {
   return path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -60,9 +62,10 @@ export function moduleConceptIds(ctx, moduleId) {
   return ctx.concepts.order.filter((id) => ctx.concepts.byId.get(id).module === moduleId);
 }
 
+/** Generation order of the active and staged languages. */
 export function langOrder(reg) {
-  const active = reg.languages.active;
-  return [...LANG_ORDER.filter((c) => active.includes(c)), ...active.filter((c) => !LANG_ORDER.includes(c))];
+  const langs = dataLanguages(reg);
+  return [...LANG_ORDER.filter((c) => langs.includes(c)), ...langs.filter((c) => !LANG_ORDER.includes(c))];
 }
 
 export function owns(concept, code) {
@@ -95,6 +98,17 @@ export function allUnits(ctx) {
     units.push({ id, type: 'concepts', module: m.id, part: null, weight: m.size > 150 ? WEIGHTS.concepts : WEIGHTS.conceptsSmall, deps: [conceptUnits[conceptUnits.length - 1]] });
     conceptUnits.push(id);
   }
+  // 1b. The country-specific and untranslatable concepts of a language added after the inventory was built
+  //     (a staged language with a country), one after another, appended to the topical modules: every language's
+  //     units of those modules wait for them.
+  const localUnits = [];
+  for (const code of reg.languages.staged ?? []) {
+    if (!reg.languages.languages[code]?.country) continue;
+    const id = `local:${code}`;
+    units.push({ id, type: 'local', lang: code, weight: WEIGHTS.local, deps: [localUnits.at(-1) ?? conceptUnits.at(-1)] });
+    localUnits.push(id);
+  }
+  const inventory = (/** @type {any} */ m) => (m.core || !localUnits.length ? conceptUnits.at(-1) : localUnits.at(-1));
   // 2. Card labels, and the landing pages' texts for each language's speakers (English is their source, in
   //    tools/landing.mjs). Both independent of everything else.
   for (const code of langOrder(reg)) {
@@ -111,13 +125,13 @@ export function allUnits(ctx) {
       const parts = Math.ceil(ids.length / LANG_SLICE);
       for (let i = 1; i <= parts; i++) {
         const id = `lang:${code}:${m.id}:${i}`;
-        const deps = [conceptUnits[conceptUnits.length - 1]];
+        const deps = [inventory(m)];
         if (code !== 'en') deps.push('review:en');
-        units.push({ id, type: 'lang', lang: code, module: m.id, part: i, slice: ids.slice((i - 1) * LANG_SLICE, i * LANG_SLICE), weight: ['ja', 'zh'].includes(code) ? WEIGHTS.langCJK : WEIGHTS.lang, deps });
+        units.push({ id, type: 'lang', lang: code, module: m.id, part: i, slice: ids.slice((i - 1) * LANG_SLICE, i * LANG_SLICE), weight: HEAVY.includes(code) ? WEIGHTS.langCJK : WEIGHTS.lang, deps });
         langUnits.push(id);
       }
     }
-    units.push({ id: `review:${code}`, type: 'review', lang: code, weight: WEIGHTS.review, deps: langUnits.length ? langUnits : [conceptUnits[conceptUnits.length - 1]] });
+    units.push({ id: `review:${code}`, type: 'review', lang: code, weight: WEIGHTS.review, deps: langUnits.length ? langUnits : [inventory({})] });
   }
   // 4. IPA (after the language is reviewed)
   for (const code of langOrder(reg)) {
@@ -182,6 +196,19 @@ export function unitDone(ctx, prog, u) {
     default:
       return Boolean(prog.done[u.id]);
   }
+}
+
+/**
+ * The concepts of a lang unit that still need their entry (or, if owned, their examples), when the others are there
+ * already: concepts added to its module later (local units). Only those are sent. Null when the whole slice is
+ * missing, or nothing is.
+ */
+export function pendingSubset(ctx, u) {
+  if (u.type !== 'lang') return null;
+  const L = ctx.layers.lang[u.lang];
+  const E = ctx.layers.ex[u.lang];
+  const pending = u.slice.filter((id) => !L?.has(id) || (owns(ctx.concepts.byId.get(id).c, u.lang) && !E?.get(id)?.length));
+  return pending.length && pending.length < u.slice.length ? pending : null;
 }
 
 export function availableUnits(ctx, prog, { type, lang } = {}) {

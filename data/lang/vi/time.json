@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"gl":"một ngày đủ 24 giờ, gồm cả ban ngày lẫn ban đêm"},
+"word-day-off": {"w":"ngày nghỉ","def":"Hôm mà mình không phải đi làm hay đi học."},
+"word-working-day": {"w":"ngày làm việc","def":"Hôm mà phần lớn mọi người đi làm, thường từ thứ Hai đến thứ Sáu."},
+"word-on-time": {"w":"đúng giờ","def":"Vào đúng lúc đã định, không muộn và không sớm."},
+"word-date-of-birth": {"w":"ngày sinh","alt":["ngày tháng năm sinh"],"def":"Ngày, tháng và năm một người chào đời."},
+"word-time-zone": {"w":"múi giờ","def":"Khu vực trên thế giới mà mọi đồng hồ đều chỉ cùng một mốc thời gian."},
+"word-o-clock": {"w":"giờ","hint":"trên đồng hồ","def":"Từ đứng sau một con số để chỉ đúng thời điểm tròn trên đồng hồ."},
+"word-lifetime": {"w":"cuộc đời","alt":["đời người"],"def":"Toàn bộ khoảng thời gian một người sống."},
+"word-hogmanay": {"gl":"Hogmanay: lễ giao thừa của Scotland, có tục xông nhà và hát Auld Lang Syne"}
+}

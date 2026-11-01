@@ -4,15 +4,15 @@
 //
 // Choices beyond the spec (agreed during M0):
 //   - synonyms of the learned word (alt) are shown in Related as "= …";
-//   - TypeTarget includes the de/nl article only while the Gender / article row is on;
-//   - Russian as the known language is shown without stress marks;
+//   - TypeTarget includes the de/nl/sv article only while the Gender / article row is on;
+//   - Russian and Ukrainian as the known language are shown without stress marks, Arabic without vowel marks;
 //   - merged notes take example slots round-robin from their members (slot 1 of each, then slot 2, …).
 
 import { SAME, placementOf, typesAnswer } from '../state.js';
 import { escapeAttr, escapeHtml, stripHtml } from '../text/html.js';
 import { exampleHtml, stripFurigana, stripTarget, wordRubyHtml } from '../text/furigana.js';
 import { SCHEMES, srToLatin } from '../text/translit.js';
-import { stripStress } from '../text/normalize.js';
+import { stripStress, stripVowels } from '../text/normalize.js';
 
 /** @typedef {import('./select.js').Note} Note */
 /** @typedef {import('./select.js').Disambig} Disambig */
@@ -30,7 +30,7 @@ export const FIELD_NAMES = /** @type {const} */ ([
 /** @typedef {Record<(typeof FIELD_NAMES)[number], string>} Fields */
 
 /** Learned languages whose typed answer includes the article (SPEC §3). */
-const TYPED_ARTICLE = new Set(['de', 'nl']);
+const TYPED_ARTICLE = new Set(['de', 'nl', 'sv']);
 /** Form keys whose values are categories with value.* labels. */
 const ENUM_FORMS = new Set(['aspect', 'class', 'type']);
 
@@ -58,19 +58,30 @@ export function deckContext({ config, meta, concepts, learnData, knowData, audio
   const languages = meta.languages.languages;
   const latn = config.srScript === 'latn';
   const stressOn = placementOf(meta, config, 'stress') === 'on';
+  const vowelsOn = placementOf(meta, config, 'vowels') === 'on';
   const labelsOf = meta.labels.labels;
+  const [learnReg, knowReg] = [languages[learnCode], languages[knowCode]];
 
-  /** Learned-language text: stress marks per the toggle, Serbian in the chosen script. @param {string} text */
+  /** Learned-language text: stress and vowel marks per their rows, Serbian in the chosen script. @param {string} text */
   const learnText = (text) => {
-    if (learnCode === 'ru' && !stressOn) text = stripStress(text);
+    if (learnReg?.stress && !stressOn) text = stripStress(text);
+    if (learnReg?.vowels && !vowelsOn) text = stripVowels(text);
     if (learnCode === 'sr' && latn) text = srToLatin(text);
     return text;
   };
-  /** Known-language text: Russian without stress marks, Serbian in the chosen script. @param {string} text */
+  /** Known-language text: as its speakers write it (no stress or vowel marks), Serbian in the chosen script. @param {string} text */
   const knowText = (text) => {
-    if (knowCode === 'ru') text = stripStress(text);
+    if (knowReg?.stress) text = stripStress(text);
+    if (knowReg?.vowels) text = stripVowels(text);
     if (knowCode === 'sr' && latn) text = srToLatin(text);
     return text;
+  };
+  // A deck with a right-to-left language marks the direction of every block, as well as its language.
+  const bidi = learnReg?.dir === 'rtl' || knowReg?.dir === 'rtl';
+  /** @param {any} reg @param {string} tag */
+  const side = (reg, tag) => {
+    const dir = reg?.dir === 'rtl' ? 'rtl' : 'ltr';
+    return { tag, dir, attrs: ` lang="${tag}"${bidi ? ` dir="${dir}"` : ''}` };
   };
   /** Card caption in the known language, falling back to English. @param {string} key @returns {string | null} */
   const label = (key) => {
@@ -83,8 +94,9 @@ export function deckContext({ config, meta, concepts, learnData, knowData, audio
     meta,
     concepts,
     same,
-    learn: { code: learnCode, reg: languages[learnCode], data: learnData, tag: langTag(languages[learnCode], learnCode, config.srScript) },
-    know: { code: knowCode, reg: languages[knowCode], data: knowData, tag: langTag(languages[knowCode], knowCode, config.srScript) },
+    learn: { code: learnCode, reg: learnReg, data: learnData, ...side(learnReg, langTag(learnReg, learnCode, config.srScript)) },
+    know: { code: knowCode, reg: knowReg, data: knowData, ...side(knowReg, langTag(knowReg, knowCode, config.srScript)) },
+    bidi,
     /** @param {string} id */
     place: (id) => placementOf(meta, config, id),
     audio: config.audio ? audio : null,
@@ -158,10 +170,9 @@ export function noteSummary(note, ctx) {
 function gender(e, ctx) {
   const rules = ctx.learn.reg?.gender;
   if (!rules || !e.g || ctx.place('gender') !== 'word') return null;
-  if (rules.mode === 'article') {
-    const art = e.art ?? rules.articles?.[e.g];
-    return art ? { art } : null;
-  }
+  const art = rules.mode === 'article' ? (e.art ?? rules.articles?.[e.g]) : null;
+  if (art) return { art };
+  // a gender without an article (Swedish plurals) shows its mark
   const mark = ctx.label(`gender.${e.g}`);
   return mark ? { mark } : null;
 }
@@ -171,13 +182,14 @@ function wordHtml(e, ctx) {
   const w = escapeHtml(ctx.learnText(e.w));
   const g = gender(e, ctx);
   if (g && 'art' in g) return `<span class="art">${escapeHtml(ctx.learnText(g.art))}</span>${/['’]$/.test(g.art) ? '' : ' '}${w}`; // l'eau: no space
-  if (g) return `${w} <span class="g" lang="${ctx.know.tag}">${escapeHtml(g.mark)}</span>`;
+  if (g) return `${w} <span class="g"${ctx.know.attrs}>${escapeHtml(g.mark)}</span>`;
   return w;
 }
 
-/** The answer typed on reverse cards: main form, no hint or stress, de/nl article, native script. @param {any} e @param {DeckContext} ctx */
+/** The answer typed on reverse cards: main form, no hint, stress or vowel marks, de/nl/sv article, native script. @param {any} e @param {DeckContext} ctx */
 function typeTarget(e, ctx) {
-  let w = stripStress(e.w);
+  let w = ctx.learn.reg?.stress ? stripStress(e.w) : e.w; // stress marks only: other accents are spelling (está, café)
+  if (ctx.learn.reg?.vowels) w = stripVowels(w);
   if (ctx.learn.code === 'sr' && ctx.config.srScript === 'latn') w = srToLatin(w);
   const g = TYPED_ARTICLE.has(ctx.learn.code) ? gender(e, ctx) : null;
   return g && 'art' in g ? `${g.art} ${w}` : w;
@@ -190,8 +202,8 @@ function disambigText(d, ctx) {
       return ctx.label(`pos.${d.pos}`) ?? d.pos;
     case 'gender': {
       const gender = ctx.learn.reg?.gender;
-      if (gender?.mode === 'article') return ctx.learnText(d.art ?? gender.articles?.[d.g] ?? d.g);
-      return ctx.label(`gender.${d.g}`) ?? d.g;
+      const art = gender?.mode === 'article' ? (d.art ?? gender.articles?.[d.g]) : null;
+      return art ? ctx.learnText(art) : (ctx.label(`gender.${d.g}`) ?? d.g);
     }
     case 'form':
       return `${ctx.label(`form.${d.key}`) ?? d.key} ${formValue(d.key, d.value, ctx)}`;
@@ -241,7 +253,7 @@ function formsHtml(e, pos, ctx) {
   const keys = ctx.learn.reg?.forms?.[pos]?.keys ?? [];
   return keys
     .filter((/** @type {string} */ k) => e.forms?.[k])
-    .map((/** @type {string} */ k) => `<span class="f"><span class="fk" lang="${ctx.know.tag}">${escapeHtml(ctx.label(`form.${k}`) ?? k)}</span> ${escapeHtml(formValue(k, e.forms[k], ctx))}</span>`)
+    .map((/** @type {string} */ k) => `<span class="f"><span class="fk"${ctx.know.attrs}>${escapeHtml(ctx.label(`form.${k}`) ?? k)}</span> ${escapeHtml(formValue(k, e.forms[k], ctx))}</span>`)
     .join(' · ');
 }
 
@@ -262,12 +274,12 @@ function examplesHtml(note, ctx) {
   return slots
     .slice(0, ctx.config.examples)
     .map(({ id, k, ex }) => {
-      let html = `<div class="ex-t" lang="${learn.tag}">${exampleHtml(ctx.learnText(ex.t), { furigana })}</div>`;
+      let html = `<div class="ex-t"${learn.attrs}>${exampleHtml(ctx.learnText(ex.t), { furigana })}</div>`;
       if (pinyin && ex.r) html += `<div class="ex-r">${escapeHtml(ex.r)}</div>`;
       const other = translate ? know.data.ex.get(id)?.[k] : undefined;
       if (other?.t && ex.p === undefined && other.p === undefined) {
         const plain = ctx.knowText(stripTarget(know.code === 'ja' ? stripFurigana(other.t) : other.t));
-        html += `<div class="ex-tr" lang="${know.tag}">${escapeHtml(plain)}</div>`;
+        html += `<div class="ex-tr"${know.attrs}>${escapeHtml(plain)}</div>`;
       }
       return `<div class="ex" data-concept="${escapeAttr(id)}">${html}</div>`;
     })

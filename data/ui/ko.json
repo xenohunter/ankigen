@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "어휘는 기계로 초안을 만들었고 일부만 검수되었습니다. 의견은 언제든 환영합니다.",
     "head.draftTopic": "어휘 초안",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "번역 대신 배우는 언어로 된 짧은 뜻풀이가 카드에 나옵니다. 그 언어로 쉬운 문장을 읽을 수 있을 때 좋아요.",
     "lang.loading": "단어를 불러오는 중({language})…",
     "lang.failed": "단어를 불러오지 못했습니다({language}). 연결을 확인하고 페이지를 새로고침해 주세요.",
+    "group.germanic": "게르만어파",
+    "group.asian": "동아시아·동남아시아",
+    "group.romance": "로망스어파",
+    "group.slavic": "슬라브어파",
+    "group.celtic": "켈트어파",
+    "group.other": "기타",
     "modules.hint": "원하는 주제를 고르세요. 나중에 더 추가할 수 있어요.",
     "modules.show": "{category} 모듈 보기",
     "modules.tally": "{total}개 중 {n}개",

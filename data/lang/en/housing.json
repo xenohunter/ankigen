@@ -25,5 +25,6 @@
 "word-jeonse-kr": {"gl":"jeonse: large lump-sum deposit in Korea instead of monthly rent"},
 "word-cold-rent-de": {"gl":"Kaltmiete: German rent without utilities"},
 "word-warm-rent-de": {"gl":"Warmmiete: German rent including utilities"},
-"word-communal-apartment-ru": {"gl":"kommunalka: Russian apartment shared by several families"}
+"word-communal-apartment-ru": {"gl":"kommunalka: Russian apartment shared by several families"},
+"word-council-tax-uk": {"gl":"council tax: UK local tax on homes, based on property value bands"}
 }

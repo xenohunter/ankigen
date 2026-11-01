@@ -133,8 +133,9 @@ test('the languages page lists the active languages, as src/languages-page.js tr
   assert.deepEqual(items.map((m) => m[1]), active, 'every active language, in their order');
   for (const [, code, item] of items) {
     const reg = registry.languages[code];
-    assert.match(item, new RegExp(`<img class="flag" src="img/flags/${reg.country.toLowerCase()}\\.svg"`), `${code}: its flag`);
-    assert.match(item, new RegExp(`<span class="lang-native" lang="${langTag(reg, code, 'cyrl')}">${reg.native}</span>`), `${code}: its native name`);
+    assert.match(item, new RegExp(`<img class="flag" src="img/flags/${(reg.flag ?? reg.country).toLowerCase()}\\.svg"`), `${code}: its flag`);
+    assert.ok(fs.existsSync(new URL(`img/flags/${(reg.flag ?? reg.country).toLowerCase()}.svg`, ROOT)), `${code}: its flag exists`);
+    assert.match(item, new RegExp(`<span class="lang-native" lang="${langTag(reg, code, 'cyrl')}"${reg.dir === 'rtl' ? ' dir="rtl"' : ''}>${reg.native}</span>`), `${code}: its native name`);
     assert.match(item, new RegExp(`<span class="lang-name"${reg.native === reg.name ? ' hidden' : ''}>${reg.name}</span>`), `${code}: its English name`);
     const extras = meta.fields.fields.filter((/** @type {any} */ d) => !d.fixed && Array.isArray(d.langs) && d.langs.includes(code)).map((/** @type {any} */ d) => d.label);
     assert.ok(item.includes(`<p class="lang-extras">${STRINGS['langs.extras'].replace('{fields}', extras.join(' · '))}</p>`), `${code}: the rows only some languages have`);

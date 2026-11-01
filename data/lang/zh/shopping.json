@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"化妆品","read":"huàzhuāngpǐn","alt":["彩妆"],"def":"人们涂在脸上或皮肤上、让自己更好看的东西。"},
 "word-small-size": {"w":"小号","read":"xiǎohào","def":"比中号小的衣服尺码。","hint":"尺码"},
 "word-medium-size": {"w":"中号","read":"zhōnghào","def":"介于小号和大号之间的衣服尺码。"},
-"word-large-size": {"w":"大号","read":"dàhào","def":"比中号大的衣服尺码。"}
+"word-large-size": {"w":"大号","read":"dàhào","def":"比中号大的衣服尺码。"},
+"word-vyshyvanka": {"gl":"维什万卡：乌克兰传统刺绣衬衫，也是民族象征"}
 }

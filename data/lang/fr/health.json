@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"lentilles de contact","g":"f.pl","alt":["lentilles"],"def":"Petits morceaux de plastique courbes qu'on porte sur les yeux pour mieux voir."},
 "word-wheelchair": {"w":"fauteuil roulant","g":"m","def":"Siège à grandes roues pour les personnes qui ne peuvent pas bien marcher."},
 "word-crutches": {"w":"béquilles","g":"f.pl","def":"Bâtons qu'on place sous les bras pour aider une personne blessée à marcher."},
-"word-patient-person": {"w":"patient","g":"m","forms":{"f":"patiente"},"def":"Personne qui reçoit des soins d'un médecin ou à l'hôpital.","hint":"hôpital"}
+"word-patient-person": {"w":"patient","g":"m","forms":{"f":"patiente"},"def":"Personne qui reçoit des soins d'un médecin ou à l'hôpital.","hint":"hôpital"},
+"word-doctor-declaration-ua": {"gl":"déclaration avec un médecin de famille en Ukraine, pour des soins gratuits"},
+"word-medical-card-ie": {"gl":"carte irlandaise du HSE donnant droit à des consultations et soins gratuits"},
+"word-nhs-uk": {"gl":"service de santé public écossais, surtout gratuit ; on s'inscrit chez un médecin généraliste"},
+"word-health-insurance-card-vn": {"gl":"thẻ bảo hiểm y tế : carte vietnamienne d'assurance maladie pour soins remboursés"}
 }

@@ -4,11 +4,12 @@
 // (tools/landing.mjs, made from those bundles):
 //   meta.json      languages, modules, fields, labels and version, as src/data/loader.js reads them
 //   concepts.json  { module: { id: concept } } in module tree order, without the authors' notes
-//   <code>.json    one per language with data: all its layers, { lang, ex, ipa, etym }, keyed by concept ID
+//   <code>.json    one per active language with data (not the staged ones): all its layers, { lang, ex, ipa, etym },
+//                  keyed by concept ID
 //   ui-<code>.json one per interface language but English: its texts, from data/ui and data/landing
 //                  (tools/ui-texts.mjs uiBundle)
 // and, outside the versioned bundles so that they stay cached across data versions, the pronunciation audio of each
-// language with clips (tools/lib/audio.mjs audioPacks): audio/<code>/<module>.<hash>.mp3 packs and an
+// active language with clips (tools/lib/audio.mjs audioPacks): audio/<code>/<module>.<hash>.mp3 packs and an
 // index.<hash>.json, which meta.json names (meta.audio). The site must stay under 900 MB (Pages allows 1 GB).
 //
 //   node tools/bundle.mjs [--site _site] [--data data] [--meta <data>/meta] [--limit-mb 900]
@@ -40,7 +41,7 @@ const MARKER = '.ankigen-site';
 export const SITE_LIMIT_MB = 900;
 
 /**
- * The site's pronunciation audio: for each language with current clips, its packs and index (site path → bytes or
+ * The site's pronunciation audio: for each active language with current clips, its packs and index (site path → bytes or
  * text), and what meta.json says of it: { voice, tier, index }.
  * @param {string} dataDir @param {string} metaDir
  */
@@ -57,7 +58,7 @@ export function makeAudio(dataDir, metaDir) {
   /** @type {Record<string, { clips: number, bytes: number }>} */
   const sizes = {};
   for (const [code, setting] of Object.entries(audio.languages)) {
-    if (!setting?.voice || !reg.languages.languages[code]) continue;
+    if (!setting?.voice || !reg.languages.active.includes(code)) continue; // a staged language is not on the site yet
     const packs = audioPacks(languageAudio(ctx, code), (id) => concepts.byId.get(id)?.module ?? '');
     if (!packs) continue;
     Object.assign(files, packs.files);
@@ -100,7 +101,7 @@ export function makeBundles(dataDir, metaDir) {
 
   /** @type {Record<string, unknown>} */
   const files = { 'meta.json': meta, 'concepts.json': concepts };
-  for (const code of Object.keys(meta.languages.languages)) {
+  for (const code of meta.languages.active) {
     /** @type {Record<string, Record<string, unknown>>} */
     const bundle = {};
     for (const layer of LAYERS) {

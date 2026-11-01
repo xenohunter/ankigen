@@ -1,0 +1,9 @@
+{
+"word-day-off": [{"t":"Holnap van a {szabadnapom}."},{"t":"Minden szerdán kivesz egy {szabadnapot}."},{"t":"Szükségem van egy {szabadnapra}, hogy pihenjek."}],
+"word-working-day": [{"t":"A hétfő a hét első {munkanapja}."},{"t":"Egy átlagos {munkanap} nyolc órás."},{"t":"A csomag három {munkanapon} belül megérkezik."}],
+"word-on-time": [{"t":"A vonat {időben} megérkezett."},{"t":"Kérlek, érkezz {időben} a megbeszélésre."},{"t":"Mindig {időben} fizeti a lakbért."}],
+"word-date-of-birth": [{"t":"Kérlek, írd be a {születési dátumodat} az űrlapra."},{"t":"A {születési dátumom} 1990. május 4."},{"t":"A nevemet és a {születési dátumomat} kérdezték."}],
+"word-time-zone": [{"t":"New York más {időzónában} van, mint Los Angeles."},{"t":"Nehezen aludtam, miután {időzónát} váltottam."},{"t":"Melyik {időzónában} vagy?"}],
+"word-o-clock": [{"t":"A film nyolc {órakor} kezdődik."},{"t":"A busz pontosan öt {órakor} indul.","p":0},{"t":"Tizenkét {órakor} ebédelünk."}],
+"word-lifetime": [{"t":"Az emberi {élettartam} ma hosszabb, mint régen.","p":0},{"t":"Egy ember {élettartama} alatt sok minden megváltozik.","p":0},{"t":"Egész {élettartamát} ugyanabban a városban töltötte."}]
+}

@@ -109,5 +109,6 @@
 "word-nationality": {"w":"nationality","alt":["citizenship"],"def":"the legal status of belonging to a particular country, shown by your passport"},
 "word-continent": {"w":"continent","def":"one of the seven very large areas of land on Earth"},
 "word-immigrant": {"w":"immigrant","def":"a person who has come to live permanently in a foreign country"},
-"word-homeland": {"w":"homeland","alt":["native country"],"def":"the country where a person was born and feels they belong"}
+"word-homeland": {"w":"homeland","alt":["native country"],"def":"the country where a person was born and feels they belong"},
+"word-gaeltacht": {"gl":"Gaeltacht: region of Ireland where Irish is the everyday community language"}
 }

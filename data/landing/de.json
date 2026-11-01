@@ -1,11 +1,11 @@
 {
-  "source": "c8187bc92e07",
+  "source": "53a63fcd959e",
   "texts": {
     "decks": "Decks",
     "cta": "Dein Deck erstellen",
     "ctaNote": "Öffnet AnkiGen mit diesem Sprachpaar und dem Modul „{module}“.",
     "deck": "Anki-Deck: {deck}",
-    "intro": "AnkiGen erstellt kostenlose Anki-Decks direkt in deinem Browser: Wörter nach Themen, jeweils mit Übersetzung und Beispielsätzen. Wähle die Module und aus, was jede Karte zeigt, und lade dann eine .apkg-Datei für Anki oder AnkiDroid herunter. Ohne Konto, ohne Installation.",
+    "intro": "AnkiGen erstellt kostenlose Anki-Decks direkt in deinem Browser: Wörter nach Themen, jeweils mit Übersetzung und Beispielsätzen. Wähle die Module und lege fest, was jede Karte zeigt, und lade dann eine .apkg-Datei für Anki oder AnkiDroid herunter. Ohne Konto, ohne Installation.",
     "cardsHeading": "Was die Karten zeigen",
     "cardsIntro": "Jede Karte zeigt das Wort, das du lernst, und seine Übersetzung. Du entscheidest, was sie sonst noch zeigt und auf welcher Seite:",
     "captions": "Kartenbeschriftungen wie „{caption}“ sind auf Deutsch.",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "Englisch",
-    "ru": "Russisch",
-    "sr": "Serbisch",
-    "ja": "Japanisch",
-    "zh": "Chinesisch",
     "de": "Deutsch",
-    "es": "Spanisch",
-    "pt": "Portugiesisch",
-    "pl": "Polnisch",
-    "ko": "Koreanisch",
     "nl": "Niederländisch",
+    "sv": "Schwedisch",
+    "zh": "Chinesisch",
+    "ja": "Japanisch",
+    "vi": "Vietnamesisch",
+    "ko": "Koreanisch",
+    "es": "Spanisch",
     "fr": "Französisch",
-    "hy": "Armenisch",
+    "pt": "Portugiesisch",
+    "it": "Italienisch",
+    "ru": "Russisch",
+    "pl": "Polnisch",
+    "uk": "Ukrainisch",
+    "sr": "Serbisch",
+    "ga": "Irisch",
+    "gd": "Schottisch-Gälisch",
+    "ar": "Arabisch",
     "tr": "Türkisch",
-    "el": "Griechisch"
+    "el": "Griechisch",
+    "hu": "Ungarisch",
+    "hy": "Armenisch"
   },
   "categories": {
     "foundations": "Grundlagen",
@@ -206,13 +214,17 @@
       "label": "Betonungszeichen",
       "help": "Markiert den betonten Vokal (молоко́). Gilt für das Wort, seine Formen und das hervorgehobene Wort in Beispielen."
     },
+    "vowels": {
+      "label": "Vokalzeichen",
+      "help": "Die Kurzvokalzeichen (Harakat) über und unter den Buchstaben: كِتَاب statt كتاب. Gilt für das Wort, seine Formen und das hervorgehobene Wort in Beispielen."
+    },
     "reading": {
       "label": "Lesung (Furigana)",
       "help": "Kana-Lesung über den Kanji. Steuert auch die Furigana in Beispielsätzen."
     },
     "romanization": {
       "label": "Umschrift",
-      "help": "Das Wort in lateinischen Buchstaben: Hepburn (Japanisch), Pinyin (Chinesisch), Revised Romanization (Koreanisch), Transliteration (Russisch, Armenisch, Griechisch). Beim Chinesischen steuert sie auch das Pinyin in Beispielsätzen."
+      "help": "Das Wort in lateinischen Buchstaben: Hepburn (Japanisch), Pinyin (Chinesisch), Revised Romanization (Koreanisch), ALA-LC (Arabisch), Transliteration (Russisch, Ukrainisch, Armenisch, Griechisch). Beim Chinesischen steuert sie auch das Pinyin in Beispielsätzen."
     },
     "otherScript": {
       "label": "Andere Schrift",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Zählwort",
-      "help": "Das Zählwort, das beim Zählen dieses Nomens verwendet wird (一本书, 鉛筆を三本)."
+      "help": "Das Zählwort, das beim Zählen dieses Nomens verwendet wird (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Antwort eintippen",
-      "help": "Auf umgekehrten Karten tippst du das Wort ein, statt es nur im Kopf abzurufen. Anki vergleicht deine Schreibweise mit der Hauptform (Artikel eingeschlossen, Betonungszeichen ignoriert)."
+      "help": "Auf umgekehrten Karten tippst du das Wort ein, statt es nur im Kopf abzurufen. Anki vergleicht deine Schreibweise mit der Hauptform (Artikel eingeschlossen, Betonungs- und Vokalzeichen ignoriert)."
     },
     "srScript": {
       "label": "Serbische Schrift",
@@ -285,26 +297,19 @@
       "lede": "Ein kostenloses Anki-Deck mit englischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
       "others": "Englisch für Sprecher anderer Sprachen"
     },
-    "ru": {
-      "name": "Russisch für Deutschsprachige",
-      "title": "Russisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Russisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit russischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Russisch für Sprecher anderer Sprachen"
+    "nl": {
+      "name": "Niederländisch für Deutschsprachige",
+      "title": "Niederländisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Niederländisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit niederländischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Niederländisch für Sprecher anderer Sprachen"
     },
-    "sr": {
-      "name": "Serbisch für Deutschsprachige",
-      "title": "Serbisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Serbisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit serbischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Serbisch für Sprecher anderer Sprachen"
-    },
-    "ja": {
-      "name": "Japanisch für Deutschsprachige",
-      "title": "Japanisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Japanisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit japanischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Japanisch für Sprecher anderer Sprachen"
+    "sv": {
+      "name": "Schwedisch für Deutschsprachige",
+      "title": "Schwedisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Schwedisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit schwedischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Schwedisch für Sprecher anderer Sprachen"
     },
     "zh": {
       "name": "Chinesisch für Deutschsprachige",
@@ -313,26 +318,19 @@
       "lede": "Ein kostenloses Anki-Deck mit chinesischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
       "others": "Chinesisch für Sprecher anderer Sprachen"
     },
-    "es": {
-      "name": "Spanisch für Deutschsprachige",
-      "title": "Spanisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Spanisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit spanischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Spanisch für Sprecher anderer Sprachen"
+    "ja": {
+      "name": "Japanisch für Deutschsprachige",
+      "title": "Japanisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Japanisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit japanischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Japanisch für Sprecher anderer Sprachen"
     },
-    "pt": {
-      "name": "Portugiesisch für Deutschsprachige",
-      "title": "Portugiesisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Portugiesisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit portugiesischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Portugiesisch für Sprecher anderer Sprachen"
-    },
-    "pl": {
-      "name": "Polnisch für Deutschsprachige",
-      "title": "Polnisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Polnisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit polnischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Polnisch für Sprecher anderer Sprachen"
+    "vi": {
+      "name": "Vietnamesisch für Deutschsprachige",
+      "title": "Vietnamesisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Vietnamesisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit vietnamesischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Vietnamesisch für Sprecher anderer Sprachen"
     },
     "ko": {
       "name": "Koreanisch für Deutschsprachige",
@@ -341,12 +339,12 @@
       "lede": "Ein kostenloses Anki-Deck mit koreanischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
       "others": "Koreanisch für Sprecher anderer Sprachen"
     },
-    "nl": {
-      "name": "Niederländisch für Deutschsprachige",
-      "title": "Niederländisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Niederländisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit niederländischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Niederländisch für Sprecher anderer Sprachen"
+    "es": {
+      "name": "Spanisch für Deutschsprachige",
+      "title": "Spanisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Spanisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit spanischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Spanisch für Sprecher anderer Sprachen"
     },
     "fr": {
       "name": "Französisch für Deutschsprachige",
@@ -355,12 +353,68 @@
       "lede": "Ein kostenloses Anki-Deck mit französischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
       "others": "Französisch für Sprecher anderer Sprachen"
     },
-    "hy": {
-      "name": "Armenisch für Deutschsprachige",
-      "title": "Armenisch-Anki-Deck für Deutschsprachige — AnkiGen",
-      "description": "Kostenloses Anki-Deck Armenisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
-      "lede": "Ein kostenloses Anki-Deck mit armenischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
-      "others": "Armenisch für Sprecher anderer Sprachen"
+    "pt": {
+      "name": "Portugiesisch für Deutschsprachige",
+      "title": "Portugiesisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Portugiesisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit portugiesischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Portugiesisch für Sprecher anderer Sprachen"
+    },
+    "it": {
+      "name": "Italienisch für Deutschsprachige",
+      "title": "Italienisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Italienisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit italienischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Italienisch für Sprecher anderer Sprachen"
+    },
+    "ru": {
+      "name": "Russisch für Deutschsprachige",
+      "title": "Russisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Russisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit russischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Russisch für Sprecher anderer Sprachen"
+    },
+    "pl": {
+      "name": "Polnisch für Deutschsprachige",
+      "title": "Polnisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Polnisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit polnischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Polnisch für Sprecher anderer Sprachen"
+    },
+    "uk": {
+      "name": "Ukrainisch für Deutschsprachige",
+      "title": "Ukrainisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Ukrainisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit ukrainischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Ukrainisch für Sprecher anderer Sprachen"
+    },
+    "sr": {
+      "name": "Serbisch für Deutschsprachige",
+      "title": "Serbisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Serbisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit serbischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Serbisch für Sprecher anderer Sprachen"
+    },
+    "ga": {
+      "name": "Irisch für Deutschsprachige",
+      "title": "Irisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Irisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit irischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Irisch für Sprecher anderer Sprachen"
+    },
+    "gd": {
+      "name": "Schottisch-Gälisch für Deutschsprachige",
+      "title": "Schottisch-Gälisch-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Schottisch-Gälisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit schottisch-gälischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Schottisch-Gälisch für Sprecher anderer Sprachen"
+    },
+    "ar": {
+      "name": "Arabisch für Deutschsprachige",
+      "title": "Arabisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Arabisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit arabischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Arabisch für Sprecher anderer Sprachen"
     },
     "tr": {
       "name": "Türkisch für Deutschsprachige",
@@ -375,6 +429,20 @@
       "description": "Kostenloses Anki-Deck Griechisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
       "lede": "Ein kostenloses Anki-Deck mit griechischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
       "others": "Griechisch für Sprecher anderer Sprachen"
+    },
+    "hu": {
+      "name": "Ungarisch für Deutschsprachige",
+      "title": "Ungarisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Ungarisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit ungarischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Ungarisch für Sprecher anderer Sprachen"
+    },
+    "hy": {
+      "name": "Armenisch für Deutschsprachige",
+      "title": "Armenisch-Anki-Deck für Deutschsprachige — AnkiGen",
+      "description": "Kostenloses Anki-Deck Armenisch für Deutschsprachige: {words} und {modules}, mit Übersetzungen und Beispielen, für Anki und AnkiDroid.",
+      "lede": "Ein kostenloses Anki-Deck mit armenischen Wörtern und deutschen Übersetzungen, direkt im Browser erstellt.",
+      "others": "Armenisch für Sprecher anderer Sprachen"
     }
   },
   "plural": {

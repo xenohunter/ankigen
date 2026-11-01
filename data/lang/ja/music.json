@@ -45,5 +45,7 @@
 "word-whistle": {"w":"口笛を吹く","read":"くちぶえをふく","rom":"kuchibue o fuku","forms":{"class":"godan","masu":"口笛を吹きます","te":"口笛を吹いて","nai":"口笛を吹かない"},"def":"唇をすぼめて息を出し、高い音を出す。"},
 "word-hum": {"w":"鼻歌を歌う","read":"はなうたをうたう","rom":"hanauta o utau","alt":["ハミングする"],"forms":{"class":"godan","masu":"鼻歌を歌います","te":"鼻歌を歌って","nai":"鼻歌を歌わない"},"def":"口を閉じたまま、小さな声で曲を口ずさむ。"},
 "word-vinyl-record": {"w":"レコード","rom":"rekōdo","alt":["アナログ盤"],"mw":"枚","def":"針を当てると音楽が流れる、平たい黒い円盤。"},
-"word-instrument": {"w":"楽器","read":"がっき","rom":"gakki","def":"弾いたり吹いたりたたいたりして、音楽を奏でる道具。"}
+"word-instrument": {"w":"楽器","read":"がっき","rom":"gakki","def":"弾いたり吹いたりたたいたりして、音楽を奏でる道具。"},
+"word-ceili": {"gl":"ケーリー：伝統的なアイルランドの音楽、歌、集団ダンスを楽しむ社交の集まり"},
+"word-mod-gaelic": {"gl":"モード：ゲール語の歌、音楽、詩、スピーチを競うスコットランドの祭り"}
 }

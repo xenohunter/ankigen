@@ -84,5 +84,9 @@
 "word-contact-lenses": {"pos":"noun","mods":["health"],"note":"contact lenses"},
 "word-wheelchair": {"pos":"noun","mods":["health"],"emoji":"♿","note":"wheelchair"},
 "word-crutches": {"pos":"noun","mods":["health"],"note":"crutches"},
-"word-patient-person": {"pos":"noun","mods":["health"],"rel":["word-patient"],"note":"person receiving medical care (not the adjective)"}
+"word-patient-person": {"pos":"noun","mods":["health"],"rel":["word-patient"],"note":"person receiving medical care (not the adjective)"},
+"word-doctor-declaration-ua": {"pos":"noun","mods":["health","residence"],"note":"Ukraine: декларація з лікарем, the agreement signed with a family doctor to receive free primary care","only":["uk"]},
+"word-medical-card-ie": {"pos":"noun","mods":["health"],"note":"Ireland: medical card, the HSE card giving eligible people free GP visits and many health services","only":["ga"]},
+"word-nhs-uk": {"pos":"noun","mods":["health"],"note":"UK: the National Health Service (NHS Scotland), public health care mostly free at the point of use; you register with a GP","only":["gd"]},
+"word-health-insurance-card-vn": {"pos":"noun","mods":["health","residence"],"note":"Vietnam: thẻ bảo hiểm y tế (BHYT), the national health insurance card used for reimbursed care at public hospitals and clinics","only":["vi"]}
 }

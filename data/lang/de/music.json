@@ -45,5 +45,7 @@
 "word-whistle": {"w":"pfeifen","forms":{"3sg":"pfeift","pret":"pfiff","pp":"hat gepfiffen"},"def":"Einen hohen Ton erzeugen, indem man Luft durch die gespitzten Lippen bläst."},
 "word-hum": {"w":"summen","forms":{"3sg":"summt","pret":"summte","pp":"hat gesummt"},"def":"Eine Melodie mit geschlossenem Mund singen."},
 "word-vinyl-record": {"w":"Schallplatte","g":"f","alt":["Vinylplatte"],"forms":{"pl":"Schallplatten"},"def":"Flache schwarze Scheibe, die Musik abspielt, wenn eine Nadel darübergleitet."},
-"word-instrument": {"w":"Instrument","g":"n","alt":["Musikinstrument"],"forms":{"pl":"Instrumente"},"def":"Gegenstand wie Gitarre oder Klavier, auf dem man spielt, um Töne zu erzeugen."}
+"word-instrument": {"w":"Instrument","g":"n","alt":["Musikinstrument"],"forms":{"pl":"Instrumente"},"def":"Gegenstand wie Gitarre oder Klavier, auf dem man spielt, um Töne zu erzeugen."},
+"word-ceili": {"gl":"Céilí: irisches Gemeinschaftsfest mit traditioneller Musik, Gesang und Gruppentanz"},
+"word-mod-gaelic": {"gl":"Mòd: schottisch-gälisches Festival für Gesang, Musik, Dichtung und Sprache"}
 }

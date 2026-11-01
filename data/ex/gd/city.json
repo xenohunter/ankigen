@@ -1,0 +1,22 @@
+{
+"word-town-hall": [{"t":"Bidh a' bhainis aig {talla a' bhaile} Disathairne."},{"t":"Gheibh thu an fhoirm aig {talla a' bhaile}."},{"t":"Tha am pròbhaist ag obair ann an {talla a' bhaile}."}],
+"word-fire-station": [{"t":"Tha an {stèisean smàlaidh} ri taobh na sgoile."},{"t":"Thadhail a' chlann air an {stèisean smàlaidh} Dihaoine."},{"t":"Tha {stèisean smàlaidh} ùr anns a' bhaile againn."}],
+"word-mosque": [{"t":"Bidh iad a' dol dhan {mhosg} a h-uile Dihaoine."},{"t":"Tha mullach cruinn gorm brèagha air a' {mhosg}."},{"t":"Thadhail sinn air {mosg} ainmeil air an turas againn."}],
+"word-synagogue": [{"t":"Tha an {t-sionagog} aig oisean na Prìomh Shràid."},{"t":"Bidh a theaghlach a' dol dhan {t-sionagog} Disathairne."},{"t":"Chaidh an {t-sionagog} aosta a thogail ann an 1890."}],
+"word-cathedral": [{"t":"Is i a' {chathair-eaglais} an togalach as sine sa bhaile-mhòr."},{"t":"Dhìrich sinn tùr na {cathrach-eaglais}."},{"t":"Thàinig na ceudan dhan {chathair-eaglais} airson a' chuirm-chiùil."}],
+"word-laundromat": [{"t":"Tha an inneal-nighe agam briste, mar sin thèid mi dhan {taigh-nighe}."},{"t":"Tha {taigh-nighe} tarsainn na sràide."},{"t":"Thoir leat beagan bhonn dhan {taigh-nighe}."}],
+"word-art-gallery": [{"t":"Chuir sinn seachad an fheasgar aig a' {ghailearaidh-ealain}."},{"t":"Tha an {gailearaidh-ealain} an-asgaidh Didòmhnaich."},{"t":"Tha dealbh aice ann an {gailearaidh-ealain} beag ann am meadhan a' bhaile."}],
+"word-nightclub": [{"t":"Dhanns iad fad na h-oidhche aig an {club-oidhche}."},{"t":"Feumaidh tu a bhith os cionn fichead 's a h-aon airson a dhol a-steach dhan {chlub-oidhche}."},{"t":"Fosglaidh an {club-oidhche} aig deich agus dùinidh e aig ceithir."}],
+"word-old-town": [{"t":"Choisich sinn tron {t-seann bhaile} an dèidh lòin."},{"t":"Tha sràidean cumhang is cafaidhean beaga anns an {t-seann bhaile}."},{"t":"Bidh mòran luchd-turais a' fuireach anns an {t-seann bhaile}."}],
+"word-skyscraper": [{"t":"Chì thu a' bhaile-mhòr gu lèir bhon {sgrìobadair-speur} sin."},{"t":"Tha iad a' togail {sgrìobadair-speur} ùr ann am meadhan a' bhaile."},{"t":"Tha an oifis agam air an dà fhicheadamh làr de {sgrìobadair-speur}."}],
+"word-apartment-block": [{"t":"Tha sinn a' fuireach ann am {bloc-flataichean} mòr faisg air a' phàirc."},{"t":"Tha àrdaichear anns a' {bhloc-flataichean}."},{"t":"Tha fichead teaghlach anns a' {bhloc-flataichean} seo."}],
+"word-avenue": [{"t":"Tha an taigh-òsta air {sràid leathann} le mòran chraobhan."},{"t":"Tionndaidh clì aig ceann na {sràide leathainn}."},{"t":"Tha caraid agam a' fuireach air {sràid leathann} faisg air a' chladach.","p":0}],
+"word-pedestrian-zone": [{"t":"Tha meadhan a' bhaile na {raon coiseachd}."},{"t":"Chan fhaod càraichean a dhol a-steach dhan {raon coiseachd}."},{"t":"Bha cofaidh againn anns an {raon coiseachd}."}],
+"word-bench": [{"t":"Suidhidh sinn air a' {bheing} sin airson mionaid."},{"t":"Bha seann duine a' leughadh air {being} sa phàirc."},{"t":"Bha a' {bheing} fliuch on uisge."}],
+"word-fountain": [{"t":"Bha a' chlann a' cluich faisg air an {fhuaran}."},{"t":"Tha {fuaran} brèagha anns a' phrìomh cheàrnag."},{"t":"Thilg sinn bonn-airgid dhan {fhuaran}."}],
+"word-opposite": [{"t":"Tha am banca {mu choinneimh} oifis a' phuist."},{"t":"Shuidh i {mu mo choinneimh} aig a' bhòrd."},{"t":"Tha taigh-fuine {mu choinneimh} an taighe againn."}],
+"word-city-block": [{"t":"Tha a' bhùth dà {bhloc} às seo."},{"t":"Choisich sinn timcheall a' {bhloc} airson beagan èadhair."},{"t":"Tha stad a' bhus air an ath {bhloc}."}],
+"word-tourist-information": [{"t":"Faighnichidh sinn aig an {ionad fiosrachaidh luchd-turais} airson mapa."},{"t":"Tha an {ionad fiosrachaidh luchd-turais} ri taobh stèisean an trèana."},{"t":"Dùinidh an {ionad fiosrachaidh luchd-turais} aig còig."}],
+"word-landmark": [{"t":"'S e an tùr an {comharra-tìre} as ainmeile sa bhaile-mhòr."},{"t":"Cleachd an eaglais mhòr sin mar {chomharra-tìre}."},{"t":"Thog sinn dealbhan de gach {comharra-tìre} air an turas."}],
+"word-outskirts": [{"t":"Tha iad a' fuireach air {iomall a' bhaile}."},{"t":"Tha am port-adhair air {iomall a' bhaile}."},{"t":"Tha taighean nas saoire air {iomall a' bhaile}."}]
+}

@@ -38,5 +38,6 @@
 "word-cosmetics": {"w":"화장품","rom":"hwajangpum","hanja":"化粧品","def":"얼굴이나 피부를 예쁘게 보이려고 바르는 물건."},
 "word-small-size": {"w":"스몰","rom":"seumol","forms":{"haeyo":"스몰이에요","past":"스몰이었어요"},"def":"옷 치수에서 중간보다 작은 크기."},
 "word-medium-size": {"w":"미디엄","rom":"midieom","forms":{"haeyo":"미디엄이에요","past":"미디엄이었어요"},"def":"옷 치수에서 작은 것과 큰 것의 중간 크기."},
-"word-large-size": {"w":"라지","rom":"raji","forms":{"haeyo":"라지예요","past":"라지였어요"},"def":"옷 치수에서 중간보다 큰 크기."}
+"word-large-size": {"w":"라지","rom":"raji","forms":{"haeyo":"라지예요","past":"라지였어요"},"def":"옷 치수에서 중간보다 큰 크기."},
+"word-vyshyvanka": {"gl":"비시반카: 전통 자수가 놓인 우크라이나의 민속 셔츠, 민족의 상징"}
 }

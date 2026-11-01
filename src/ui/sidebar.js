@@ -81,9 +81,9 @@ export function mountCardList(root, app, { isActive, report, onPick }) {
     const pick = h(
       'button',
       { type: 'button', class: 'cl-pick', tabindex: '-1', 'data-concept': note.conceptIds.join(','), 'data-word': word },
-      h('span', { class: 'cl-word', lang: ctx.learn.tag, 'data-field': 'Word' }, word),
-      disambig && h('span', { class: 'cl-dis', lang: ctx.know.tag }, disambig),
-      h('span', { class: 'cl-tr', lang: ctx.know.tag, 'data-field': 'Translation' }, translation),
+      h('span', { class: 'cl-word', lang: ctx.learn.tag, dir: ctx.learn.dir, 'data-field': 'Word' }, word),
+      disambig && h('span', { class: 'cl-dis', lang: ctx.know.tag, dir: ctx.know.dir }, disambig),
+      h('span', { class: 'cl-tr', lang: ctx.know.tag, dir: ctx.know.dir, 'data-field': 'Translation' }, translation),
     );
     const flag = h('button', { type: 'button', class: 'cl-report', tabindex: '-1', 'aria-label': t('list.report', { word }), title: t('list.reportTitle') }, icon('flag'));
     return h('div', { class: 'cl-row', role: 'listitem', 'data-key': note.key }, pick, flag);

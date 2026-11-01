@@ -109,5 +109,6 @@
 "word-nationality": {"w":"uyruk","alt":["milliyet","vatandaşlık"],"forms":{"acc":"uyruğu","pl":"uyruklar"},"def":"Bir kişinin hukuken bağlı olduğu devlet; pasaportta yazar."},
 "word-continent": {"w":"kıta","forms":{"acc":"kıtayı","pl":"kıtalar"},"def":"Yeryüzündeki yedi büyük kara parçasından her biri."},
 "word-immigrant": {"w":"göçmen","forms":{"acc":"göçmeni","pl":"göçmenler"},"def":"Başka bir ülkede kalıcı olarak yaşamak için oraya gelen kişi."},
-"word-homeland": {"w":"vatan","alt":["anavatan"],"forms":{"acc":"vatanı","pl":"vatanlar","poss3":"vatanı"},"def":"Bir insanın doğduğu ve kendini ait hissettiği ülke."}
+"word-homeland": {"w":"vatan","alt":["anavatan"],"forms":{"acc":"vatanı","pl":"vatanlar","poss3":"vatanı"},"def":"Bir insanın doğduğu ve kendini ait hissettiği ülke."},
+"word-gaeltacht": {"gl":"Gaeltacht: İrlanda'da İrlandaca'nın günlük halk dili olduğu bölge"}
 }

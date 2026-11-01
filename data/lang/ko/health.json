@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"콘택트렌즈","rom":"kontaekteurenjeu","alt":["렌즈"],"def":"눈에 직접 끼워 잘 보이게 하는 작고 둥근 플라스틱 조각."},
 "word-wheelchair": {"w":"휠체어","rom":"hwilcheeo","def":"잘 걷지 못하는 사람이 타는, 큰 바퀴가 달린 의자."},
 "word-crutches": {"w":"목발","rom":"mokbal","def":"다친 사람이 겨드랑이에 끼고 걷는 지팡이."},
-"word-patient-person": {"w":"환자","rom":"hwanja","hanja":"患者","def":"병원에서 치료를 받는 사람."}
+"word-patient-person": {"w":"환자","rom":"hwanja","hanja":"患者","def":"병원에서 치료를 받는 사람."},
+"word-doctor-declaration-ua": {"gl":"선언서: 무료 1차 진료를 위해 가정의와 맺는 우크라이나의 계약"},
+"word-medical-card-ie": {"gl":"메디컬 카드: 아일랜드에서 무료 일반의 진료와 보건 서비스를 받게 해 주는 카드"},
+"word-nhs-uk": {"gl":"NHS: 영국의 공공 의료 서비스, 이용 시 대부분 무료이며 일반의에게 등록함"},
+"word-health-insurance-card-vn": {"gl":"건강보험증: 진료비를 환급받을 수 있는 베트남의 건강보험 카드"}
 }

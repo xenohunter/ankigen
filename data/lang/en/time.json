@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"date of birth","alt":["birth date","birthdate"],"def":"the day, month and year when a person was born"},
 "word-time-zone": {"w":"time zone","def":"an area of the world where all clocks show the same hour"},
 "word-o-clock": {"w":"o'clock","def":"a word used after a number to say the exact hour on a clock"},
-"word-lifetime": {"w":"lifetime","alt":["life span"],"def":"the whole period during which a person lives"}
+"word-lifetime": {"w":"lifetime","alt":["life span"],"def":"the whole period during which a person lives"},
+"word-hogmanay": {"gl":"Hogmanay: Scottish New Year's Eve celebration with first-footing and Auld Lang Syne"}
 }

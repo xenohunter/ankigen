@@ -1,16 +1,19 @@
 // @ts-check
-// Search folding. Index strings and queries go through the same fold: lower case; accents, stress marks
-// and pinyin tones removed; katakana → hiragana; punctuation → spaces. The index adds the variants that
-// let one query match several spellings (Serbian in both scripts, romaji from kana); see searchKey().
+// Search folding. Index strings and queries go through the same fold: lower case; accents, stress marks,
+// Arabic vowel marks and pinyin tones removed; katakana → hiragana; punctuation → spaces. The index adds the
+// variants that let one query match several spellings (Serbian in both scripts, romaji from kana); see searchKey().
 
 const VOICED_KANA = /[\u3099\u309A]/; // dakuten/handakuten survive folding (が ≠ か)
 /** @type {Record<string, string>} */
-const LETTERS = { ß: 'ss', æ: 'ae', œ: 'oe', ø: 'o', ł: 'l', đ: 'dj', ı: 'i', ς: 'σ' };
+const LETTERS = { ß: 'ss', æ: 'ae', œ: 'oe', ø: 'o', ł: 'l', đ: 'dj', ı: 'i', ς: 'σ', ى: 'ي', ة: 'ه', ـ: '' };
 
-/** Remove Russian stress marks (U+0301) and keep everything else. @param {string} text */
+/** Remove Russian and Ukrainian stress marks (U+0301) and keep everything else. @param {string} text */
 export function stripStress(text) {
   return text.normalize('NFD').replace(/\u0301/g, '').normalize('NFC');
 }
+
+/** Remove Arabic short-vowel marks (harakat, the superscript alef). @param {string} text */
+export const stripVowels = (text) => text.replace(/[\u064B-\u0652\u0670]/g, '');
 
 /** Katakana → hiragana, character by character. @param {string} text */
 export function toHiragana(text) {
@@ -24,7 +27,7 @@ export function fold(text) {
       .normalize('NFKD')
       .toLowerCase()
       .replace(/\p{M}/gu, (m) => (VOICED_KANA.test(m) ? m : ''))
-      .replace(/[ßæœøłđıς]/g, (c) => LETTERS[c]),
+      .replace(/[ßæœøłđıςىةـ]/g, (c) => LETTERS[c]),
   )
     .normalize('NFC')
     .replace(/[\p{P}\p{S}\s]+/gu, ' ')

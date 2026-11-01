@@ -45,5 +45,7 @@
 "word-whistle": {"w":"gwizdać","forms":{"aspect":"ipf","pair":"zagwizdać","1sg":"gwiżdżę","2sg":"gwiżdżesz","past":"gwizdał"},"def":"Wydawać wysoki dźwięk, dmuchając powietrzem przez wargi."},
 "word-hum": {"w":"nucić","forms":{"aspect":"ipf","pair":"zanucić","1sg":"nucę","2sg":"nucisz","past":"nucił"},"def":"Śpiewać melodię z zamkniętymi ustami."},
 "word-vinyl-record": {"w":"płyta winylowa","g":"f","alt":["winyl"],"forms":{"gen":"płyty winylowej","pl":"płyty winylowe"},"def":"Płaski czarny krążek, z którego gra muzyka, gdy po nim przesuwa się igła."},
-"word-instrument": {"w":"instrument muzyczny","g":"m","alt":["instrument"],"forms":{"gen":"instrumentu muzycznego","pl":"instrumenty muzyczne"},"def":"Przedmiot, np. gitara albo pianino, na którym się gra, żeby wydobywać dźwięki."}
+"word-instrument": {"w":"instrument muzyczny","g":"m","alt":["instrument"],"forms":{"gen":"instrumentu muzycznego","pl":"instrumenty muzyczne"},"def":"Przedmiot, np. gitara albo pianino, na którym się gra, żeby wydobywać dźwięki."},
+"word-ceili": {"gl":"céilí: irlandzkie spotkanie z tradycyjną muzyką, śpiewem i tańcami grupowymi"},
+"word-mod-gaelic": {"gl":"mòd: szkocki festiwal pieśni, muzyki, poezji i mowy gaelickiej"}
 }

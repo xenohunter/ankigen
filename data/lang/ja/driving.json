@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV：スペインで義務づけられている、車の技術検査"},
 "word-apk-nl": {"gl":"APK：オランダの、車の定期的な安全検査"},
 "word-kteo-gr": {"gl":"KTEO：ギリシャの、車の技術検査センター"},
-"word-muayene-tr": {"gl":"araç muayenesi：トルコの、車の定期検査"}
+"word-muayene-tr": {"gl":"araç muayenesi：トルコの、車の定期検査"},
+"word-revisione-it": {"gl":"レヴィジオーネ：イタリアで義務づけられている定期的な車両検査"},
+"word-besiktning-se": {"gl":"ベシクトニング：スウェーデンで認定の検査場で受ける義務的な車検"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS：ウクライナの運転免許・車両登録・試験を扱う内務省の窓口"},
+"word-nct-ie": {"gl":"NCT：アイルランドで義務づけられている乗用車の定期安全検査"},
+"word-mot-uk": {"gl":"MOT：イギリスで、初度登録から三年を超える車に毎年義務づけられる車検"},
+"word-muszaki-vizsga-hu": {"gl":"ミュサキ・ヴィジュガ：ハンガリーの定期車検、ナンバープレートのステッカーで示される"},
+"word-dang-kiem-vn": {"gl":"ダンキエム：ベトナムで義務づけられている車の技術・排ガスの定期検査"}
 }

@@ -18,5 +18,6 @@
 "word-city-block": {"w":"街区","read":"jiēqū","mw":"个","def":"四面都有街道围着的一片建筑区域。"},
 "word-tourist-information": {"w":"旅游咨询处","read":"lǚyóu zīxúnchù","mw":"个","alt":["游客中心"],"def":"来玩的人可以在这里拿地图、询问当地情况的地方。"},
 "word-landmark": {"w":"地标","read":"dìbiāo","mw":"个","alt":["标志性建筑"],"def":"因为很有名、容易认出而被人记住的建筑或地方。"},
-"word-outskirts": {"w":"郊区","read":"jiāoqū","mw":"个","alt":["市郊"],"def":"城市里离中心最远的地区。","hint":"边缘"}
+"word-outskirts": {"w":"郊区","read":"jiāoqū","mw":"个","alt":["市郊"],"def":"城市里离中心最远的地区。","hint":"边缘"},
+"word-passeggiata": {"gl":"帕塞贾塔：意大利人傍晚或周日悠闲地散步，既看人也被人看"}
 }

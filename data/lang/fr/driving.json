@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV : contrôle technique obligatoire des véhicules en Espagne"},
 "word-apk-nl": {"gl":"APK : contrôle technique périodique néerlandais des véhicules"},
 "word-kteo-gr": {"gl":"KTEO : centre grec de contrôle technique des véhicules"},
-"word-muayene-tr": {"gl":"araç muayenesi : contrôle technique périodique des véhicules en Turquie"}
+"word-muayene-tr": {"gl":"araç muayenesi : contrôle technique périodique des véhicules en Turquie"},
+"word-revisione-it": {"gl":"revisione : contrôle technique périodique obligatoire des véhicules en Italie"},
+"word-besiktning-se": {"gl":"besiktning : contrôle technique obligatoire des véhicules en Suède, dans un centre agréé"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS : centre ukrainien pour permis de conduire, immatriculation et examens"},
+"word-nct-ie": {"gl":"NCT : contrôle technique obligatoire des voitures en Irlande"},
+"word-mot-uk": {"gl":"MOT : contrôle technique annuel britannique des véhicules de plus de trois ans"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga : contrôle technique hongrois, attesté par une vignette sur la plaque"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm : contrôle technique et des émissions obligatoire des véhicules au Vietnam"}
 }

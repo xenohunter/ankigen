@@ -109,5 +109,6 @@
 "word-nationality": {"w":"nationaliteit","g":"c","forms":{"pl":"nationaliteiten"},"def":"De wettelijke band met een bepaald land, die in je paspoort staat."},
 "word-continent": {"w":"werelddeel","g":"n","alt":["continent"],"forms":{"pl":"werelddelen"},"def":"Een van de zeer grote stukken land op aarde, zoals Europa of Azië."},
 "word-immigrant": {"w":"immigrant","g":"c","forms":{"pl":"immigranten","f":"immigrante"},"def":"Iemand die zich blijvend in een ander land vestigt om daar te wonen."},
-"word-homeland": {"w":"vaderland","g":"n","alt":["geboorteland"],"forms":{"pl":"vaderlanden"},"def":"Het land waar iemand geboren is en waar hij of zij zich thuis voelt."}
+"word-homeland": {"w":"vaderland","g":"n","alt":["geboorteland"],"forms":{"pl":"vaderlanden"},"def":"Het land waar iemand geboren is en waar hij of zij zich thuis voelt."},
+"word-gaeltacht": {"gl":"Gaeltacht: Ierse streek waar Iers de gewone omgangstaal is"}
 }

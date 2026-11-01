@@ -5,13 +5,13 @@
 [![Liberapay](https://img.shields.io/badge/Liberapay-support-F6C915?logo=liberapay&logoColor=black)](https://liberapay.com/blisstweeting)
 [![ENS](https://img.shields.io/badge/ENS-support-0080BC?logo=ens&logoColor=white)](https://etherscan.io/address/0x567ccDD062Ec253293B2A3C0459A86c00CdDfDbe)
 
-Free Anki vocabulary decks in 15 languages, built in your browser: **https://xenohunter.github.io/ankigen/**
+Free Anki vocabulary decks in 23 languages, built in your browser: **https://xenohunter.github.io/ankigen/**
 
 ![AnkiGen](docs/screenshot.png)
 
 Pick the language you're learning and one you speak (or same-language definitions), choose topic modules and card fields, and download an `.apkg` for Anki or AnkiDroid. Nothing is uploaded. Decks are deterministic: a newer download imports over the old deck and keeps your review history.
 
-Languages: English, Russian, Serbian, Japanese, Chinese, German, Spanish, Portuguese, Polish, Korean, Dutch, French, Armenian, Turkish and Greek. Next: Italian, Irish, Scottish Gaelic and Swedish.
+Languages: English, German, Dutch, Swedish; Chinese, Japanese, Vietnamese, Korean; Spanish, French, Portuguese, Italian; Russian, Polish, Ukrainian, Serbian; Irish, Scottish Gaelic; Arabic, Turkish, Greek, Hungarian and Armenian. The page itself speaks all of them, Arabic right to left.
 
 The vocabulary is drafted by an AI model and partly reviewed by people. Spotted an error? Select it on a card and press Ctrl+Enter, or use the Feedback button.
 

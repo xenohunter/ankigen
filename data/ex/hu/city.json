@@ -1,0 +1,22 @@
+{
+"word-town-hall": [{"t":"Az esküvő szombaton a {városházán} lesz."},{"t":"Az űrlapot a {városházán} kaphatod meg."},{"t":"A polgármester a {városházán} dolgozik."}],
+"word-fire-station": [{"t":"A {tűzoltóság} az iskola mellett van."},{"t":"A gyerekek pénteken meglátogatták a {tűzoltóságot}."},{"t":"Városunkban új {tűzoltóság} épült."}],
+"word-mosque": [{"t":"Minden pénteken a {mecsetbe} járnak."},{"t":"A {mecset} kupolája gyönyörű kék."},{"t":"Az utunk során meglátogattunk egy híres {mecsetet}."}],
+"word-synagogue": [{"t":"A {zsinagóga} a Fő utca sarkán áll."},{"t":"A családja szombatonként a {zsinagógába} jár."},{"t":"A régi {zsinagógát} 1890-ben építették."}],
+"word-cathedral": [{"t":"A {katedrális} a város legrégebbi épülete."},{"t":"Felmásztunk a {katedrális} tornyába."},{"t":"Százak jöttek a {katedrálisba} a koncertre."}],
+"word-laundromat": [{"t":"Elromlott a mosógépem, ezért az {önkiszolgáló mosodába} járok."},{"t":"Az utca túloldalán van egy {önkiszolgáló mosoda}."},{"t":"Vigyél pár érmét az {önkiszolgáló mosodába}."}],
+"word-art-gallery": [{"t":"A délutánt a {galériában} töltöttük."},{"t":"A {galéria} vasárnap ingyenes."},{"t":"Egy kis belvárosi {galériában} van egy festménye."}],
+"word-nightclub": [{"t":"Egész éjjel táncoltak az {éjszakai klubban}."},{"t":"Huszonegy évesnél idősebbnek kell lenned, hogy belépj az {éjszakai klubba}."},{"t":"Az {éjszakai klub} tízkor nyit és négykor zár."}],
+"word-old-town": [{"t":"Ebéd után sétáltunk az {óvárosban}."},{"t":"Az {óvárosban} szűk utcák és kis kávézók vannak."},{"t":"Sok turista az {óvárosban} száll meg."}],
+"word-skyscraper": [{"t":"Arról a {felhőkarcolóról} az egész város látszik."},{"t":"Új {felhőkarcolót} építenek a belvárosban."},{"t":"Az irodám egy {felhőkarcoló} negyvenedik emeletén van."}],
+"word-apartment-block": [{"t":"Egy nagy {lakóházban} lakunk a park közelében."},{"t":"A {lakóházban} van lift."},{"t":"Húsz család él ebben a {lakóházban}."}],
+"word-avenue": [{"t":"A szálloda egy széles, fás {sugárúton} van."},{"t":"A {sugárút} végén fordulj balra."},{"t":"Az Ötödik {sugárút} New York híres utcája."}],
+"word-pedestrian-zone": [{"t":"A városközpont egy {sétálóutca}."},{"t":"Autók nem hajthatnak be a {sétálóutcába}."},{"t":"A {sétálóutcában} ittunk kávét."}],
+"word-bench": [{"t":"Üljünk le egy percre arra a {padra}."},{"t":"Egy idős férfi olvasott egy {padon} a parkban."},{"t":"A {pad} vizes volt az esőtől."}],
+"word-fountain": [{"t":"A gyerekek a {szökőkút} közelében játszottak."},{"t":"A főtéren gyönyörű {szökőkút} áll."},{"t":"Érméket dobtunk a {szökőkútba}."}],
+"word-opposite": [{"t":"A bank a postával {szemben} van."},{"t":"Velem {szemben} ült az asztalnál."},{"t":"A házunkkal {szemben} van egy pékség."}],
+"word-city-block": [{"t":"Az üzlet innen két {háztömbre} van."},{"t":"Körbesétáltunk a {háztömbön}, hogy kapjunk egy kis levegőt."},{"t":"A buszmegálló a következő {háztömbnél} van."}],
+"word-tourist-information": [{"t":"Kérjünk térképet a {turistainformációban}."},{"t":"A {turistainformáció} a vasútállomás mellett van."},{"t":"A {turistainformáció} ötkor zár."}],
+"word-landmark": [{"t":"A torony a város leghíresebb {nevezetessége}."},{"t":"Ez a régi híd a falu legfontosabb {nevezetessége}.","p":0},{"t":"A túrán minden {nevezetességről} fotót készítettünk."}],
+"word-outskirts": [{"t":"A város {külvárosában} laknak."},{"t":"A repülőtér a város {külvárosában} van."},{"t":"A házak olcsóbbak a {külvárosban}."}]
+}

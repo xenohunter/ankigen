@@ -1,0 +1,9 @@
+{
+"word-day-off": [{"t":"Ngày mai là {ngày nghỉ} của tôi."},{"t":"Mỗi tuần cô ấy có một {ngày nghỉ} vào thứ Tư."},{"t":"Tôi cần một {ngày nghỉ} để nghỉ ngơi."}],
+"word-working-day": [{"t":"Thứ Hai là {ngày làm việc} đầu tiên trong tuần."},{"t":"Một {ngày làm việc} bình thường kéo dài tám tiếng."},{"t":"Gói hàng sẽ đến trong ba {ngày làm việc}."}],
+"word-on-time": [{"t":"Tàu đến {đúng giờ}."},{"t":"Hãy cố gắng có mặt {đúng giờ} trong cuộc họp."},{"t":"Cô ấy luôn đến làm {đúng giờ}.","p":0}],
+"word-date-of-birth": [{"t":"Hãy ghi {ngày sinh} của bạn vào mẫu đơn."},{"t":"{Ngày sinh} của tôi là ngày 4 tháng 5 năm 1990."},{"t":"Họ hỏi tên và {ngày sinh} của tôi."}],
+"word-time-zone": [{"t":"New York ở {múi giờ} khác với Los Angeles."},{"t":"Tôi khó ngủ sau khi đổi {múi giờ}."},{"t":"Bạn ở {múi giờ} nào?"}],
+"word-o-clock": [{"t":"Phim bắt đầu lúc tám {giờ}."},{"t":"Bây giờ là đúng năm {giờ}."},{"t":"Chúng tôi ăn trưa lúc mười hai {giờ}."}],
+"word-lifetime": [{"t":"Ông ấy đã chứng kiến nhiều thay đổi trong {cuộc đời} mình."},{"t":"Đây là chuyến đi của cả {cuộc đời}."},{"t":"Cô ấy sống cả {cuộc đời} ở cùng một thị trấn."}]
+}

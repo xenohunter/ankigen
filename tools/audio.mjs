@@ -65,7 +65,7 @@ function context() {
   const reg = loadRegistry(p.meta);
   const concepts = loadConcepts(p, reg, []);
   const audio = readAudioMeta(META);
-  const order = [...reg.languages.active, ...reg.languages.deferred];
+  const order = [...reg.languages.active, ...(reg.languages.staged ?? []), ...reg.languages.deferred];
   const withData = listDirs(path.join(DATA, 'lang')).filter((code) => reg.languages.languages[code]);
   if (ONLY && !reg.languages.languages[ONLY]) die(`unknown language "${ONLY}"`);
   const codes = ONLY ? [ONLY] : order.filter((code) => withData.includes(code));

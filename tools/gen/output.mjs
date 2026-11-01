@@ -1,9 +1,14 @@
 // @ts-check
 // Read a unit's JSON object from the model's reply (tools/gen/batch.mjs).
 
+/** The keys of a unit's output (tools/gen/merge-unit.mjs): an object without any of them is not one. */
+const OUTPUT_KEYS = ['unit', 'lang', 'ex', 'patch', 'concepts', 'addMods', 'labels', 'landing', 'ipa', 'slots'];
+
 /**
  * The reply is one JSON object, perhaps in a code fence. Sometimes the model writes the object, then
- * "Wait — correcting …" and the corrected object: then the last object that parses is the answer.
+ * "Wait — correcting …" and the corrected object: then the last object that parses is the answer. But it may
+ * also correct only one entry ("The corrected entry is: "word-put": {…}"), which is not a unit's output: the last
+ * object with a unit's keys is the answer then, and the entry's fix is left to lint and the review.
  * @param {string} raw
  * @returns {any}
  */
@@ -12,14 +17,17 @@ export function parseOutput(raw) {
   try {
     return JSON.parse(s);
   } catch {
-    for (const text of topLevelObjects(s).reverse()) {
+    const objects = topLevelObjects(s).flatMap((text) => {
       try {
-        return JSON.parse(text);
+        return [JSON.parse(text)];
       } catch {
-        // an object in the prose, or cut off: try the one before
+        return []; // an object in the prose, or cut off
       }
-    }
-    throw new Error('no JSON object found');
+    });
+    const outputs = objects.filter((o) => o && typeof o === 'object' && OUTPUT_KEYS.some((k) => k in o));
+    const answer = (outputs.length ? outputs : objects).at(-1);
+    if (answer === undefined) throw new Error('no JSON object found');
+    return answer;
   }
 }
 

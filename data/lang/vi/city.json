@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"tòa thị chính","alt":["tòa đô chính"],"mw":"tòa","def":"Nơi chính quyền thành phố đặt cơ quan làm việc."},
+"word-fire-station": {"w":"trạm cứu hỏa","alt":["đồn cứu hỏa"],"def":"Nơi lính chữa cháy và xe của họ chờ sẵn để đi dập lửa."},
+"word-mosque": {"w":"nhà thờ Hồi giáo","alt":["thánh đường Hồi giáo"],"mw":"ngôi","def":"Nơi những người theo đạo của Muhammad đến cầu nguyện."},
+"word-synagogue": {"w":"giáo đường Do Thái","alt":["hội đường Do Thái"],"mw":"ngôi","def":"Nơi các tín đồ của một tôn giáo cổ ở Israel họp nhau cầu nguyện và học kinh."},
+"word-cathedral": {"w":"nhà thờ lớn","alt":["thánh đường"],"mw":"ngôi","def":"Công trình tôn giáo rất lớn và quan trọng của đạo Thiên Chúa, do giám mục đứng đầu."},
+"word-laundromat": {"w":"hiệu giặt tự động","alt":["tiệm giặt tự động"],"def":"Nơi có nhiều máy để khách tự trả tiền, rồi làm sạch và sấy khô quần áo."},
+"word-art-gallery": {"w":"phòng tranh","alt":["phòng triển lãm"],"mw":"phòng","def":"Nơi trưng bày hội họa và các tác phẩm nghệ thuật khác cho mọi người xem."},
+"word-nightclub": {"w":"hộp đêm","alt":["vũ trường","câu lạc bộ đêm"],"def":"Nơi mở cửa đến khuya, có nhạc, khiêu vũ và đồ uống."},
+"word-old-town": {"w":"khu phố cổ","alt":["phố cổ"],"def":"Phần lâu đời nhất của một thành phố, thường có nhà cũ và đường hẹp."},
+"word-skyscraper": {"w":"tòa nhà chọc trời","alt":["nhà cao tầng"],"mw":"tòa","def":"Công trình rất cao với hàng chục tầng."},
+"word-apartment-block": {"w":"chung cư","alt":["nhà chung cư"],"mw":"tòa","def":"Tòa nhà lớn chia thành nhiều căn hộ ở các tầng."},
+"word-avenue": {"w":"đại lộ","alt":["đường lớn"],"mw":"con","def":"Con đường rộng trong thành phố, thường có hàng cây hai bên."},
+"word-pedestrian-zone": {"w":"phố đi bộ","alt":["khu đi bộ"],"def":"Nơi trong thành phố mà xe không được vào để mọi người đi lại an toàn."},
+"word-bench": {"w":"ghế đá","alt":["ghế băng","ghế dài"],"mw":"chiếc","def":"Chỗ ngồi dài cho nhiều người, thường đặt ngoài trời."},
+"word-fountain": {"w":"đài phun nước","alt":["vòi phun nước"],"mw":"cái","def":"Công trình làm cho dòng chất lỏng trong vắt bắn lên cao, thường ở công viên hoặc quảng trường."},
+"word-opposite": {"w":"đối diện","def":"Ở phía bên kia của một vật, nhìn thẳng vào nó."},
+"word-city-block": {"w":"dãy phố","alt":["khối nhà"],"mw":"dãy","def":"Khu có nhiều nhà, bốn phía đều là đường."},
+"word-tourist-information": {"w":"trung tâm thông tin du lịch","alt":["quầy thông tin du lịch"],"def":"Văn phòng nơi khách đến lấy bản đồ và hỏi lời khuyên về một địa điểm."},
+"word-landmark": {"w":"địa danh","alt":["cột mốc"],"def":"Công trình hay nơi nổi tiếng, dễ nhận ra."},
+"word-outskirts": {"w":"ngoại ô","alt":["ven đô"],"def":"Những khu của thành phố nằm xa trung tâm nhất.","hint":"rìa thành phố"},
+"word-passeggiata": {"gl":"passeggiata: cuộc dạo bộ thong thả buổi tối hoặc Chủ nhật của người Ý, để ngắm và được ngắm"}
+}

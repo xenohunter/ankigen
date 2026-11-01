@@ -44,9 +44,9 @@ if (flag('--json')) {
 const gateOk = !flag('--gate') || gate(ctx);
 process.exit(errors.length || !gateOk ? 1 : 0);
 
-/** The deploy gate: every active language has an entry (a word or a gloss) for every concept. */
+/** The deploy gate: every active language has an entry (a word or a gloss) for every concept. Staged ones don't count. */
 function gate(ctx) {
-  const incomplete = coverage(ctx).filter((r) => r.entries < r.total);
+  const incomplete = coverage(ctx).filter((r) => !r.staged && r.entries < r.total);
   if (incomplete.length) {
     console.log(`Deploy gate: ${incomplete.length} active language(s) incomplete: ${incomplete.map((r) => `${r.code} ${r.entries}/${r.total}`).join(', ')}`);
   } else {
@@ -80,11 +80,11 @@ function fix(dataDir, metaDir) {
 
 function report(ctx) {
   const pct = (a, b) => (b ? Math.round((100 * a) / b) + '%' : '—');
-  console.log('\nCoverage (all concepts, per learning language)');
+  console.log('\nCoverage (all concepts, per learning language; * staged, not shown yet)');
   console.log('lang  entries   defs      ex≥1      ex=3      ipa       etym');
   for (const r of coverage(ctx)) {
     console.log(
-      `${r.code.padEnd(5)} ${pct(r.entries, r.total).padEnd(9)} ${pct(r.defs, r.total).padEnd(9)} ${pct(r.ex1, r.total).padEnd(9)} ${pct(r.ex3, r.total).padEnd(9)} ${pct(r.ipa, r.total).padEnd(9)} ${pct(r.etym, r.total)}`,
+      `${(r.code + (r.staged ? '*' : '')).padEnd(5)} ${pct(r.entries, r.total).padEnd(9)} ${pct(r.defs, r.total).padEnd(9)} ${pct(r.ex1, r.total).padEnd(9)} ${pct(r.ex3, r.total).padEnd(9)} ${pct(r.ipa, r.total).padEnd(9)} ${pct(r.etym, r.total)}`,
     );
   }
   console.log('\nModule sizes (members incl. cross-listed / target)');

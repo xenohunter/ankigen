@@ -91,5 +91,12 @@
 "word-itv-es": {"w":"ITV","g":"f","def":"Revisión obligatoria que comprueba cada cierto tiempo que un coche es seguro para circular."},
 "word-apk-nl": {"gl":"APK: inspección técnica periódica de vehículos en los Países Bajos"},
 "word-kteo-gr": {"gl":"KTEO: centro griego de inspección técnica de vehículos"},
-"word-muayene-tr": {"gl":"araç muayenesi: inspección técnica periódica de vehículos en Turquía"}
+"word-muayene-tr": {"gl":"araç muayenesi: inspección técnica periódica de vehículos en Turquía"},
+"word-revisione-it": {"gl":"revisione: inspección técnica periódica obligatoria de vehículos en Italia"},
+"word-besiktning-se": {"gl":"besiktning: inspección técnica obligatoria de vehículos en Suecia, en una estación autorizada"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS: oficina ucraniana para permisos de conducir, matriculación y exámenes"},
+"word-nct-ie": {"gl":"NCT: inspección técnica obligatoria de coches en Irlanda (National Car Test)"},
+"word-mot-uk": {"gl":"MOT: inspección técnica anual británica para vehículos de más de tres años"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga: inspección técnica periódica húngara, con pegatina en la matrícula"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm: inspección técnica y de emisiones obligatoria de vehículos en Vietnam"}
 }

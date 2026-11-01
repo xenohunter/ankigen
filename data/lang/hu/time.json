@@ -1,0 +1,11 @@
+{
+"word-day-24h": {"gl":"teljes, 24 órás időszak, nappal és éjszaka együtt"},
+"word-day-off": {"w":"szabadnap","alt":["pihenőnap"],"forms":{"pl":"szabadnapok","acc":"szabadnapot"},"def":"Olyan nap, amikor nem kell dolgozni vagy iskolába menni."},
+"word-working-day": {"w":"munkanap","forms":{"pl":"munkanapok","acc":"munkanapot"},"def":"Olyan nap, amikor a legtöbb ember dolgozik, általában hétfőtől péntekig."},
+"word-on-time": {"w":"időben","alt":["pontosan"],"def":"A megfelelő pillanatban, nem későn és nem korán."},
+"word-date-of-birth": {"w":"születési dátum","alt":["születési idő"],"forms":{"pl":"születési dátumok","acc":"születési dátumot"},"def":"Az az év, hónap és nap, amikor egy ember a világra jött."},
+"word-time-zone": {"w":"időzóna","forms":{"pl":"időzónák","acc":"időzónát"},"def":"A Föld olyan területe, ahol minden óra ugyanazt az időt mutatja."},
+"word-o-clock": {"w":"órakor","def":"Számnév után használt szó, amellyel megadjuk egy esemény időpontját."},
+"word-lifetime": {"w":"élettartam","forms":{"pl":"élettartamok","acc":"élettartamot"},"def":"Az az egész időszak, amíg valaki él."},
+"word-hogmanay": {"gl":"hogmanay: skót szilveszter, szokásaival és az Auld Lang Syne éneklésével"}
+}

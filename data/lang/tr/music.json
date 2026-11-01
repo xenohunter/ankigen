@@ -45,5 +45,7 @@
 "word-whistle": {"w":"ıslık çalmak","forms":{"aor":"ıslık çalar","prog":"ıslık çalıyor","past":"ıslık çaldı"},"def":"Dudaklardan hava üfleyerek ince bir ses çıkarmak."},
 "word-hum": {"w":"mırıldanmak","forms":{"aor":"mırıldanır","prog":"mırıldanıyor","past":"mırıldandı"},"def":"Ağzı kapalı veya kısık sesle bir ezgi söylemek."},
 "word-vinyl-record": {"w":"plak","alt":["vinil plak"],"forms":{"acc":"plağı"},"def":"Üzerinde iğne gezdirilince müzik çalan yassı siyah disk."},
-"word-instrument": {"w":"enstrüman","alt":["çalgı","müzik aleti"],"forms":{"acc":"enstrümanı"},"def":"Müzik yapmak için çalınan gitar veya piyano gibi şey."}
+"word-instrument": {"w":"enstrüman","alt":["çalgı","müzik aleti"],"forms":{"acc":"enstrümanı"},"def":"Müzik yapmak için çalınan gitar veya piyano gibi şey."},
+"word-ceili": {"gl":"céilí: geleneksel İrlanda müziği, şarkı ve grup danslarıyla yapılan İrlanda sosyal buluşması"},
+"word-mod-gaelic": {"gl":"mòd: şarkı, müzik, şiir ve konuşma içeren İskoç Galcesi festivali"}
 }

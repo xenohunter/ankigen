@@ -128,9 +128,14 @@ export function loadRegistry(metaDir) {
   return { languages, modulesTree, modules, moduleById, fields, labels, labelsText, retired };
 }
 
-/** Language order for meta/labels.json: the registry's active, then deferred languages. */
+/** Language order for meta/labels.json: the registry's active, staged, then deferred languages. */
 export function labelOrder(reg) {
-  return [...reg.languages.active, ...reg.languages.deferred];
+  return [...reg.languages.active, ...(reg.languages.staged ?? []), ...reg.languages.deferred];
+}
+
+/** The languages that have data or get it: active and staged (generated, not shown yet). @param {any} reg */
+export function dataLanguages(reg) {
+  return [...reg.languages.active, ...(reg.languages.staged ?? [])];
 }
 
 // ---------- Concepts ----------
@@ -181,6 +186,7 @@ const SCRIPT_RE = {
   Hangul: /\p{Script=Hangul}/u,
   Han: /\p{Script=Han}/u,
   Japanese: /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆ヶ]/u,
+  Arabic: /[\p{Script=Arabic}\u0640]/u, // U+0640 tatweel (Script=Common) writes bound suffixes: ـِي
 };
 const LETTER_RE = /\p{L}/u;
 
@@ -232,22 +238,92 @@ function checkPunctuation(file, id, str, lang, issues, what) {
   }
 }
 
+// ---------------------------------------------------------------- Language-specific spelling
+
+// Arabic short-vowel marks (harakat): fathatan to sukun, and the superscript alef. The Vowel marks row hides them.
+const HARAKAT = /[\u064B-\u0652\u0670]/g;
+const HAS_HARAKA = /[\u064B-\u0652\u0670]/;
+const ARABIC_LETTER = /(?=\p{L})\p{Script=Arabic}/gu;
+
+/** Arabic without its vowel marks. @param {string} s */
+export function stripVowels(s) { return s.replace(HARAKAT, ''); }
+
+/** The words of an Arabic text (2+ letters) that carry no vowel mark at all. @param {string} s */
+export function unvowelizedWords(s) {
+  return s.split(/[\s/,،؛؟.!()«»"-]+/).filter((w) => (w.match(ARABIC_LETTER) || []).length >= 2 && !HAS_HARAKA.test(w));
+}
+
+// Prose takes the Arabic comma, semicolon and question mark (، ؛ ؟): an ASCII one next to Arabic letters is a slip.
+const ARABIC_ASCII_PUNCT = /\p{Script=Arabic}\p{M}*\s*[,;?]|[,;?]\s*\p{Script=Arabic}/u;
+
+/**
+ * Spelling slips of one language in any of its texts: Russian letters in Ukrainian, grave accents in Irish and
+ * acute ones in Scottish Gaelic (their standard orthographies use only one kind), õ û for Hungarian ő ű, ASCII
+ * punctuation in Arabic. A gloss quotes the foreign term it explains (lakcímkártya, С лёгким паром): only its
+ * punctuation is checked.
+ * @param {string} code @param {string} str @param {{ quotes?: boolean }} [opts] quotes: the text is a gloss
+ * @returns {string[]}
+ */
+export function spellingProblems(code, str, { quotes = false } = {}) {
+  if (typeof str !== 'string') return [];
+  const out = [];
+  const found = (re) => (quotes ? '' : [...new Set(str.normalize('NFC').match(re) || [])].join(''));
+  if (code === 'uk' && found(/[ыэёъ]/gi)) out.push(`Russian letters in Ukrainian text: ${found(/[ыэёъ]/gi)}`);
+  if (code === 'ga' && found(/[àèìòù]/gi)) out.push(`grave accent in Irish (the síneadh fada is acute: á é í ó ú): ${found(/[àèìòù]/gi)}`);
+  if (code === 'gd' && found(/[áéíóú]/gi)) out.push(`acute accent in Scottish Gaelic (the Gaelic Orthographic Conventions use à è ì ò ù only): ${found(/[áéíóú]/gi)}`);
+  if (code === 'hu' && found(/[õûÕÛ]/g)) out.push(`${found(/[õûÕÛ]/g)}: Hungarian writes ő ű (double acute)`);
+  if (code === 'ar' && ARABIC_ASCII_PUNCT.test(str)) out.push('ASCII punctuation in Arabic text; use ، ؛ ؟');
+  return out;
+}
+
+function checkSpelling(file, id, str, code, issues, what, opts) {
+  for (const pr of spellingProblems(code, str, opts)) issues.push(err(file, id, `${what}: ${pr}`));
+}
+
+// Symbols no word or form has: a slip of the model (покла*де́ш), not spelling.
+const STRAY = /[*_#@$%^&=+<>{}[\]|\\~`]/;
+function checkStray(file, id, str, issues, what) {
+  if (typeof str === 'string' && STRAY.test(str)) issues.push(err(file, id, `${what}: stray character ${str.match(STRAY)[0]} in "${str}"`));
+}
+
+/** Arabic words, forms and synonyms carry full vowel marks. */
+function checkVowels(file, id, str, issues, what) {
+  const bare = typeof str === 'string' ? unvowelizedWords(str) : [];
+  if (bare.length) issues.push(err(file, id, `${what}: no vowel marks (harakat) on ${bare.join(' ')}`));
+}
+
+/**
+ * The article an Italian noun needs in `art`, when the one derived from its gender (il, la, i, le, il/la) is wrong:
+ * l' before a vowel or h; lo (lo/la, gli) before s + consonant, z, gn, ps, pn, x, y or i + vowel. Null when the
+ * derived one is right.
+ * @param {string} w @param {string} g
+ */
+export function italianArticle(w, g) {
+  const vowel = /^[aeiouàèéìíòóùúh]/i.test(w) && !/^i[aeiou]/i.test(w);
+  const impure = /^(s[^aeiouàèéìíòóùú]|z|gn|ps|pn|x|y|i[aeiou])/i.test(w);
+  if (g === 'm') return vowel ? "l'" : impure ? 'lo' : null;
+  if (g === 'f') return vowel ? "l'" : null;
+  if (g === 'mf') return vowel ? "l'" : impure ? 'lo/la' : null;
+  if (g === 'm.pl') return vowel || impure ? 'gli' : null;
+  return null;
+}
+
 export function stripStress(s) { return s.normalize('NFD').replace(/́/g, '').normalize('NFC'); }
 
 export function foldForCompare(s) {
   return stripStress(s).toLowerCase().normalize('NFC');
 }
 
-const RU_VOWELS = /[аеёиоуыэюяАЕЁИОУЫЭЮЯ]/g;
-// Russian: every polysyllabic word needs U+0301 or ё. Upper-case abbreviations are exempt.
-export function russianStressProblems(str) {
+const STRESS_VOWELS = { ru: /[аеёиоуыэюя]/gi, uk: /[аеєиіїоуюя]/gi };
+// Russian and Ukrainian: every polysyllabic word needs U+0301 (or, in Russian, ё). Upper-case abbreviations are exempt.
+export function stressProblems(str, code = 'ru') {
   const out = [];
-  // NFC keeps й/ё precomposed; Cyrillic vowel + U+0301 has no precomposed form, so the acute stays separate.
+  // NFC keeps й/ё/ї precomposed; Cyrillic vowel + U+0301 has no precomposed form, so the acute stays separate.
   for (const raw of str.normalize('NFC').split(/[\s\-,;/()«»"!?.:]+/)) {
     const word = raw.trim();
     if (!word) continue;
-    if (/^[А-ЯЁ]{2,6}$/.test(word)) continue;
-    const vowels = (word.match(RU_VOWELS) || []).length;
+    if (/^[А-ЯЁЄІЇҐ]{2,6}$/.test(word)) continue;
+    const vowels = (word.match(STRESS_VOWELS[code] ?? STRESS_VOWELS.ru) || []).length;
     const hasYo = /[ёЁ]/.test(word);
     const acutes = (word.match(/́/g) || []).length;
     if (vowels >= 2 && acutes === 0 && !hasYo) out.push(`${word}: missing stress mark`);
@@ -261,6 +337,12 @@ export const PINYIN_SENT_RE = /^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔù�
 export const KANA_RE = /^[\p{Script=Hiragana}\p{Script=Katakana}ー・\s]+$/u;
 export const HEPBURN_RE = /^[a-zA-Zāīūēō'’\s\-]+$/;
 export const ASCII_ROM_RE = /^[a-zA-Z'’\s\-]+$/;
+// Arabic in ALA-LC style: macrons for long vowels, dots for the emphatic and pharyngeal consonants, ʿayn and hamza.
+export const ARABIC_ROM_RE = /^[a-zA-ZāīūĀĪŪḥṣḍṭẓḤṢḌṬẒʿʾ'’\s\-/]+$/;
+/** Stored romanization schemes and their characters (others: plain ASCII letters). */
+const ROM_RE = { 'hepburn-macron': HEPBURN_RE, 'ar-ala-lc': ARABIC_ROM_RE };
+/** The auxiliaries of the aux form, per language. */
+const AUX = { fr: ['avoir', 'être'], it: ['avere', 'essere'] };
 export const HAN_RE = /^\p{Script=Han}+$/u;
 export const HAS_HAN = /\p{Script=Han}/u;
 export const IPA_FORBIDDEN = /[\/\[\]0-9]/;
@@ -301,11 +383,19 @@ const TARGET_PASS = 0.75; // a target at least this close to the word or one of 
 const ALT_MIN = 0.5;      // a target at least this close to an alt (and closer than to the word) shows the alt
 const ENUM_FORMS = ['aspect', 'class', 'type', 'aux'];
 
+// Arabic: the article, with a conjunction or preposition before it, is not part of the word (والكتاب shows كتاب).
+const AR_ARTICLE = /^[وف]?(?:[بكل]?ال|لل)(?=\p{L}{2})/u;
+// Irish and Scottish Gaelic: initial mutations are not part of the word (bhean, mbean, hathair show bean, athair).
+const unmutate = (/** @type {string} */ word) =>
+  word.replace(/^(?:m(?=b)|g(?=c)|n(?=[dg])|bh(?=f)|b(?=p)|d(?=t)|t(?=s)|h(?=[aeiouáéíóúàèìòù]))/, '').replace(/^([bcdfgmpst])h/, '$1');
+
 function foldTarget(s, lang, unspaced) {
-  const plain = stripStress(s.replace(/ ?([^ [\]{}]+?)\[[^\]]*\]/g, '$1'))
+  let plain = stripStress(s.replace(/ ?([^ [\]{}]+?)\[[^\]]*\]/g, '$1'))
     .toLocaleLowerCase(lang.locale)
-    .replace(/[՛՜՝՞]/g, '') // Armenian emphasis and question marks sit inside the word
-    .normalize('NFD'); // Hangul syllables → jamo, so 가다 and 갈 share a beginning
+    .replace(/[՛՜՝՞]/g, ''); // Armenian emphasis and question marks sit inside the word
+  if (lang.vowels) plain = stripVowels(plain).split(/(\s+)/).map((w) => w.replace(AR_ARTICLE, '')).join('');
+  if (/^g[ad]\b/.test(lang.locale)) plain = plain.split(/([\s'’-]+)/).map(unmutate).join('');
+  plain = plain.normalize('NFD'); // Hangul syllables → jamo, so 가다 and 갈 share a beginning
   return unspaced ? plain.replace(/\s+/g, '') : plain;
 }
 
@@ -438,18 +528,22 @@ function lintRegistry(reg, issues, opts) {
   if (opts.checkCanonical !== false && stringifyLabels(reg.labels, labelOrder(reg)) !== reg.labelsText) {
     issues.push(err('meta/labels.json', null, 'not in canonical format (run lint with --fix)'));
   }
-  for (const code of [...L.active, ...L.deferred]) {
+  for (const code of [...L.active, ...(L.staged ?? []), ...L.deferred]) {
     if (!L.languages[code]) issues.push(err(F, code, 'listed but not defined'));
   }
-  for (const code of L.active) {
+  for (const code of dataLanguages(reg)) {
     const lang = L.languages[code];
     if (!lang) continue;
-    if (lang.status !== 'active') issues.push(err(F, code, 'in active list but status is not "active"'));
+    const status = L.active.includes(code) ? 'active' : 'staged';
+    if (lang.status !== status) issues.push(err(F, code, `in the ${status} list but status is not "${status}"`));
     for (const k of ['name', 'native', 'locale', 'country', 'script', 'forms']) {
       if (lang[k] === undefined) issues.push(err(F, code, `missing "${k}"`));
     }
+    if (!lang.country && !lang.flag) issues.push(err(F, code, 'a language without a country needs a "flag"'));
     if (!SCRIPT_RE[lang.script]) issues.push(err(F, code, `unknown script "${lang.script}"`));
+    if (!(lang.speakers > 0)) issues.push(err(F, code, '"speakers" (millions, L1 + L2) must be a positive number'));
   }
+  lintGroups(reg, issues);
   const seen = new Set();
   for (const m of reg.modules) {
     if (seen.has(m.id)) issues.push(err('meta/modules.json', m.id, 'duplicate module id'));
@@ -471,8 +565,42 @@ function lintRegistry(reg, issues, opts) {
   }
 }
 
+/**
+ * The language chips' groups (SPEC §4): every active and staged language in exactly one group; the group with
+ * English first, then by the speakers of their languages, "other" last; languages within a group by speakers; the
+ * active list in the same order.
+ */
+function lintGroups(reg, issues) {
+  const L = reg.languages;
+  const F = 'meta/languages.json';
+  const groups = Array.isArray(L.groups) ? L.groups : [];
+  const grouped = groups.flatMap((g) => g.languages ?? []);
+  for (const code of dataLanguages(reg)) {
+    const n = grouped.filter((c) => c === code).length;
+    if (n !== 1) issues.push(err(F, code, n ? 'in more than one group' : 'in no group'));
+  }
+  for (const code of grouped) if (!dataLanguages(reg).includes(code)) issues.push(err(F, code, 'in a group but neither active nor staged'));
+  const speakers = (code) => L.languages[code]?.speakers ?? 0;
+  const total = (g) => (g.languages ?? []).reduce((sum, c) => sum + speakers(c), 0);
+  if (groups.length && !groups[0].languages?.includes('en')) issues.push(err(F, groups[0].id, 'the group with English comes first'));
+  const other = groups.findIndex((g) => g.id === 'other');
+  if (other >= 0 && other !== groups.length - 1) issues.push(err(F, 'other', 'the "other" group comes last'));
+  const ranked = groups.slice(1).filter((g) => g.id !== 'other');
+  for (let i = 1; i < ranked.length; i++) {
+    if (total(ranked[i]) > total(ranked[i - 1])) issues.push(err(F, ranked[i].id, `group has more speakers (${total(ranked[i])} m) than "${ranked[i - 1].id}" (${total(ranked[i - 1])} m) before it`));
+  }
+  for (const g of groups) {
+    const list = g.languages ?? [];
+    for (let i = 1; i < list.length; i++) {
+      if (speakers(list[i]) > speakers(list[i - 1])) issues.push(err(F, list[i], `has more speakers than ${list[i - 1]} before it in group "${g.id}"`));
+    }
+  }
+  const order = grouped.filter((c) => L.active.includes(c));
+  if (groups.length && order.join(' ') !== L.active.join(' ')) issues.push(err(F, null, `"active" must follow the order of the groups: ${order.join(' ')}`));
+}
+
 function lintConcepts(p, reg, concepts, issues, opts) {
-  const langCodes = new Set([...reg.languages.active, ...reg.languages.deferred]);
+  const langCodes = new Set([...dataLanguages(reg), ...reg.languages.deferred]);
   const groups = new Map();
   for (const [mod, parsed] of Object.entries(concepts.files)) {
     const file = `concepts/${mod}.json`;
@@ -599,6 +727,7 @@ function lintLangEntries(code, map, reg, concepts, issues) {
       if (e.w !== undefined) issues.push(err(file, id, `concept is only for ${c.only.join(',')}; give a descriptive "gl", not "w"`));
       if (typeof e.gl !== 'string' || !e.gl.trim()) issues.push(err(file, id, 'gl (descriptive gloss) required'));
       checkPunctuation(file, id, e.gl, lang, issues, 'gl');
+      checkSpelling(file, id, e.gl, code, issues, 'gl', { quotes: true });
       for (const k of Object.keys(e)) if (!['gl', 'st'].includes(k)) issues.push(err(file, id, `only "gl" is allowed for a gloss entry (found "${k}")`));
       continue;
     }
@@ -607,8 +736,13 @@ function lintLangEntries(code, map, reg, concepts, issues) {
     if (e.w !== e.w.trim() || /\s{2,}/.test(e.w)) issues.push(err(file, id, 'w has stray whitespace'));
     if (e.w !== e.w.normalize('NFC') && !lang.stress) issues.push(err(file, id, 'w must be NFC-normalized'));
     checkScript(file, id, e.w, lang, issues, 'w');
-    for (const k of ['w', 'hint', 'def']) checkPunctuation(file, id, e[k], lang, issues, k);
-    if (lang.stress) for (const pr of russianStressProblems(e.w)) issues.push(err(file, id, `w: ${pr}`));
+    for (const k of ['w', 'hint', 'def']) {
+      checkPunctuation(file, id, e[k], lang, issues, k);
+      checkSpelling(file, id, e[k], code, issues, k);
+    }
+    if (lang.stress) for (const pr of stressProblems(e.w, code)) issues.push(err(file, id, `w: ${pr}`));
+    if (lang.vowels) checkVowels(file, id, e.w, issues, 'w');
+    checkStray(file, id, e.w, issues, 'w');
     if (e.alt !== undefined) {
       if (!Array.isArray(e.alt) || e.alt.length === 0 || e.alt.some((a) => typeof a !== 'string' || !a.trim())) issues.push(err(file, id, 'alt must be a non-empty array of strings'));
       else {
@@ -616,7 +750,10 @@ function lintLangEntries(code, map, reg, concepts, issues) {
         for (const a of e.alt) {
           checkScript(file, id, a, lang, issues, 'alt');
           checkPunctuation(file, id, a, lang, issues, 'alt');
-          if (lang.stress) for (const pr of russianStressProblems(a)) issues.push(err(file, id, `alt: ${pr}`));
+          checkSpelling(file, id, a, code, issues, 'alt');
+          checkStray(file, id, a, issues, 'alt');
+          if (lang.stress) for (const pr of stressProblems(a, code)) issues.push(err(file, id, `alt: ${pr}`));
+          if (lang.vowels) checkVowels(file, id, a, issues, 'alt');
         }
       }
     }
@@ -626,9 +763,11 @@ function lintLangEntries(code, map, reg, concepts, issues) {
       if (c.pos === 'noun' && e.g === undefined) issues.push(err(file, id, 'g (gender) required for nouns'));
       if (c.pos !== 'noun' && e.g !== undefined && c.pos !== 'pron' && c.pos !== 'num') issues.push(warn(file, id, 'g given for a non-noun'));
       if (e.art !== undefined && lang.gender.mode !== 'article') issues.push(err(file, id, 'art is only for article languages'));
-      if (lang.gender.elision && c.pos === 'noun' && e.art === undefined && /^[aeiouyhàâæéèêëîïôœùûü]/i.test(e.w)) {
+      if (code === 'fr' && c.pos === 'noun' && e.art === undefined && /^[aeiouyhàâæéèêëîïôœùûü]/i.test(e.w)) {
         issues.push(err(file, id, 'French noun starting with a vowel or h: set art ("l\'" or, for h aspiré, "le"/"la")'));
       }
+      const italian = code === 'it' && c.pos === 'noun' && e.art === undefined ? italianArticle(e.w, e.g) : null;
+      if (italian) issues.push(err(file, id, `Italian noun: set art ("${italian}"), the article its first sound takes`));
     } else {
       if (e.g !== undefined) issues.push(err(file, id, `${code} has no grammatical gender`));
       if (e.art !== undefined) issues.push(err(file, id, `${code} has no articles`));
@@ -646,10 +785,13 @@ function lintLangEntries(code, map, reg, concepts, issues) {
             if (k === 'aspect' && !['ipf', 'pf', 'bi'].includes(val)) issues.push(err(file, id, 'aspect must be ipf|pf|bi'));
             else if (k === 'class' && !['godan', 'ichidan', 'suru', 'kuru'].includes(val)) issues.push(err(file, id, 'class must be godan|ichidan|suru|kuru'));
             else if (k === 'type' && !['i', 'na'].includes(val)) issues.push(err(file, id, 'type must be i|na'));
-            else if (k === 'aux' && !['avoir', 'être'].includes(val)) issues.push(err(file, id, 'aux must be avoir|être'));
+            else if (k === 'aux' && !(AUX[code] ?? AUX.fr).includes(val)) issues.push(err(file, id, `aux must be ${(AUX[code] ?? AUX.fr).join('|')}`));
             else if (!['aspect', 'class', 'type', 'aux'].includes(k)) {
               checkScript(file, id, val, lang, issues, `forms.${k}`);
-              if (lang.stress) for (const pr of russianStressProblems(val)) issues.push(err(file, id, `forms.${k}: ${pr}`));
+              checkSpelling(file, id, val, code, issues, `forms.${k}`);
+              checkStray(file, id, val, issues, `forms.${k}`);
+              if (lang.stress) for (const pr of stressProblems(val, code)) issues.push(err(file, id, `forms.${k}: ${pr}`));
+              if (lang.vowels) checkVowels(file, id, val, issues, `forms.${k}`);
             }
           }
         }
@@ -672,10 +814,11 @@ function lintLangEntries(code, map, reg, concepts, issues) {
     } else if (e.read !== undefined) issues.push(err(file, id, `${code} has no stored reading`));
     if (lang.romanization?.source === 'stored') {
       if (!e.rom) issues.push(err(file, id, 'rom (romanization) required'));
-      else if (!(lang.romanization.scheme === 'hepburn-macron' ? HEPBURN_RE : ASCII_ROM_RE).test(e.rom)) issues.push(err(file, id, `rom has characters outside ${lang.romanization.scheme}`));
+      else if (!(ROM_RE[lang.romanization.scheme] ?? ASCII_ROM_RE).test(e.rom)) issues.push(err(file, id, `rom has characters outside ${lang.romanization.scheme}`));
     } else if (e.rom !== undefined) issues.push(err(file, id, `${code} romanization is derived at runtime; remove rom`));
     if (e.mw !== undefined) {
       if (!lang.measureWord) issues.push(err(file, id, `${code} has no measure words/counters`));
+      else if (lang.measureWord === 'classifier') checkScript(file, id, e.mw, lang, issues, 'mw');
       else if (!HAN_RE.test(e.mw.replace(/[\s、,／/]/g, '')) && !KANA_RE.test(e.mw)) issues.push(err(file, id, 'mw must be CJK characters'));
       if (c.pos !== 'noun') issues.push(warn(file, id, 'mw on a non-noun'));
     } else if (lang.measureWord === 'measure-word' && c.pos === 'noun') issues.push(warn(file, id, 'noun without measure word (fine for uncountables)'));
@@ -687,11 +830,12 @@ function lintLangEntries(code, map, reg, concepts, issues) {
     if (typeof e.def !== 'string' || !e.def.trim()) issues.push(err(file, id, 'def (same-language definition) required'));
     else {
       if (e.def.length > 220) issues.push(err(file, id, 'def longer than 220 chars'));
-      const fw = foldForCompare(e.w);
-      if ([...fw].length >= 3 && foldForCompare(e.def).includes(fw)) issues.push(warn(file, id, 'def contains the headword'));
+      const fw = foldForCompare(lang.vowels ? stripVowels(e.w) : e.w);
+      if ([...fw].length >= 3 && foldForCompare(lang.vowels ? stripVowels(e.def) : e.def).includes(fw)) issues.push(warn(file, id, 'def contains the headword'));
     }
     if (e.st !== undefined && e.st !== 'r') issues.push(err(file, id, 'st may only be "r" (reviewed); omit for draft'));
-    const key = e.w.normalize('NFC');
+    // Arabic is shown without vowel marks where it is the known language, so words that differ only in them collide.
+    const key = (lang.vowels ? stripVowels(e.w) : e.w).normalize('NFC');
     if (!byWord.has(key)) byWord.set(key, []);
     byWord.get(key).push({ id, e, file });
   }
@@ -701,7 +845,8 @@ function lintLangEntries(code, map, reg, concepts, issues) {
     const hints = list.map((x) => x.e.hint);
     const distinct = new Set(hints.filter(Boolean));
     for (const x of list) {
-      if (!x.e.hint) issues.push(err(x.file, x.id, `"${w}" is also used by ${list.filter((y) => y !== x).map((y) => y.id).join(', ')}: add a hint`));
+      const word = lang.vowels ? `"${w}" (without its vowel marks)` : `"${w}"`;
+      if (!x.e.hint) issues.push(err(x.file, x.id, `${word} is also used by ${list.filter((y) => y !== x).map((y) => y.id).join(', ')}: add a hint`));
     }
     if (hints.every(Boolean) && distinct.size !== hints.length) {
       for (const x of list) issues.push(err(x.file, x.id, `"${w}": hints must differ between colliding entries`));
@@ -732,6 +877,7 @@ function lintExamples(code, map, reg, concepts, layers, issues) {
       if (typeof ex.t !== 'string' || !ex.t.trim()) { issues.push(err(file, id, `${where}: t (sentence) required`)); return; }
       if (ex.t.length > 180) issues.push(err(file, id, `${where}: sentence longer than 180 chars`));
       checkPunctuation(file, id, ex.t, lang, issues, where);
+      checkSpelling(file, id, ex.t, code, issues, where);
       const spans = targetSpans(ex.t);
       if (spans.length !== 1 || !spans[0].trim()) issues.push(err(file, id, `${where}: mark the target word with exactly one {…}`));
       if ((ex.t.match(/[{}]/g) || []).length !== 2) issues.push(err(file, id, `${where}: unbalanced braces`));
@@ -750,7 +896,8 @@ function lintExamples(code, map, reg, concepts, layers, issues) {
         else if (!PINYIN_SENT_RE.test(ex.r)) issues.push(err(file, id, `${where}: r must be pinyin with tone marks`));
       } else if (ex.r !== undefined) issues.push(err(file, id, `${where}: r is only for Chinese`));
       if (lang.exampleReading === 'furigana') for (const pr of furiganaProblems(ex.t)) issues.push((pr.startsWith('kanji without') ? warn : err)(file, id, `${where}: ${pr}`));
-      if (lang.stress && spans[0]) for (const pr of russianStressProblems(spans[0])) issues.push(warn(file, id, `${where}: target ${pr}`));
+      if (lang.stress && spans[0]) for (const pr of stressProblems(spans[0], code)) issues.push(warn(file, id, `${where}: target ${pr}`));
+      if (lang.vowels && spans[0] && unvowelizedWords(spans[0]).length) issues.push(warn(file, id, `${where}: target {${spans[0]}} without vowel marks`));
       const plain = ex.t.replace(/\[[^\]]*\]/g, '');
       const { expected, foreign } = scriptStats(plain, lang.script);
       if (expected === 0) issues.push(err(file, id, `${where}: sentence has no ${lang.script} letters`));
@@ -761,11 +908,12 @@ function lintExamples(code, map, reg, concepts, layers, issues) {
 
 // ---------- Coverage ----------
 
+/** Coverage per active and staged language (staged: true for the latter, which the deploy gate leaves out). */
 export function coverage(ctx) {
   const { reg, concepts, layers } = ctx;
   const rows = [];
-  for (const code of reg.languages.active) {
-    const row = { code, total: 0, entries: 0, defs: 0, ex3: 0, ex1: 0, ipa: 0, etym: 0 };
+  for (const code of dataLanguages(reg)) {
+    const row = { code, staged: !reg.languages.active.includes(code), total: 0, entries: 0, defs: 0, ex3: 0, ex1: 0, ipa: 0, etym: 0 };
     for (const id of concepts.order) {
       const { c } = concepts.byId.get(id);
       row.total++;

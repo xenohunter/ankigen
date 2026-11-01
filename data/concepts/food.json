@@ -82,5 +82,8 @@
 "word-picnic": {"pos":"noun","mods":["food","hobbies"],"note":"meal outdoors"},
 "word-butcher-shop": {"pos":"noun","mods":["food","shopping"],"note":"shop selling meat"},
 "word-grocery-store": {"pos":"noun","mods":["food","shopping"],"note":"small food shop"},
-"word-sobremesa": {"pos":"noun","mods":["food"],"note":"Spanish: time spent talking at the table after a meal","only":["es"]}
+"word-sobremesa": {"pos":"noun","mods":["food"],"note":"Spanish: time spent talking at the table after a meal","only":["es"]},
+"word-aperitivo": {"pos":"noun","mods":["food"],"note":"Italian: pre-dinner drink served with snacks, a social ritual in bars at early evening","only":["it"]},
+"word-fika": {"pos":"noun","mods":["food"],"note":"Swedish: a social coffee-and-pastry break with friends or colleagues; also used as a verb","only":["sv"]},
+"word-nhau": {"pos":"verb","mods":["food","feelings"],"note":"Vietnamese: nhậu, to drink beer or spirits socially with shared dishes of food, a central male-dominated bonding ritual","only":["vi"]}
 }

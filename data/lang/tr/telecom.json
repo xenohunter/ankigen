@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"karekod","alt":["QR kod"],"forms":{"acc":"karekodu","poss3":"karekodu"},"def":"Telefon kamerasıyla okutulan, siyah beyaz noktalardan oluşan kare desen."},
 "word-notification": {"w":"bildirim","alt":["uyarı"],"forms":{"acc":"bildirimi","poss3":"bildirimi"},"def":"Telefonda beliren, yeni bir şeyi haber veren kısa mesaj."},
 "word-landline": {"w":"sabit telefon","alt":["ev telefonu"],"forms":{"acc":"sabit telefonu","poss3":"sabit telefonu"},"def":"Mobil şebekeye değil, kablolara bağlı olan telefon."},
-"word-postal-worker": {"w":"postacı","forms":{"acc":"postacıyı","poss3":"postacısı"},"def":"İşi mektupları ve paketleri evlere götürmek olan kişi."}
+"word-postal-worker": {"w":"postacı","forms":{"acc":"postacıyı","poss3":"postacısı"},"def":"İşi mektupları ve paketleri evlere götürmek olan kişi."},
+"word-eircode-ie": {"gl":"Eircode: İrlanda'da her adresi tek tek belirleyen yedi karakterli posta kodu"}
 }

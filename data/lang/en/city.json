@@ -18,5 +18,6 @@
 "word-city-block": {"w":"block","alt":["city block"],"def":"an area of buildings with streets on all four sides"},
 "word-tourist-information": {"w":"tourist information","alt":["visitor center"],"def":"an office where visitors can get maps and advice about a place"},
 "word-landmark": {"w":"landmark","def":"a building or place that is famous and easy to recognize"},
-"word-outskirts": {"w":"outskirts","def":"the parts of a city that are farthest from the center"}
+"word-outskirts": {"w":"outskirts","def":"the parts of a city that are farthest from the center"},
+"word-passeggiata": {"gl":"passeggiata: Italian leisurely evening or Sunday stroll to see and be seen"}
 }

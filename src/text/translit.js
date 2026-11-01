@@ -2,6 +2,7 @@
 // Rule-based romanization for the languages whose romanization is not stored in the data
 // (data/meta/languages.json: romanization.source "rule", otherScript.rule):
 //   ru-simple     Russian → readable Latin (this project's scheme, below)
+//   uk-national   Ukrainian → Latin, the national system of 2010
 //   sr-cyrl-latn  Serbian Cyrillic → Latin (exact); srToCyrillic is the inverse, for search only
 //   hy-bgn-pcgn   Eastern Armenian, BGN/PCGN 1981 (PCGN table, checked November 2022)
 //   el-elot-743   Modern Greek, ELOT 743 = BGN/PCGN 1996 (PCGN table, checked October 2017)
@@ -73,6 +74,50 @@ export function ruToLatin(text, { stress = true } = {}) {
       if (lower === 'ё' && 'жчшщц'.includes(prev || '-')) latin = 'o';
       if (lower === 'й' && prev === 'ы' && i === chars.length - 1) latin = '';
       if (stress && (chars[i + 1] === ACUTE || (lower === 'ё' && syllables > 1))) latin = accentLastVowel(latin);
+      out += withCase(latin, isUpper(ch), caps);
+      prev = lower;
+    });
+    return out;
+  });
+}
+
+// ---------------------------------------------------------------- Ukrainian (uk-national)
+// The national system of 2010 (Cabinet of Ministers resolution 55): є ї й ю я are ye yi y yu ya at the start of a
+// word, ie i i iu ia elsewhere; г is h, ґ is g, and зг is zgh; ь and the apostrophe are dropped. With stress on,
+// the U+0301 marks of the data carry over, as in Russian.
+
+/** @type {Record<string, string>} */
+const UK = {
+  а: 'a', б: 'b', в: 'v', г: 'h', ґ: 'g', д: 'd', е: 'e', є: 'ie', ж: 'zh', з: 'z', и: 'y', і: 'i', ї: 'i', й: 'i',
+  к: 'k', л: 'l', м: 'm', н: 'n', о: 'o', п: 'p', р: 'r', с: 's', т: 't', у: 'u', ф: 'f', х: 'kh', ц: 'ts', ч: 'ch',
+  ш: 'sh', щ: 'shch', ь: '', ю: 'iu', я: 'ia',
+};
+/** @type {Record<string, string>} */
+const UK_INITIAL = { є: 'ye', ї: 'yi', й: 'y', ю: 'yu', я: 'ya' };
+const UK_WORD = /\p{L}[\p{L}\p{M}]*(?:['’ʼ]\p{L}[\p{L}\p{M}]*)*/gu; // an apostrophe inside a word (сім’я) belongs to it
+
+/**
+ * @param {string} text Ukrainian, NFC with U+0301 stress marks
+ * @param {{ stress?: boolean }} [opts]
+ */
+export function ukToLatin(text, { stress = true } = {}) {
+  return text.normalize('NFC').replace(UK_WORD, (word) => {
+    const chars = [...word];
+    const caps = isAllCaps(chars);
+    let out = '';
+    let prev = ''; // previous letter, lower case; empty at the start of the word
+    chars.forEach((ch, i) => {
+      if (ch === ACUTE) return; // handled with its vowel
+      const lower = ch.toLowerCase();
+      let latin = UK[lower];
+      if (latin === undefined) {
+        if (!"'’ʼ".includes(ch)) out += ch;
+        prev = lower;
+        return;
+      }
+      if (!prev && UK_INITIAL[lower]) latin = UK_INITIAL[lower];
+      if (lower === 'г' && prev === 'з') latin = 'gh';
+      if (stress && chars[i + 1] === ACUTE) latin = accentLastVowel(latin);
       out += withCase(latin, isUpper(ch), caps);
       prev = lower;
     });
@@ -246,6 +291,7 @@ export function elToLatin(text) {
 /** Romanization schemes by the names used in data/meta/languages.json. */
 export const SCHEMES = {
   'ru-simple': ruToLatin,
+  'uk-national': ukToLatin,
   'sr-cyrl-latn': srToLatin,
   'hy-bgn-pcgn': hyToLatin,
   'el-elot-743': elToLatin,

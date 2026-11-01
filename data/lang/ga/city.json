@@ -1,0 +1,23 @@
+{
+"word-town-hall": {"w":"halla an bhaile","g":"m","alt":["halla cathrach"],"forms":{"gen":"halla an bhaile","pl":"hallaí an bhaile"},"def":"Foirgneamh ina n-oibríonn údaráis áitiúla cathrach."},
+"word-fire-station": {"w":"stáisiún dóiteáin","g":"m","forms":{"gen":"stáisiúin dóiteáin","pl":"stáisiúin dóiteáin"},"def":"Foirgneamh ina mbíonn na fir agus mná a mhúchann tinte réidh d'éigeandálaí."},
+"word-mosque": {"w":"mosc","g":"m","forms":{"gen":"mosc","pl":"moscanna"},"def":"Foirgneamh ina ndéanann Moslamaigh paidreacha."},
+"word-synagogue": {"w":"sionagóg","g":"f","forms":{"gen":"sionagóige","pl":"sionagóga"},"def":"Foirgneamh ina ndéanann Giúdaigh paidir agus staidéar."},
+"word-cathedral": {"w":"ardeaglais","g":"f","forms":{"gen":"ardeaglaise","pl":"ardeaglaisí"},"def":"Teach pobail an-mhór agus tábhachtach faoi stiúir easpaig."},
+"word-laundromat": {"w":"laundraí","g":"m","alt":["ionad níocháin"],"forms":{"gen":"laundraí"},"def":"Áit phoiblí ina ndéanann tú do chuid éadaí a níochán agus a thriomú i meaisíní a oibríonn le boinn."},
+"word-art-gallery": {"w":"gailearaí ealaíne","g":"m","alt":["gailearaí"],"forms":{"gen":"gailearaí ealaíne","pl":"gailearaithe ealaíne"},"def":"Foirgneamh nó seomra ina dtaispeántar pictiúir agus saothair eile don phobal."},
+"word-nightclub": {"w":"club oíche","g":"m","forms":{"gen":"club oíche","pl":"clubanna oíche"},"def":"Áit a bhíonn oscailte go deireanach ag am dorcha le ceol, damhsa agus deochanna."},
+"word-old-town": {"w":"seanchathair","g":"f","forms":{"gen":"seanchathrach","pl":"seanchathracha"},"def":"An chuid is sine de lár baile mór, go minic le foirgnimh stairiúla agus sráideanna cúnga."},
+"word-skyscraper": {"w":"ardfhoirgneamh","g":"m","forms":{"gen":"ardfhoirgnimh","pl":"ardfhoirgnimh"},"def":"Tógáil an-ard a bhfuil go leor urlár inti."},
+"word-apartment-block": {"w":"bloc árasán","g":"m","alt":["foirgneamh árasán"],"forms":{"gen":"bloc árasán","pl":"blocanna árasán"},"def":"Foirgneamh mór ina bhfuil go leor tithe ar urláir éagsúla."},
+"word-avenue": {"w":"ascaill","g":"f","forms":{"gen":"ascaille","pl":"ascaillí"},"def":"Sráid leathan i gcathair, go minic le crainn ar na taobhanna."},
+"word-pedestrian-zone": {"w":"limistéar coisithe","g":"m","forms":{"gen":"limistéir choisithe","pl":"limistéir choisithe"},"def":"Cuid de chathair nach bhfuil gluaisteáin ceadaithe inti, ionas gur féidir siúl go sábháilte."},
+"word-bench": {"w":"binse","g":"m","forms":{"gen":"binse","pl":"binsí"},"def":"Suíochán fada do roinnt daoine, taobh amuigh de ghnáth."},
+"word-fountain": {"w":"scairdeán","g":"m","forms":{"gen":"scairdeáin","pl":"scairdeáin"},"def":"Struchtúr a scaoileann uisce san aer, de ghnáth i bpáirc nó i gcearnóg."},
+"word-opposite": {"w":"os comhair","alt":["os coinne"],"def":"Ar an taobh eile de rud éigin, ag féachaint air.","hint":"trasna uaidh"},
+"word-city-block": {"w":"bloc","g":"m","alt":["bloc cathrach"],"forms":{"gen":"bloc","pl":"blocanna"},"def":"Ceantar foirgneamh a bhfuil sráideanna ar na ceithre thaobh de."},
+"word-tourist-information": {"w":"oifig eolais do thurasóirí","g":"f","alt":["oifig turasóireachta"],"forms":{"gen":"oifige eolais do thurasóirí","pl":"oifigí eolais do thurasóirí"},"def":"Áit ina bhfaigheann cuairteoirí léarscáileanna agus comhairle faoin áit."},
+"word-landmark": {"w":"sainchomhartha","g":"m","forms":{"gen":"sainchomhartha","pl":"sainchomharthaí"},"def":"Foirgneamh nó áit cháiliúil atá éasca a aithint."},
+"word-outskirts": {"w":"imeall na cathrach","g":"m","forms":{"gen":"imill na cathrach","pl":"imill na cathrach"},"def":"An chuid den chathair is faide ón lár."},
+"word-passeggiata": {"gl":"passeggiata: siúlóid shóisialta shuaimhneach Iodálach tráthnóna chun bualadh le daoine"}
+}

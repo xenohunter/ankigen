@@ -1,5 +1,5 @@
 {
-  "source": "90d5a0ebb9f3",
+  "source": "ddee17b9f677",
   "texts": {
     "decks": "Baralhos",
     "cta": "Cria o teu baralho",
@@ -26,20 +26,28 @@
   },
   "languages": {
     "en": "Inglês",
-    "ru": "Russo",
-    "sr": "Sérvio",
-    "ja": "Japonês",
-    "zh": "Chinês",
     "de": "Alemão",
-    "es": "Espanhol",
-    "pt": "Português",
-    "pl": "Polaco",
-    "ko": "Coreano",
     "nl": "Neerlandês",
+    "sv": "Sueco",
+    "zh": "Chinês",
+    "ja": "Japonês",
+    "vi": "Vietnamita",
+    "ko": "Coreano",
+    "es": "Espanhol",
     "fr": "Francês",
-    "hy": "Arménio",
+    "pt": "Português",
+    "it": "Italiano",
+    "ru": "Russo",
+    "pl": "Polaco",
+    "uk": "Ucraniano",
+    "sr": "Sérvio",
+    "ga": "Irlandês",
+    "gd": "Gaélico escocês",
+    "ar": "Árabe",
     "tr": "Turco",
-    "el": "Grego"
+    "el": "Grego",
+    "hu": "Húngaro",
+    "hy": "Arménio"
   },
   "categories": {
     "foundations": "Fundamentos",
@@ -206,13 +214,17 @@
       "label": "Marcas de acento",
       "help": "Marca a vogal tónica (молоко́). Aplica-se à palavra, às suas formas e à palavra destacada nos exemplos."
     },
+    "vowels": {
+      "label": "Marcas de vogais",
+      "help": "Os sinais das vogais breves (harakat) por cima e por baixo das letras: كِتَاب em vez de كتاب. Aplica-se à palavra, às suas formas e à palavra destacada nos exemplos."
+    },
     "reading": {
       "label": "Leitura (furigana)",
       "help": "Leitura em kana por cima dos kanji. Controla também o furigana nas frases de exemplo."
     },
     "romanization": {
       "label": "Romanização",
-      "help": "A palavra em letras latinas: Hepburn (japonês), pinyin (chinês), Romanização Revista (coreano), transliteração (russo, arménio, grego). No chinês controla também o pinyin nas frases de exemplo."
+      "help": "A palavra em letras latinas: Hepburn (japonês), pinyin (chinês), Romanização Revista (coreano), ALA-LC (árabe), transliteração (russo, ucraniano, arménio, grego). No chinês controla também o pinyin nas frases de exemplo."
     },
     "otherScript": {
       "label": "Outra escrita",
@@ -220,7 +232,7 @@
     },
     "measureWord": {
       "label": "Classificador / contador",
-      "help": "O classificador usado ao contar este substantivo (一本书, 鉛筆を三本)."
+      "help": "O classificador usado ao contar este substantivo (一本书, 鉛筆を三本, ba con mèo)."
     },
     "hanja": {
       "label": "Hanja",
@@ -270,7 +282,7 @@
     },
     "typeAnswer": {
       "label": "Escrever a resposta",
-      "help": "Nos cartões invertidos escreves a palavra em vez de apenas a recordares. O Anki compara a tua grafia com a forma principal (artigos incluídos, marcas de acento ignoradas)."
+      "help": "Nos cartões invertidos escreves a palavra em vez de apenas a recordares. O Anki compara a tua grafia com a forma principal (artigos incluídos, marcas de acento e de vogais ignoradas)."
     },
     "srScript": {
       "label": "Escrita do sérvio",
@@ -285,61 +297,12 @@
       "lede": "Um baralho Anki gratuito de palavras de inglês com traduções em português, criado no teu navegador.",
       "others": "Inglês para falantes de outras línguas"
     },
-    "ru": {
-      "name": "Russo para falantes de português",
-      "title": "Baralho de russo para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de russo para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de russo com traduções em português, criado no teu navegador.",
-      "others": "Russo para falantes de outras línguas"
-    },
-    "sr": {
-      "name": "Sérvio para falantes de português",
-      "title": "Baralho de sérvio para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de sérvio para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de sérvio com traduções em português, criado no teu navegador.",
-      "others": "Sérvio para falantes de outras línguas"
-    },
-    "ja": {
-      "name": "Japonês para falantes de português",
-      "title": "Baralho de japonês para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de japonês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de japonês com traduções em português, criado no teu navegador.",
-      "others": "Japonês para falantes de outras línguas"
-    },
-    "zh": {
-      "name": "Chinês para falantes de português",
-      "title": "Baralho de chinês para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de chinês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de chinês com traduções em português, criado no teu navegador.",
-      "others": "Chinês para falantes de outras línguas"
-    },
     "de": {
       "name": "Alemão para falantes de português",
       "title": "Baralho de alemão para falantes de português — AnkiGen",
       "description": "Baralho Anki gratuito de alemão para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
       "lede": "Um baralho Anki gratuito de palavras de alemão com traduções em português, criado no teu navegador.",
       "others": "Alemão para falantes de outras línguas"
-    },
-    "es": {
-      "name": "Espanhol para falantes de português",
-      "title": "Baralho de espanhol para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de espanhol para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de espanhol com traduções em português, criado no teu navegador.",
-      "others": "Espanhol para falantes de outras línguas"
-    },
-    "pl": {
-      "name": "Polaco para falantes de português",
-      "title": "Baralho de polaco para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de polaco para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de polaco com traduções em português, criado no teu navegador.",
-      "others": "Polaco para falantes de outras línguas"
-    },
-    "ko": {
-      "name": "Coreano para falantes de português",
-      "title": "Baralho de coreano para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de coreano para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de coreano com traduções em português, criado no teu navegador.",
-      "others": "Coreano para falantes de outras línguas"
     },
     "nl": {
       "name": "Neerlandês para falantes de português",
@@ -348,6 +311,48 @@
       "lede": "Um baralho Anki gratuito de palavras de neerlandês com traduções em português, criado no teu navegador.",
       "others": "Neerlandês para falantes de outras línguas"
     },
+    "sv": {
+      "name": "Sueco para falantes de português",
+      "title": "Baralho de sueco para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de sueco para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de sueco com traduções em português, criado no teu navegador.",
+      "others": "Sueco para falantes de outras línguas"
+    },
+    "zh": {
+      "name": "Chinês para falantes de português",
+      "title": "Baralho de chinês para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de chinês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de chinês com traduções em português, criado no teu navegador.",
+      "others": "Chinês para falantes de outras línguas"
+    },
+    "ja": {
+      "name": "Japonês para falantes de português",
+      "title": "Baralho de japonês para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de japonês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de japonês com traduções em português, criado no teu navegador.",
+      "others": "Japonês para falantes de outras línguas"
+    },
+    "vi": {
+      "name": "Vietnamita para falantes de português",
+      "title": "Baralho de vietnamita para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de vietnamita para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de vietnamita com traduções em português, criado no teu navegador.",
+      "others": "Vietnamita para falantes de outras línguas"
+    },
+    "ko": {
+      "name": "Coreano para falantes de português",
+      "title": "Baralho de coreano para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de coreano para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de coreano com traduções em português, criado no teu navegador.",
+      "others": "Coreano para falantes de outras línguas"
+    },
+    "es": {
+      "name": "Espanhol para falantes de português",
+      "title": "Baralho de espanhol para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de espanhol para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de espanhol com traduções em português, criado no teu navegador.",
+      "others": "Espanhol para falantes de outras línguas"
+    },
     "fr": {
       "name": "Francês para falantes de português",
       "title": "Baralho de francês para falantes de português — AnkiGen",
@@ -355,12 +360,61 @@
       "lede": "Um baralho Anki gratuito de palavras de francês com traduções em português, criado no teu navegador.",
       "others": "Francês para falantes de outras línguas"
     },
-    "hy": {
-      "name": "Arménio para falantes de português",
-      "title": "Baralho de arménio para falantes de português — AnkiGen",
-      "description": "Baralho Anki gratuito de arménio para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
-      "lede": "Um baralho Anki gratuito de palavras de arménio com traduções em português, criado no teu navegador.",
-      "others": "Arménio para falantes de outras línguas"
+    "it": {
+      "name": "Italiano para falantes de português",
+      "title": "Baralho de italiano para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de italiano para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de italiano com traduções em português, criado no teu navegador.",
+      "others": "Italiano para falantes de outras línguas"
+    },
+    "ru": {
+      "name": "Russo para falantes de português",
+      "title": "Baralho de russo para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de russo para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de russo com traduções em português, criado no teu navegador.",
+      "others": "Russo para falantes de outras línguas"
+    },
+    "pl": {
+      "name": "Polaco para falantes de português",
+      "title": "Baralho de polaco para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de polaco para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de polaco com traduções em português, criado no teu navegador.",
+      "others": "Polaco para falantes de outras línguas"
+    },
+    "uk": {
+      "name": "Ucraniano para falantes de português",
+      "title": "Baralho de ucraniano para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de ucraniano para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de ucraniano com traduções em português, criado no teu navegador.",
+      "others": "Ucraniano para falantes de outras línguas"
+    },
+    "sr": {
+      "name": "Sérvio para falantes de português",
+      "title": "Baralho de sérvio para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de sérvio para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de sérvio com traduções em português, criado no teu navegador.",
+      "others": "Sérvio para falantes de outras línguas"
+    },
+    "ga": {
+      "name": "Irlandês para falantes de português",
+      "title": "Baralho de irlandês para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de irlandês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de irlandês com traduções em português, criado no teu navegador.",
+      "others": "Irlandês para falantes de outras línguas"
+    },
+    "gd": {
+      "name": "Gaélico escocês para falantes de português",
+      "title": "Gaélico escocês para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de gaélico escocês para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de gaélico escocês com traduções em português, criado no teu navegador.",
+      "others": "Gaélico escocês para falantes de outras línguas"
+    },
+    "ar": {
+      "name": "Árabe para falantes de português",
+      "title": "Baralho de árabe para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de árabe para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de árabe com traduções em português, criado no teu navegador.",
+      "others": "Árabe para falantes de outras línguas"
     },
     "tr": {
       "name": "Turco para falantes de português",
@@ -375,6 +429,20 @@
       "description": "Baralho Anki gratuito de grego para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
       "lede": "Um baralho Anki gratuito de palavras de grego com traduções em português, criado no teu navegador.",
       "others": "Grego para falantes de outras línguas"
+    },
+    "hu": {
+      "name": "Húngaro para falantes de português",
+      "title": "Baralho de húngaro para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de húngaro para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de húngaro com traduções em português, criado no teu navegador.",
+      "others": "Húngaro para falantes de outras línguas"
+    },
+    "hy": {
+      "name": "Arménio para falantes de português",
+      "title": "Baralho de arménio para falantes de português — AnkiGen",
+      "description": "Baralho Anki gratuito de arménio para falantes de português: {words} em {modules}, com traduções e exemplos. Para Anki e AnkiDroid.",
+      "lede": "Um baralho Anki gratuito de palavras de arménio com traduções em português, criado no teu navegador.",
+      "others": "Arménio para falantes de outras línguas"
     }
   },
   "plural": {

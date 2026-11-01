@@ -45,5 +45,7 @@
 "word-whistle": {"w":"吹口哨","read":"chuī kǒushào","def":"撮起嘴唇吹气，发出尖细的声音。"},
 "word-hum": {"w":"哼","read":"hēng","alt":["哼唱"],"def":"闭着嘴发出声音，唱出曲调。"},
 "word-vinyl-record": {"w":"黑胶唱片","read":"hēijiāo chàngpiàn","mw":"张","alt":["唱片"],"def":"一种黑色的圆盘，针头划过时会放出音乐。"},
-"word-instrument": {"w":"乐器","read":"yuèqì","mw":"件","def":"吉他、钢琴这类用来演奏出音乐的东西。"}
+"word-instrument": {"w":"乐器","read":"yuèqì","mw":"件","def":"吉他、钢琴这类用来演奏出音乐的东西。"},
+"word-ceili": {"gl":"凯利舞会：爱尔兰的传统音乐、歌曲和集体舞社交聚会"},
+"word-mod-gaelic": {"gl":"莫德节：苏格兰盖尔语的歌曲、音乐、诗歌和演讲节日"}
 }

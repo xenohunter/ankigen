@@ -18,5 +18,6 @@
 "word-city-block": {"w":"pâté de maisons","g":"m","def":"Groupe de bâtiments entouré de rues sur ses quatre côtés."},
 "word-tourist-information": {"w":"office de tourisme","g":"m","art":"l'","alt":["office du tourisme"],"def":"Bureau où les visiteurs reçoivent des cartes et des conseils sur une région."},
 "word-landmark": {"w":"monument","g":"m","alt":["point de repère"],"def":"Bâtiment ou lieu célèbre et facile à reconnaître.","hint":"repère"},
-"word-outskirts": {"w":"banlieue","g":"f","alt":["périphérie"],"def":"Les quartiers situés loin du centre d'une ville.","hint":"périphérie"}
+"word-outskirts": {"w":"banlieue","g":"f","alt":["périphérie"],"def":"Les quartiers situés loin du centre d'une ville.","hint":"périphérie"},
+"word-passeggiata": {"gl":"passeggiata : promenade italienne tranquille, le soir ou le dimanche, pour voir et être vu"}
 }

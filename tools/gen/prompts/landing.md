@@ -32,6 +32,7 @@ How to write:
   - `lede`: one sentence under the heading.
   - `others`: a heading above links to the same language's pages for speakers of other languages.
 - `modules`, `categories`, `fields`, `options`: the names and help texts the app shows in English. Translate them for your reader. Keep the examples in their own languages ("der Tisch, la mesa", "молоко́", "一本书", "은행 → 銀行").
-- Write your language in its usual script: Serbian in Cyrillic, Chinese in Simplified characters, Japanese in ordinary kanji and kana. No stress marks in Russian prose.
+- Write your language in its usual script: Serbian in Cyrillic, Chinese in Simplified characters, Japanese in ordinary kanji and kana, Arabic without vowel marks. No stress marks in Russian or Ukrainian prose.
+- Arabic takes its own comma, semicolon and question mark (، ؛ ؟), never the ASCII ones. Irish writes only acute accents (á), Scottish Gaelic only grave ones (à).
 - Chinese and Japanese take full-width punctuation (，。：；！？（）), also around Latin words and placeholders: `导入 Anki（File → Import）`, `{words}，涵盖 {modules}`. The pipeline rejects ASCII marks next to Chinese or Japanese text.
 - Plain text only: no HTML, no Markdown.

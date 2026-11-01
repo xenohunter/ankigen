@@ -10,9 +10,10 @@
 //   node tools/gen/batch.mjs retry    <batchId> [--dry-run] [--incomplete]   resubmit failures (lint feedback / split if truncated)
 //   node tools/gen/batch.mjs sync     <unit> [--repairs 2]    one unit via the plain Messages API, with repair rounds
 //   node tools/gen/batch.mjs auto     [filters] [--max N]  submit → wait → collect → retry (≤ 2 rounds);
-//                                                          concepts/review units run one by one via sync
+//                                                          concepts/local/review units run one by one via sync;
+//                                                          a lang unit whose other entries exist sends only the missing
 //   node tools/gen/batch.mjs auto --batch <batchId>        resume waiting on a submitted batch (no new submit)
-// filters:  --type concepts|labels|landing|lang|review|ipa|exfix   --lang <code>   --module <id>
+// filters:  --type concepts|local|labels|landing|lang|review|ipa|exfix   --lang <code>   --module <id>   --units <id,id,…>
 // options:  --model claude-sonnet-5-5  --max-tokens 64000  --price-in 1 --price-out 5 (USD per M tokens, batch)
 //           --data <dir> (default data)
 //           --incomplete (retry, auto): resubmit only units still missing entries; their review units fix lint errors
@@ -22,7 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { context, loadProgress, availableUnits, findUnit, unitDone, repoRoot } from './units.mjs';
+import { context, loadProgress, availableUnits, findUnit, unitDone, repoRoot, pendingSubset } from './units.mjs';
 import { buildInput, compact, systemBlocks, outputPath } from './inputs.mjs';
 import { parseOutput } from './output.mjs';
 
@@ -53,6 +54,8 @@ const PRICE_OUT = Number(opt('--price-out', 5));
 const DATA = path.resolve(ROOT, opt('--data', 'data'));
 const BATCH_DIR = path.join(ROOT, 'tmp', 'batches');
 const MAX_ATTEMPTS = 3;
+/** Unit types that run one by one through sync: each may unlock the next. */
+const SEQUENTIAL = ['concepts', 'local', 'review'];
 
 fs.mkdirSync(BATCH_DIR, { recursive: true });
 
@@ -85,6 +88,7 @@ function selectUnits() {
   const busy = inflightUnits();
   let { available } = availableUnits(ctx, prog, { type: f.type, lang: f.lang });
   if (f.module) available = available.filter((u) => u.module === f.module);
+  if (opt('--units')) available = available.filter((u) => opt('--units').split(',').includes(u.id));
   available = available.filter((u) => !busy.has(u.id));
   const max = Number(opt('--max', 300));
   return { ctx, units: available.slice(0, max) };
@@ -122,7 +126,8 @@ function estimateTokens(params) {
 function expectedOutput(u, subset) {
   const n = subset ? subset.length : u.slice?.length ?? u.ids?.length ?? 0;
   switch (u.type) {
-    case 'lang': return n * (['ja', 'zh'].includes(u.lang) ? 300 : 220);
+    case 'lang': return n * (['ja', 'zh', 'ar', 'vi'].includes(u.lang) ? 300 : 220);
+    case 'local': return 4000;
     case 'ipa': return n * 20;
     case 'exfix': return n * (['ja', 'zh'].includes(u.lang) ? 400 : 300);
     case 'labels': return 2000;
@@ -190,8 +195,9 @@ async function estimate() {
   let tin = 0, tout = 0;
   const byType = {};
   for (const u of units) {
-    const i = estimateTokens(buildParams(ctx, u));
-    const o = expectedOutput(u);
+    const subset = pendingSubset(ctx, u);
+    const i = estimateTokens(buildParams(ctx, u, { subset }));
+    const o = expectedOutput(u, subset);
     tin += i; tout += o;
     const k = `${u.type}${u.lang ? ':' + u.lang : ''}`;
     byType[k] ??= { n: 0, in: 0, out: 0 };
@@ -209,9 +215,9 @@ async function submit(prebuilt) {
   else {
     const sel = selectUnits();
     ctx = sel.ctx;
-    const syncTypes = sel.units.filter((u) => u.type === 'concepts' || u.type === 'review');
-    if (syncTypes.length && !opt('--type')) console.log(`Note: ${syncTypes.length} concepts/review unit(s) skipped — run them with "auto --type concepts|review" (sequential).`);
-    requests = sel.units.filter((u) => u.type !== 'concepts' && u.type !== 'review').map((u) => ({ unit: u.id, part: null, subset: null, attempt: 1 }));
+    const syncTypes = sel.units.filter((u) => SEQUENTIAL.includes(u.type));
+    if (syncTypes.length && !opt('--type')) console.log(`Note: ${syncTypes.length} concepts/local/review unit(s) skipped — run them with "auto --type concepts|local|review" (sequential).`);
+    requests = sel.units.filter((u) => !SEQUENTIAL.includes(u.type)).map((u) => ({ unit: u.id, part: null, subset: pendingSubset(ctx, u), attempt: 1 }));
   }
   if (!requests.length) { console.log('Nothing to submit.'); return null; }
   const apiRequests = requests.map((r) => {
@@ -375,11 +381,12 @@ async function runSync(unitId, repairs) {
   let ctx = context(DATA);
   const u = findUnit(ctx, unitId);
   if (!u) die(`unknown unit ${unitId}`);
-  const r = { unit: u.id, part: null, subset: null, attempt: 1 };
+  const subset = pendingSubset(ctx, u);
+  const r = { unit: u.id, part: null, subset, attempt: 1 };
   let repair = null;
   for (let round = 0; round <= repairs; round++) {
     ctx = context(DATA);
-    const params = buildParams(ctx, findUnit(ctx, u.id), { repair });
+    const params = buildParams(ctx, findUnit(ctx, u.id), { subset, repair });
     if (flag('--dry-run')) { console.log(JSON.stringify(params).slice(0, 2000)); return true; }
     console.log(`${u.id}: request${round ? ` (repair ${round})` : ''}…`);
     const msg = await api('POST', '/messages', params);
@@ -405,7 +412,7 @@ async function sync() {
 
 async function auto() {
   const type = opt('--type');
-  if (type === 'concepts' || type === 'review') {
+  if (SEQUENTIAL.includes(type)) {
     // sequential: each unit may unlock the next
     for (;;) {
       const { units } = selectUnits();

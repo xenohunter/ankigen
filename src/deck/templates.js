@@ -9,7 +9,8 @@
 //            stay on the question. Type the answer adds {{type:TypeTarget}} to both sides.
 //   Audio:   only on the forward question and the reverse answer (ARCHITECTURE §7.1).
 // Captions come from labels.json in the known language. data-field / data-dir / data-side let the site
-// tell which field a selection came from (feedback reports).
+// tell which field a selection came from (feedback reports). In a deck with a right-to-left language every block
+// also says its direction (fields.js: learn.attrs, know.attrs), captions and the typed answer included.
 
 import { typesAnswer } from '../state.js';
 import { escapeHtml } from '../text/html.js';
@@ -41,14 +42,17 @@ const ROWS = [
 /** @param {DeckContext} ctx @param {string} row */
 const sideOf = (ctx, row) => ctx.meta.fields.fields.find((/** @type {any} */ f) => f.id === row)?.side;
 
+/** What a measure-word row is called: a counter in Japanese, a classifier in Vietnamese. @type {Record<string, string>} */
+const MEASURE_CAPTION = { ja: 'section.counter', vi: 'section.classifier' };
+
 /**
  * A conditional section, shown only when the field is not empty.
  * @param {DeckContext} ctx @param {string} row @param {string} field @param {string} cls @param {string | null} captionKey
  */
 function section(ctx, row, field, cls, captionKey) {
-  const key = row === 'measureWord' && ctx.learn.code === 'ja' ? 'section.counter' : captionKey;
-  const caption = key ? `<div class="cap">${escapeHtml(ctx.label(key) ?? '')}</div>` : '';
-  const lang = sideOf(ctx, row) === 'learning' ? ` lang="${ctx.learn.tag}"` : ` lang="${ctx.know.tag}"`;
+  const key = (row === 'measureWord' && MEASURE_CAPTION[ctx.learn.code]) || captionKey;
+  const caption = key ? `<div class="cap"${ctx.bidi ? ctx.know.attrs : ''}>${escapeHtml(ctx.label(key) ?? '')}</div>` : '';
+  const lang = sideOf(ctx, row) === 'learning' ? ctx.learn.attrs : ctx.know.attrs;
   return `{{#${field}}}<div class="sec ${cls}">${caption}<div class="val"${lang} data-field="${field}">{{${field}}}</div></div>{{/${field}}}`;
 }
 
@@ -61,14 +65,14 @@ function sections(ctx, pick) {
 function word(ctx, ruby) {
   const field = ruby ? 'WordRuby' : 'Word';
   return (
-    `<div class="word" lang="${ctx.learn.tag}" data-field="${field}">{{${field}}}</div>` +
-    `{{#Disambig}}<div class="disambig" lang="${ctx.know.tag}" data-field="Disambig">{{Disambig}}</div>{{/Disambig}}`
+    `<div class="word"${ctx.learn.attrs} data-field="${field}">{{${field}}}</div>` +
+    `{{#Disambig}}<div class="disambig"${ctx.know.attrs} data-field="Disambig">{{Disambig}}</div>{{/Disambig}}`
   );
 }
 
 /** @param {DeckContext} ctx @param {string} cls */
 function translation(ctx, cls) {
-  return `<div class="${cls}" lang="${ctx.know.tag}" data-field="Translation">{{Translation}}</div>`;
+  return `<div class="${cls}"${ctx.know.attrs} data-field="Translation">{{Translation}}</div>`;
 }
 
 /** @param {string} dir @param {string} side @param {string} body */
@@ -102,7 +106,7 @@ export function noteType(ctx, css) {
     sections(ctx, (row, p) => isEmoji(row) && p === 'front') +
     translation(ctx, 'translation prompt') +
     sections(ctx, (row, p) => !isEmoji(row) && !learningRow(row) && p === 'front');
-  const typeBox = type ? '<div class="typeans">{{type:TypeTarget}}</div>' : '';
+  const typeBox = type ? `<div class="typeans"${ctx.bidi ? ctx.learn.attrs : ''}>{{type:TypeTarget}}</div>` : '';
   const reverseFront = `{{#Reverse}}${card('reverse', 'front', revQuestion + typeBox)}{{/Reverse}}`;
   const reverseBack = card(
     'reverse',

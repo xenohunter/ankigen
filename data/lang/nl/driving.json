@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV: Spaanse verplichte technische keuring van voertuigen"},
 "word-apk-nl": {"w":"APK","g":"c","forms":{"pl":"APK's"},"def":"Verplichte periodieke keuring die controleert of een voertuig nog veilig en schoon genoeg is."},
 "word-kteo-gr": {"gl":"KTEO: Griekse technische keuring van voertuigen"},
-"word-muayene-tr": {"gl":"araç muayenesi: periodieke voertuigkeuring in Turkije"}
+"word-muayene-tr": {"gl":"araç muayenesi: periodieke voertuigkeuring in Turkije"},
+"word-revisione-it": {"gl":"revisione: verplichte periodieke voertuigkeuring in Italië"},
+"word-besiktning-se": {"gl":"besiktning: verplichte Zweedse voertuigkeuring bij een erkend keuringsstation"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS: Oekraïens kantoor voor rijbewijzen, kentekens en rijexamens"},
+"word-nct-ie": {"gl":"NCT: Ierse verplichte technische keuring voor auto's (National Car Test)"},
+"word-mot-uk": {"gl":"MOT: Britse jaarlijkse keuring voor voertuigen ouder dan drie jaar"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga: Hongaarse periodieke voertuigkeuring, met sticker op de kentekenplaat"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm: Vietnamese verplichte technische en uitstootkeuring van voertuigen"}
 }

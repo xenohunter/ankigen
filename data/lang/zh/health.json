@@ -84,5 +84,9 @@
 "word-contact-lenses": {"w":"隐形眼镜","read":"yǐnxíng yǎnjìng","mw":"副","def":"戴在眼睛上帮助看清东西的小塑料片。"},
 "word-wheelchair": {"w":"轮椅","read":"lúnyǐ","mw":"辆","def":"装着大轮子、给行走不便的人坐的椅子。"},
 "word-crutches": {"w":"拐杖","read":"guǎizhàng","alt":["拐"],"mw":"副","def":"夹在腋下帮受伤的人走路的棍子。"},
-"word-patient-person": {"w":"病人","read":"bìngrén","alt":["患者"],"mw":"位","def":"在医院或医生那里接受治疗的人。"}
+"word-patient-person": {"w":"病人","read":"bìngrén","alt":["患者"],"mw":"位","def":"在医院或医生那里接受治疗的人。"},
+"word-doctor-declaration-ua": {"gl":"乌克兰的“家庭医生声明”：与家庭医生签订的协议，可享受免费基础医疗"},
+"word-medical-card-ie": {"gl":"爱尔兰医疗卡：符合条件者凭卡免费看全科医生并享受医疗服务"},
+"word-nhs-uk": {"gl":"苏格兰公共医疗服务：看病大多免费，需先登记全科医生"},
+"word-health-insurance-card-vn": {"gl":"越南医疗保险卡：用于在公立医院报销医疗费用"}
 }

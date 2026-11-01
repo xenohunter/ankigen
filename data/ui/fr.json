@@ -1,5 +1,5 @@
 {
-  "source": "bdc86f0e97d2",
+  "source": "f7f1eb66b4c0",
   "texts": {
     "head.draft": "Le vocabulaire a été rédigé par une machine et n'est que partiellement relu. Vos retours sont les bienvenus.",
     "head.draftTopic": "le vocabulaire en brouillon",
@@ -23,6 +23,12 @@
     "lang.sameHelp": "Les cartes affichent une courte définition dans la langue que vous apprenez au lieu d'une traduction. Idéal dès que vous pouvez y lire des phrases simples.",
     "lang.loading": "Chargement des mots ({language})…",
     "lang.failed": "Impossible de charger les mots ({language}). Vérifiez votre connexion et rechargez la page.",
+    "group.germanic": "Germaniques",
+    "group.asian": "Asie de l’Est et du Sud-Est",
+    "group.romance": "Romanes",
+    "group.slavic": "Slaves",
+    "group.celtic": "Celtiques",
+    "group.other": "Autres",
     "modules.hint": "Choisissez les thèmes qui vous intéressent ; vous pourrez en ajouter plus tard.",
     "modules.show": "Afficher les modules : {category}",
     "modules.tally": "{n} sur {total}",

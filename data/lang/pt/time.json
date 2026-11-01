@@ -6,5 +6,6 @@
 "word-date-of-birth": {"w":"data de nascimento","g":"f","def":"O dia, o mês e o ano em que uma pessoa nasceu."},
 "word-time-zone": {"w":"fuso horário","g":"m","def":"Zona do mundo onde todos os relógios marcam a mesma hora."},
 "word-o-clock": {"w":"em ponto","def":"Diz-se a seguir a um número para indicar a hora exata, sem minutos."},
-"word-lifetime": {"w":"tempo de vida","g":"m","alt":["vida"],"def":"Todo o período entre o nascimento e a morte de uma pessoa."}
+"word-lifetime": {"w":"tempo de vida","g":"m","alt":["vida"],"def":"Todo o período entre o nascimento e a morte de uma pessoa."},
+"word-hogmanay": {"gl":"Hogmanay: celebração escocesa da passagem de ano, com visitas de boa sorte e Auld Lang Syne"}
 }

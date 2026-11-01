@@ -82,5 +82,8 @@
 "word-picnic": {"w":"picknick","g":"c","forms":{"pl":"picknicks"},"def":"Een maaltijd die je buiten opeet, vaak in een park."},
 "word-butcher-shop": {"w":"slagerij","g":"c","forms":{"pl":"slagerijen"},"def":"Een winkel waar vers vlees wordt verkocht."},
 "word-grocery-store": {"w":"buurtwinkel","g":"c","alt":["levensmiddelenwinkel"],"forms":{"pl":"buurtwinkels"},"def":"Een kleine winkel in de buurt waar je eten en kleine huishoudspullen koopt."},
-"word-sobremesa": {"gl":"sobremesa: Spaanse gewoonte om na de maaltijd nog aan tafel te blijven praten"}
+"word-sobremesa": {"gl":"sobremesa: Spaanse gewoonte om na de maaltijd nog aan tafel te blijven praten"},
+"word-aperitivo": {"gl":"aperitivo: Italiaans drankje met hapjes aan het begin van de avond in een bar"},
+"word-fika": {"gl":"fika: Zweedse koffiepauze met gebak, samen met vrienden of collega's"},
+"word-nhau": {"gl":"nhậu: Vietnamees sociaal drinken van bier of sterke drank met gedeelde gerechten"}
 }

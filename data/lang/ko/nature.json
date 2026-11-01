@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"자연보호구역","rom":"jayeonbohoguyeok","hanja":"自然保護區域","alt":["보호구역"],"def":"야생 동물과 식물이 해를 입지 않도록 지키는 지역."},
 "word-environment-protection": {"w":"환경 보호","rom":"hwangyeong boho","hanja":"環境保護","alt":["환경보호"],"def":"공기, 물, 땅이 더러워지거나 망가지지 않도록 지키는 활동."},
 "word-climate-change": {"w":"기후 변화","rom":"gihu byeonhwa","hanja":"氣候變化","alt":["지구 온난화"],"def":"지구의 온도가 오랫동안 오르고 날씨의 모습이 달라지는 현상."},
-"word-renewable-energy": {"w":"재생 에너지","rom":"jaesaeng eneoji","alt":["재생에너지"],"def":"해와 바람처럼 써도 없어지지 않는 자원에서 얻는 힘."}
+"word-renewable-energy": {"w":"재생 에너지","rom":"jaesaeng eneoji","alt":["재생에너지"],"def":"해와 바람처럼 써도 없어지지 않는 자원에서 얻는 힘."},
+"word-allemansratten": {"gl":"알레만스rätten: 스웨덴의 자연 접근권, 대부분의 땅에서 걷고 야영하고 열매를 딸 수 있는 권리"},
+"word-machair": {"gl":"마하이르: 헤브리디스 제도의 조개 모래 위에 펼쳐진 비옥한 해안 초원"}
 }

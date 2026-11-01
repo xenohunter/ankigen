@@ -1,0 +1,458 @@
+{
+  "source": "69afa0f8ff07",
+  "texts": {
+    "decks": "Kortlekar",
+    "cta": "Skapa din kortlek",
+    "ctaNote": "Öppnar AnkiGen med det här språkparet och modulen {module} förvald.",
+    "deck": "Anki-kortlek: {deck}",
+    "intro": "AnkiGen skapar kostnadsfria Anki-kortlekar direkt i webbläsaren: ord indelade efter ämne, vart och ett med översättning och exempelmeningar. Välj moduler och vad varje kort ska visa, och ladda sedan ned en .apkg-fil för Anki eller AnkiDroid. Inget konto, inget att installera.",
+    "cardsHeading": "Vad korten visar",
+    "cardsIntro": "Varje kort visar ordet du lär dig och dess översättning. Du väljer vad mer det ska visa, och på vilken sida:",
+    "captions": "Kortens etiketter, till exempel ”{caption}”, är på svenska.",
+    "modulesHeading": "Moduler",
+    "modulesIntro": "Ett ord som hör till flera moduler finns bara en gång i kortleken. Varje modul öppnar AnkiGen med just den modulen vald; där kan du lägga till fler.",
+    "sampleWords": "Exempelord",
+    "local": "Ord som bara det här språket har: {count}, till exempel {example}. Andra språk har inget exakt motsvarande ord, så korten förklarar dem på svenska.",
+    "howHeading": "Så fungerar det",
+    "step1": "Välj de moduler du vill ha. Varje modul visar hur många ord den har för ditt språkpar.",
+    "step2": "Välj vad varje kort ska visa, och på vilken sida. Förhandsgranskningen visar riktiga kort medan du justerar.",
+    "step3": "Ladda ned .apkg-filen och öppna den med Anki (File → Import), eller tryck på den i mobilen för att öppna den i AnkiDroid.",
+    "update": "Har du ändrat fält, lagt till moduler eller vill du ha nyare data? Ladda ned igen och importera den nya filen i Anki (File → Import) med standardalternativen. Anki uppdaterar dina befintliga anteckningar och deras layout, lägger till nya ord i samma kortlek och behåller dina repetitionsframsteg.",
+    "aboutHeading": "Om ordförrådet",
+    "about": "Ord, översättningar och exempelmeningar har tagits fram med en AI-modell och granskas av människor, språk för språk. Om något ser fel ut: markera det på ett förhandsgranskningskort i AnkiGen och tryck Ctrl+Enter (⌘+Enter på Mac), eller använd knappen Feedback där. Varje rapport hjälper till att förbättra kortleken för alla.",
+    "moreHeading": "Fler kortlekar",
+    "moreForYou": "Fler kortlekar för svensktalande",
+    "allDecks": "Alla kortlekar per språkpar"
+  },
+  "languages": {
+    "en": "Engelska",
+    "de": "Tyska",
+    "nl": "Nederländska",
+    "sv": "Svenska",
+    "zh": "Kinesiska",
+    "ja": "Japanska",
+    "vi": "Vietnamesiska",
+    "ko": "Koreanska",
+    "es": "Spanska",
+    "fr": "Franska",
+    "pt": "Portugisiska",
+    "it": "Italienska",
+    "ru": "Ryska",
+    "pl": "Polska",
+    "uk": "Ukrainska",
+    "sr": "Serbiska",
+    "ga": "Iriska",
+    "gd": "Skotsk gaeliska",
+    "ar": "Arabiska",
+    "tr": "Turkiska",
+    "el": "Grekiska",
+    "hu": "Ungerska",
+    "hy": "Armeniska"
+  },
+  "categories": {
+    "foundations": "Grunder",
+    "communication": "Kommunikation",
+    "daily-life": "Vardagsliv",
+    "getting-around": "Att ta sig runt",
+    "living-abroad": "Att bo utomlands",
+    "health-safety": "Hälsa och säkerhet",
+    "interests": "Intressen",
+    "adult": "18+"
+  },
+  "modules": {
+    "core-1": {
+      "name": "Kärnord I",
+      "desc": "De cirka 500 vanligaste orden, gemensamma för alla språk."
+    },
+    "core-2": {
+      "name": "Kärnord II",
+      "desc": "Nästa cirka 500 vanligaste ord."
+    },
+    "core-3": {
+      "name": "Kärnord III",
+      "desc": "Nästa cirka 800 vanligaste ord."
+    },
+    "numbers": {
+      "name": "Tal och matematik",
+      "desc": "Grundtal och ordningstal, bråk, räkning, mått."
+    },
+    "time": {
+      "name": "Tid och kalender",
+      "desc": "Veckodagar, månader, årstider, klockslag, datum, frekvens."
+    },
+    "phrases": {
+      "name": "Överlevnadsfraser",
+      "desc": "Hälsningar, artighet och hela meningar för vardagssituationer."
+    },
+    "countries": {
+      "name": "Länder, nationaliteter och språk",
+      "desc": "Stora länder, deras invånare, adjektiv och språk."
+    },
+    "language-learning": {
+      "name": "Språkinlärning",
+      "desc": "Att prata om språk: grammatiska termer, uttal, att be om hjälp."
+    },
+    "family": {
+      "name": "Familj och relationer",
+      "desc": "Släktingar, partner, vänner, livshändelser."
+    },
+    "feelings": {
+      "name": "Känslor och personlighet",
+      "desc": "Känslor, sinnesstämningar, personlighetsdrag."
+    },
+    "food": {
+      "name": "Mat och dryck",
+      "desc": "Matvaror, rätter, drycker, att äta ute."
+    },
+    "cooking": {
+      "name": "Matlagning och kök",
+      "desc": "Matlagningsverb, redskap, köksapparater, recept."
+    },
+    "shopping": {
+      "name": "Shopping och kläder",
+      "desc": "Butiker, betalning, storlekar, kläder, returer."
+    },
+    "housing": {
+      "name": "Boende och hyra",
+      "desc": "Hyra, kontrakt, hyresvärdar, el och vatten, rum."
+    },
+    "household": {
+      "name": "Hem och reparationer",
+      "desc": "Hushållssysslor, möbler, verktyg, reparationer, vvs, el."
+    },
+    "nature": {
+      "name": "Väder och natur",
+      "desc": "Väder, klimat, landskap, växter."
+    },
+    "animals": {
+      "name": "Husdjur och djur",
+      "desc": "Husdjur, djurvård, veterinärbesök, vanliga djur."
+    },
+    "city": {
+      "name": "Stad och vägbeskrivningar",
+      "desc": "Platser i staden, att fråga efter och ge vägbeskrivningar."
+    },
+    "transport": {
+      "name": "Transport och resor",
+      "desc": "Kollektivtrafik, biljetter, flygplatser, hotell, bagage."
+    },
+    "driving": {
+      "name": "Bilkörning och trafikregler",
+      "desc": "Bildelar, trafikregler, vägskyltar, körkortsprov, böter, olyckor."
+    },
+    "signs": {
+      "name": "Skyltar och anslag",
+      "desc": "Vad man läser på dörrar, butiker och gator: Dra, Utgång, Ur funktion."
+    },
+    "residence": {
+      "name": "Uppehållstillstånd och registrering",
+      "desc": "Visum, tillstånd, folkbokföring, dokument, myndigheter – plus landsspecifika termer."
+    },
+    "money": {
+      "name": "Pengar och bank",
+      "desc": "Konton, kort, överföringar, skatter, lån."
+    },
+    "work": {
+      "name": "Arbete och anställning",
+      "desc": "Yrken, kontrakt, lön, kontorsliv, jobbsökning."
+    },
+    "telecom": {
+      "name": "Post, telefon och internet",
+      "desc": "Paket, SIM-kort, mobilabonnemang, internet, konton."
+    },
+    "education": {
+      "name": "Utbildning",
+      "desc": "Skola, universitet, kurser, prov."
+    },
+    "health": {
+      "name": "Hälsa och medicin",
+      "desc": "Kropp, symtom, läkare, apotek, försäkring."
+    },
+    "emergencies": {
+      "name": "Nödsituationer",
+      "desc": "Polis, brand, ambulans, olyckor, katastrofer."
+    },
+    "hobbies": {
+      "name": "Hobbyer",
+      "desc": "Vanliga fritidsintressen, hantverk, samlande, friluftsliv."
+    },
+    "sports": {
+      "name": "Sport",
+      "desc": "Sporter, utrustning, tävlingar, träning."
+    },
+    "music": {
+      "name": "Musik",
+      "desc": "Instrument, genrer, att spela och lyssna."
+    },
+    "video-games": {
+      "name": "Datorspel",
+      "desc": "Spelord för att spela och chatta."
+    },
+    "tabletop": {
+      "name": "Brädspel",
+      "desc": "Tärningar, kort, turer och regler – för spelkvällar."
+    },
+    "tech": {
+      "name": "Teknik och datorer",
+      "desc": "Enheter, programvara, webben, felsökning."
+    },
+    "science": {
+      "name": "Naturvetenskap",
+      "desc": "Grundläggande ord inom fysik, kemi, biologi och astronomi."
+    },
+    "profanity": {
+      "name": "Svordomar",
+      "desc": "Svordomar och förolämpningar, matchade efter styrka mellan språken."
+    }
+  },
+  "fields": {
+    "gender": {
+      "label": "Genus / artikel",
+      "help": "Visar artikeln (der Tisch, la mesa) eller en genusmarkering (m/f/n) bredvid ordet."
+    },
+    "stress": {
+      "label": "Betoningstecken",
+      "help": "Markerar den betonade vokalen (молоко́). Gäller ordet, dess former och det markerade ordet i exempel."
+    },
+    "vowels": {
+      "label": "Vokaltecken",
+      "help": "Tecknen för korta vokaler (harakat) över och under bokstäverna: كِتَاب i stället för كتاب. Gäller ordet, dess former och det markerade ordet i exempel."
+    },
+    "reading": {
+      "label": "Läsning (furigana)",
+      "help": "Kanaläsning ovanför kanjitecknen. Styr också furigana i exempelmeningar."
+    },
+    "romanization": {
+      "label": "Romanisering",
+      "help": "Ordet med latinska bokstäver: Hepburn (japanska), pinyin (kinesiska), Revised Romanization (koreanska), ALA-LC (arabiska), translitteration (ryska, ukrainska, armeniska, grekiska). För kinesiska styr det också pinyin i exempelmeningar."
+    },
+    "otherScript": {
+      "label": "Annat skriftsystem",
+      "help": "Visar ordet i det andra serbiska skriftsystemet (latinskt om kortleken använder kyrilliskt, och tvärtom)."
+    },
+    "measureWord": {
+      "label": "Räkneord / klassificerare",
+      "help": "Klassificeraren som används när man räknar detta substantiv (一本书, 鉛筆を三本, ba con mèo)."
+    },
+    "hanja": {
+      "label": "Hanja",
+      "help": "Kinesiska tecken bakom sinokoreanska ord (은행 → 銀行). Visas bara för ord som har dem."
+    },
+    "forms": {
+      "label": "Viktiga former",
+      "help": "De få former du behöver för att använda ordet: plural, genitiv, preteritum, aspektpartner, verbklass … inga fullständiga tabeller."
+    },
+    "ipa": {
+      "label": "IPA",
+      "help": "Uttal i det internationella fonetiska alfabetet."
+    },
+    "examples": {
+      "label": "Exempel",
+      "help": "Exempelmeningar med ordet markerat. Använd reglaget för att välja hur många (0–3)."
+    },
+    "exampleTranslations": {
+      "label": "Översättning av exempel",
+      "help": "Visar varje exempel på ditt språk när det finns en motsvarande översättning. Vissa exempel är skrivna direkt på målspråket och saknar översättning."
+    },
+    "related": {
+      "label": "Motsatser och besläktade ord",
+      "help": "Motsatser och nära besläktade ord, på språket du lär dig."
+    },
+    "pos": {
+      "label": "Ordklass",
+      "help": "substantiv, verb, adjektiv …"
+    },
+    "register": {
+      "label": "Stilnivå",
+      "help": "Markerar informella, formella, vulgära eller stötande ord."
+    },
+    "emoji": {
+      "label": "Emoji",
+      "help": "En bildledtråd för konkreta ord (💧 vatten). De flesta abstrakta ord har ingen."
+    },
+    "conceptId": {
+      "label": "Begrepps-ID",
+      "help": "En liten kod längst ned på kortet (t.ex. word-water). Om du hittar ett fel när du pluggar i Anki, ange koden i din rapport så att vi hittar rätt post."
+    }
+  },
+  "options": {
+    "reverse": {
+      "label": "Omvända kort",
+      "help": "Lägger till ett andra kort per ord: ditt språk → språket du lär dig. På omvända kort flyttas allt om det inlärda ordet till svarssidan så att inget avslöjar svaret."
+    },
+    "typeAnswer": {
+      "label": "Skriv svaret",
+      "help": "På omvända kort skriver du ordet i stället för att bara komma ihåg det. Anki jämför din stavning med huvudformen (artiklar räknas med, betoning och vokaltecken ignoreras)."
+    },
+    "srScript": {
+      "label": "Serbiskt skriftsystem",
+      "help": "Serbiska skrivs med både kyrilliska och latinska bokstäver. Välj det som används på dina kort."
+    }
+  },
+  "pairs": {
+    "en": {
+      "name": "Engelska för svensktalande",
+      "title": "Gratis Anki-kortlek i engelska — AnkiGen",
+      "description": "Gratis Anki-kortlek i engelska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på engelska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Engelska för talare av andra språk"
+    },
+    "de": {
+      "name": "Tyska för svensktalande",
+      "title": "Gratis Anki-kortlek i tyska — AnkiGen",
+      "description": "Gratis Anki-kortlek i tyska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på tyska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Tyska för talare av andra språk"
+    },
+    "nl": {
+      "name": "Nederländska för svensktalande",
+      "title": "Gratis Anki-kortlek i nederländska — AnkiGen",
+      "description": "Gratis Anki-kortlek i nederländska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på nederländska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Nederländska för talare av andra språk"
+    },
+    "zh": {
+      "name": "Kinesiska för svensktalande",
+      "title": "Gratis Anki-kortlek i kinesiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i kinesiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på kinesiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Kinesiska för talare av andra språk"
+    },
+    "ja": {
+      "name": "Japanska för svensktalande",
+      "title": "Gratis Anki-kortlek i japanska — AnkiGen",
+      "description": "Gratis Anki-kortlek i japanska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på japanska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Japanska för talare av andra språk"
+    },
+    "vi": {
+      "name": "Vietnamesiska för svensktalande",
+      "title": "Gratis Anki-kortlek i vietnamesiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i vietnamesiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på vietnamesiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Vietnamesiska för talare av andra språk"
+    },
+    "ko": {
+      "name": "Koreanska för svensktalande",
+      "title": "Gratis Anki-kortlek i koreanska — AnkiGen",
+      "description": "Gratis Anki-kortlek i koreanska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på koreanska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Koreanska för talare av andra språk"
+    },
+    "es": {
+      "name": "Spanska för svensktalande",
+      "title": "Gratis Anki-kortlek i spanska — AnkiGen",
+      "description": "Gratis Anki-kortlek i spanska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på spanska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Spanska för talare av andra språk"
+    },
+    "fr": {
+      "name": "Franska för svensktalande",
+      "title": "Gratis Anki-kortlek i franska — AnkiGen",
+      "description": "Gratis Anki-kortlek i franska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på franska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Franska för talare av andra språk"
+    },
+    "pt": {
+      "name": "Portugisiska för svensktalande",
+      "title": "Gratis Anki-kortlek i portugisiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i portugisiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på portugisiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Portugisiska för talare av andra språk"
+    },
+    "it": {
+      "name": "Italienska för svensktalande",
+      "title": "Gratis Anki-kortlek i italienska — AnkiGen",
+      "description": "Gratis Anki-kortlek i italienska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på italienska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Italienska för talare av andra språk"
+    },
+    "ru": {
+      "name": "Ryska för svensktalande",
+      "title": "Gratis Anki-kortlek i ryska — AnkiGen",
+      "description": "Gratis Anki-kortlek i ryska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på ryska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Ryska för talare av andra språk"
+    },
+    "pl": {
+      "name": "Polska för svensktalande",
+      "title": "Gratis Anki-kortlek i polska — AnkiGen",
+      "description": "Gratis Anki-kortlek i polska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på polska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Polska för talare av andra språk"
+    },
+    "uk": {
+      "name": "Ukrainska för svensktalande",
+      "title": "Gratis Anki-kortlek i ukrainska — AnkiGen",
+      "description": "Gratis Anki-kortlek i ukrainska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på ukrainska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Ukrainska för talare av andra språk"
+    },
+    "sr": {
+      "name": "Serbiska för svensktalande",
+      "title": "Gratis Anki-kortlek i serbiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i serbiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på serbiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Serbiska för talare av andra språk"
+    },
+    "ga": {
+      "name": "Iriska för svensktalande",
+      "title": "Gratis Anki-kortlek i iriska — AnkiGen",
+      "description": "Gratis Anki-kortlek i iriska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på iriska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Iriska för talare av andra språk"
+    },
+    "gd": {
+      "name": "Skotsk gaeliska för svensktalande",
+      "title": "Gratis Anki-kortlek i skotsk gaeliska — AnkiGen",
+      "description": "Gratis Anki-kortlek i skotsk gaeliska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på skotsk gaeliska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Skotsk gaeliska för talare av andra språk"
+    },
+    "ar": {
+      "name": "Arabiska för svensktalande",
+      "title": "Gratis Anki-kortlek i arabiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i arabiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på arabiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Arabiska för talare av andra språk"
+    },
+    "tr": {
+      "name": "Turkiska för svensktalande",
+      "title": "Gratis Anki-kortlek i turkiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i turkiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på turkiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Turkiska för talare av andra språk"
+    },
+    "el": {
+      "name": "Grekiska för svensktalande",
+      "title": "Gratis Anki-kortlek i grekiska — AnkiGen",
+      "description": "Gratis Anki-kortlek i grekiska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på grekiska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Grekiska för talare av andra språk"
+    },
+    "hu": {
+      "name": "Ungerska för svensktalande",
+      "title": "Gratis Anki-kortlek i ungerska — AnkiGen",
+      "description": "Gratis Anki-kortlek i ungerska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på ungerska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Ungerska för talare av andra språk"
+    },
+    "hy": {
+      "name": "Armeniska för svensktalande",
+      "title": "Gratis Anki-kortlek i armeniska — AnkiGen",
+      "description": "Gratis Anki-kortlek i armeniska för svensktalande: {words} i {modules}, med översättningar och exempel. För Anki och AnkiDroid.",
+      "lede": "En gratis Anki-kortlek med ord på armeniska och svenska översättningar, skapad direkt i webbläsaren.",
+      "others": "Armeniska för talare av andra språk"
+    }
+  },
+  "plural": {
+    "word": {
+      "one": "{n} ord",
+      "other": "{n} ord"
+    },
+    "module": {
+      "one": "{n} modul",
+      "other": "{n} moduler"
+    }
+  }
+}

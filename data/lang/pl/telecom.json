@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"kod QR","g":"m","forms":{"gen":"kodu QR","pl":"kody QR"},"def":"Kwadratowy wzór z czarnych i białych kropek, który skanuje aparat telefonu."},
 "word-notification": {"w":"powiadomienie","g":"n","forms":{"gen":"powiadomienia","pl":"powiadomienia"},"def":"Krótka wiadomość na ekranie telefonu, która informuje o czymś nowym."},
 "word-landline": {"w":"telefon stacjonarny","g":"m","forms":{"gen":"telefonu stacjonarnego","pl":"telefony stacjonarne"},"def":"Aparat podłączony przewodem do linii, a nie działający przez zasięg komórkowy."},
-"word-postal-worker": {"w":"listonosz","g":"m","forms":{"gen":"listonosza","pl":"listonosze","f":"listonoszka"},"def":"Osoba, której praca polega na roznoszeniu przesyłek do domów."}
+"word-postal-worker": {"w":"listonosz","g":"m","forms":{"gen":"listonosza","pl":"listonosze","f":"listonoszka"},"def":"Osoba, której praca polega na roznoszeniu przesyłek do domów."},
+"word-eircode-ie": {"gl":"Eircode: irlandzki siedmioznakowy kod pocztowy, który wskazuje konkretny adres"}
 }

@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"自然保护区","read":"zìrán bǎohùqū","mw":"个","def":"划出来让野生动植物不受伤害的地区。"},
 "word-environment-protection": {"w":"环境保护","read":"huánjìng bǎohù","alt":["环保"],"def":"让空气、水和土地保持干净、不受破坏的各种做法。"},
 "word-climate-change": {"w":"气候变化","read":"qìhòu biànhuà","alt":["全球变暖"],"def":"地球温度长期升高、天气规律随之改变的现象。"},
-"word-renewable-energy": {"w":"可再生能源","read":"kězàishēng néngyuán","def":"来自不会用完的来源（比如太阳和风）的动力。"}
+"word-renewable-energy": {"w":"可再生能源","read":"kězàishēng néngyuán","def":"来自不会用完的来源（比如太阳和风）的动力。"},
+"word-allemansratten": {"gl":"万人权：瑞典的公共通行权，可在大多数土地上漫游、露营和采摘浆果"},
+"word-machair": {"gl":"梅切尔：苏格兰西部岛屿特有的贝壳沙质低地沿海草场，土地肥沃"}
 }

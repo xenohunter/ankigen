@@ -91,5 +91,12 @@
 "word-itv-es": {"gl":"ITV：西班牙强制性的车辆技术检验"},
 "word-apk-nl": {"gl":"APK：荷兰车辆的定期适驾检验"},
 "word-kteo-gr": {"gl":"KTEO：希腊的车辆技术检验中心"},
-"word-muayene-tr": {"gl":"araç muayenesi：土耳其的定期车辆检验"}
+"word-muayene-tr": {"gl":"araç muayenesi：土耳其的定期车辆检验"},
+"word-revisione-it": {"gl":"revisione：意大利的机动车定期强制检验"},
+"word-besiktning-se": {"gl":"besiktning：瑞典在指定检测站进行的机动车强制检验"},
+"word-tsc-mvs-ua": {"gl":"TSC MVS：乌克兰办理驾照、车辆登记和驾驶考试的内务部服务中心"},
+"word-nct-ie": {"gl":"NCT：爱尔兰的国家汽车检测，即汽车强制安全检验"},
+"word-mot-uk": {"gl":"MOT：英国对三年以上车辆的年度安全检验"},
+"word-muszaki-vizsga-hu": {"gl":"műszaki vizsga：匈牙利的车辆定期技术检验，以车牌贴纸为证"},
+"word-dang-kiem-vn": {"gl":"đăng kiểm：越南在登记中心进行的车辆技术和排放强制检验"}
 }

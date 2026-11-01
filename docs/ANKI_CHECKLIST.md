@@ -183,6 +183,20 @@ node tools/apkg.mjs '#v1&l=ru&k=en&m=core-1,time&f=forms:f,ipa:o&x=1&r=1' --data
 - [ ] **Result:** 11 notes updated; no card plays anything or shows a play button. Edit a note: the Audio field is empty.
 - [ ] **Tools → Check Media:** lists 11 unused files, `ankigen-ru-….mp3`. "Delete Unused" removes them. This is what the page's "?" next to the audio toggle tells users to do.
 
+**Step 12: Right to left (Arabic)**
+
+With the real data (Arabic is not in the golden sample): Arabic learned with English, reverse cards and typing, then English learned by an Arabic speaker.
+
+```
+node tools/apkg.mjs '#v1&l=ar&k=en&m=core-1&x=2&r=1&t=1' --out tmp/anki-test/12
+node tools/apkg.mjs '#v1&l=en&k=ar&m=core-1&x=2' --out tmp/anki-test/12
+```
+
+- [ ] **Forward card (ar → en):** the word reads right to left with its vowel marks (كِتَاب), and its gender mark ("m.") sits after it, to its left. The forms read "pl. كُتُب" with the caption first from the right; the examples are right-aligned Arabic with the English translation under them.
+- [ ] **Reverse card:** type the word without vowel marks (كتاب): it shows as correct. The typing box writes right to left.
+- [ ] **en → ar:** the translations are Arabic without vowel marks, the captions (الأمثلة…) read right to left, and the English examples stay left to right.
+- [ ] **Fonts:** the vowel marks are legible and not clipped at the top or bottom of a line.
+
 ## AnkiDroid
 
 Repeat a shorter round on the phone, in a fresh state (or after deleting the desktop-tested decks there).
@@ -201,6 +215,7 @@ Repeat a shorter round on the phone, in a fresh state (or after deleting the des
 - [ ] **Step 9:** the full-size deck imports in reasonable time.
 - [ ] **Step 10:** the clip plays when the forward front appears and from its button, not again on the forward answer, not on the reverse front, and on the reverse back. Copy the file over again and import it a second time: no new media.
 - [ ] **Step 11:** after the audio-off file, Check Media (⋮ → Check media, or Settings → Advanced) lists the unused clips. Tell me the menu path in your version.
+- [ ] **Step 12:** the Arabic cards read right to left as on desktop, and the Arabic keyboard types into the answer box.
 
 ## What to send back
 

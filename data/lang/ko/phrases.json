@@ -87,5 +87,7 @@
 "phrase-thanks-for-hard-work": {"w":"수고하셨습니다","rom":"sugohasyeosseumnida","alt":["수고하세요","수고했어요"],"def":"함께 일한 사람에게 애쓴 것에 대해 고마움을 전하는 말."},
 "phrase-kolay-gelsin": {"gl":"콜라이 겔신: 일하는 사람에게 ‘일이 쉽기를’ 하고 건네는 터키어 인사"},
 "phrase-kalo-mina": {"gl":"칼로 미나: 매달 첫날에 ‘좋은 달 되세요’ 하고 건네는 그리스어 인사"},
-"phrase-s-lyogkim-parom": {"gl":"스 료흐킴 파롬: 목욕이나 사우나를 마친 사람에게 하는 러시아어 인사"}
+"phrase-s-lyogkim-parom": {"gl":"스 료흐킴 파롬: 목욕이나 사우나를 마친 사람에게 하는 러시아어 인사"},
+"phrase-kezcsokolom": {"gl":"케즈트 초콜롬: 헝가리어 \"당신의 손에 입을 맞춥니다\", 여성이나 어르신께 하는 공손한 인사"},
+"phrase-have-you-eaten-yet": {"gl":"안 꼬므 쯔어: 베트남어 \"밥 먹었어요?\", 안부를 묻는 다정한 일상 인사"}
 }

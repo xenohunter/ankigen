@@ -32,5 +32,6 @@
 "word-qr-code": {"w":"QRコード","rom":"kyūāru kōdo","def":"黒と白の点が並んだ四角い模様で、スマホのカメラで読み取れるもの。"},
 "word-notification": {"w":"通知","read":"つうち","rom":"tsūchi","def":"新しい出来事を知らせるために、スマホの画面に出る短い表示。"},
 "word-landline": {"w":"固定電話","read":"こていでんわ","rom":"kotei denwa","mw":"台","def":"線でつながっていて、家や会社に置いて使う電話。"},
-"word-postal-worker": {"w":"郵便配達員","read":"ゆうびんはいたついん","rom":"yūbin haitatsuin","alt":["郵便屋さん"],"def":"手紙や荷物を家まで運ぶ仕事の人。"}
+"word-postal-worker": {"w":"郵便配達員","read":"ゆうびんはいたついん","rom":"yūbin haitatsuin","alt":["郵便屋さん"],"def":"手紙や荷物を家まで運ぶ仕事の人。"},
+"word-eircode-ie": {"gl":"エアコード：アイルランドの、住所ごとに割り当てられた7桁の郵便番号"}
 }

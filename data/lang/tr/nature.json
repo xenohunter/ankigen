@@ -36,5 +36,7 @@
 "word-nature-reserve": {"w":"doğa koruma alanı","alt":["tabiat koruma alanı","koruma alanı"],"forms":{"acc":"doğa koruma alanını","poss3":"doğa koruma alanı"},"def":"Yabani hayvanların ve bitkilerin zarar görmeden yaşaması için korunan yer."},
 "word-environment-protection": {"w":"çevre koruma","alt":["çevrenin korunması"],"forms":{"acc":"çevre korumayı"},"def":"Hava, su ve toprağın kirlenmesini önlemek için yapılan işler."},
 "word-climate-change": {"w":"iklim değişikliği","alt":["küresel ısınma"],"forms":{"acc":"iklim değişikliğini","poss3":"iklim değişikliği"},"def":"Dünyanın sıcaklığının uzun vadede artması ve hava koşullarının farklılaşması."},
-"word-renewable-energy": {"w":"yenilenebilir enerji","forms":{"acc":"yenilenebilir enerjiyi"},"def":"Güneş ve rüzgâr gibi tükenmeyen kaynaklardan elde edilen güç."}
+"word-renewable-energy": {"w":"yenilenebilir enerji","forms":{"acc":"yenilenebilir enerjiyi"},"def":"Güneş ve rüzgâr gibi tükenmeyen kaynaklardan elde edilen güç."},
+"word-allemansratten": {"gl":"allemansrätten: İsveç'te çoğu arazide dolaşma, kamp kurma ve orman meyvesi toplama hakkı"},
+"word-machair": {"gl":"machair: Hebridler'e özgü, kabuklu kumlu, çiçekli alçak kıyı çayırı"}
 }
