@@ -7,7 +7,7 @@
 import { PLURALS, STRINGS } from './strings.js';
 
 /** The interface languages, in the order of the language chips: English and those with a data/ui translation. */
-export const UI_LANGUAGES = ['en', 'de', 'nl', 'sv', 'zh', 'ja', 'vi', 'ko', 'es', 'fr', 'pt', 'it', 'ru', 'pl', 'uk', 'sr', 'ga', 'gd', 'ar', 'tr', 'el', 'hu', 'hy'];
+export const UI_LANGUAGES = ['en', 'de', 'nl', 'sv', 'zh', 'ja', 'vi', 'ko', 'es', 'fr', 'pt', 'it', 'ru', 'pl', 'uk', 'sr', 'ar', 'tr', 'el', 'hu', 'hy', 'ga', 'gd'];
 /** The user's last choice, in localStorage. */
 export const LANGUAGE_KEY = 'ankigen:lang';
 

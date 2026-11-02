@@ -10,31 +10,31 @@ Repo: https://github.com/xenohunter/ankigen (branch `master`). Site: https://xen
 
   | Group | Language | Variant |
   |---|---|---|
-  | Germanic | English | US |
+  | Germanic languages | English | US |
   | | German | Germany |
   | | Dutch | Netherlands |
   | | Swedish | Sweden (rikssvenska) |
-  | East and Southeast Asian | Chinese | Mandarin, Simplified, mainland |
+  | Asian languages | Chinese | Mandarin, Simplified, mainland |
   | | Japanese | |
   | | Vietnamese | Northern (Hà Nội): vocabulary, spelling, IPA |
   | | Korean | South Korea |
-  | Romance | Spanish | Spain |
+  | Romance languages | Spanish | Spain |
   | | French | France |
   | | Portuguese | Portugal |
   | | Italian | Italy |
-  | Slavic | Russian | |
+  | Slavic languages | Russian | |
   | | Polish | |
   | | Ukrainian | Ukraine, 2019 orthography; stress marks as in Russian |
   | | Serbian | ekavian; stored in Cyrillic, Latin derived |
-  | Celtic | Irish | An Caighdeán Oifigiúil; IPA: Connacht |
-  | | Scottish Gaelic | Gaelic Orthographic Conventions; IPA: a general Hebridean pronunciation |
-  | Other | Arabic | Modern Standard; full vowel marks (harakat), which a row can hide |
+  | Other languages | Arabic | Modern Standard; full vowel marks (harakat), which a row can hide |
   | | Turkish | Turkey |
   | | Greek | modern, monotonic |
   | | Hungarian | Hungary |
   | | Armenian | Eastern, reformed orthography |
+  | | Irish | An Caighdeán Oifigiúil; IPA: Connacht |
+  | | Scottish Gaelic | Gaelic Orthographic Conventions; IPA: a general Hebridean pronunciation |
 
-- **Groups:** Germanic, Romance, Slavic and Celtic are branches of Indo-European; East and Southeast Asian is a region (its four languages belong to four families); Other holds the rest. The group with English comes first and Other last; the other groups, and the languages within every group, go by their number of speakers (L1 + L2: Ethnologue 2026, or Wikipedia's infobox for languages under 50 million; `speakers` in `languages.json`, whose order lint checks).
+- **Groups:** Germanic, Romance and Slavic are branches of Indo-European; Asian is a region (East and Southeast Asia: its four languages belong to four families); Other holds the rest, Irish and Scottish Gaelic among them. The group with English comes first and Other last; the other groups, and the languages within every group, go by their number of speakers (L1 + L2: Ethnologue 2026, or Wikipedia's infobox for languages under 50 million; `speakers` in `languages.json`, whose order lint checks).
 - **Adding a language:** it is first *staged*: generated, but not shown; once complete it becomes active (GENERATION.md §9).
 - **Regional variants** (pt-BR, es-MX, en-GB, …) are added later as separate dropdown entries backed by override files (`extends`).
 - **Modes:**
@@ -115,7 +115,7 @@ Minimal, clean, fast. Card captions use the language the user speaks, via `label
 - Module, field and option texts and the language names come from the landing pages' translations (`data/landing`); the page's own texts are in `data/ui`. A text a translation lacks is shown in English.
 
 1. **Title + short description**, plus a one-line disclaimer: vocabulary is machine-drafted and partly unreviewed, and feedback is welcome. Top right, beside the interface language: "Support this project:" with Patreon and Buy Me a Coffee (as in the footer, but outlined in orange there).
-2. **I'm learning:** language chips with native names (Српски, 日本語, Հայերեն) and the names in the interface language as tooltips, under the names of their groups (§1), the name beside its chips (above them on phones).
+2. **I'm learning:** language chips with native names (Српски, 日本語, Հայերեն) and the names in the interface language as tooltips, under the names of their groups (§1), the name above its chips and followed by a thin light-gray line to the end of the row, which sets the groups apart.
 3. **I speak:** first a **Same language** button on a row of its own, with "— word definitions" in muted text (the interface language's clearest phrase: ru «толковый словарь»), set apart from the language chips below by a thin line; the chips are grouped as in step 2.
 4. **Modules:** a tree with expand/collapse and checkboxes at module and category level, a selected count, and an 18+ badge on Profanity.
 5. **Card fields:** the field table and examples slider; the rarely used rows under "More…" (§3).

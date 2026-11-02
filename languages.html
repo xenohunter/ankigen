@@ -76,13 +76,13 @@
           { "@type": "ListItem", "position": 14, "item": { "@type": "Language", "name": "Polish", "alternateName": "pl" } },
           { "@type": "ListItem", "position": 15, "item": { "@type": "Language", "name": "Ukrainian", "alternateName": "uk" } },
           { "@type": "ListItem", "position": 16, "item": { "@type": "Language", "name": "Serbian", "alternateName": "sr" } },
-          { "@type": "ListItem", "position": 17, "item": { "@type": "Language", "name": "Irish", "alternateName": "ga" } },
-          { "@type": "ListItem", "position": 18, "item": { "@type": "Language", "name": "Scottish Gaelic", "alternateName": "gd" } },
-          { "@type": "ListItem", "position": 19, "item": { "@type": "Language", "name": "Arabic", "alternateName": "ar" } },
-          { "@type": "ListItem", "position": 20, "item": { "@type": "Language", "name": "Turkish", "alternateName": "tr" } },
-          { "@type": "ListItem", "position": 21, "item": { "@type": "Language", "name": "Greek", "alternateName": "el" } },
-          { "@type": "ListItem", "position": 22, "item": { "@type": "Language", "name": "Hungarian", "alternateName": "hu" } },
-          { "@type": "ListItem", "position": 23, "item": { "@type": "Language", "name": "Armenian", "alternateName": "hy" } }
+          { "@type": "ListItem", "position": 17, "item": { "@type": "Language", "name": "Arabic", "alternateName": "ar" } },
+          { "@type": "ListItem", "position": 18, "item": { "@type": "Language", "name": "Turkish", "alternateName": "tr" } },
+          { "@type": "ListItem", "position": 19, "item": { "@type": "Language", "name": "Greek", "alternateName": "el" } },
+          { "@type": "ListItem", "position": 20, "item": { "@type": "Language", "name": "Hungarian", "alternateName": "hu" } },
+          { "@type": "ListItem", "position": 21, "item": { "@type": "Language", "name": "Armenian", "alternateName": "hy" } },
+          { "@type": "ListItem", "position": 22, "item": { "@type": "Language", "name": "Irish", "alternateName": "ga" } },
+          { "@type": "ListItem", "position": 23, "item": { "@type": "Language", "name": "Scottish Gaelic", "alternateName": "gd" } }
         ]
       }
     }
@@ -94,7 +94,7 @@
 <script>
   (function () {
     var root = document.documentElement;
-    var ui = 'en de nl sv zh ja vi ko es fr pt it ru pl uk sr ga gd ar tr el hu hy'.split(' ');
+    var ui = 'en de nl sv zh ja vi ko es fr pt it ru pl uk sr ar tr el hu hy ga gd'.split(' ');
     var picks = [new URLSearchParams(location.search).get('lang')];
     try { picks.push(localStorage.getItem('ankigen:lang')); } catch (e) {}
     var browser = navigator.languages || [navigator.language];
@@ -138,7 +138,7 @@
   <p class="lede" data-plural="langsLede">AnkiGen makes Anki decks in 23 languages. Learn any of them from any other, or on its own with definitions in the same language.</p>
   <div class="lang-groups-page" id="language-list">
     <section class="lang-sect" aria-labelledby="group-germanic">
-      <h2 class="lang-sect-name" id="group-germanic" data-t="group.germanic">Germanic</h2>
+      <h2 class="lang-sect-name" id="group-germanic" data-t="group.germanic">Germanic languages</h2>
       <ul class="lang-list">
       <li class="lang" data-code="en">
         <img class="flag" src="img/flags/us.svg" alt="" width="20" height="15">
@@ -175,7 +175,7 @@
       </ul>
     </section>
     <section class="lang-sect" aria-labelledby="group-asian">
-      <h2 class="lang-sect-name" id="group-asian" data-t="group.asian">East and Southeast Asian</h2>
+      <h2 class="lang-sect-name" id="group-asian" data-t="group.asian">Asian languages</h2>
       <ul class="lang-list">
       <li class="lang" data-code="zh">
         <img class="flag" src="img/flags/cn.svg" alt="" width="20" height="15">
@@ -212,7 +212,7 @@
       </ul>
     </section>
     <section class="lang-sect" aria-labelledby="group-romance">
-      <h2 class="lang-sect-name" id="group-romance" data-t="group.romance">Romance</h2>
+      <h2 class="lang-sect-name" id="group-romance" data-t="group.romance">Romance languages</h2>
       <ul class="lang-list">
       <li class="lang" data-code="es">
         <img class="flag" src="img/flags/es.svg" alt="" width="20" height="15">
@@ -249,7 +249,7 @@
       </ul>
     </section>
     <section class="lang-sect" aria-labelledby="group-slavic">
-      <h2 class="lang-sect-name" id="group-slavic" data-t="group.slavic">Slavic</h2>
+      <h2 class="lang-sect-name" id="group-slavic" data-t="group.slavic">Slavic languages</h2>
       <ul class="lang-list">
       <li class="lang" data-code="ru">
         <img class="flag" src="img/flags/ru.svg" alt="" width="20" height="15">
@@ -285,29 +285,8 @@
       </li>
       </ul>
     </section>
-    <section class="lang-sect" aria-labelledby="group-celtic">
-      <h2 class="lang-sect-name" id="group-celtic" data-t="group.celtic">Celtic</h2>
-      <ul class="lang-list">
-      <li class="lang" data-code="ga">
-        <img class="flag" src="img/flags/ie.svg" alt="" width="20" height="15">
-        <div>
-          <p class="lang-title" id="lang-ga"><span class="lang-native" lang="ga-IE">Gaeilge</span><span class="lang-name">Irish</span></p>
-          <p class="lang-extras">Cards can also show: Gender / article · IPA</p>
-          <a class="lang-build" href="./#v1&amp;l=ga" aria-describedby="lang-ga" data-keep-lang data-t="langs.build">Build a deck</a>
-        </div>
-      </li>
-      <li class="lang" data-code="gd">
-        <img class="flag" src="img/flags/gb-sct.svg" alt="" width="20" height="15">
-        <div>
-          <p class="lang-title" id="lang-gd"><span class="lang-native" lang="gd-GB">Gàidhlig</span><span class="lang-name">Scottish Gaelic</span></p>
-          <p class="lang-extras">Cards can also show: Gender / article · IPA</p>
-          <a class="lang-build" href="./#v1&amp;l=gd" aria-describedby="lang-gd" data-keep-lang data-t="langs.build">Build a deck</a>
-        </div>
-      </li>
-      </ul>
-    </section>
     <section class="lang-sect" aria-labelledby="group-other">
-      <h2 class="lang-sect-name" id="group-other" data-t="group.other">Other</h2>
+      <h2 class="lang-sect-name" id="group-other" data-t="group.other">Other languages</h2>
       <ul class="lang-list">
       <li class="lang" data-code="ar">
         <img class="flag" src="img/flags/arab-league.svg" alt="" width="20" height="15">
@@ -347,6 +326,22 @@
           <p class="lang-title" id="lang-hy"><span class="lang-native" lang="hy-AM">Հայերեն</span><span class="lang-name">Armenian</span></p>
           <p class="lang-extras">Cards can also show: Romanization · IPA</p>
           <a class="lang-build" href="./#v1&amp;l=hy" aria-describedby="lang-hy" data-keep-lang data-t="langs.build">Build a deck</a>
+        </div>
+      </li>
+      <li class="lang" data-code="ga">
+        <img class="flag" src="img/flags/ie.svg" alt="" width="20" height="15">
+        <div>
+          <p class="lang-title" id="lang-ga"><span class="lang-native" lang="ga-IE">Gaeilge</span><span class="lang-name">Irish</span></p>
+          <p class="lang-extras">Cards can also show: Gender / article · IPA</p>
+          <a class="lang-build" href="./#v1&amp;l=ga" aria-describedby="lang-ga" data-keep-lang data-t="langs.build">Build a deck</a>
+        </div>
+      </li>
+      <li class="lang" data-code="gd">
+        <img class="flag" src="img/flags/gb-sct.svg" alt="" width="20" height="15">
+        <div>
+          <p class="lang-title" id="lang-gd"><span class="lang-native" lang="gd-GB">Gàidhlig</span><span class="lang-name">Scottish Gaelic</span></p>
+          <p class="lang-extras">Cards can also show: Gender / article · IPA</p>
+          <a class="lang-build" href="./#v1&amp;l=gd" aria-describedby="lang-gd" data-keep-lang data-t="langs.build">Build a deck</a>
         </div>
       </li>
       </ul>

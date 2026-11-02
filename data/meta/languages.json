@@ -1,6 +1,6 @@
 {
   "$comment": "Language registry. 'active' = shipped in the UI, in the order of 'groups'. 'staged' = being generated: full feature blocks and generation units, but the page, the landing pages, the bundles and the deploy gate leave them out until they move to 'active'. 'deferred' = codes reserved for later, without feature blocks. 'groups' = how the page groups the language chips (SPEC §4): the group with English first, then by the speakers of their languages, 'other' last; languages within a group by 'speakers' (millions, L1 + L2: Ethnologue 2026, or Wikipedia's infobox for languages under 50 million; tools/lib/data.mjs checks the order). 'flag' names the flag image (img/flags/<flag>.svg) of a language without a country. 'dir': 'rtl' for right-to-left scripts. 'vowels': short-vowel marks (Arabic harakat) that the Vowel marks row can hide. Variants (e.g. pt-BR) are added later as separate entries with \"extends\": \"pt\" and only the files/entries that differ. See docs/DATA_FORMAT.md §Languages.",
-  "active": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
+  "active": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ar", "tr", "el", "hu", "hy", "ga", "gd"],
   "staged": [],
   "deferred": [],
   "groups": [
@@ -8,8 +8,7 @@
     { "id": "asian", "languages": ["zh", "ja", "vi", "ko"] },
     { "id": "romance", "languages": ["es", "fr", "pt", "it"] },
     { "id": "slavic", "languages": ["ru", "pl", "uk", "sr"] },
-    { "id": "celtic", "languages": ["ga", "gd"] },
-    { "id": "other", "languages": ["ar", "tr", "el", "hu", "hy"] }
+    { "id": "other", "languages": ["ar", "tr", "el", "hu", "hy", "ga", "gd"] }
   ],
   "languages": {
     "en": {

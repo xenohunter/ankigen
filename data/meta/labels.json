@@ -205,30 +205,6 @@
       "value.class.godan": "годан", "value.class.ichidan": "ичидан", "value.class.suru": "суру-глагол", "value.class.kuru": "куру (неправилан)",
       "value.type.i": "и-придев", "value.type.na": "на-придев"
     },
-    "ga": {
-      "section.forms": "Foirmeacha", "section.examples": "Samplaí", "section.related": "Gaolmhar", "section.antonyms": "Contrártha", "section.etymology": "Bunús", "section.ipa": "AFA", "section.reading": "Léamh", "section.romanization": "Rómhánú", "section.measureWord": "Focal comhairimh", "section.counter": "Comhairleoir", "section.classifier": "Aicmitheoir", "section.hanja": "Hanja", "section.definition": "Sainmhíniú", "section.otherScript": "Script eile", "section.conceptId": "ID",
-      "pos.noun": "ainmfhocal", "pos.verb": "briathar", "pos.adj": "aidiacht", "pos.adv": "dobhriathar", "pos.pron": "forainm", "pos.num": "uimhir", "pos.prep": "réamhfhocal", "pos.conj": "cónasc", "pos.interj": "intriacht", "pos.particle": "mír", "pos.det": "cinnteoir", "pos.phrase": "frása",
-      "reg.informal": "neamhfhoirmiúil", "reg.formal": "foirmiúil", "reg.vulgar": "gáirsiúil", "reg.offensive": "maslach",
-      "gender.m": "fir.", "gender.f": "bain.", "gender.n": "neodrach", "gender.c": "coitianta", "gender.mf": "fir./bain.", "gender.pl": "iolra amháin",
-      "form.gen": "ginid.", "form.pl": "iol.", "form.dim": "bain.", "form.def": "cinnte", "form.acc": "cuir.", "form.poss3": "a (his/her)", "form.f": "bain.", "form.n": "neodrach", "form.short": "gearr", "form.comp": "breisíocht", "form.sup": "sárchéim",
-      "form.aspect": "gné", "form.pair": "péire", "form.inf": "éagsh.", "form.pres": "láithreach", "form.1sg": "mé", "form.2sg": "tú", "form.3sg": "sé/sí", "form.1pl": "sinn", "form.3pl": "siad", "form.past": "aimsir chaite", "form.pret": "aimsir chaite", "form.pp": "foshuiteach", "form.supine": "súpine", "form.aux": "cabh.", "form.lpt": "mionl. caite", "form.aor": "aorast", "form.prog": "leanúnach", "form.fut": "aimsir fháistineach", "form.imp": "ordaitheach", "form.vn": "ainm briathartha",
-      "form.class": "aicme", "form.masu": "múinte", "form.te": "foirm te", "form.nai": "diúltach", "form.type": "cineál", "form.neg": "diúltach", "form.haeyo": "múinte",
-      "value.aspect.ipf": "neamhfhoirfe", "value.aspect.pf": "foirfe", "value.aspect.bi": "an dá ghné",
-      "value.class.godan": "godan (briathar u)", "value.class.ichidan": "ichidan (briathar ru)", "value.class.suru": "briathar suru", "value.class.kuru": "kuru (neamhrialta)",
-      "value.type.i": "aidiacht i", "value.type.na": "aidiacht na"
-    },
-    "gd": {
-      "section.forms": "Cruthan", "section.examples": "Eisimpleirean", "section.related": "Co-cheangailte", "section.antonyms": "Mu choinneamh", "section.etymology": "Tùs", "section.ipa": "IPA", "section.reading": "Leughadh", "section.romanization": "Ròmanachadh", "section.measureWord": "Facal tomhais", "section.counter": "Cunntair", "section.classifier": "Seòrsaiche", "section.hanja": "Hanja", "section.definition": "Mìneachadh", "section.otherScript": "Sgrìobhadh eile", "section.conceptId": "ID",
-      "pos.noun": "ainmear", "pos.verb": "gnìomhair", "pos.adj": "buadhair", "pos.adv": "dobhriathar", "pos.pron": "riochdair", "pos.num": "àireamhair", "pos.prep": "roimhear", "pos.conj": "ceangal", "pos.interj": "clisgear", "pos.particle": "mìrean", "pos.det": "cinnteachair", "pos.phrase": "abairt",
-      "reg.informal": "neo-fhoirmeil", "reg.formal": "foirmeil", "reg.vulgar": "garbh", "reg.offensive": "maslach",
-      "gender.m": "fir.", "gender.f": "boir.", "gender.n": "neo-sheach.", "gender.c": "cumanta", "gender.mf": "fir./boir.", "gender.pl": "iol. a-mhàin",
-      "form.gen": "gin.", "form.pl": "iol.", "form.dim": "lùghd.", "form.def": "cinnt.", "form.acc": "cus.", "form.poss3": "aige/aice", "form.f": "boir.", "form.n": "neo-sheach.", "form.short": "goirid", "form.comp": "coimeas.", "form.sup": "àrd-ìre",
-      "form.aspect": "taobh", "form.pair": "paidhir", "form.inf": "neo-chrìoch.", "form.pres": "làthaireach", "form.1sg": "mi", "form.2sg": "thu", "form.3sg": "e/i", "form.1pl": "sinn", "form.3pl": "iad", "form.past": "caithte", "form.pret": "dìreach-chaithte", "form.pp": "foirfe", "form.supine": "supine", "form.aux": "cuideach.", "form.lpt": "com-pàirt chaithte", "form.aor": "aorist", "form.prog": "leantainneach", "form.fut": "teachdail", "form.imp": "àithneach", "form.vn": "ainmear-gnìomhaireach",
-      "form.class": "clas", "form.masu": "modhail", "form.te": "cruth -te", "form.nai": "àicheil", "form.type": "seòrsa", "form.neg": "àicheil", "form.haeyo": "modhail",
-      "value.aspect.ipf": "neo-choileanta", "value.aspect.pf": "coileanta", "value.aspect.bi": "an dà chuid",
-      "value.class.godan": "godan (gnìomhair u)", "value.class.ichidan": "ichidan (gnìomhair ru)", "value.class.suru": "gnìomhair suru", "value.class.kuru": "kuru (neo-riaghailteach)",
-      "value.type.i": "buadhair i", "value.type.na": "buadhair na"
-    },
     "ar": {
       "section.forms": "الصيغ", "section.examples": "أمثلة", "section.related": "ذات صلة", "section.antonyms": "الأضداد", "section.etymology": "الأصل", "section.ipa": "IPA", "section.reading": "القراءة", "section.romanization": "النقحرة", "section.measureWord": "كلمة العد", "section.counter": "أداة العد", "section.classifier": "المُصنِّف", "section.hanja": "هانجا", "section.definition": "التعريف", "section.otherScript": "كتابة أخرى", "section.conceptId": "المعرّف",
       "pos.noun": "اسم", "pos.verb": "فعل", "pos.adj": "صفة", "pos.adv": "ظرف", "pos.pron": "ضمير", "pos.num": "عدد", "pos.prep": "حرف جر", "pos.conj": "حرف عطف", "pos.interj": "أداة تعجب", "pos.particle": "أداة", "pos.det": "محدِّد", "pos.phrase": "عبارة",
@@ -288,6 +264,30 @@
       "value.aspect.ipf": "անկատար կերպ", "value.aspect.pf": "կատարյալ կերպ", "value.aspect.bi": "երկու կերպ",
       "value.class.godan": "գոդան", "value.class.ichidan": "իչիդան", "value.class.suru": "սուրու-բայ", "value.class.kuru": "կուրու (անկանոն)",
       "value.type.i": "i-ածական", "value.type.na": "na-ածական"
+    },
+    "ga": {
+      "section.forms": "Foirmeacha", "section.examples": "Samplaí", "section.related": "Gaolmhar", "section.antonyms": "Contrártha", "section.etymology": "Bunús", "section.ipa": "AFA", "section.reading": "Léamh", "section.romanization": "Rómhánú", "section.measureWord": "Focal comhairimh", "section.counter": "Comhairleoir", "section.classifier": "Aicmitheoir", "section.hanja": "Hanja", "section.definition": "Sainmhíniú", "section.otherScript": "Script eile", "section.conceptId": "ID",
+      "pos.noun": "ainmfhocal", "pos.verb": "briathar", "pos.adj": "aidiacht", "pos.adv": "dobhriathar", "pos.pron": "forainm", "pos.num": "uimhir", "pos.prep": "réamhfhocal", "pos.conj": "cónasc", "pos.interj": "intriacht", "pos.particle": "mír", "pos.det": "cinnteoir", "pos.phrase": "frása",
+      "reg.informal": "neamhfhoirmiúil", "reg.formal": "foirmiúil", "reg.vulgar": "gáirsiúil", "reg.offensive": "maslach",
+      "gender.m": "fir.", "gender.f": "bain.", "gender.n": "neodrach", "gender.c": "coitianta", "gender.mf": "fir./bain.", "gender.pl": "iolra amháin",
+      "form.gen": "ginid.", "form.pl": "iol.", "form.dim": "bain.", "form.def": "cinnte", "form.acc": "cuir.", "form.poss3": "a (his/her)", "form.f": "bain.", "form.n": "neodrach", "form.short": "gearr", "form.comp": "breisíocht", "form.sup": "sárchéim",
+      "form.aspect": "gné", "form.pair": "péire", "form.inf": "éagsh.", "form.pres": "láithreach", "form.1sg": "mé", "form.2sg": "tú", "form.3sg": "sé/sí", "form.1pl": "sinn", "form.3pl": "siad", "form.past": "aimsir chaite", "form.pret": "aimsir chaite", "form.pp": "foshuiteach", "form.supine": "súpine", "form.aux": "cabh.", "form.lpt": "mionl. caite", "form.aor": "aorast", "form.prog": "leanúnach", "form.fut": "aimsir fháistineach", "form.imp": "ordaitheach", "form.vn": "ainm briathartha",
+      "form.class": "aicme", "form.masu": "múinte", "form.te": "foirm te", "form.nai": "diúltach", "form.type": "cineál", "form.neg": "diúltach", "form.haeyo": "múinte",
+      "value.aspect.ipf": "neamhfhoirfe", "value.aspect.pf": "foirfe", "value.aspect.bi": "an dá ghné",
+      "value.class.godan": "godan (briathar u)", "value.class.ichidan": "ichidan (briathar ru)", "value.class.suru": "briathar suru", "value.class.kuru": "kuru (neamhrialta)",
+      "value.type.i": "aidiacht i", "value.type.na": "aidiacht na"
+    },
+    "gd": {
+      "section.forms": "Cruthan", "section.examples": "Eisimpleirean", "section.related": "Co-cheangailte", "section.antonyms": "Mu choinneamh", "section.etymology": "Tùs", "section.ipa": "IPA", "section.reading": "Leughadh", "section.romanization": "Ròmanachadh", "section.measureWord": "Facal tomhais", "section.counter": "Cunntair", "section.classifier": "Seòrsaiche", "section.hanja": "Hanja", "section.definition": "Mìneachadh", "section.otherScript": "Sgrìobhadh eile", "section.conceptId": "ID",
+      "pos.noun": "ainmear", "pos.verb": "gnìomhair", "pos.adj": "buadhair", "pos.adv": "dobhriathar", "pos.pron": "riochdair", "pos.num": "àireamhair", "pos.prep": "roimhear", "pos.conj": "ceangal", "pos.interj": "clisgear", "pos.particle": "mìrean", "pos.det": "cinnteachair", "pos.phrase": "abairt",
+      "reg.informal": "neo-fhoirmeil", "reg.formal": "foirmeil", "reg.vulgar": "garbh", "reg.offensive": "maslach",
+      "gender.m": "fir.", "gender.f": "boir.", "gender.n": "neo-sheach.", "gender.c": "cumanta", "gender.mf": "fir./boir.", "gender.pl": "iol. a-mhàin",
+      "form.gen": "gin.", "form.pl": "iol.", "form.dim": "lùghd.", "form.def": "cinnt.", "form.acc": "cus.", "form.poss3": "aige/aice", "form.f": "boir.", "form.n": "neo-sheach.", "form.short": "goirid", "form.comp": "coimeas.", "form.sup": "àrd-ìre",
+      "form.aspect": "taobh", "form.pair": "paidhir", "form.inf": "neo-chrìoch.", "form.pres": "làthaireach", "form.1sg": "mi", "form.2sg": "thu", "form.3sg": "e/i", "form.1pl": "sinn", "form.3pl": "iad", "form.past": "caithte", "form.pret": "dìreach-chaithte", "form.pp": "foirfe", "form.supine": "supine", "form.aux": "cuideach.", "form.lpt": "com-pàirt chaithte", "form.aor": "aorist", "form.prog": "leantainneach", "form.fut": "teachdail", "form.imp": "àithneach", "form.vn": "ainmear-gnìomhaireach",
+      "form.class": "clas", "form.masu": "modhail", "form.te": "cruth -te", "form.nai": "àicheil", "form.type": "seòrsa", "form.neg": "àicheil", "form.haeyo": "modhail",
+      "value.aspect.ipf": "neo-choileanta", "value.aspect.pf": "coileanta", "value.aspect.bi": "an dà chuid",
+      "value.class.godan": "godan (gnìomhair u)", "value.class.ichidan": "ichidan (gnìomhair ru)", "value.class.suru": "gnìomhair suru", "value.class.kuru": "kuru (neo-riaghailteach)",
+      "value.type.i": "buadhair i", "value.type.na": "buadhair na"
     }
   }
 }

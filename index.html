@@ -42,7 +42,7 @@
       "browserRequirements": "Requires JavaScript",
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
+      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ar", "tr", "el", "hu", "hy", "ga", "gd"],
       "featureList": [
         "Vocabulary decks for any pair of 23 languages, or with definitions in the language you learn",
         "Topic modules, from the most frequent words to food, housing, health, work and travel",
@@ -60,7 +60,7 @@
       "@id": "https://xenohunter.github.io/ankigen/#site",
       "name": "AnkiGen",
       "url": "https://xenohunter.github.io/ankigen/",
-      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ga", "gd", "ar", "tr", "el", "hu", "hy"],
+      "inLanguage": ["en", "de", "nl", "sv", "zh", "ja", "vi", "ko", "es", "fr", "pt", "it", "ru", "pl", "uk", "sr", "ar", "tr", "el", "hu", "hy", "ga", "gd"],
       "publisher": { "@id": "https://xenohunter.github.io/ankigen/#author" }
     },
     {
@@ -80,7 +80,7 @@
 <script>
   (function () {
     var root = document.documentElement;
-    var ui = 'en de nl sv zh ja vi ko es fr pt it ru pl uk sr ga gd ar tr el hu hy'.split(' ');
+    var ui = 'en de nl sv zh ja vi ko es fr pt it ru pl uk sr ar tr el hu hy ga gd'.split(' ');
     var picks = [new URLSearchParams(location.search).get('lang')];
     try { picks.push(localStorage.getItem('ankigen:lang')); } catch (e) {}
     var browser = navigator.languages || [navigator.language];
@@ -141,7 +141,7 @@
 
 <noscript>
   <div class="noscript">
-    <p>AnkiGen builds free Anki vocabulary decks right in your browser. You pick the language you are learning and one you speak, among English, German, Dutch, Swedish, Chinese, Japanese, Vietnamese, Korean, Spanish, French, Portuguese, Italian, Russian, Polish, Ukrainian, Serbian, Irish, Scottish Gaelic, Arabic, Turkish, Greek, Hungarian and Armenian. Then you choose topic modules, from the most frequent words to food, housing, health, work and travel, and what each card shows. AnkiGen gives you an .apkg file for Anki or AnkiDroid.</p>
+    <p>AnkiGen builds free Anki vocabulary decks right in your browser. You pick the language you are learning and one you speak, among English, German, Dutch, Swedish, Chinese, Japanese, Vietnamese, Korean, Spanish, French, Portuguese, Italian, Russian, Polish, Ukrainian, Serbian, Arabic, Turkish, Greek, Hungarian, Armenian, Irish and Scottish Gaelic. Then you choose topic modules, from the most frequent words to food, housing, health, work and travel, and what each card shows. AnkiGen gives you an .apkg file for Anki or AnkiDroid.</p>
     <p>It needs JavaScript: please enable it and reload the page. Without it you can still browse the <a href="decks/">decks by language pair</a>, with their modules and sample words.</p>
   </div>
 </noscript>
